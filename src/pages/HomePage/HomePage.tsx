@@ -86,6 +86,7 @@ export const HomePage = () => {
               .filter((step) => step.id % 2 === 0)
               .map((step) => (
                 <Step
+                  key={step.id}
                   id={step.id}
                   title={t(`homepage.steps.stepTitle${step.id}`)}
                   iconOnTop={step.iconOnTop}
@@ -99,6 +100,7 @@ export const HomePage = () => {
           <FlexCell width="auto" cx={styles.mobile}>
             {steps.map((step) => (
               <Step
+                key={step.id}
                 id={step.id}
                 title={t(`homepage.steps.stepTitle${step.id}`)}
                 iconOnTop={step.iconOnTop}

@@ -24,11 +24,13 @@ import { useState } from 'react';
 const languageList = [
   {
     code: 'en',
+    localizedCode: 'en',
     label: 'english',
   },
   {
     code: 'ru',
-    label: 'russian',
+    localizedCode: 'ру',
+    label: 'Русский',
   },
 ];
 
@@ -36,6 +38,9 @@ export const Header = () => {
   const location = useLocation();
   const { i18n, t } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+  const getLocalizedLabel = languageList.filter(
+    (language) => language.code === selectedLanguage,
+  )[0];
 
   const changeLanguageHandler = (language: string) => {
     setSelectedLanguage(language);
@@ -43,13 +48,43 @@ export const Header = () => {
   };
 
   const renderBurger = (props: { onClose: () => void }) => (
-    <BurgerButton
-      href="/"
-      caption="Home"
-      onClick={() => {
-        props.onClose && props.onClose();
-      }}
-    />
+    <>
+      <BurgerButton
+        href="/"
+        caption={t('global.layout.header.homepage')}
+        onClick={() => {
+          props.onClose && props.onClose();
+        }}
+      />
+      <BurgerButton
+        href="/"
+        caption={t('global.layout.header.tenders')}
+        onClick={() => {
+          props.onClose && props.onClose();
+        }}
+      />
+      <BurgerButton
+        href="/"
+        caption={t('global.layout.header.proposals')}
+        onClick={() => {
+          props.onClose && props.onClose();
+        }}
+      />
+      <BurgerButton
+        href="/"
+        caption={t('global.layout.header.signInCta')}
+        onClick={() => {
+          props.onClose && props.onClose();
+        }}
+      />
+      <BurgerButton
+        href="/"
+        caption={t('global.layout.header.signUpCta')}
+        onClick={() => {
+          props.onClose && props.onClose();
+        }}
+      />
+    </>
   );
 
   const renderLanguageSelector = () => {
@@ -59,7 +94,7 @@ export const Header = () => {
         renderTarget={(props: DropdownBodyProps) => (
           <FlexRow padding="6" vPadding="12" spacing="12">
             <MainMenuButton
-              caption={selectedLanguage}
+              caption={getLocalizedLabel.localizedCode}
               {...props}
               cx={styles.languageSelector}
             />
@@ -144,7 +179,7 @@ export const Header = () => {
       },
       {
         id: 'languageSelector',
-        priority: 4,
+        priority: 7,
         render: renderLanguageSelector,
       },
       {

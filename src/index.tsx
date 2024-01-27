@@ -16,6 +16,9 @@ import { svc } from './services';
 import { MainPage } from './pages/MainPage/MainPage';
 import { HomePage } from './pages/HomePage/HomePage';
 import { Layout } from './layout/Layout';
+import './i18n';
+import { SignUpPage } from './pages/SignUpPage/SignUpPage';
+import { SignInPage } from './pages/SignInPage/SignInPage';
 
 const history = createBrowserHistory();
 const router = new HistoryAdaptedRouter(history);
@@ -34,6 +37,12 @@ const UuiEnhancedApp = () => {
                 <Route exact path="/" component={MainPage} />
               ) : (
                 <Route exact path="/" component={HomePage} />
+              )}
+              {!isLoggedIn && (
+                <Route exact path="/register" component={SignUpPage} />
+              )}
+              {!isLoggedIn && (
+                <Route exact path="/login" component={SignInPage} />
               )}
             </Switch>
           </Layout>

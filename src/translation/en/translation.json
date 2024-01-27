@@ -1,0 +1,43 @@
+{
+  "global": {
+    "layout": {
+      "header": {
+        "homepage": "Home",
+        "tenders": "Tenders",
+        "proposals": "Proposals",
+        "signInCta": "Sign In",
+        "signUpCta": "Sign Up"
+      },
+      "footer": {
+        "copyright": "© 1993—2024 EPAM Systems. All Rights Reserved.",
+        "privatePolicyCta": "Privacy policy",
+        "cookiePolicyCta": "Cookies policy"
+      }
+    }
+  },
+  "homepage": {
+    "header": {
+      "title": "Welcome to Artograd",
+      "subtitle": "The largest community of creators and city residents. <br /> Be the one who changes the world around.",
+      "cta": "Join Community"
+    },
+    "steps": {
+      "sectionTitle": "How it works",
+      "stepTitle1": "Tenders for art project are created",
+      "stepDescription1": "Tenders created to beautify the neighborhood through various art projects, which may span across multiple formats such as murals, installations, sculptural works, landscape art, and more.",
+      "stepLinkText1": "",
+      "stepTitle2": "Creators submit their proposals",
+      "stepDescription2": "Creators are invited to submit their proposals for art projects based on the tenders released, sharing their concept, expected budget, timeframe, and how their work aims to enhance the neighborhood's aesthetics and culture.",
+      "stepLinkText2": "View open tenders",
+      "stepTitle3": "You vote for submitted art projects proposals",
+      "stepDescription3": "As a resident, you can vote for submitted art projects proposals considering their potential aesthetic impact and value addition to the community's culture, and the benefits they would bring to the neighborhood.",
+      "stepLinkText3": "Vote for proposed art projects",
+      "stepTitle4": "Artists and creators start working on the project chosen",
+      "stepDescription4": "Once the winning proposals are selected, creators and artists begin the implementation process. They bring their artistic vision to life, adhering to the project's budget and timeline, and working towards enhancing the neighborhood's aesthetic and cultural appeal.",
+      "stepLinkText4": "View and support art projects",
+      "stepTitle5": "New art project in your city/ location",
+      "stepDescription5": "A new art project is set to enliven our city. Everyone’s participation is welcomed in enhancing local aesthetics and convenience, and continuously contribute to the enrichment of our cityscape, either by submitting proposals or voting for their favorite projects.",
+      "stepLinkText5": ""
+    }
+  }
+}

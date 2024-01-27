@@ -7,7 +7,6 @@
 }
 
 .step {
-  width: 470px;
   margin-bottom: 120px;
 }
 
@@ -42,8 +41,32 @@
 .stepDescription {
   color: var(--night700);
   font-family: var(--uui-font);
+  width: 470px;
 }
 
 .stepLink {
-  text-transform: capitalize;
+  text-transform: none;
+}
+
+@media only screen and (max-device-width: 767px) {
+  .offsetEnd,
+  .offsetStart {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .stepWrapper:nth-child(even) {
+    align-items: baseline;
+  }
+  .stepWrapper:last-child {
+    margin-bottom: 60px;
+  }
+  .stepDescription {
+    width: 335px;
+  }
+  .step {
+    margin-bottom: 30px;
+  }
+  .stepIcon {
+    display: none;
+  }
 }

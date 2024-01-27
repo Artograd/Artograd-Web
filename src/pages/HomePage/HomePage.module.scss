@@ -53,3 +53,27 @@
   align-items: flex-start;
   justify-content: space-between;
 }
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-device-width: 767px) {
+  .steps {
+    margin: 0 15px;
+  }
+  .headerWrapper {
+    padding: 30px 15px;
+  }
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}

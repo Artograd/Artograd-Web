@@ -1,37 +1,13 @@
 import React from 'react';
-import {
-  BurgerButton,
-  MainMenu,
-  MainMenuButton,
-  FlexSpacer,
-  FlexCell,
-  Burger,
-} from '@epam/uui';
+import { MainMenu, MainMenuButton, FlexSpacer, FlexCell } from '@epam/uui';
 import { AdaptiveItemProps, MainMenuLogo } from '@epam/uui-components';
+import { useTranslation } from 'react-i18next';
 
 export const Footer = () => {
-  const renderBurger = (props: { onClose: () => void }) => (
-    <>
-      <BurgerButton
-        href="/"
-        caption="Training Catalog"
-        onClick={() => {
-          props.onClose && props.onClose();
-        }}
-      />
-    </>
-  );
+  const { t } = useTranslation();
 
   const getMenuItems = (): AdaptiveItemProps[] => {
     return [
-      {
-        id: 'burger',
-        priority: 100,
-        collapsedContainer: true,
-        render: (p) => (
-          <Burger key={p.id} width={300} renderBurgerContent={renderBurger} />
-        ),
-      },
       {
         id: 'logo',
         priority: 99,
@@ -54,7 +30,7 @@ export const Footer = () => {
         render: (p) => (
           <MainMenuButton
             key={p.id}
-            caption="© 1993—2024 EPAM Systems. All Rights Reserved."
+            caption={t('global.layout.footer.copyright')}
           />
         ),
       },
@@ -66,12 +42,22 @@ export const Footer = () => {
       {
         id: 'privacyPolicy',
         priority: 3,
-        render: (p) => <MainMenuButton key={p.id} caption="Privacy policy" />,
+        render: (p) => (
+          <MainMenuButton
+            key={p.id}
+            caption={t('global.layout.footer.privatePolicyCta')}
+          />
+        ),
       },
       {
         id: 'cookiesPolicy',
         priority: 3,
-        render: (p) => <MainMenuButton key={p.id} caption="Cookies policy" />,
+        render: (p) => (
+          <MainMenuButton
+            key={p.id}
+            caption={t('global.layout.footer.cookiePolicyCta')}
+          />
+        ),
       },
     ];
   };

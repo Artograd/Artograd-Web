@@ -18,6 +18,8 @@ import {
 import { DropdownBodyProps } from '@epam/uui-core';
 import { useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
+import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 
 const languageList = [
   {
@@ -32,6 +34,13 @@ const languageList = [
 
 export const Header = () => {
   const location = useLocation();
+  const { i18n, t } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+
+  const changeLanguageHandler = (language: string) => {
+    setSelectedLanguage(language);
+    i18n.changeLanguage(language);
+  };
 
   const renderBurger = (props: { onClose: () => void }) => (
     <BurgerButton
@@ -48,10 +57,9 @@ export const Header = () => {
       <Dropdown
         key="lagnuage-selector"
         renderTarget={(props: DropdownBodyProps) => (
-          // TODO: Add state manager and display label on the base of the selected language
           <FlexRow padding="6" vPadding="12" spacing="12">
             <MainMenuButton
-              caption="en"
+              caption={selectedLanguage}
               {...props}
               cx={styles.languageSelector}
             />
@@ -63,6 +71,7 @@ export const Header = () => {
               <DropdownMenuButton
                 caption={language.label}
                 cx={styles.languageSelectorItem}
+                onClick={() => changeLanguageHandler(language.code)}
               />
             ))}
           </DropdownMenuBody>
@@ -96,7 +105,7 @@ export const Header = () => {
           <MainMenuButton
             key={p.id}
             href="/"
-            caption="home"
+            caption={t('global.layout.header.homepage')}
             isLinkActive={location.pathname === '/'}
             cx={styles.menuPageLink}
           />
@@ -109,7 +118,7 @@ export const Header = () => {
           <MainMenuButton
             key={p.id}
             href="/tenders"
-            caption="tenders"
+            caption={t('global.layout.header.tenders')}
             isLinkActive={location.pathname === '/tenders'}
             cx={styles.menuPageLink}
           />
@@ -122,7 +131,7 @@ export const Header = () => {
           <MainMenuButton
             key={p.id}
             href="/proposals"
-            caption="proposals"
+            caption={t('global.layout.header.proposals')}
             isLinkActive={location.pathname === '/proposals'}
             cx={styles.menuPageLink}
           />
@@ -145,8 +154,8 @@ export const Header = () => {
           <FlexRow key={p.id} padding="6" vPadding="12" spacing="12">
             <Button
               key={p.id}
-              href="/s"
-              caption="Sign In"
+              href="/login"
+              caption={t('global.layout.header.signInCta')}
               fill="none"
               color="primary"
               cx={styles.signInButton}
@@ -160,8 +169,9 @@ export const Header = () => {
         render: (p) => (
           <FlexRow key={p.id} padding="6" vPadding="12" spacing="12">
             <Button
+              href="/register"
               color="primary"
-              caption="Sign Up"
+              caption={t('global.layout.header.signUpCta')}
               cx={styles.signUpButton}
             />
           </FlexRow>

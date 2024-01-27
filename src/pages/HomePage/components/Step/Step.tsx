@@ -35,8 +35,8 @@ export const Step = ({
             <Text cx={styles.stepTitle}>{title}</Text>
           </FlexCell>
           {iconOnTop && icon && (
-            <FlexCell width="auto">
-              <img src={icon} className={styles.stepIcon} />
+            <FlexCell width="auto" cx={styles.stepIcon}>
+              <img src={icon} />
             </FlexCell>
           )}
         </FlexRow>
@@ -56,8 +56,8 @@ export const Step = ({
               </FlexCell>
             )}
             {!iconOnTop && icon && (
-              <FlexCell width="auto">
-                <img src={icon} className={styles.stepIcon} />
+              <FlexCell width="auto" cx={styles.stepIcon}>
+                <img src={icon} />
               </FlexCell>
             )}
           </FlexRow>

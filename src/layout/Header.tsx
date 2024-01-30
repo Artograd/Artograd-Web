@@ -43,9 +43,14 @@ export const Header = () => {
     (language) => language.code === selectedLanguage,
   )[0];
 
-  const changeLanguageHandler = (language: string) => {
+  const changeLanguageHandler = (
+    language: string,
+    props: { onClose?: () => void },
+  ) => {
     setSelectedLanguage(language);
     i18n.changeLanguage(language);
+    props.onClose;
+    props.onClose?.();
   };
 
   const visitPage = (props: { onClose: () => void }, page: string) => {
@@ -82,7 +87,7 @@ export const Header = () => {
   const renderLanguageSelector = () => {
     return (
       <Dropdown
-        key="lagnuage-selector"
+        key="language-selector"
         renderTarget={(props: DropdownBodyProps) => (
           <FlexRow padding="6" vPadding="12" spacing="12">
             <MainMenuButton
@@ -98,7 +103,7 @@ export const Header = () => {
               <DropdownMenuButton
                 caption={language.label}
                 cx={styles.languageSelectorItem}
-                onClick={() => changeLanguageHandler(language.code)}
+                onClick={() => changeLanguageHandler(language.code, props)}
               />
             ))}
           </DropdownMenuBody>

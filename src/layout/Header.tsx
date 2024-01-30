@@ -39,9 +39,9 @@ export const Header = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(
     i18n.language ?? 'en',
   );
-  const getLabel = languageList.filter(
-    (language) => language.code === selectedLanguage,
-  )[0];
+  const getLabel =
+    languageList.filter((language) => language.code === selectedLanguage)[0] ??
+    languageList[0];
 
   const changeLanguageHandler = (
     language: string,

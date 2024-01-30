@@ -16,7 +16,7 @@ import {
   Dropdown,
 } from '@epam/uui-components';
 import { DropdownBodyProps } from '@epam/uui-core';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
@@ -36,6 +36,7 @@ const languageList = [
 
 export const Header = () => {
   const location = useLocation();
+  const history = useHistory();
   const { i18n, t } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
   const getLocalizedLabel = languageList.filter(
@@ -47,42 +48,33 @@ export const Header = () => {
     i18n.changeLanguage(language);
   };
 
+  const visitPage = (props: { onClose: () => void }, page: string) => {
+    props.onClose;
+    props.onClose();
+    history.push(page);
+  };
+
   const renderBurger = (props: { onClose: () => void }) => (
     <>
       <BurgerButton
-        href="/"
         caption={t('global.layout.header.homepage')}
-        onClick={() => {
-          props.onClose && props.onClose();
-        }}
+        onClick={() => visitPage(props, '/')}
       />
       <BurgerButton
-        href="/"
         caption={t('global.layout.header.tenders')}
-        onClick={() => {
-          props.onClose && props.onClose();
-        }}
+        onClick={() => visitPage(props, '/tenders')}
       />
       <BurgerButton
-        href="/"
         caption={t('global.layout.header.proposals')}
-        onClick={() => {
-          props.onClose && props.onClose();
-        }}
+        onClick={() => visitPage(props, '/proposals')}
       />
       <BurgerButton
-        href="/"
         caption={t('global.layout.header.signInCta')}
-        onClick={() => {
-          props.onClose && props.onClose();
-        }}
+        onClick={() => visitPage(props, '/login')}
       />
       <BurgerButton
-        href="/"
         caption={t('global.layout.header.signUpCta')}
-        onClick={() => {
-          props.onClose && props.onClose();
-        }}
+        onClick={() => visitPage(props, '/register')}
       />
     </>
   );
@@ -139,7 +131,7 @@ export const Header = () => {
         render: (p) => (
           <MainMenuButton
             key={p.id}
-            href="/"
+            onClick={() => history.push('/')}
             caption={t('global.layout.header.homepage')}
             isLinkActive={location.pathname === '/'}
             cx={styles.menuPageLink}
@@ -152,7 +144,7 @@ export const Header = () => {
         render: (p) => (
           <MainMenuButton
             key={p.id}
-            href="/tenders"
+            onClick={() => history.push('/tenders')}
             caption={t('global.layout.header.tenders')}
             isLinkActive={location.pathname === '/tenders'}
             cx={styles.menuPageLink}
@@ -165,7 +157,7 @@ export const Header = () => {
         render: (p) => (
           <MainMenuButton
             key={p.id}
-            href="/proposals"
+            onClick={() => history.push('/proposals')}
             caption={t('global.layout.header.proposals')}
             isLinkActive={location.pathname === '/proposals'}
             cx={styles.menuPageLink}
@@ -189,7 +181,7 @@ export const Header = () => {
           <FlexRow key={p.id} padding="6" vPadding="12" spacing="12">
             <Button
               key={p.id}
-              href="/login"
+              onClick={() => history.push('/login')}
               caption={t('global.layout.header.signInCta')}
               fill="none"
               color="primary"
@@ -204,7 +196,7 @@ export const Header = () => {
         render: (p) => (
           <FlexRow key={p.id} padding="6" vPadding="12" spacing="12">
             <Button
-              href="/register"
+              onClick={() => history.push('/register')}
               color="primary"
               caption={t('global.layout.header.signUpCta')}
               cx={styles.signUpButton}

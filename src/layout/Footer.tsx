@@ -1,13 +1,55 @@
 import React from 'react';
-import { MainMenu, MainMenuButton, FlexSpacer, FlexCell } from '@epam/uui';
+import {
+  MainMenu,
+  MainMenuButton,
+  FlexSpacer,
+  FlexCell,
+  BurgerButton,
+  Burger,
+} from '@epam/uui';
 import { AdaptiveItemProps, MainMenuLogo } from '@epam/uui-components';
 import { useTranslation } from 'react-i18next';
+import styles from './Footer.module.scss';
+import { useHistory } from 'react-router-dom';
 
 export const Footer = () => {
   const { t } = useTranslation();
+  const history = useHistory();
+
+  const visitPage = (props: { onClose: () => void }, page: string) => {
+    props.onClose;
+    props.onClose();
+    history.push(page);
+  };
+
+  const renderBurger = (props: { onClose: () => void }) => (
+    <>
+      <BurgerButton
+        caption={t('global.layout.footer.privatePolicyCta')}
+        onClick={() => visitPage(props, '/policy')}
+      />
+      <BurgerButton
+        caption={t('global.layout.footer.cookiePolicyCta')}
+        onClick={() => visitPage(props, '/cookie')}
+      />
+    </>
+  );
 
   const getMenuItems = (): AdaptiveItemProps[] => {
     return [
+      {
+        id: 'burger',
+        priority: 100,
+        collapsedContainer: true,
+        render: (p) => (
+          <Burger
+            key={p.id}
+            width={300}
+            renderBurgerContent={renderBurger}
+            cx={styles.footer}
+          />
+        ),
+      },
       {
         id: 'logo',
         priority: 99,
@@ -45,6 +87,7 @@ export const Footer = () => {
         render: (p) => (
           <MainMenuButton
             key={p.id}
+            onClick={() => history.push('/policy')}
             caption={t('global.layout.footer.privatePolicyCta')}
           />
         ),
@@ -55,6 +98,7 @@ export const Footer = () => {
         render: (p) => (
           <MainMenuButton
             key={p.id}
+            onClick={() => history.push('/cookie')}
             caption={t('global.layout.footer.cookiePolicyCta')}
           />
         ),

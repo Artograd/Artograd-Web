@@ -5,9 +5,11 @@ import EmptyIcon from './assets/empty.svg';
 import LaptopIcon from './assets/laptop.svg';
 import { Step } from './components/Step/Step';
 import { useTranslation, Trans } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 
 export const HomePage = () => {
   const { t } = useTranslation();
+  const history = useHistory();
   const steps = [
     {
       id: 1,
@@ -17,19 +19,19 @@ export const HomePage = () => {
     },
     {
       id: 2,
-      linkUrl: '/',
+      linkUrl: '/tenders',
       icon: DragAndDropIcon,
       iconOnTop: true,
     },
     {
       id: 3,
-      linkUrl: '/',
+      linkUrl: '/proposals',
       icon: LaptopIcon,
       iconOnTop: false,
     },
     {
       id: 4,
-      linkUrl: '/',
+      linkUrl: '/projects',
       icon: EmptyIcon,
       iconOnTop: false,
     },
@@ -53,7 +55,10 @@ export const HomePage = () => {
               <Trans i18nKey="homepage.header.subtitle" />
             </Text>
             <FlexRow cx={styles.headerCta}>
-              <Button caption={t('homepage.header.cta')} onClick={() => null} />
+              <Button
+                caption={t('homepage.header.cta')}
+                onClick={() => history.push('/login')}
+              />
             </FlexRow>
           </FlexCell>
         </FlexRow>

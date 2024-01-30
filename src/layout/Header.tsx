@@ -88,7 +88,7 @@ export const Header = () => {
         renderTarget={(props: DropdownBodyProps) => (
           <FlexRow padding="6" vPadding="12" spacing="12">
             <MainMenuButton
-              caption={selectedLanguage}
+              caption={selectedLanguage ?? 'en'}
               {...props}
               cx={styles.languageSelector}
             />

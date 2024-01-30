@@ -39,5 +39,9 @@
       "stepDescription5": "A new art project is set to enliven our city. Everyone’s participation is welcomed in enhancing local aesthetics and convenience, and continuously contribute to the enrichment of our cityscape, either by submitting proposals or voting for their favorite projects.",
       "stepLinkText5": ""
     }
+  },
+  "notFoundPage": {
+    "title": "Page not found!",
+    "cta": "Return to homepage"
   }
 }

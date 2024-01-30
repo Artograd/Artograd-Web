@@ -38,7 +38,9 @@ export const Header = () => {
   const location = useLocation();
   const history = useHistory();
   const { i18n, t } = useTranslation();
-  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    i18n.language ?? 'en',
+  );
   const getLocalizedLabel = languageList.filter(
     (language) => language.code === selectedLanguage,
   )[0];
@@ -91,7 +93,7 @@ export const Header = () => {
         renderTarget={(props: DropdownBodyProps) => (
           <FlexRow padding="6" vPadding="12" spacing="12">
             <MainMenuButton
-              caption={getLocalizedLabel.localizedCode}
+              caption={getLocalizedLabel.localizedCode ?? 'en'}
               {...props}
               cx={styles.languageSelector}
             />

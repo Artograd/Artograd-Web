@@ -39,6 +39,9 @@ export const Header = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(
     i18n.language ?? 'en',
   );
+  const getLabel = languageList.filter(
+    (language) => language.code === selectedLanguage,
+  )[0];
 
   const changeLanguageHandler = (
     language: string,
@@ -88,7 +91,7 @@ export const Header = () => {
         renderTarget={(props: DropdownBodyProps) => (
           <FlexRow padding="6" vPadding="12" spacing="12">
             <MainMenuButton
-              caption={selectedLanguage ?? 'en'}
+              caption={getLabel.code ?? 'en'}
               {...props}
               cx={styles.languageSelector}
             />

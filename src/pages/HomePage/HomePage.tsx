@@ -13,31 +13,31 @@ export const HomePage = () => {
   const steps = [
     {
       id: 1,
-      linkUrl: undefined,
+      linkUrl: '/tenders',
       icon: undefined,
       iconOnTop: false,
     },
     {
       id: 2,
-      linkUrl: '/tenders',
+      linkUrl: '/submit',
       icon: DragAndDropIcon,
       iconOnTop: true,
     },
     {
       id: 3,
-      linkUrl: '/proposals',
+      linkUrl: '/projects',
       icon: LaptopIcon,
       iconOnTop: false,
     },
     {
       id: 4,
-      linkUrl: '/projects',
+      linkUrl: '/invest',
       icon: EmptyIcon,
       iconOnTop: false,
     },
     {
       id: 5,
-      linkUrl: undefined,
+      linkUrl: '/donate',
       icon: undefined,
       iconOnTop: false,
     },

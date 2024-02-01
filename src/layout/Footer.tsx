@@ -89,6 +89,7 @@ export const Footer = () => {
             key={p.id}
             onClick={() => history.push('/policy')}
             caption={t('global.layout.footer.privatePolicyCta')}
+            cx={styles.footerLink}
           />
         ),
       },
@@ -100,6 +101,7 @@ export const Footer = () => {
             key={p.id}
             onClick={() => history.push('/cookie')}
             caption={t('global.layout.footer.cookiePolicyCta')}
+            cx={styles.footerLink}
           />
         ),
       },

@@ -30,9 +30,7 @@ export const Step = ({
       >
         <FlexRow alignItems="bottom">
           <FlexCell width="auto">
-            <Text cx={styles.stepNumber}>
-              {id.toString().padStart(2, '0')}.
-            </Text>
+            <Text cx={styles.stepNumber}>{id.toString().padStart(2, '0')}</Text>
             <Text cx={styles.stepTitle}>{title}</Text>
           </FlexCell>
           {iconOnTop && icon && (

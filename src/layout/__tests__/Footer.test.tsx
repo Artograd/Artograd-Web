@@ -4,13 +4,6 @@ import { screen, fireEvent } from '@epam/uui-test-utils';
 import { createMemoryHistory } from 'history';
 import { testWrapper } from '../../utils/testWrapper';
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useLocation: () => ({
-    pathname: 'localhost:3000/test',
-  }),
-}));
-
 const menuLinks = [
   {
     linkName: 'Privacy policy',

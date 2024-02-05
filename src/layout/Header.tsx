@@ -121,7 +121,12 @@ export const Header = () => {
         priority: 100,
         collapsedContainer: true,
         render: (p) => (
-          <Burger key={p.id} width={300} renderBurgerContent={renderBurger} />
+          <Burger
+            key={p.id}
+            width={300}
+            renderBurgerContent={renderBurger}
+            rawProps={{ 'data-testid': `header-burger-menu` }}
+          />
         ),
       },
       {

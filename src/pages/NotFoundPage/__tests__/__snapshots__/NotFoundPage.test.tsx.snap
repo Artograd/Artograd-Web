@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home page renders correctly 1`] = `
+exports[`Not found page renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

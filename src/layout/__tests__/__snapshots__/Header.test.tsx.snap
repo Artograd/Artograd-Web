@@ -1,0 +1,326 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout header renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class=""
+        style="min-width: 0; flex-basis: 0px;"
+      >
+        <nav
+          class="BULoA8 uui-main_menu uui-mainmenu-container aqkY9D"
+        >
+          <div
+            class="bziidR HXwiKY"
+          >
+            <div
+              class="uui-flex-row x8mfAd q3nKl2"
+            >
+              <div>
+                <a
+                  aria-disabled="false"
+                  class="YHd3ss uui-anchor uui-enabled -clickable lhoOmi"
+                  href="/"
+                  role="link"
+                  tabindex="0"
+                >
+                  <img
+                    alt="Main Menu Logo"
+                    class="qzo1nb"
+                    src="/artograd.logo.svg"
+                  />
+                </a>
+              </div>
+              <button
+                class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz menuPageLink"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="uui-caption"
+                >
+                  Home
+                </div>
+              </button>
+              <button
+                class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz menuPageLink"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="uui-caption"
+                >
+                  Tenders
+                </div>
+              </button>
+              <button
+                class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz menuPageLink"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="uui-caption"
+                >
+                  Proposals
+                </div>
+              </button>
+              <div
+                class="bTGcnV"
+              />
+              <div
+                class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz languageSelector"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    en
+                  </div>
+                  <div
+                    class="_1t9CRQ uui-icon uui-enabled"
+                  >
+                    <svg
+                      class=""
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <div
+                class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
+              >
+                <button
+                  class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Sign In
+                  </div>
+                </button>
+              </div>
+              <div
+                class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
+              >
+                <button
+                  class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Sign Up
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class=""
+      style="min-width: 0; flex-basis: 0px;"
+    >
+      <nav
+        class="BULoA8 uui-main_menu uui-mainmenu-container aqkY9D"
+      >
+        <div
+          class="bziidR HXwiKY"
+        >
+          <div
+            class="uui-flex-row x8mfAd q3nKl2"
+          >
+            <div>
+              <a
+                aria-disabled="false"
+                class="YHd3ss uui-anchor uui-enabled -clickable lhoOmi"
+                href="/"
+                role="link"
+                tabindex="0"
+              >
+                <img
+                  alt="Main Menu Logo"
+                  class="qzo1nb"
+                  src="/artograd.logo.svg"
+                />
+              </a>
+            </div>
+            <button
+              class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz menuPageLink"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Home
+              </div>
+            </button>
+            <button
+              class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz menuPageLink"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Tenders
+              </div>
+            </button>
+            <button
+              class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz menuPageLink"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Proposals
+              </div>
+            </button>
+            <div
+              class="bTGcnV"
+            />
+            <div
+              class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz languageSelector"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="uui-caption"
+                >
+                  en
+                </div>
+                <div
+                  class="_1t9CRQ uui-icon uui-enabled"
+                >
+                  <svg
+                    class=""
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
+            >
+              <button
+                class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="uui-caption"
+                >
+                  Sign In
+                </div>
+              </button>
+            </div>
+            <div
+              class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
+            >
+              <button
+                class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="uui-caption"
+                >
+                  Sign Up
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

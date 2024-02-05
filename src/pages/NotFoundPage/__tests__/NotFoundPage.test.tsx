@@ -1,12 +1,8 @@
 import { render } from '@testing-library/react';
 import { ErrorPage } from '../NotFoundPage';
 import { createMemoryHistory } from 'history';
-import {
-  renderWithContextAsync,
-  screen,
-  fireEvent,
-} from '@epam/uui-test-utils';
-import { Router } from 'react-router';
+import { screen, fireEvent } from '@epam/uui-test-utils';
+import { testWrapper } from '../../../utils/testWrapper';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -25,16 +21,7 @@ describe('Not found page', () => {
   test('redirect on click page CTA', async () => {
     const history = createMemoryHistory();
 
-    const { rerender } = await renderWithContextAsync(
-      <Router history={history}>
-        <ErrorPage />
-      </Router>,
-    );
-    rerender(
-      <Router history={history}>
-        <ErrorPage />
-      </Router>,
-    );
+    await testWrapper({ component: <ErrorPage />, history });
     fireEvent.click(screen.getByText('Return to homepage'));
 
     expect(history.location.pathname).toBe('/');

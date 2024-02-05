@@ -1,12 +1,8 @@
 import { render } from '@testing-library/react';
 import { Footer } from '../Footer';
-import {
-  renderWithContextAsync,
-  screen,
-  fireEvent,
-} from '@epam/uui-test-utils';
+import { screen, fireEvent } from '@epam/uui-test-utils';
 import { createMemoryHistory } from 'history';
-import { Router } from 'react-router';
+import { testWrapper } from '../../utils/testWrapper';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -40,16 +36,7 @@ describe('Layout footer', () => {
     test('redirect on menu link click', async () => {
       const history = createMemoryHistory();
 
-      const { rerender } = await renderWithContextAsync(
-        <Router history={history}>
-          <Footer />
-        </Router>,
-      );
-      rerender(
-        <Router history={history}>
-          <Footer />
-        </Router>,
-      );
+      await testWrapper({ component: <Footer />, history });
       fireEvent.click(screen.getByText(link.linkName));
 
       expect(history.location.pathname).toBe(link.url);

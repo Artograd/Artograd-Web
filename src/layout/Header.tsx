@@ -32,7 +32,7 @@ const languageList = [
   },
 ];
 
-export const Header = () => {
+export const Header = ({ mobile = false }: { mobile?: boolean }) => {
   const location = useLocation();
   const history = useHistory();
   const { i18n, t } = useTranslation();
@@ -119,7 +119,7 @@ export const Header = () => {
       {
         id: 'burger',
         priority: 100,
-        collapsedContainer: true,
+        collapsedContainer: !mobile,
         render: (p) => (
           <Burger
             key={p.id}

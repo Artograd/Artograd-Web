@@ -1,12 +1,8 @@
 import { render } from '@testing-library/react';
 import { HomePage } from '../HomePage';
-import {
-  fireEvent,
-  renderWithContextAsync,
-  screen,
-} from '@epam/uui-test-utils';
+import { fireEvent, screen } from '@epam/uui-test-utils';
 import { createMemoryHistory } from 'history';
-import { Router } from 'react-router';
+import { testWrapper } from '../../../utils/testWrapper';
 
 describe('Home page', () => {
   afterEach(() => {
@@ -21,16 +17,7 @@ describe('Home page', () => {
   test('redirect on click page CTA', async () => {
     const history = createMemoryHistory();
 
-    const { rerender } = await renderWithContextAsync(
-      <Router history={history}>
-        <HomePage />
-      </Router>,
-    );
-    rerender(
-      <Router history={history}>
-        <HomePage />
-      </Router>,
-    );
+    await testWrapper({ component: <HomePage />, history });
     fireEvent.click(screen.getByTestId('join-community-cta'));
 
     expect(history.location.pathname).toBe('/login');

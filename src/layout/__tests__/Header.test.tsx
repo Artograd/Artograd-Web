@@ -1,12 +1,8 @@
 import { render } from '@testing-library/react';
 import { Header } from '../Header';
 import { createMemoryHistory } from 'history';
-import { Router } from 'react-router';
-import {
-  renderWithContextAsync,
-  screen,
-  fireEvent,
-} from '@epam/uui-test-utils';
+import { screen, fireEvent } from '@epam/uui-test-utils';
+import { testWrapper } from '../../utils/testWrapper';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -38,6 +34,29 @@ const menuLinks = [
   },
 ];
 
+describe('Layout mobile header', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+  test('renders correctly', () => {
+    const component = render(<Header mobile />);
+    fireEvent.click(screen.getByTestId('header-burger-menu'));
+
+    expect(component).toMatchSnapshot();
+  });
+
+  test('redirect on burger menu link click', async () => {
+    const history = createMemoryHistory();
+
+    await testWrapper({ component: <Header mobile />, history });
+
+    fireEvent.click(screen.getByTestId('header-burger-menu'));
+    fireEvent.click(screen.getByText(menuLinks[1].linkName));
+
+    expect(history.location.pathname).toBe(menuLinks[1].url);
+  });
+});
+
 describe('Layout header', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -52,16 +71,7 @@ describe('Layout header', () => {
     test('redirect on menu link click', async () => {
       const history = createMemoryHistory();
 
-      const { rerender } = await renderWithContextAsync(
-        <Router history={history}>
-          <Header />
-        </Router>,
-      );
-      rerender(
-        <Router history={history}>
-          <Header />
-        </Router>,
-      );
+      await testWrapper({ component: <Header />, history });
       fireEvent.click(screen.getByText(link.linkName));
 
       expect(history.location.pathname).toBe(link.url);
@@ -71,16 +81,7 @@ describe('Layout header', () => {
   test('change language on click', async () => {
     const history = createMemoryHistory();
 
-    const { rerender } = await renderWithContextAsync(
-      <Router history={history}>
-        <Header />
-      </Router>,
-    );
-    rerender(
-      <Router history={history}>
-        <Header />
-      </Router>,
-    );
+    await testWrapper({ component: <Header />, history });
     fireEvent.click(screen.getByText('en'));
     await fireEvent.click(screen.getByText('Русский'));
 

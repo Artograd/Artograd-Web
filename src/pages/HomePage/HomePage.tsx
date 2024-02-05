@@ -58,7 +58,7 @@ export const HomePage = () => {
               <Button
                 rawProps={{ 'data-testid': `join-community-cta` }}
                 caption={t('homepage.header.cta')}
-                onClick={() => history.push('/login')}
+                onClick={() => history.push('/register')}
               />
             </FlexRow>
           </FlexCell>

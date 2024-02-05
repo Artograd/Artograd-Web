@@ -20,6 +20,6 @@ describe('Home page', () => {
     await testWrapper({ component: <HomePage />, history });
     fireEvent.click(screen.getByTestId('join-community-cta'));
 
-    expect(history.location.pathname).toBe('/login');
+    expect(history.location.pathname).toBe('/register');
   });
 });

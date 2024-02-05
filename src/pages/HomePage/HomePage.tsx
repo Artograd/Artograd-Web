@@ -1,8 +1,8 @@
 import { FlexRow, FlexCell, Text, Panel, Button } from '@epam/uui';
 import styles from './HomePage.module.scss';
-import DragAndDropIcon from './assets/draganddrop.svg';
-import EmptyIcon from './assets/empty.svg';
-import LaptopIcon from './assets/laptop.svg';
+import DragAndDropIcon from '../../images/draganddrop.svg';
+import EmptyIcon from '../../images/empty.svg';
+import LaptopIcon from '../../images/laptop.svg';
 import { Step } from './components/Step/Step';
 import { useTranslation, Trans } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
@@ -56,6 +56,7 @@ export const HomePage = () => {
             </Text>
             <FlexRow cx={styles.headerCta}>
               <Button
+                rawProps={{ 'data-testid': `join-community-cta` }}
                 caption={t('homepage.header.cta')}
                 onClick={() => history.push('/login')}
               />

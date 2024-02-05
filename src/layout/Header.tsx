@@ -128,7 +128,7 @@ export const Header = () => {
         id: 'logo',
         priority: 99,
         render: (p) => (
-          <MainMenuLogo key={p.id} href="/" logoUrl="/artograd.logo.svg" />
+          <MainMenuLogo key={p.id} href="{window.location.origin}" logoUrl="artograd.logo.svg" />
         ),
       },
       {

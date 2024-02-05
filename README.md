@@ -47,6 +47,18 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run storybook`
+
+Runs local instance with the storybook
+
+### `npm build-storybook`
+
+Builds the storybook to /storybook-static
+
+## Storybook
+
+The latest storybook from the master branch is available at https://artograd.github.io/Artograd-Web/
+
 # Build configuration
 
 ## CSS/SCSS Modules

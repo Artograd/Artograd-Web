@@ -22,7 +22,7 @@ export const Step = ({
   linkText,
 }: StepProps) => {
   return (
-    <Panel cx={styles.stepWrapper}>
+    <Panel cx={styles.stepWrapper} data-testid={`step-${id}`}>
       <Panel
         cx={`${styles.step} ${id === 2 && styles.offsetStart} ${
           icon && !iconOnTop && styles.offsetEnd
@@ -47,6 +47,7 @@ export const Step = ({
             {linkText && linkUrl && (
               <FlexCell width="auto">
                 <LinkButton
+                  rawProps={{ 'data-testid': `step-link-${id}` }}
                   caption={linkText}
                   link={{ pathname: linkUrl }}
                   size="42"

@@ -84,5 +84,11 @@
   "lint-staged": {
     "*.{ts,tsx,js}": "npm run lint",
     "*.css": "npm run format"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/src/stories/",
+      "src/index.tsx"
+    ]
   }
 }

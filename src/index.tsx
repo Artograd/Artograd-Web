@@ -17,8 +17,6 @@ import { MainPage } from './pages/MainPage/MainPage';
 import { HomePage } from './pages/HomePage/HomePage';
 import { Layout } from './layout/Layout';
 import './i18n';
-import { SignUpPage } from './pages/SignUpPage/SignUpPage';
-import { SignInPage } from './pages/SignInPage/SignInPage';
 import { ErrorPage } from './pages/NotFoundPage/NotFoundPage';
 
 const history = createBrowserHistory();
@@ -39,12 +37,6 @@ const UuiEnhancedApp = () => {
               ) : (
                 <Route exact path="/" component={HomePage} />
               )}
-              {!isLoggedIn && (
-                <Route exact path="/register" component={SignUpPage} />
-              )}
-              {!isLoggedIn && (
-                <Route exact path="/login" component={SignInPage} />
-              )}
               <Route path="*" component={ErrorPage} />
             </Switch>
           </Layout>
@@ -54,7 +46,7 @@ const UuiEnhancedApp = () => {
   );
 };
 
-const initApp = () => {
+const App = () => {
   const root = createRoot(window.document.getElementById('root') as Element);
   root.render(
     <StrictMode>
@@ -63,4 +55,4 @@ const initApp = () => {
   );
 };
 
-initApp();
+App();

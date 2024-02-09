@@ -20,11 +20,11 @@ Object {
             >
               <div>
                 <a
-                  aria-disabled="false"
-                  class="YHd3ss uui-anchor uui-enabled -clickable lhoOmi"
-                  href="http://localhost"
+                  aria-disabled="true"
+                  class="YHd3ss uui-anchor uui-disabled -clickable lhoOmi"
+                  disabled=""
                   role="link"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <img
                     alt="Main Menu Logo"
@@ -94,11 +94,11 @@ Object {
           >
             <div>
               <a
-                aria-disabled="false"
-                class="YHd3ss uui-anchor uui-enabled -clickable lhoOmi"
-                href="http://localhost"
+                aria-disabled="true"
+                class="YHd3ss uui-anchor uui-disabled -clickable lhoOmi"
+                disabled=""
                 role="link"
-                tabindex="0"
+                tabindex="-1"
               >
                 <img
                   alt="Main Menu Logo"

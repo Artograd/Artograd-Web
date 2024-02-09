@@ -56,7 +56,7 @@ export const Footer = () => {
         render: (p) => (
           <MainMenuLogo
             key={p.id}
-            href={window.location.origin}
+            onClick={() => history.push('/')}
             logoUrl="artograd.logo.svg"
           />
         ),

@@ -23,14 +23,6 @@ const menuLinks = [
     linkName: 'Proposals',
     url: '/proposals',
   },
-  {
-    linkName: 'Sign In',
-    url: '/login',
-  },
-  {
-    linkName: 'Sign Up',
-    url: '/register',
-  },
 ];
 
 describe('Layout mobile header', () => {
@@ -71,7 +63,7 @@ describe('Layout header', () => {
   });
 
   menuLinks.map((link) => {
-    test.skip('redirect on menu link click', async () => {
+    test('redirect on menu link click', async () => {
       const history = createMemoryHistory();
 
       await testWrapper({ component: <Header />, history });

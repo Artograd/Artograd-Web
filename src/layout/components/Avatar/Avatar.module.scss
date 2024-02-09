@@ -1,0 +1,22 @@
+.avatarMenu {
+  margin: 0 12px;
+}
+
+.name,
+.avatarMenuItem {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--night800);
+}
+
+.avatarMenuItem svg {
+  fill: var(--night600);
+}
+
+.email {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--night600);
+}

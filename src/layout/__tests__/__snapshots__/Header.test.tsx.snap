@@ -22,14 +22,14 @@ Object {
                 <a
                   aria-disabled="false"
                   class="YHd3ss uui-anchor uui-enabled -clickable lhoOmi"
-                  href="/"
+                  href="{window.location.origin}"
                   role="link"
                   tabindex="0"
                 >
                   <img
                     alt="Main Menu Logo"
                     class="qzo1nb"
-                    src="/artograd.logo.svg"
+                    src="artograd.logo.svg"
                   />
                 </a>
               </div>
@@ -105,32 +105,34 @@ Object {
               <div
                 class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
               >
-                <button
+                <a
                   class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
+                  href="https://artograd.auth.eu-central-1.amazoncognito.com/oauth2/authorize?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+                  role="link"
                   tabindex="0"
-                  type="button"
                 >
                   <div
                     class="uui-caption"
                   >
                     Sign In
                   </div>
-                </button>
+                </a>
               </div>
               <div
                 class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
               >
-                <button
+                <a
                   class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
+                  href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+                  role="link"
                   tabindex="0"
-                  type="button"
                 >
                   <div
                     class="uui-caption"
                   >
                     Sign Up
                   </div>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -156,14 +158,14 @@ Object {
               <a
                 aria-disabled="false"
                 class="YHd3ss uui-anchor uui-enabled -clickable lhoOmi"
-                href="/"
+                href="{window.location.origin}"
                 role="link"
                 tabindex="0"
               >
                 <img
                   alt="Main Menu Logo"
                   class="qzo1nb"
-                  src="/artograd.logo.svg"
+                  src="artograd.logo.svg"
                 />
               </a>
             </div>
@@ -239,32 +241,34 @@ Object {
             <div
               class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
             >
-              <button
+              <a
                 class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
+                href="https://artograd.auth.eu-central-1.amazoncognito.com/oauth2/authorize?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+                role="link"
                 tabindex="0"
-                type="button"
               >
                 <div
                   class="uui-caption"
                 >
                   Sign In
                 </div>
-              </button>
+              </a>
             </div>
             <div
               class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
             >
-              <button
+              <a
                 class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
+                href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+                role="link"
                 tabindex="0"
-                type="button"
               >
                 <div
                   class="uui-caption"
                 >
                   Sign Up
                 </div>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -273,50 +277,62 @@ Object {
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
+  "findAllByAria": [Function],
   "findAllByDisplayValue": [Function],
   "findAllByLabelText": [Function],
   "findAllByPlaceholderText": [Function],
   "findAllByRole": [Function],
+  "findAllByRoleAndText": [Function],
   "findAllByTestId": [Function],
   "findAllByText": [Function],
   "findAllByTitle": [Function],
   "findByAltText": [Function],
+  "findByAria": [Function],
   "findByDisplayValue": [Function],
   "findByLabelText": [Function],
   "findByPlaceholderText": [Function],
   "findByRole": [Function],
+  "findByRoleAndText": [Function],
   "findByTestId": [Function],
   "findByText": [Function],
   "findByTitle": [Function],
   "getAllByAltText": [Function],
+  "getAllByAria": [Function],
   "getAllByDisplayValue": [Function],
   "getAllByLabelText": [Function],
   "getAllByPlaceholderText": [Function],
   "getAllByRole": [Function],
+  "getAllByRoleAndText": [Function],
   "getAllByTestId": [Function],
   "getAllByText": [Function],
   "getAllByTitle": [Function],
   "getByAltText": [Function],
+  "getByAria": [Function],
   "getByDisplayValue": [Function],
   "getByLabelText": [Function],
   "getByPlaceholderText": [Function],
   "getByRole": [Function],
+  "getByRoleAndText": [Function],
   "getByTestId": [Function],
   "getByText": [Function],
   "getByTitle": [Function],
   "queryAllByAltText": [Function],
+  "queryAllByAria": [Function],
   "queryAllByDisplayValue": [Function],
   "queryAllByLabelText": [Function],
   "queryAllByPlaceholderText": [Function],
   "queryAllByRole": [Function],
+  "queryAllByRoleAndText": [Function],
   "queryAllByTestId": [Function],
   "queryAllByText": [Function],
   "queryAllByTitle": [Function],
   "queryByAltText": [Function],
+  "queryByAria": [Function],
   "queryByDisplayValue": [Function],
   "queryByLabelText": [Function],
   "queryByPlaceholderText": [Function],
   "queryByRole": [Function],
+  "queryByRoleAndText": [Function],
   "queryByTestId": [Function],
   "queryByText": [Function],
   "queryByTitle": [Function],
@@ -371,14 +387,14 @@ Object {
                 <a
                   aria-disabled="false"
                   class="YHd3ss uui-anchor uui-enabled -clickable lhoOmi"
-                  href="/"
+                  href="{window.location.origin}"
                   role="link"
                   tabindex="0"
                 >
                   <img
                     alt="Main Menu Logo"
                     class="qzo1nb"
-                    src="/artograd.logo.svg"
+                    src="artograd.logo.svg"
                   />
                 </a>
               </div>
@@ -454,32 +470,34 @@ Object {
               <div
                 class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
               >
-                <button
+                <a
                   class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
+                  href="https://artograd.auth.eu-central-1.amazoncognito.com/oauth2/authorize?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+                  role="link"
                   tabindex="0"
-                  type="button"
                 >
                   <div
                     class="uui-caption"
                   >
                     Sign In
                   </div>
-                </button>
+                </a>
               </div>
               <div
                 class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
               >
-                <button
+                <a
                   class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
+                  href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+                  role="link"
                   tabindex="0"
-                  type="button"
                 >
                   <div
                     class="uui-caption"
                   >
                     Sign Up
                   </div>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -529,14 +547,14 @@ Object {
               <a
                 aria-disabled="false"
                 class="YHd3ss uui-anchor uui-enabled -clickable lhoOmi"
-                href="/"
+                href="{window.location.origin}"
                 role="link"
                 tabindex="0"
               >
                 <img
                   alt="Main Menu Logo"
                   class="qzo1nb"
-                  src="/artograd.logo.svg"
+                  src="artograd.logo.svg"
                 />
               </a>
             </div>
@@ -612,32 +630,34 @@ Object {
             <div
               class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
             >
-              <button
+              <a
                 class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
+                href="https://artograd.auth.eu-central-1.amazoncognito.com/oauth2/authorize?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+                role="link"
                 tabindex="0"
-                type="button"
               >
                 <div
                   class="uui-caption"
                 >
                   Sign In
                 </div>
-              </button>
+              </a>
             </div>
             <div
               class="uui-flex-row z4sbms _1HO2Le EJ46iX WcNP1L qIWqPR x8mfAd q3nKl2"
             >
-              <button
+              <a
                 class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
+                href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+                role="link"
                 tabindex="0"
-                type="button"
               >
                 <div
                   class="uui-caption"
                 >
                   Sign Up
                 </div>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -646,50 +666,62 @@ Object {
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
+  "findAllByAria": [Function],
   "findAllByDisplayValue": [Function],
   "findAllByLabelText": [Function],
   "findAllByPlaceholderText": [Function],
   "findAllByRole": [Function],
+  "findAllByRoleAndText": [Function],
   "findAllByTestId": [Function],
   "findAllByText": [Function],
   "findAllByTitle": [Function],
   "findByAltText": [Function],
+  "findByAria": [Function],
   "findByDisplayValue": [Function],
   "findByLabelText": [Function],
   "findByPlaceholderText": [Function],
   "findByRole": [Function],
+  "findByRoleAndText": [Function],
   "findByTestId": [Function],
   "findByText": [Function],
   "findByTitle": [Function],
   "getAllByAltText": [Function],
+  "getAllByAria": [Function],
   "getAllByDisplayValue": [Function],
   "getAllByLabelText": [Function],
   "getAllByPlaceholderText": [Function],
   "getAllByRole": [Function],
+  "getAllByRoleAndText": [Function],
   "getAllByTestId": [Function],
   "getAllByText": [Function],
   "getAllByTitle": [Function],
   "getByAltText": [Function],
+  "getByAria": [Function],
   "getByDisplayValue": [Function],
   "getByLabelText": [Function],
   "getByPlaceholderText": [Function],
   "getByRole": [Function],
+  "getByRoleAndText": [Function],
   "getByTestId": [Function],
   "getByText": [Function],
   "getByTitle": [Function],
   "queryAllByAltText": [Function],
+  "queryAllByAria": [Function],
   "queryAllByDisplayValue": [Function],
   "queryAllByLabelText": [Function],
   "queryAllByPlaceholderText": [Function],
   "queryAllByRole": [Function],
+  "queryAllByRoleAndText": [Function],
   "queryAllByTestId": [Function],
   "queryAllByText": [Function],
   "queryAllByTitle": [Function],
   "queryByAltText": [Function],
+  "queryByAria": [Function],
   "queryByDisplayValue": [Function],
   "queryByLabelText": [Function],
   "queryByPlaceholderText": [Function],
   "queryByRole": [Function],
+  "queryByRoleAndText": [Function],
   "queryByTestId": [Function],
   "queryByText": [Function],
   "queryByTitle": [Function],

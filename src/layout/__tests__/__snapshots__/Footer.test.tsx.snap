@@ -29,7 +29,7 @@ Object {
                   <img
                     alt="Main Menu Logo"
                     class="qzo1nb"
-                    src="/artograd.logo.svg"
+                    src="artograd.logo.svg"
                   />
                 </a>
               </div>
@@ -103,7 +103,7 @@ Object {
                 <img
                   alt="Main Menu Logo"
                   class="qzo1nb"
-                  src="/artograd.logo.svg"
+                  src="artograd.logo.svg"
                 />
               </a>
             </div>

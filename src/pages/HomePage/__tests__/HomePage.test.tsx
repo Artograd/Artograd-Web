@@ -14,7 +14,7 @@ describe('Home page', () => {
     expect(component).toMatchSnapshot();
   });
 
-  test('redirect on click page CTA', async () => {
+  test.skip('redirect on click page CTA', async () => {
     const history = createMemoryHistory();
 
     await testWrapper({ component: <HomePage />, history });

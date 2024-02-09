@@ -30,18 +30,19 @@ Object {
             <div
               class="uui-flex-row z4sbms _1HO2Le headerCta x8mfAd q3nKl2"
             >
-              <button
+              <a
                 class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-solid uui-color-primary uui-size-36"
                 data-testid="join-community-cta"
+                href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+                role="link"
                 tabindex="0"
-                type="button"
               >
                 <div
                   class="uui-caption"
                 >
                   Join Community
                 </div>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -771,18 +772,19 @@ Object {
           <div
             class="uui-flex-row z4sbms _1HO2Le headerCta x8mfAd q3nKl2"
           >
-            <button
+            <a
               class="penmb- uui-button-box uui-enabled -clickable qBwJ-6 uui-button uui-fill-solid uui-color-primary uui-size-36"
               data-testid="join-community-cta"
+              href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback"
+              role="link"
               tabindex="0"
-              type="button"
             >
               <div
                 class="uui-caption"
               >
                 Join Community
               </div>
-            </button>
+            </a>
           </div>
         </div>
       </div>

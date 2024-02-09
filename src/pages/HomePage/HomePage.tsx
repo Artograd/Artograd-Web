@@ -5,11 +5,13 @@ import EmptyIcon from '../../images/empty.svg';
 import LaptopIcon from '../../images/laptop.svg';
 import { Step } from './components/Step/Step';
 import { useTranslation, Trans } from 'react-i18next';
-import { useHistory } from 'react-router-dom';
+
+const cognitoSignUpUrl = `${
+  process.env.REACT_APP_REGISTER_URL
+}&redirect_uri=${encodeURIComponent(process.env.REACT_APP_REDIRECT_URL ?? '')}`;
 
 export const HomePage = () => {
   const { t } = useTranslation();
-  const history = useHistory();
   const steps = [
     {
       id: 1,
@@ -58,7 +60,7 @@ export const HomePage = () => {
               <Button
                 rawProps={{ 'data-testid': `join-community-cta` }}
                 caption={t('homepage.header.cta')}
-                onClick={() => history.push('/register')}
+                href={cognitoSignUpUrl}
               />
             </FlexRow>
           </FlexCell>

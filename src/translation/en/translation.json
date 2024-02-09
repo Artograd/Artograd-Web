@@ -6,7 +6,11 @@
         "tenders": "Tenders",
         "proposals": "Proposals",
         "signInCta": "Sign In",
-        "signUpCta": "Sign Up"
+        "signUpCta": "Sign Up",
+        "profile": "Profile",
+        "settings": "Settings",
+        "notifications": "Notifications",
+        "logOut": "Log out"
       },
       "footer": {
         "copyright": "© 1993—2024 EPAM Systems. All Rights Reserved.",

@@ -6,7 +6,11 @@
         "tenders": "Тендеры",
         "proposals": "Предложения",
         "signInCta": "Войти",
-        "signUpCta": "Зарегистрироваться"
+        "signUpCta": "Зарегистрироваться",
+        "profile": "Профиль",
+        "settings": "Настройка",
+        "notifications": "Уведомления",
+        "logOut": "Выйти"
       },
       "footer": {
         "copyright": "© 1993—2024 EPAM Systems. Все права защищены.",

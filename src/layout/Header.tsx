@@ -21,6 +21,10 @@ import styles from './Header.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
+import { RootState } from '../store/store';
+import { useSelector } from 'react-redux';
+import { Avatar } from './components/Avatar/Avatar';
+
 const languageList = [
   {
     code: 'en',
@@ -32,13 +36,23 @@ const languageList = [
   },
 ];
 
+const cognitoLoginUrl = `${
+  process.env.REACT_APP_LOGIN_URL
+}&redirect_uri=${encodeURIComponent(process.env.REACT_APP_REDIRECT_URL ?? '')}`;
+
+const cognitoSignUpUrl = `${
+  process.env.REACT_APP_REGISTER_URL
+}&redirect_uri=${encodeURIComponent(process.env.REACT_APP_REDIRECT_URL ?? '')}`;
+
 export const Header = ({ mobile = false }: { mobile?: boolean }) => {
   const location = useLocation();
   const history = useHistory();
+
   const { i18n, t } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState(
     i18n.language ?? 'en',
   );
+  const { isLoggedIn } = useSelector((state: RootState) => state.identity);
   const getLabel =
     languageList.filter((language) => language.code === selectedLanguage)[0] ??
     languageList[0];
@@ -73,14 +87,18 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
         caption={t('global.layout.header.proposals')}
         onClick={() => visitPage(props, '/proposals')}
       />
-      <BurgerButton
-        caption={t('global.layout.header.signInCta')}
-        onClick={() => visitPage(props, '/login')}
-      />
-      <BurgerButton
-        caption={t('global.layout.header.signUpCta')}
-        onClick={() => visitPage(props, '/register')}
-      />
+      {!isLoggedIn && (
+        <BurgerButton
+          caption={t('global.layout.header.signInCta')}
+          href={cognitoLoginUrl}
+        />
+      )}
+      {!isLoggedIn && (
+        <BurgerButton
+          caption={t('global.layout.header.signUpCta')}
+          onClick={() => visitPage(props, '/register')}
+        />
+      )}
     </>
   );
 
@@ -133,7 +151,11 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
         id: 'logo',
         priority: 99,
         render: (p) => (
-          <MainMenuLogo key={p.id} href="{window.location.origin}" logoUrl="artograd.logo.svg" />
+          <MainMenuLogo
+            key={p.id}
+            href="{window.location.origin}"
+            logoUrl="artograd.logo.svg"
+          />
         ),
       },
       {
@@ -185,35 +207,38 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
         priority: 7,
         render: renderLanguageSelector,
       },
+      { id: 'avatar', priority: 2, render: Avatar },
       {
         id: 'signin',
         priority: 5,
-        render: (p) => (
-          <FlexRow key={p.id} padding="6" vPadding="12" spacing="12">
-            <Button
-              key={p.id}
-              onClick={() => history.push('/login')}
-              caption={t('global.layout.header.signInCta')}
-              fill="none"
-              color="primary"
-              cx={styles.signInButton}
-            />
-          </FlexRow>
-        ),
+        render: (p) =>
+          !isLoggedIn && (
+            <FlexRow key={p.id} padding="6" vPadding="12" spacing="12">
+              <Button
+                key={p.id}
+                href={cognitoLoginUrl}
+                caption={t('global.layout.header.signInCta')}
+                fill="none"
+                color="primary"
+                cx={styles.signInButton}
+              />
+            </FlexRow>
+          ),
       },
       {
-        id: 'sign',
+        id: 'signup',
         priority: 6,
-        render: (p) => (
-          <FlexRow key={p.id} padding="6" vPadding="12" spacing="12">
-            <Button
-              onClick={() => history.push('/register')}
-              color="primary"
-              caption={t('global.layout.header.signUpCta')}
-              cx={styles.signUpButton}
-            />
-          </FlexRow>
-        ),
+        render: (p) =>
+          !isLoggedIn && (
+            <FlexRow key={p.id} padding="6" vPadding="12" spacing="12">
+              <Button
+                href={cognitoSignUpUrl}
+                color="primary"
+                caption={t('global.layout.header.signUpCta')}
+                cx={styles.signUpButton}
+              />
+            </FlexRow>
+          ),
       },
     ];
   };

@@ -15,11 +15,8 @@ describe('Layout component', () => {
   });
   test('renders correctly', async () => {
     const history = createMemoryHistory();
-
-    const component = await testWrapper({
-      component: <Layout>test component</Layout>,
-      history,
-    });
+    
+    const component = await testWrapper({component: <Layout>test component</Layout>, history});
 
     expect(component).toMatchSnapshot();
   });

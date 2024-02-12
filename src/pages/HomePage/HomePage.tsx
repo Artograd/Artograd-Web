@@ -8,9 +8,7 @@ import { useTranslation, Trans } from 'react-i18next';
 
 const cognitoSignUpUrl = `${
   process.env.REACT_APP_REGISTER_URL
-}&redirect_uri=${encodeURIComponent(
-  window.location.href + process.env.REACT_APP_REDIRECT_PAGE ?? '',
-)}`;
+}&redirect_uri=${encodeURIComponent(process.env.REACT_APP_REDIRECT_URL ?? '')}`;
 
 export const HomePage = () => {
   const { t } = useTranslation();

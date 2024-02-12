@@ -38,15 +38,11 @@ const languageList = [
 
 const cognitoLoginUrl = `${
   process.env.REACT_APP_LOGIN_URL
-}&redirect_uri=${encodeURIComponent(
-  window.location.href + process.env.REACT_APP_REDIRECT_PAGE ?? '',
-)}`;
+}&redirect_uri=${encodeURIComponent(process.env.REACT_APP_REDIRECT_URL ?? '')}`;
 
 const cognitoSignUpUrl = `${
   process.env.REACT_APP_REGISTER_URL
-}&redirect_uri=${encodeURIComponent(
-  window.location.href + process.env.REACT_APP_REDIRECT_PAGE ?? '',
-)}`;
+}&redirect_uri=${encodeURIComponent(process.env.REACT_APP_REDIRECT_URL ?? '')}`;
 
 export const Header = ({ mobile = false }: { mobile?: boolean }) => {
   const location = useLocation();

@@ -10,10 +10,7 @@ export const testWrapper = async ({
 }: {
   component: React.JSX.Element;
   history: MemoryHistory<unknown>;
+  
 }) => {
-  return renderWithContextAsync(
-    <Provider store={store}>
-      <Router history={history}>{component}</Router>
-    </Provider>,
-  );
+  return renderWithContextAsync(<Provider store={store}><Router history={history}>{component}</Router></Provider>);
 };

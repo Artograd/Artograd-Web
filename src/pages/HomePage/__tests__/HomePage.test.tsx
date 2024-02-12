@@ -10,4 +10,5 @@ describe('Home page', () => {
 
     expect(component).toMatchSnapshot();
   });
+
 });

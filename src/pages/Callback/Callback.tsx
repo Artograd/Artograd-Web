@@ -13,7 +13,9 @@ const requestOptions = {
 
 const cognitoLoginUrl = `${
   process.env.REACT_APP_LOGIN_URL
-}&redirect_uri=${encodeURIComponent(process.env.REACT_APP_REDIRECT_URL ?? '')}`;
+}&redirect_uri=${encodeURIComponent(
+  window.location.href + process.env.REACT_APP_REDIRECT_PAGE ?? '',
+)}`;
 
 export const CallbackPage = () => {
   const query = useQuery();

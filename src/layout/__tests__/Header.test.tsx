@@ -31,8 +31,11 @@ describe('Layout mobile header', () => {
   });
   test('renders correctly', async () => {
     const history = createMemoryHistory();
-    
-    const component = await testWrapper({component: <Header mobile />, history});
+
+    const component = await testWrapper({
+      component: <Header mobile />,
+      history,
+    });
     fireEvent.click(screen.getByTestId('header-burger-menu'));
 
     expect(component).toMatchSnapshot();
@@ -56,8 +59,8 @@ describe('Layout header', () => {
   });
   test('renders correctly', async () => {
     const history = createMemoryHistory();
-    
-    const component = await testWrapper({component: <Header />, history});
+
+    const component = await testWrapper({ component: <Header />, history });
 
     expect(component).toMatchSnapshot();
   });

@@ -13,7 +13,9 @@ const requestOptions = {
 
 const cognitoLoginUrl = `${
   process.env.REACT_APP_LOGIN_URL
-}&redirect_uri=${encodeURIComponent(process.env.REACT_APP_REDIRECT_URL ?? '')}`;
+}&redirect_uri=${encodeURIComponent(
+  window.location.origin + process.env.REACT_APP_REDIRECT_PAGE ?? '',
+)}`;
 
 export const CallbackPage = () => {
   const query = useQuery();
@@ -25,9 +27,9 @@ export const CallbackPage = () => {
       process.env.REACT_APP_COGNITO_URL
     }/oauth2/token?grant_type=${grantType}&client_id=${
       process.env.REACT_APP_CLIENT_ID
-    }&redirect_uri=${process.env.REACT_APP_REDIRECT_URL}&code=${query.get(
-      'code',
-    )}`,
+    }&redirect_uri=${
+      window.location.origin + process.env.REACT_APP_REDIRECT_PAGE
+    }&code=${query.get('code')}`,
     requestOptions,
   )
     .then((response) => response.json())

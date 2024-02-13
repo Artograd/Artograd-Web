@@ -80,6 +80,7 @@
     "jwt-decode": "^4.0.0",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.4",
+    "prettier-eslint": "^16.3.0",
     "prop-types": "^15.8.1",
     "react-refresh": "^0.11.0",
     "storybook": "^7.6.14",

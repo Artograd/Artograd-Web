@@ -7,11 +7,7 @@ import { withUUI } from './decorators/withUUI';
 import { withRedux } from './decorators/withRedux';
 
 const preview: Preview = {
-  decorators: [
-    withRedux,
-    withTranslations,
-    withUUI
-  ],
+  decorators: [withRedux, withTranslations, withUUI],
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {

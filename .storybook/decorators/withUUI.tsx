@@ -12,24 +12,24 @@ import {
 import { svc } from '../../src/services';
 
 export const withUUI = (Story, context) => {
-    const history = createBrowserHistory();
-    const router = new HistoryAdaptedRouter(history);
-    const { services } = useUuiServices({ router });
-    Object.assign(svc, services);
-    document.body.classList.add('uui-theme-electric');
+  const history = createBrowserHistory();
+  const router = new HistoryAdaptedRouter(history);
+  const { services } = useUuiServices({ router });
+  Object.assign(svc, services);
+  document.body.classList.add('uui-theme-electric');
   return (
     <UuiContext.Provider value={services}>
-        <Router history={history}>
-      <div
+      <Router history={history}>
+        <div
           style={{
             display: 'flex',
             flexDirection: 'column',
             minHeight: '100vh',
           }}
         >
-        {Story(context)}
+          {Story(context)}
         </div>
       </Router>
-      </UuiContext.Provider>
+    </UuiContext.Provider>
   );
 };

@@ -21,7 +21,7 @@ export const Avatar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { family_name, name, email, isLoggedIn } = useSelector(
+  const { family_name, name, email } = useSelector(
     (state: RootState) => state.identity,
   );
   const logOut = async () => {
@@ -47,53 +47,51 @@ export const Avatar = () => {
   };
 
   return (
-    isLoggedIn && (
-      <Dropdown
-        key="avatar"
-        renderTarget={(props) => (
-          <MainMenuAvatar
-            avatarUrl="https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4"
-            isDropdown
-            {...props}
+    <Dropdown
+      key="avatar"
+      renderTarget={(props) => (
+        <MainMenuAvatar
+          avatarUrl="https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4"
+          isDropdown
+          {...props}
+        />
+      )}
+      renderBody={(props) => (
+        <DropdownMenuBody {...props} cx={styles.userMenu}>
+          <DropdownMenuHeader
+            caption={`${name} ${family_name}`}
+            cx={styles.name}
           />
-        )}
-        renderBody={(props) => (
-          <DropdownMenuBody {...props} cx={styles.userMenu}>
-            <DropdownMenuHeader
-              caption={`${name} ${family_name}`}
-              cx={styles.name}
-            />
-            <DropdownMenuHeader caption={email} cx={styles.email} />
-            <DropdownMenuSplitter />
-            <DropdownMenuButton
-              caption={t('global.layout.header.profile')}
-              cx={styles.userMenuItem}
-              icon={ProfileIcon}
-              onClick={() => history.push('/profile')}
-            />
-            <DropdownMenuButton
-              caption={t('global.layout.header.settings')}
-              cx={styles.userMenuItem}
-              icon={SettingsIcon}
-              onClick={() => history.push('/settings')}
-            />
-            <DropdownMenuButton
-              caption={t('global.layout.header.notifications')}
-              cx={styles.userMenuItem}
-              icon={BellIcon}
-              onClick={() => history.push('/notifications')}
-            />
-            <DropdownMenuSplitter />
-            <DropdownMenuButton
-              caption={t('global.layout.header.logOut')}
-              cx={styles.userMenuItem}
-              icon={LogoutIcon}
-              onClick={() => logOut()}
-            />
-          </DropdownMenuBody>
-        )}
-        placement="bottom-end"
-      />
-    )
+          <DropdownMenuHeader caption={email} cx={styles.email} />
+          <DropdownMenuSplitter />
+          <DropdownMenuButton
+            caption={t('global.layout.header.profile')}
+            cx={styles.userMenuItem}
+            icon={ProfileIcon}
+            onClick={() => history.push('/profile')}
+          />
+          <DropdownMenuButton
+            caption={t('global.layout.header.settings')}
+            cx={styles.userMenuItem}
+            icon={SettingsIcon}
+            onClick={() => history.push('/settings')}
+          />
+          <DropdownMenuButton
+            caption={t('global.layout.header.notifications')}
+            cx={styles.userMenuItem}
+            icon={BellIcon}
+            onClick={() => history.push('/notifications')}
+          />
+          <DropdownMenuSplitter />
+          <DropdownMenuButton
+            caption={t('global.layout.header.logOut')}
+            cx={styles.userMenuItem}
+            icon={LogoutIcon}
+            onClick={() => logOut()}
+          />
+        </DropdownMenuBody>
+      )}
+      placement="bottom-end"
+    />
   );
 };

@@ -10,48 +10,47 @@ Object {
         style="min-width: 0; flex-basis: 0px;"
       >
         <nav
-          class="BULoA8 uui-main_menu uui-mainmenu-container aqkY9D"
+          class="cIyvAa uui-main_menu uui-mainmenu-container Qonjm4"
         >
           <div
-            class="bziidR HXwiKY"
+            class="QFvWHT rnyczA"
           >
             <div
-              class="uui-flex-row x8mfAd q3nKl2"
+              class="uui-flex-row TtA74w _3odmFf"
             >
               <div>
                 <a
                   aria-disabled="true"
-                  class="YHd3ss uui-anchor uui-disabled -clickable lhoOmi"
-                  disabled=""
-                  role="link"
+                  class="uui-button-box uui-disabled -clickable uui-anchor grqyCP GiETOh"
                   tabindex="-1"
                 >
                   <img
                     alt="Main Menu Logo"
-                    class="qzo1nb"
+                    class="KnIMMk"
                     src="artograd.logo.svg"
                   />
                 </a>
               </div>
               <div
-                class="bTGcnV"
+                class="G9zrcQ"
               />
-              <button
-                class="penmb- uui-button-box uui-enabled RL38By _8kGjpz"
+              <span
+                class="uui-button-box uui-enabled _9OkE-9 d7THM-"
+                role="menuitem"
                 tabindex="-1"
-                type="button"
               >
                 <div
                   class="uui-caption"
                 >
                   © 1993—2024 EPAM Systems. All Rights Reserved.
                 </div>
-              </button>
+              </span>
               <div
-                class="bTGcnV"
+                class="G9zrcQ"
               />
               <button
-                class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz footerLink"
+                class="uui-button-box uui-enabled -clickable _9OkE-9 d7THM- footerLink"
+                role="menuitem"
                 tabindex="0"
                 type="button"
               >
@@ -62,7 +61,8 @@ Object {
                 </div>
               </button>
               <button
-                class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz footerLink"
+                class="uui-button-box uui-enabled -clickable _9OkE-9 d7THM- footerLink"
+                role="menuitem"
                 tabindex="0"
                 type="button"
               >
@@ -84,48 +84,47 @@ Object {
       style="min-width: 0; flex-basis: 0px;"
     >
       <nav
-        class="BULoA8 uui-main_menu uui-mainmenu-container aqkY9D"
+        class="cIyvAa uui-main_menu uui-mainmenu-container Qonjm4"
       >
         <div
-          class="bziidR HXwiKY"
+          class="QFvWHT rnyczA"
         >
           <div
-            class="uui-flex-row x8mfAd q3nKl2"
+            class="uui-flex-row TtA74w _3odmFf"
           >
             <div>
               <a
                 aria-disabled="true"
-                class="YHd3ss uui-anchor uui-disabled -clickable lhoOmi"
-                disabled=""
-                role="link"
+                class="uui-button-box uui-disabled -clickable uui-anchor grqyCP GiETOh"
                 tabindex="-1"
               >
                 <img
                   alt="Main Menu Logo"
-                  class="qzo1nb"
+                  class="KnIMMk"
                   src="artograd.logo.svg"
                 />
               </a>
             </div>
             <div
-              class="bTGcnV"
+              class="G9zrcQ"
             />
-            <button
-              class="penmb- uui-button-box uui-enabled RL38By _8kGjpz"
+            <span
+              class="uui-button-box uui-enabled _9OkE-9 d7THM-"
+              role="menuitem"
               tabindex="-1"
-              type="button"
             >
               <div
                 class="uui-caption"
               >
                 © 1993—2024 EPAM Systems. All Rights Reserved.
               </div>
-            </button>
+            </span>
             <div
-              class="bTGcnV"
+              class="G9zrcQ"
             />
             <button
-              class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz footerLink"
+              class="uui-button-box uui-enabled -clickable _9OkE-9 d7THM- footerLink"
+              role="menuitem"
               tabindex="0"
               type="button"
             >
@@ -136,7 +135,8 @@ Object {
               </div>
             </button>
             <button
-              class="penmb- uui-button-box uui-enabled -clickable RL38By _8kGjpz footerLink"
+              class="uui-button-box uui-enabled -clickable _9OkE-9 d7THM- footerLink"
+              role="menuitem"
               tabindex="0"
               type="button"
             >
@@ -153,50 +153,62 @@ Object {
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
+  "findAllByAria": [Function],
   "findAllByDisplayValue": [Function],
   "findAllByLabelText": [Function],
   "findAllByPlaceholderText": [Function],
   "findAllByRole": [Function],
+  "findAllByRoleAndText": [Function],
   "findAllByTestId": [Function],
   "findAllByText": [Function],
   "findAllByTitle": [Function],
   "findByAltText": [Function],
+  "findByAria": [Function],
   "findByDisplayValue": [Function],
   "findByLabelText": [Function],
   "findByPlaceholderText": [Function],
   "findByRole": [Function],
+  "findByRoleAndText": [Function],
   "findByTestId": [Function],
   "findByText": [Function],
   "findByTitle": [Function],
   "getAllByAltText": [Function],
+  "getAllByAria": [Function],
   "getAllByDisplayValue": [Function],
   "getAllByLabelText": [Function],
   "getAllByPlaceholderText": [Function],
   "getAllByRole": [Function],
+  "getAllByRoleAndText": [Function],
   "getAllByTestId": [Function],
   "getAllByText": [Function],
   "getAllByTitle": [Function],
   "getByAltText": [Function],
+  "getByAria": [Function],
   "getByDisplayValue": [Function],
   "getByLabelText": [Function],
   "getByPlaceholderText": [Function],
   "getByRole": [Function],
+  "getByRoleAndText": [Function],
   "getByTestId": [Function],
   "getByText": [Function],
   "getByTitle": [Function],
   "queryAllByAltText": [Function],
+  "queryAllByAria": [Function],
   "queryAllByDisplayValue": [Function],
   "queryAllByLabelText": [Function],
   "queryAllByPlaceholderText": [Function],
   "queryAllByRole": [Function],
+  "queryAllByRoleAndText": [Function],
   "queryAllByTestId": [Function],
   "queryAllByText": [Function],
   "queryAllByTitle": [Function],
   "queryByAltText": [Function],
+  "queryByAria": [Function],
   "queryByDisplayValue": [Function],
   "queryByLabelText": [Function],
   "queryByPlaceholderText": [Function],
   "queryByRole": [Function],
+  "queryByRoleAndText": [Function],
   "queryByTestId": [Function],
   "queryByText": [Function],
   "queryByTitle": [Function],

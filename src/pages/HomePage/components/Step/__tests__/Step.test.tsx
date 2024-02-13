@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react';
 import { Step } from '../Step';
 import EmptyIcon from '../../../../../images/empty.svg';
+import { testWrapper } from '../../../../../utils/testWrapper';
+import { createMemoryHistory } from 'history';
 
 const mockData = {
   id: 1,
@@ -14,17 +16,24 @@ const mockData = {
 };
 
 describe('Step component', () => {
+  const history = createMemoryHistory();
   afterEach(() => {
     jest.clearAllMocks();
   });
   test('renders correctly', () => {
-    const component = render(<Step {...mockData} />);
+    const component = testWrapper({
+      component: <Step {...mockData} />,
+      history,
+    });
 
     expect(component).toMatchSnapshot();
   });
 
   test('renders correctly with offset and icon on top', () => {
-    const component = render(<Step {...mockData} id={2} iconOnTop />);
+    const component = testWrapper({
+      component: <Step {...mockData} id={2} iconOnTop />,
+      history,
+    });
 
     expect(component).toMatchSnapshot();
   });

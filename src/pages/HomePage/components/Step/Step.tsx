@@ -51,7 +51,7 @@ export const Step = ({
                   caption={linkText}
                   link={{ pathname: linkUrl }}
                   size="42"
-                  captionCX={styles.stepLink}
+                  cx={styles.stepLink}
                   icon={navigationIcon}
                   iconPosition="right"
                 />

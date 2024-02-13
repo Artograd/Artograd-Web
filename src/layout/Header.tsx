@@ -254,12 +254,12 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
       {
         id: 'languageSelector',
         priority: 7,
-        render: () => <LanguageSelector />,
+        render: (p) => <LanguageSelector key={p.id} />,
       },
       {
         id: 'header-avatar',
         priority: 5,
-        render: () => <Avatar />,
+        render: (p) => <Avatar key={p.id} />,
       },
     ];
   };

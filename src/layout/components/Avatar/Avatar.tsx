@@ -25,12 +25,11 @@ export const Avatar = () => {
     (state: RootState) => state.identity,
   );
   const logOut = async () => {
-    const refreshToken = localStorage.getItem('refresh_token');
     // clear identity state to the initial
     dispatch(saveUserData(identityState));
     // revoke cognito token and clear tokens from localStorage
     await fetch(
-      `${process.env.REACT_APP_COGNITO_URL}/oauth2/revoke?token=${refreshToken}&client_id=${process.env.REACT_APP_CLIENT_ID}`,
+      `${process.env.REACT_APP_COGNITO_URL}/logout?client_id=${process.env.REACT_APP_CLIENT_ID}`,
       {
         method: 'POST',
         headers: {
@@ -43,7 +42,7 @@ export const Avatar = () => {
         localStorage.removeItem('refresh_token');
         localStorage.removeItem('access_token');
       })
-      .finally(() => history.push('/'));
+      .finally(() => (window.location.href = '/'));
   };
 
   return (
@@ -58,10 +57,12 @@ export const Avatar = () => {
       )}
       renderBody={(props) => (
         <DropdownMenuBody {...props} cx={styles.userMenu}>
-          <DropdownMenuHeader
-            caption={`${name} ${family_name}`}
-            cx={styles.name}
-          />
+          {name && family_name && (
+            <DropdownMenuHeader
+              caption={`${name} ${family_name}`}
+              cx={styles.name}
+            />
+          )}
           <DropdownMenuHeader caption={email} cx={styles.email} />
           <DropdownMenuSplitter />
           <DropdownMenuButton

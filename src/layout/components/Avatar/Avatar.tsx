@@ -39,8 +39,6 @@ export const Avatar = () => {
     );
   };
 
-  console.log('uri', window.location.origin);
-
   return (
     <Dropdown
       key="avatar"

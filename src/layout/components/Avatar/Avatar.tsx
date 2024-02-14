@@ -28,22 +28,18 @@ export const Avatar = () => {
     // clear identity state to the initial
     dispatch(saveUserData(identityState));
     // revoke cognito token and clear tokens from localStorage
-    await fetch(
-      `${process.env.REACT_APP_COGNITO_URL}/logout?client_id=${process.env.REACT_APP_CLIENT_ID}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      },
-    )
-      .then(() => {
-        localStorage.removeItem('id_token');
-        localStorage.removeItem('refresh_token');
-        localStorage.removeItem('access_token');
-      })
-      .finally(() => (window.location.href = '/'));
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('refresh_token');
+    localStorage.removeItem('access_token');
+    // redirect to the cognito logout page
+    window.location.replace(
+      `${process.env.REACT_APP_LOGOUT_URL}&logout_uri=${encodeURIComponent(
+        window.location.origin ?? '',
+      )}`,
+    );
   };
+
+  console.log('uri', window.location.origin);
 
   return (
     <Dropdown

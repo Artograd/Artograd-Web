@@ -21,10 +21,12 @@ const languageList = [
   },
 ];
 
+const storedLanguage = localStorage.getItem('i18nextLng');
+
 export const LanguageSelector = () => {
   const { i18n } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState(
-    i18n.language ?? 'en',
+    storedLanguage ?? i18n.language ?? 'en',
   );
   const getLabel =
     languageList.filter((language) => language.code === selectedLanguage)[0] ??

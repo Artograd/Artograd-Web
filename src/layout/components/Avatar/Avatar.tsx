@@ -5,6 +5,7 @@ import {
   DropdownMenuSplitter,
   DropdownMenuHeader,
   Dropdown,
+  Panel,
 } from '@epam/uui';
 import { ReactComponent as ProfileIcon } from '@epam/assets/icons/common/social-person-18.svg';
 import { ReactComponent as SettingsIcon } from '@epam/assets/icons/common/action-settings-18.svg';
@@ -40,53 +41,55 @@ export const Avatar = () => {
   };
 
   return (
-    <Dropdown
-      key="avatar"
-      renderTarget={(props) => (
-        <MainMenuAvatar
-          avatarUrl="https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4"
-          isDropdown
-          {...props}
-        />
-      )}
-      renderBody={(props) => (
-        <DropdownMenuBody {...props} cx={styles.userMenu}>
-          {given_name && family_name && (
-            <DropdownMenuHeader
-              caption={`${given_name} ${family_name}`}
-              cx={styles.name}
+    <Panel rawProps={{ 'data-testid': `user-avatar` }}>
+      <Dropdown
+        key="avatar"
+        renderTarget={(props) => (
+          <MainMenuAvatar
+            avatarUrl="https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4"
+            isDropdown
+            {...props}
+          />
+        )}
+        renderBody={(props) => (
+          <DropdownMenuBody {...props} cx={styles.userMenu}>
+            {given_name && family_name && (
+              <DropdownMenuHeader
+                caption={`${given_name} ${family_name}`}
+                cx={styles.name}
+              />
+            )}
+            <DropdownMenuHeader caption={email} cx={styles.email} />
+            <DropdownMenuSplitter />
+            <DropdownMenuButton
+              caption={t('global.layout.header.profile')}
+              cx={styles.userMenuItem}
+              icon={ProfileIcon}
+              onClick={() => history.push('/profile')}
             />
-          )}
-          <DropdownMenuHeader caption={email} cx={styles.email} />
-          <DropdownMenuSplitter />
-          <DropdownMenuButton
-            caption={t('global.layout.header.profile')}
-            cx={styles.userMenuItem}
-            icon={ProfileIcon}
-            onClick={() => history.push('/profile')}
-          />
-          <DropdownMenuButton
-            caption={t('global.layout.header.settings')}
-            cx={styles.userMenuItem}
-            icon={SettingsIcon}
-            onClick={() => history.push('/settings')}
-          />
-          <DropdownMenuButton
-            caption={t('global.layout.header.notifications')}
-            cx={styles.userMenuItem}
-            icon={BellIcon}
-            onClick={() => history.push('/notifications')}
-          />
-          <DropdownMenuSplitter />
-          <DropdownMenuButton
-            caption={t('global.layout.header.logOut')}
-            cx={styles.userMenuItem}
-            icon={LogoutIcon}
-            onClick={() => logOut()}
-          />
-        </DropdownMenuBody>
-      )}
-      placement="bottom-end"
-    />
+            <DropdownMenuButton
+              caption={t('global.layout.header.settings')}
+              cx={styles.userMenuItem}
+              icon={SettingsIcon}
+              onClick={() => history.push('/settings')}
+            />
+            <DropdownMenuButton
+              caption={t('global.layout.header.notifications')}
+              cx={styles.userMenuItem}
+              icon={BellIcon}
+              onClick={() => history.push('/notifications')}
+            />
+            <DropdownMenuSplitter />
+            <DropdownMenuButton
+              caption={t('global.layout.header.logOut')}
+              cx={styles.userMenuItem}
+              icon={LogoutIcon}
+              onClick={() => logOut()}
+            />
+          </DropdownMenuBody>
+        )}
+        placement="bottom-end"
+      />
+    </Panel>
   );
 };

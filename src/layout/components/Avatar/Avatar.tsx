@@ -21,7 +21,7 @@ export const Avatar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { family_name, name, email } = useSelector(
+  const { family_name, given_name, email } = useSelector(
     (state: RootState) => state.identity,
   );
   const logOut = async () => {
@@ -51,9 +51,9 @@ export const Avatar = () => {
       )}
       renderBody={(props) => (
         <DropdownMenuBody {...props} cx={styles.userMenu}>
-          {name && family_name && (
+          {given_name && family_name && (
             <DropdownMenuHeader
-              caption={`${name} ${family_name}`}
+              caption={`${given_name} ${family_name}`}
               cx={styles.name}
             />
           )}

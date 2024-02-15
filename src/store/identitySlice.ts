@@ -8,7 +8,7 @@ type IdentityState = {
   email_verified: boolean;
   family_name: string;
   gender: 'male' | 'female' | '';
-  name: string;
+  given_name: string;
   phone_number: string;
   phone_number_verified: boolean;
   isLoggedIn: boolean;
@@ -20,7 +20,7 @@ export const identityState: IdentityState = {
   email_verified: false,
   family_name: '',
   gender: '',
-  name: '',
+  given_name: '',
   phone_number: '',
   phone_number_verified: false,
   isLoggedIn: false,

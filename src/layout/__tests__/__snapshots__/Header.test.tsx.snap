@@ -109,7 +109,7 @@ Object {
               >
                 <a
                   class="uui-button-box uui-enabled -clickable uui-anchor EBheCm pSu6kE uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
-                  href="https://artograd.auth.eu-central-1.amazoncognito.com/oauth2/authorize?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
+                  href="https://artograd-dev.auth.eu-central-1.amazoncognito.com/login?client_id=3ejpv53oulc3ba35cnrr031ff2&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
                   tabindex="0"
                 >
                   <div
@@ -124,7 +124,7 @@ Object {
               >
                 <a
                   class="uui-button-box uui-enabled -clickable uui-anchor EBheCm pSu6kE uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
-                  href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
+                  href="https://artograd-dev.auth.eu-central-1.amazoncognito.com/signup?client_id=3ejpv53oulc3ba35cnrr031ff2&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
                   tabindex="0"
                 >
                   <div
@@ -245,7 +245,7 @@ Object {
             >
               <a
                 class="uui-button-box uui-enabled -clickable uui-anchor EBheCm pSu6kE uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
-                href="https://artograd.auth.eu-central-1.amazoncognito.com/oauth2/authorize?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
+                href="https://artograd-dev.auth.eu-central-1.amazoncognito.com/login?client_id=3ejpv53oulc3ba35cnrr031ff2&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
                 tabindex="0"
               >
                 <div
@@ -260,7 +260,7 @@ Object {
             >
               <a
                 class="uui-button-box uui-enabled -clickable uui-anchor EBheCm pSu6kE uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
-                href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
+                href="https://artograd-dev.auth.eu-central-1.amazoncognito.com/signup?client_id=3ejpv53oulc3ba35cnrr031ff2&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
                 tabindex="0"
               >
                 <div
@@ -474,7 +474,7 @@ Object {
               >
                 <a
                   class="uui-button-box uui-enabled -clickable uui-anchor EBheCm pSu6kE uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
-                  href="https://artograd.auth.eu-central-1.amazoncognito.com/oauth2/authorize?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
+                  href="https://artograd-dev.auth.eu-central-1.amazoncognito.com/login?client_id=3ejpv53oulc3ba35cnrr031ff2&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
                   tabindex="0"
                 >
                   <div
@@ -489,7 +489,7 @@ Object {
               >
                 <a
                   class="uui-button-box uui-enabled -clickable uui-anchor EBheCm pSu6kE uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
-                  href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
+                  href="https://artograd-dev.auth.eu-central-1.amazoncognito.com/signup?client_id=3ejpv53oulc3ba35cnrr031ff2&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
                   tabindex="0"
                 >
                   <div
@@ -634,7 +634,7 @@ Object {
             >
               <a
                 class="uui-button-box uui-enabled -clickable uui-anchor EBheCm pSu6kE uui-button uui-fill-none uui-color-primary uui-size-36 signInButton"
-                href="https://artograd.auth.eu-central-1.amazoncognito.com/oauth2/authorize?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
+                href="https://artograd-dev.auth.eu-central-1.amazoncognito.com/login?client_id=3ejpv53oulc3ba35cnrr031ff2&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
                 tabindex="0"
               >
                 <div
@@ -649,7 +649,7 @@ Object {
             >
               <a
                 class="uui-button-box uui-enabled -clickable uui-anchor EBheCm pSu6kE uui-button uui-fill-solid uui-color-primary uui-size-36 signUpButton"
-                href="https://artograd.auth.eu-central-1.amazoncognito.com/signup?client_id=16lm3r1hhua3p00unpbojdsi21&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
+                href="https://artograd-dev.auth.eu-central-1.amazoncognito.com/signup?client_id=3ejpv53oulc3ba35cnrr031ff2&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%2Fcallback"
                 tabindex="0"
               >
                 <div

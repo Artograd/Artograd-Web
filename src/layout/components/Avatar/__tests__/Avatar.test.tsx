@@ -1,6 +1,8 @@
 import { Avatar } from '../Avatar';
 import { createMemoryHistory } from 'history';
 import { testWrapper } from '../../../../utils/testWrapper';
+import { identityState } from '../../../../store/identitySlice';
+import { screen, userEvent } from '@epam/uui-test-utils';
 
 describe('Avatar', () => {
   const history = createMemoryHistory();
@@ -8,20 +10,22 @@ describe('Avatar', () => {
     jest.clearAllMocks();
   });
   test('renders correctly', async () => {
-    const component = await testWrapper({ component: <Avatar />, history });
+    const user = userEvent.setup();
+
+    const component = await testWrapper({
+      component: <Avatar />,
+      history,
+      state: {
+        identity: {
+          ...identityState,
+          given_name: 'test',
+          family_name: 'user',
+        },
+      },
+    });
+
+    await user.click(screen.getByTestId('user-avatar'));
 
     expect(component).toMatchSnapshot();
-  });
-
-  it.skip('logout remove tokens', async () => {
-    localStorage.setItem('id_token', 'idToken');
-    localStorage.setItem('refresh_token', 'refreshToken');
-    localStorage.setItem('access_token', 'access_token');
-
-    await testWrapper({ component: <Avatar />, history });
-
-    expect(localStorage.getItem('id_token')).toEqual(null);
-    expect(localStorage.getItem('refresh_token')).toEqual(null);
-    expect(localStorage.getItem('access_token')).toEqual(null);
   });
 });

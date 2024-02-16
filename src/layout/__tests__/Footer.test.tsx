@@ -33,4 +33,17 @@ describe('Layout footer', () => {
       expect(history.location.pathname).toBe(link.url);
     });
   });
+
+  test('goes back to home page on logo click anon user', async () => {
+    const history = createMemoryHistory();
+
+    await testWrapper({
+      component: <Footer />,
+      history,
+    });
+
+    fireEvent.click(screen.getByTestId('footer-logo-image'));
+
+    expect(history.location.pathname).toBe('/');
+  });
 });

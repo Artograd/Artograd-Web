@@ -95,6 +95,7 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
           <MainMenuLogo
             key={p.id}
             onClick={() => history.push('/')}
+            rawProps={{ 'data-testid': `header-logo-image` }}
             logoUrl="artograd.logo.svg"
           />
         ),
@@ -203,6 +204,7 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
           <MainMenuLogo
             key={p.id}
             onClick={() => history.push('/')}
+            rawProps={{ 'data-testid': `header-logo-image` }}
             logoUrl="artograd.logo.svg"
           />
         ),

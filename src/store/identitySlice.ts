@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
-type IdentityState = {
+export type IdentityStateType = {
   'cognito:username': string;
   email: string;
   email_verified: boolean;
@@ -14,7 +14,11 @@ type IdentityState = {
   isLoggedIn: boolean;
 };
 
-export const identityState: IdentityState = {
+export type InitialStateType = {
+  identity: IdentityStateType;
+};
+
+export const identityState: IdentityStateType = {
   'cognito:username': '',
   email: '',
   email_verified: false,
@@ -26,7 +30,7 @@ export const identityState: IdentityState = {
   isLoggedIn: false,
 };
 
-const initialState = {
+export const initialState: InitialStateType = {
   identity: identityState,
 };
 

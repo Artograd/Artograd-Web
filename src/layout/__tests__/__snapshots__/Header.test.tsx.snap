@@ -18,7 +18,9 @@ Object {
             <div
               class="uui-flex-row TtA74w _3odmFf"
             >
-              <div>
+              <div
+                data-testid="header-logo-image"
+              >
                 <a
                   aria-disabled="true"
                   class="uui-button-box uui-disabled -clickable uui-anchor grqyCP GiETOh"
@@ -154,7 +156,9 @@ Object {
           <div
             class="uui-flex-row TtA74w _3odmFf"
           >
-            <div>
+            <div
+              data-testid="header-logo-image"
+            >
               <a
                 aria-disabled="true"
                 class="uui-button-box uui-disabled -clickable uui-anchor grqyCP GiETOh"
@@ -383,7 +387,9 @@ Object {
                   </div>
                 </button>
               </div>
-              <div>
+              <div
+                data-testid="header-logo-image"
+              >
                 <a
                   aria-disabled="true"
                   class="uui-button-box uui-disabled -clickable uui-anchor grqyCP GiETOh"
@@ -543,7 +549,9 @@ Object {
                 </div>
               </button>
             </div>
-            <div>
+            <div
+              data-testid="header-logo-image"
+            >
               <a
                 aria-disabled="true"
                 class="uui-button-box uui-disabled -clickable uui-anchor grqyCP GiETOh"

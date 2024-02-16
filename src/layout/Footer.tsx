@@ -57,6 +57,7 @@ export const Footer = () => {
           <MainMenuLogo
             key={p.id}
             onClick={() => history.push('/')}
+            rawProps={{ 'data-testid': `footer-logo-image` }}
             logoUrl="artograd.logo.svg"
           />
         ),

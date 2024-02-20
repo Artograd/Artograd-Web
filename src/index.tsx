@@ -22,6 +22,7 @@ import { store } from './store/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
+import { TendersPage } from './pages/TendersPage/TendersPage';
 
 const history = createBrowserHistory();
 const router = new HistoryAdaptedRouter(history);
@@ -40,6 +41,7 @@ const UuiEnhancedApp = () => {
                 <Switch>
                   <Route exact path="/" component={HomePage} />
                   <Route exact path="/callback" component={CallbackPage} />
+                  <Route exact path="/tenders" component={TendersPage} />
                   <Route path="*" component={ErrorPage} />
                 </Switch>
               </Layout>

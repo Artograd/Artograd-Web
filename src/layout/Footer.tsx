@@ -58,7 +58,7 @@ export const Footer = () => {
             key={p.id}
             onClick={() => history.push('/')}
             rawProps={{ 'data-testid': `footer-logo-image` }}
-            logoUrl="artograd.logo.svg"
+            logoUrl="/artograd.logo.svg"
           />
         ),
       },

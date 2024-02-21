@@ -16,33 +16,13 @@
   min-height: 748px;
 }
 
-.emptyFolderIcon {
-  height: 200px;
-  margin: 30px 0;
-}
-
-.tenders {
-  margin: 0 355px;
-  text-align: center;
-  button {
-    margin: 0 auto;
-  }
-}
-
-.tendersTitle {
-  font-weight: 600;
+.sectionHeadline {
   font-size: 18px;
+  font-weight: 600;
   line-height: 24px;
+  letter-spacing: 0em;
 }
 
-.tendersDescription {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: 30px;
-  color: var(--night600);
-}
-
-.headerTendersCta {
-  float: right;
+.contentBody {
+  padding: 24px;
 }

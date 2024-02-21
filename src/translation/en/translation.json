@@ -49,11 +49,14 @@
     "cta": "Return to homepage"
   },
   "tendersPage": {
-    "pageTitle": "Tenders",
-    "emptyContent": {
-      "emptyContentTitle": "Create your first tender.",
-      "emptyContentDescription": "Creating a tender, you announce open calls for street art, invite sculptors, artists, and creators to enhance the cityscape.",
-      "emptyContentCta": "Create New Tender"
+    "tenders": {
+      "pageTitle": "Tenders",
+      "tendersTitle": "Create your first tender.",
+      "tendersDescription": "Creating a tender, you announce open calls for street art, invite sculptors, artists, and creators to enhance the cityscape.",
+      "tendersCta": "Create New Tender"
+    },
+    "newTender": {
+      "pageTitle": "Create New Tender"
     }
   }
 }

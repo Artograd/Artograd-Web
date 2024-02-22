@@ -29,7 +29,7 @@ Object {
                   <img
                     alt="Main Menu Logo"
                     class="KnIMMk"
-                    src="artograd.logo.svg"
+                    src="/artograd.logo.svg"
                   />
                 </a>
               </div>
@@ -66,7 +66,7 @@ Object {
                 <div
                   class="uui-caption"
                 >
-                  Proposals
+                  Art Objects
                 </div>
               </button>
               <div
@@ -167,7 +167,7 @@ Object {
                 <img
                   alt="Main Menu Logo"
                   class="KnIMMk"
-                  src="artograd.logo.svg"
+                  src="/artograd.logo.svg"
                 />
               </a>
             </div>
@@ -204,7 +204,7 @@ Object {
               <div
                 class="uui-caption"
               >
-                Proposals
+                Art Objects
               </div>
             </button>
             <div
@@ -398,7 +398,7 @@ Object {
                   <img
                     alt="Main Menu Logo"
                     class="KnIMMk"
-                    src="artograd.logo.svg"
+                    src="/artograd.logo.svg"
                   />
                 </a>
               </div>
@@ -435,7 +435,7 @@ Object {
                 <div
                   class="uui-caption"
                 >
-                  Proposals
+                  Art Objects
                 </div>
               </button>
               <div
@@ -560,7 +560,7 @@ Object {
                 <img
                   alt="Main Menu Logo"
                   class="KnIMMk"
-                  src="artograd.logo.svg"
+                  src="/artograd.logo.svg"
                 />
               </a>
             </div>
@@ -597,7 +597,7 @@ Object {
               <div
                 class="uui-caption"
               >
-                Proposals
+                Art Objects
               </div>
             </button>
             <div

@@ -55,8 +55,8 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
         onClick={() => visitPage(props, '/tenders')}
       />
       <BurgerButton
-        caption={t('global.layout.header.proposals')}
-        onClick={() => visitPage(props, '/proposals')}
+        caption={t('global.layout.header.artObjects')}
+        onClick={() => visitPage(props, '/artobjects')}
       />
       {!isLoggedIn && (
         <BurgerButton
@@ -127,14 +127,14 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
         ),
       },
       {
-        id: 'proposalsMenuItem',
+        id: 'artObjectsMenuItem',
         priority: 3,
         render: (p) => (
           <MainMenuButton
             key={p.id}
-            onClick={() => history.push('/proposals')}
-            caption={t('global.layout.header.proposals')}
-            isLinkActive={location.pathname === '/proposals'}
+            onClick={() => history.push('/artobjects')}
+            caption={t('global.layout.header.artObjects')}
+            isLinkActive={location.pathname === '/artobjects'}
             cx={styles.menuPageLink}
           />
         ),
@@ -236,14 +236,14 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
         ),
       },
       {
-        id: 'proposalsMenuItem',
+        id: 'artObjectsMenuItem',
         priority: 3,
         render: (p) => (
           <MainMenuButton
             key={p.id}
-            onClick={() => history.push('/proposals')}
-            caption={t('global.layout.header.proposals')}
-            isLinkActive={location.pathname === '/proposals'}
+            onClick={() => history.push('/artobjects')}
+            caption={t('global.layout.header.artObjects')}
+            isLinkActive={location.pathname === '/artobjects'}
             cx={styles.menuPageLink}
           />
         ),

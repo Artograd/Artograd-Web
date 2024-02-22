@@ -21,8 +21,8 @@ const menuLinks = [
     url: '/tenders',
   },
   {
-    linkName: 'Proposals',
-    url: '/proposals',
+    linkName: 'Art Objects',
+    url: '/artobjects',
   },
 ];
 

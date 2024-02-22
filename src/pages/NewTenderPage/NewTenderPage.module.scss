@@ -11,6 +11,10 @@
   margin-bottom: 30px;
 }
 
+.pageBackCta {
+  width: max-content;
+}
+
 .contentWrapper {
   background-color: white;
   min-height: 748px;
@@ -71,4 +75,10 @@
 .rangeDatePickerWrapper,
 .categoryPickerWrapper {
   margin-right: 24px;
+}
+
+@media only screen and (max-device-width: 1227px) {
+  .wrapper {
+    margin: 36px 24px 60px;
+  }
 }

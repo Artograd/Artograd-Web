@@ -121,7 +121,7 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
             key={p.id}
             onClick={() => history.push('/tenders')}
             caption={t('global.layout.header.tenders')}
-            isLinkActive={location.pathname === '/tenders'}
+            isLinkActive={location.pathname.includes('tenders')}
             cx={styles.menuPageLink}
           />
         ),
@@ -230,7 +230,7 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
             key={p.id}
             onClick={() => history.push('/tenders')}
             caption={t('global.layout.header.tenders')}
-            isLinkActive={location.pathname === '/tenders'}
+            isLinkActive={location.pathname.includes('tenders')}
             cx={styles.menuPageLink}
           />
         ),

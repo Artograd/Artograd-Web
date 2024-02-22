@@ -11,7 +11,7 @@
     "@epam/uui-core": "^5.5.0",
     "@reduxjs/toolkit": "^2.1.0",
     "@types/react-redux": "^7.1.33",
-    "dayjs": "^1.11.10",
+    "dayjs": "^1.10.7",
     "history": "^4.10.1",
     "i18next": "^23.7.20",
     "i18next-browser-languagedetector": "^7.2.0",

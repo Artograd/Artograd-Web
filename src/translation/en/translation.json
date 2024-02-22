@@ -1,5 +1,6 @@
 {
   "global": {
+    "datePickerPlaceholder": "MMM D, YYYY",
     "layout": {
       "header": {
         "homepage": "Home",
@@ -56,7 +57,36 @@
       "tendersCta": "Create New Tender"
     },
     "newTender": {
-      "pageTitle": "Create New Tender"
+      "pageTitle": "Create New Tender",
+      "pageBackCta": "Back",
+      "tenderInformationSectionTitle": "Primary Tender Information",
+      "tenderTitleLabel": "Tender Title",
+      "tenderTitlePlaceholder": "Enter a text",
+      "tenderDescriptionLabel": "Tender Description",
+      "tenderDescriptionPlaceholder": "Type a text",
+      "tenderDetailsSectionTitle": "Tender Details",
+      "tenderValidityPeriodLabel": "Tender Validity Period",
+      "tenderValidityPeriodFromPlaceholder": "From",
+      "tenderValidityPeriodToPlaceholder": "To",
+      "tenderExpectedDeliveryLabel": "Expected Delivery",
+      "tenderExpectedDeliveryLabelSidenote": "This field is optional",
+      "tenderCategoryLabel": "Category",
+      "tenderCategoryLabelSidenote": "This field is optional",
+      "tenderCategoryPlaceholder": "Please select category(s)",
+      "tenderLocationSectionTitle": "Art Object Location",
+      "tenderIndicateLink": "Indicate location",
+      "tenderOwnerContactSectionTitle": "Tender Owner Contact Information",
+      "tenderOwnerName": "Contact person",
+      "tenderOwnerOrganisation": "Organisation",
+      "tenderOwnerEmail": "Email",
+      "tenderOwnerEmailAvailabilityCheckbox": "Show my email as means of contact in the tender description.",
+      "tenderAdditionalInformationLabel": "Additional Information",
+      "tenderAdditionalInformationInfotext": "Up to 10 files. Limit for 1 file is 50 Mb",
+      "tenderAdditionalInformationLabelText": "Drop files to attach or",
+      "tenderAdditionalInformationLink": "browse",
+      "pageFormFooterCancelCta": "Cancel",
+      "pageFormFooterCreateCta": "Create Tender",
+      "pageFormFooterDraftCta": "Save as Draft"
     }
   }
 }

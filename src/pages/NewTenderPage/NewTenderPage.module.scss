@@ -24,5 +24,51 @@
 }
 
 .contentBody {
+  padding: 24px 24px 0 24px;
+}
+
+.contentFooter {
   padding: 24px;
+}
+
+.inputLabel,
+.indicateLink {
+  margin-bottom: 24px;
+}
+
+.indicateLink {
+  width: max-content;
+}
+
+.ownerDetails {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.emailInfoAlert {
+  margin-top: 6px;
+  margin-bottom: 24px;
+  border-width: 1px 1px 1px 6px;
+  border-color: var(--sun-50);
+  border-style: solid;
+}
+
+.separator {
+  border: 0.5px solid var(--night400);
+  margin-top: 30px;
+  background-color: white;
+}
+
+.draftCta {
+  margin-right: 12px;
+}
+
+.orderDetailsWrapper {
+  display: inline-block;
+  margin-right: 36px;
+}
+
+.rangeDatePickerWrapper,
+.categoryPickerWrapper {
+  margin-right: 24px;
 }

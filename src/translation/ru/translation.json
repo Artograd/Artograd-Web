@@ -1,5 +1,6 @@
 {
   "global": {
+    "datePickerPlaceholder": "МММ Д, ГГГГ",
     "layout": {
       "header": {
         "homepage": "Главная",
@@ -56,7 +57,36 @@
       "tendersCta": "Создать новый тендер"
     },
     "newTender": {
-      "pageTitle": "Создать новый тендер"
+      "pageTitle": "Создать новый тендер",
+      "pageBackCta": "Назад",
+      "tenderInformationSectionTitle": "Основная информация о тендере",
+      "tenderTitleLabel": "Название тендера",
+      "tenderTitlePlaceholder": "Введите текст",
+      "tenderDescriptionLabel": "Описание тендера",
+      "tenderDescriptionPlaceholder": "Введите текст",
+      "tenderDetailsSectionTitle": "Детали тендера",
+      "tenderValidityPeriodLabel": "Срок действия тендера",
+      "tenderValidityPeriodFromPlaceholder": "От",
+      "tenderValidityPeriodToPlaceholder": "До",
+      "tenderExpectedDeliveryLabel": "Ожидаемая доставка",
+      "tenderExpectedDeliveryLabelSidenote": "Это поле является необязательным",
+      "tenderCategoryLabel": "Категория",
+      "tenderCategoryLabelSidenote": "Это поле является необязательным",
+      "tenderCategoryPlaceholder": "Пожалуйста, выберите категорию(и)",
+      "tenderLocationSectionTitle": "Расположение арт-объекта",
+      "tenderIndicateLink": "Укажите местоположение",
+      "tenderOwnerContactSectionTitle": "Контактная информация владельца тендера",
+      "tenderOwnerName": "Контактное лицо",
+      "tenderOwnerOrganisation": "Организация",
+      "tenderOwnerEmail": "Электронная почта",
+      "tenderOwnerEmailAvailabilityCheckbox": "Укажите мою электронную почту в качестве средства связи в описании тендера.",
+      "tenderAdditionalInformationLabel": "Дополнительная информация",
+      "tenderAdditionalInformationInfotext": "До 10 файлов. Лимит на 1 файл 50 Мб.",
+      "tenderAdditionalInformationLabelText": "Перетащите файлы, чтобы прикрепить или",
+      "tenderAdditionalInformationLink": "просматривать",
+      "pageFormFooterCancelCta": "Отменить",
+      "pageFormFooterCreateCta": "Создать Тендер",
+      "pageFormFooterDraftCta": "Сохранить как черновик"
     }
   }
 }

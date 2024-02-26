@@ -24,6 +24,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 import { TendersPage } from './pages/TendersPage/TendersPage';
 import { NewTenderPage } from './pages/NewTenderPage/NewTenderPage';
+import { Modals } from '@epam/uui-components';
 
 const history = createBrowserHistory();
 const router = new HistoryAdaptedRouter(history);
@@ -48,6 +49,7 @@ const UuiEnhancedApp = () => {
                 </Switch>
               </Layout>
             </Router>
+            <Modals />
           </ErrorHandler>
         </UuiContext.Provider>
       </PersistGate>

@@ -41,3 +41,10 @@ export type Tender = {
   description: string;
   proposals: Proposals[];
 };
+
+export type pickerItemType = {
+  name: string;
+  lat?: number;
+  lng?: number;
+  id?: number;
+};

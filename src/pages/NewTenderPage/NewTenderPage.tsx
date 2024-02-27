@@ -285,10 +285,18 @@ export const NewTenderPage = () => {
                       <>
                         <Panel cx={styles.orderDetailsWrapper}>
                           {(cityValue || addressValue) && (
-                            <Text cx={styles.ownerDetails}>Address line</Text>
+                            <Text cx={styles.ownerDetails}>
+                              {t(
+                                'tendersPage.newTender.tenderLocationAddressLine',
+                              )}
+                            </Text>
                           )}
                           {commentsValue && (
-                            <Text cx={styles.ownerDetails}>Comments</Text>
+                            <Text cx={styles.ownerDetails}>
+                              {t(
+                                'tendersPage.newTender.tenderLocationComments',
+                              )}
+                            </Text>
                           )}
                         </Panel>
 
@@ -321,10 +329,7 @@ export const NewTenderPage = () => {
                         scrollWheelZoom={false}
                         style={{ height: '111px', width: '100%' }}
                       >
-                        <TileLayer
-                          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
+                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                         <MapCordsController cityCords={cityValue} />
                       </MapContainer>
                     )}

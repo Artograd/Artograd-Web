@@ -25,6 +25,7 @@ import { LatLngExpression } from 'leaflet';
 import citiesDB from './cities.json';
 import { pickerItemType } from '../../../../types';
 import { MapCordsController } from '../MapCordsController/MapCordsController';
+import { useTranslation } from 'react-i18next';
 
 const cityList: pickerItemType[] = citiesDB;
 const addressList: pickerItemType[] = [{ id: 1, name: 'Mediteranska, 8525' }];
@@ -50,6 +51,7 @@ export function LocationSelectorModal({
   setAddressValue: Dispatch<SetStateAction<pickerItemType | undefined>>;
   setCordsValue: Dispatch<SetStateAction<LatLngExpression>>;
 }) {
+  const { t } = useTranslation();
   const [commentsModalValue, setCommentsModalValue] = useState(commentsValue);
   const [cordsModalValue] = useState(cordsValue);
   const [cityModalValue, setCityModalValue] = useState<
@@ -80,14 +82,12 @@ export function LocationSelectorModal({
     modalProps.success('Success action');
   };
 
-  console.log(':::cityModalValue', cityModalValue);
-
   return (
     <ModalBlocker {...modalProps}>
       <ModalWindow width={753}>
         <Panel background="surface-main">
           <ModalHeader
-            title="Indicate location"
+            title={t('tendersPage.newTender.tenderLocationModal.modalTitle')}
             onClose={() => modalProps.abort()}
             borderBottom
           />
@@ -97,7 +97,9 @@ export function LocationSelectorModal({
                 <FlexCell width="100%">
                   <LabeledInput
                     htmlFor="countryInput"
-                    label="Country"
+                    label={t(
+                      'tendersPage.newTender.tenderLocationModal.countryInputLabel',
+                    )}
                     cx={styles.modalInputLabel}
                   >
                     <TextInput
@@ -110,7 +112,9 @@ export function LocationSelectorModal({
                   </LabeledInput>
                   <LabeledInput
                     htmlFor="cityInput"
-                    label="City / Region"
+                    label={t(
+                      'tendersPage.newTender.tenderLocationModal.cityInputLabel',
+                    )}
                     cx={styles.modalInputLabel}
                   >
                     <PickerInput
@@ -124,12 +128,19 @@ export function LocationSelectorModal({
                       valueType="entity"
                       sorting={{ field: 'name', direction: 'asc' }}
                       emptyValue={null}
+                      placeholder={t(
+                        'tendersPage.newTender.tenderLocationModal.cityInputPlaceholder',
+                      )}
                     />
                   </LabeledInput>
                   <LabeledInput
                     htmlFor="addressInput"
-                    label="Address line"
-                    sidenote="This field is optional"
+                    label={t(
+                      'tendersPage.newTender.tenderLocationModal.addressInputLabel',
+                    )}
+                    sidenote={t(
+                      'tendersPage.newTender.tenderLocationModal.addressInputLabelSidenote',
+                    )}
                     cx={styles.modalInputLabel}
                   >
                     <PickerInput
@@ -142,6 +153,9 @@ export function LocationSelectorModal({
                       selectionMode="single"
                       valueType="entity"
                       sorting={{ field: 'name', direction: 'asc' }}
+                      placeholder={t(
+                        'tendersPage.newTender.tenderLocationModal.addressInputPlaceholder',
+                      )}
                       emptyValue={null}
                     />
                   </LabeledInput>
@@ -165,15 +179,21 @@ export function LocationSelectorModal({
               <FlexRow>
                 <FlexCell width="100%">
                   <LabeledInput
-                    label="Comments"
-                    sidenote="This field is optional"
+                    label={t(
+                      'tendersPage.newTender.tenderLocationModal.commentsInputLabel',
+                    )}
+                    sidenote={t(
+                      'tendersPage.newTender.tenderLocationModal.commentsInputLabelSidenote',
+                    )}
                     htmlFor="commentsInput"
                     cx={styles.commentsInputWrapper}
                   >
                     <TextArea
                       value={commentsModalValue}
                       onValueChange={setCommentsModalValue}
-                      placeholder="Type text"
+                      placeholder={t(
+                        'tendersPage.newTender.tenderLocationModal.commentsInputPlaceholder',
+                      )}
                       id="commentsInput"
                     />
                   </LabeledInput>
@@ -186,12 +206,14 @@ export function LocationSelectorModal({
             <Button
               color="secondary"
               fill="outline"
-              caption="Cancel"
+              caption={t('tendersPage.newTender.tenderLocationModal.cancelCta')}
               onClick={() => modalProps.abort()}
             />
             <Button
               color="accent"
-              caption="Confirm Location"
+              caption={t(
+                'tendersPage.newTender.tenderLocationModal.confirmCta',
+              )}
               onClick={() => saveValues()}
             />
           </ModalFooter>

@@ -87,7 +87,23 @@
       "tenderAdditionalInformationLink": "browse",
       "pageFormFooterCancelCta": "Cancel",
       "pageFormFooterCreateCta": "Create Tender",
-      "pageFormFooterDraftCta": "Save as Draft"
+      "pageFormFooterDraftCta": "Save as Draft",
+      "tenderLocationAddressLine": "Address line",
+      "tenderLocationComments": "Comments",
+      "tenderLocationModal": {
+        "modalTitle": "Indicate location",
+        "countryInputLabel": "Country",
+        "cityInputLabel": "City / Region",
+        "cityInputPlaceholder": "Please select City / Region",
+        "addressInputLabel": "Address line",
+        "addressInputPlaceholder": "Please select Address",
+        "addressInputLabelSidenote": "This field is optional",
+        "commentsInputLabel": "Comments",
+        "commentsInputPlaceholder": "Type text",
+        "commentsInputLabelSidenote": "This field is optional",
+        "confirmCta": "Confirm Location",
+        "cancelCta": "Cancel"
+      }
     }
   }
 }

@@ -87,7 +87,23 @@
       "tenderAdditionalInformationLink": "просматривать",
       "pageFormFooterCancelCta": "Отменить",
       "pageFormFooterCreateCta": "Создать Тендер",
-      "pageFormFooterDraftCta": "Сохранить как черновик"
+      "pageFormFooterDraftCta": "Сохранить как черновик",
+      "tenderLocationAddressLine": "Адресс",
+      "tenderLocationComments": "Комментарии",
+      "tenderLocationModal": {
+        "modalTitle": "Укажите местоположение",
+        "countryInputLabel": "Страна",
+        "cityInputLabel": "Город / Регион",
+        "cityInputPlaceholder": "Пожалуйста выберите Город / Регион",
+        "addressInputLabel": "Адресс",
+        "addressInputPlaceholder": "Пожалуйста выберите Адресс",
+        "addressInputLabelSidenote": "Это поле является необязательным",
+        "commentsInputLabel": "Комментарии",
+        "commentsInputPlaceholder": "Введите текст",
+        "commentsInputLabelSidenote": "Это поле является необязательным",
+        "confirmCta": "Потвердить локацию",
+        "cancelCta": "Отменить"
+      }
     }
   }
 }

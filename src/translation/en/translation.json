@@ -75,6 +75,7 @@
       "tenderCategoryPlaceholder": "Please select category(s)",
       "tenderLocationSectionTitle": "Art Object Location",
       "tenderIndicateLink": "Indicate location",
+      "tenderEditLocationLink": "Edit location",
       "tenderOwnerContactSectionTitle": "Tender Owner Contact Information",
       "tenderOwnerName": "Contact person",
       "tenderOwnerOrganisation": "Organisation",

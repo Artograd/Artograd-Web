@@ -25,7 +25,7 @@ import {
 } from '@epam/uui';
 import styles from './NewTenderPage.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import {
   IModal,
   RangeDatePickerValue,
@@ -38,21 +38,25 @@ import 'dayjs/locale/ru';
 import { FlexSpacer, i18n } from '@epam/uui-components';
 import { ReactComponent as navigationBack } from '@epam/assets/icons/common/navigation-back-18.svg';
 import { FileUpload } from './components/FileUpload/FileUpload';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer, useMapEvent } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import { LatLngExpression } from 'leaflet';
+import citiesDB from './cities.json';
 
 type pickerItemType = {
-  id: number;
-  label: string;
+  name: string;
+  lat?: number;
+  lng?: number;
+  id?: number;
 };
 
 const categoryList: pickerItemType[] = [
-  { id: 1, label: 'Outdoors' },
-  { id: 2, label: 'Sculptures' },
+  { id: 1, name: 'Outdoors' },
+  { id: 2, name: 'Sculptures' },
 ];
 
-const cityList: pickerItemType[] = [{ id: 1, label: 'Budva, Becici' }];
-const addressList: pickerItemType[] = [{ id: 1, label: 'Mediteranska, 8525' }];
+const cityList: pickerItemType[] = citiesDB;
+const addressList: pickerItemType[] = [{ id: 1, name: 'Mediteranska, 8525' }];
 
 i18n.datePicker.locale = 'ru';
 
@@ -70,8 +74,13 @@ export const NewTenderPage = () => {
   const [titleValue, setTitleValue] = useState<string | undefined>('');
   const [date, setDate] = useState<string | null>('');
   const [commentsValue, setCommentsValue] = useState('');
-  const [cityValue, setCityValue] = useState({ id: 0, label: '' });
-  const [addressValue, setAddressValue] = useState({ id: 0, label: '' });
+  const [cordsValue, setCordsValue] = useState<LatLngExpression>([
+    42.28364, 18.872,
+  ]);
+  const [cityValue, setCityValue] = useState<pickerItemType | undefined>();
+  const [addressValue, setAddressValue] = useState<
+    pickerItemType | undefined
+  >();
   const [checkBoxValue, setCheckBoxValue] = useState(false);
   const [categoryValue, setCategoryValue] = useState<unknown[]>([]);
   const [rangeValue, setRangeValue] = useState<RangeDatePickerValue>({
@@ -214,11 +223,13 @@ export const NewTenderPage = () => {
                         dataSource={dataSource}
                         value={categoryValue}
                         onValueChange={setCategoryValue}
-                        getName={(item: pickerItemType) => item.label}
+                        getName={(item: pickerItemType | undefined) =>
+                          item!.name
+                        }
                         entityName="category"
                         selectionMode="multi"
                         valueType="id"
-                        sorting={{ field: 'label', direction: 'asc' }}
+                        sorting={{ field: 'name', direction: 'asc' }}
                         placeholder={t(
                           'tendersPage.newTender.tenderCategoryPlaceholder',
                         )}
@@ -237,7 +248,11 @@ export const NewTenderPage = () => {
                 </Text>
 
                 <LinkButton
-                  caption={t('tendersPage.newTender.tenderIndicateLink')}
+                  caption={
+                    cityValue?.name || addressValue?.name || commentsValue
+                      ? t('tendersPage.newTender.tenderEditLocationLink')
+                      : t('tendersPage.newTender.tenderIndicateLink')
+                  }
                   cx={styles.indicateLink}
                   onClick={() =>
                     uuiModals
@@ -247,9 +262,11 @@ export const NewTenderPage = () => {
                           addressValue={addressValue}
                           cityValue={cityValue}
                           commentsValue={commentsValue}
+                          cordsValue={cordsValue}
                           setAddressValue={setAddressValue}
                           setCityValue={setCityValue}
                           setCommentsValue={setCommentsValue}
+                          setCordsValue={setCordsValue}
                         />
                       ))
                       .then((result) => {
@@ -276,9 +293,57 @@ export const NewTenderPage = () => {
                       })
                   }
                 />
-                <Text>{cityValue.label}</Text>
-                <Text>{addressValue.label}</Text>
-                <Text>{commentsValue}</Text>
+                <FlexRow alignItems="top">
+                  <FlexCell width="100%" grow={1}>
+                    {(cityValue || addressValue || commentsValue) && (
+                      <>
+                        <Panel cx={styles.orderDetailsWrapper}>
+                          {(cityValue || addressValue) && (
+                            <Text cx={styles.ownerDetails}>Address line</Text>
+                          )}
+                          {commentsValue && (
+                            <Text cx={styles.ownerDetails}>Comments</Text>
+                          )}
+                        </Panel>
+
+                        <Panel cx={styles.orderDetailsWrapper}>
+                          <Text cx={styles.ownerDetails}>
+                            {cityValue?.name || addressValue?.name
+                              ? `${process.env.REACT_APP_LOCATION}`
+                              : ''}
+                            {cityValue?.name
+                              ? `, ${cityValue?.name}`
+                              : undefined}
+                            {addressValue?.name
+                              ? `, ${addressValue?.name}`
+                              : ''}
+                          </Text>
+                          {commentsValue && (
+                            <Text cx={styles.ownerDetails}>
+                              {commentsValue}
+                            </Text>
+                          )}
+                        </Panel>
+                      </>
+                    )}
+                  </FlexCell>
+                  <FlexCell width="100%" grow={1}>
+                    {cordsValue && cityValue?.name && (
+                      <MapContainer
+                        center={[cityValue.lat!, cityValue.lng!]}
+                        zoom={13}
+                        scrollWheelZoom={false}
+                        style={{ height: '111px', width: '100%' }}
+                      >
+                        <TileLayer
+                          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <SetViewOnClick cityCords={cityValue} />
+                      </MapContainer>
+                    )}
+                  </FlexCell>
+                </FlexRow>
               </FlexCell>
             </FlexRow>
 
@@ -365,23 +430,30 @@ export function LocationModal({
   commentsValue,
   cityValue,
   addressValue,
+  cordsValue,
   setCommentsValue,
   setCityValue,
   setAddressValue,
+  setCordsValue,
 }: {
   modalProps: IModal<string>;
   commentsValue: string;
-  cityValue: pickerItemType;
-  addressValue: pickerItemType;
+  cityValue?: pickerItemType;
+  addressValue?: pickerItemType;
+  cordsValue: LatLngExpression;
   setCommentsValue: Dispatch<SetStateAction<string>>;
-  setCityValue: Dispatch<SetStateAction<pickerItemType>>;
-  setAddressValue: Dispatch<SetStateAction<pickerItemType>>;
+  setCityValue: Dispatch<SetStateAction<pickerItemType | undefined>>;
+  setAddressValue: Dispatch<SetStateAction<pickerItemType | undefined>>;
+  setCordsValue: Dispatch<SetStateAction<LatLngExpression>>;
 }) {
   const [commentsModalValue, setCommentsModalValue] = useState(commentsValue);
-  const [cityModalValue, setCityModalValue] =
-    useState<pickerItemType>(cityValue);
-  const [addressModalValue, setAddressModalValue] =
-    useState<pickerItemType>(addressValue);
+  const [cordsModalValue] = useState(cordsValue);
+  const [cityModalValue, setCityModalValue] = useState<
+    pickerItemType | undefined
+  >(cityValue);
+  const [addressModalValue, setAddressModalValue] = useState<
+    pickerItemType | undefined
+  >(addressValue);
   const cityDataSource = useArrayDataSource(
     {
       items: cityList,
@@ -400,12 +472,11 @@ export function LocationModal({
     setCommentsValue(commentsModalValue);
     setCityValue(cityModalValue);
     setAddressValue(addressModalValue);
+    setCordsValue(cordsModalValue);
     modalProps.success('Success action');
   };
 
-  console.log(':::commentsModalValue', commentsModalValue);
   console.log(':::cityModalValue', cityModalValue);
-  console.log(':::addressModalValue', addressModalValue);
 
   return (
     <ModalBlocker {...modalProps}>
@@ -427,7 +498,7 @@ export function LocationModal({
                   >
                     <TextInput
                       id="countryInput"
-                      value="Montenegro"
+                      value={process.env.REACT_APP_LOCATION}
                       onValueChange={(e) => e}
                       placeholder="Please type text"
                       isDisabled
@@ -443,11 +514,12 @@ export function LocationModal({
                       dataSource={cityDataSource}
                       value={cityModalValue}
                       onValueChange={setCityModalValue}
-                      getName={(item: pickerItemType) => item.label}
+                      getName={(item: pickerItemType | undefined) => item!.name}
                       entityName="City"
                       selectionMode="single"
                       valueType="entity"
-                      sorting={{ field: 'label', direction: 'asc' }}
+                      sorting={{ field: 'name', direction: 'asc' }}
+                      emptyValue={null}
                     />
                   </LabeledInput>
                   <LabeledInput
@@ -461,27 +533,28 @@ export function LocationModal({
                       dataSource={addressDataSource}
                       value={addressModalValue}
                       onValueChange={setAddressModalValue}
-                      getName={(item: pickerItemType) => item.label}
+                      getName={(item: pickerItemType | undefined) => item!.name}
                       entityName="Address"
                       selectionMode="single"
                       valueType="entity"
-                      sorting={{ field: 'label', direction: 'asc' }}
+                      sorting={{ field: 'name', direction: 'asc' }}
+                      emptyValue={null}
                     />
                   </LabeledInput>
                 </FlexCell>
                 <FlexCell width="100%">
                   <Panel cx={styles.mapWrapper}>
-                    <MapContainer
-                      center={[51.505, -0.09]}
-                      zoom={13}
-                      scrollWheelZoom={false}
-                      style={{ height: '234px', width: '100%' }}
-                    >
-                      <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                      />
-                    </MapContainer>
+                    {cityModalValue && (
+                      <MapContainer
+                        center={[cityModalValue.lat!, cityModalValue.lng!]}
+                        zoom={13}
+                        scrollWheelZoom={false}
+                        style={{ height: '234px', width: '100%' }}
+                      >
+                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                        <SetViewOnClick cityCords={cityModalValue} />
+                      </MapContainer>
+                    )}
                   </Panel>
                 </FlexCell>
               </FlexRow>
@@ -522,4 +595,16 @@ export function LocationModal({
       </ModalWindow>
     </ModalBlocker>
   );
+}
+
+function SetViewOnClick({ cityCords }: { cityCords: pickerItemType }) {
+  const map = useMapEvent('click', () => {
+    map.setView({ lat: cityCords.lat!, lng: cityCords.lng! });
+  });
+
+  useEffect(() => {
+    map.setView({ lat: cityCords.lat!, lng: cityCords.lng! });
+  }, [cityCords]);
+
+  return null;
 }

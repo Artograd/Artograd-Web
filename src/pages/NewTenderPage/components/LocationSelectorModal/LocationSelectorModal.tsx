@@ -1,5 +1,6 @@
 import {
   Button,
+  ErrorNotification,
   FlexCell,
   FlexRow,
   LabeledInput,
@@ -10,12 +11,15 @@ import {
   Panel,
   PickerInput,
   ScrollBars,
+  SuccessNotification,
   TextArea,
   TextInput,
+  useForm,
+  Text,
 } from '@epam/uui';
 import styles from './LocationSelectorModal.module.scss';
 
-import { IModal, useArrayDataSource } from '@epam/uui-core';
+import { IModal, useArrayDataSource, useUuiContext } from '@epam/uui-core';
 import 'dayjs/locale/ru';
 import { FlexSpacer } from '@epam/uui-components';
 import { MapContainer, TileLayer } from 'react-leaflet';
@@ -57,6 +61,13 @@ type LocationSelectorModalType = {
   setLocationCoordinates: Dispatch<SetStateAction<LatLngLiteral | undefined>>;
 };
 
+type LocationSelectorFormType = {
+  country?: string;
+  city?: string;
+  address?: string;
+  comments?: string;
+};
+
 export function LocationSelectorModal({
   modalProps,
   cityId,
@@ -78,6 +89,7 @@ export function LocationSelectorModal({
   >(locationCoordinates);
 
   const { t } = useTranslation();
+  const svc = useUuiContext();
   const cityDataSource = useArrayDataSource(
     {
       items: cityList,
@@ -93,6 +105,7 @@ export function LocationSelectorModal({
   );
 
   const saveValues = () => {
+    save();
     if (cityIdModal) {
       setCommentsValue(commentsModalValue);
       setCityId(cityIdModal);
@@ -107,6 +120,33 @@ export function LocationSelectorModal({
     const selectedCity = getCityById(id);
     setLocationCoordinatesModal(selectedCity ?? { lat: 0, lng: 0 });
   };
+
+  const { lens, save } = useForm<LocationSelectorFormType>({
+    value: {},
+    onSave: (person) =>
+      Promise.resolve({ form: person }) /* place your save api call here */,
+    onSuccess: () =>
+      svc.uuiNotifications.show((props) => (
+        <SuccessNotification {...props}>
+          <Text>Form saved</Text>
+        </SuccessNotification>
+      )),
+    onError: () =>
+      svc.uuiNotifications.show((props) => (
+        <ErrorNotification {...props}>
+          <Text>Error on save</Text>
+        </ErrorNotification>
+      )),
+    getMetadata: () => ({
+      props: {
+        country: { isRequired: false },
+        city: { isRequired: true },
+        address: { isRequired: false },
+        comments: { isRequired: false },
+      },
+    }),
+    settingsKey: 'basic-form-example',
+  });
 
   return (
     <ModalBlocker {...modalProps}>
@@ -127,9 +167,11 @@ export function LocationSelectorModal({
                       'tendersPage.newTender.tenderLocationModal.countryInputLabel',
                     )}
                     cx={styles.modalInputLabel}
+                    {...lens.prop('country').toProps()}
                   >
                     <TextInput
                       id="countryInput"
+                      {...lens.prop('country').toProps()}
                       value={process.env.REACT_APP_LOCATION}
                       onValueChange={(e) => e}
                       placeholder="Please type text"
@@ -142,9 +184,11 @@ export function LocationSelectorModal({
                       'tendersPage.newTender.tenderLocationModal.cityInputLabel',
                     )}
                     cx={styles.modalInputLabel}
+                    {...lens.prop('city').toProps()}
                   >
                     <PickerInput
                       id="cityInput"
+                      {...lens.prop('city').toProps()}
                       dataSource={cityDataSource}
                       value={cityIdModal}
                       onValueChange={onCityValueChange}
@@ -155,7 +199,6 @@ export function LocationSelectorModal({
                       placeholder={t(
                         'tendersPage.newTender.tenderLocationModal.cityInputPlaceholder',
                       )}
-                      isRequired
                     />
                   </LabeledInput>
                   <LabeledInput
@@ -167,10 +210,12 @@ export function LocationSelectorModal({
                       'tendersPage.newTender.tenderLocationModal.addressInputLabelSidenote',
                     )}
                     cx={styles.modalInputLabel}
+                    {...lens.prop('address').toProps()}
                   >
                     <PickerInput
                       id="addressInput"
                       dataSource={addressDataSource}
+                      {...lens.prop('address').toProps()}
                       value={addressModalValue}
                       onValueChange={setAddressModalValue}
                       entityName="Address"
@@ -214,8 +259,10 @@ export function LocationSelectorModal({
                     )}
                     htmlFor="commentsInput"
                     cx={styles.commentsInputWrapper}
+                    {...lens.prop('comments').toProps()}
                   >
                     <TextArea
+                      {...lens.prop('comments').toProps()}
                       value={commentsModalValue ?? ''}
                       onValueChange={setCommentsModalValue}
                       placeholder={t(

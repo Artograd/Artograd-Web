@@ -3,6 +3,7 @@ import {
   Button,
   Checkbox,
   DatePicker,
+  ErrorNotification,
   FileCardItem,
   FlexCell,
   FlexRow,
@@ -17,6 +18,7 @@ import {
   TextInput,
   WarningNotification,
   i18n as i18nFromUui,
+  useForm,
 } from '@epam/uui';
 import styles from './NewTenderPage.module.scss';
 import { useTranslation } from 'react-i18next';
@@ -57,9 +59,19 @@ const categoryList: CategoryItemType[] = [
   { id: 2, name: 'Sculptures' },
 ];
 
+type NewTenderFormType = {
+  tenderTitle?: string;
+  tenderDescription?: string;
+  tenderValidity?: string;
+  tenderExpectedDelivery?: string;
+  tenderCategory?: string[];
+  emailSharingAgreement?: boolean;
+};
+
 export const NewTenderPage = () => {
   const { t } = useTranslation();
   const { uuiModals, uuiNotifications } = useUuiContext();
+  const svc = useUuiContext();
 
   const { family_name, given_name, email } = useSelector(
     (state: RootState) => state.identity,
@@ -117,6 +129,34 @@ export const NewTenderPage = () => {
     return addressList.find((address) => address.id === addressValue);
   };
 
+  const { lens, save } = useForm<NewTenderFormType>({
+    value: {},
+    onSave: (person) => Promise.resolve({ form: person }),
+    onSuccess: () =>
+      svc.uuiNotifications.show((props) => (
+        <SuccessNotification {...props}>
+          <Text>Form saved</Text>
+        </SuccessNotification>
+      )),
+    onError: () =>
+      svc.uuiNotifications.show((props) => (
+        <ErrorNotification {...props}>
+          <Text>Error on save</Text>
+        </ErrorNotification>
+      )),
+    getMetadata: () => ({
+      props: {
+        tenderTitle: { isRequired: true },
+        tenderDescription: { isRequired: true },
+        tenderValidity: { isRequired: true },
+        tenderExpectedDelivery: { isRequired: false },
+        tenderCategory: { isRequired: false },
+        emailSharingAgreement: { isRequired: false },
+      },
+    }),
+    settingsKey: 'basic-form-example',
+  });
+
   return (
     <Panel cx={styles.wrapper}>
       <LinkButton
@@ -139,15 +179,16 @@ export const NewTenderPage = () => {
                   htmlFor="tenderTitle"
                   label={t('tendersPage.newTender.tenderTitleLabel')}
                   cx={styles.inputLabel}
+                  {...lens.prop('tenderTitle').toProps()}
                 >
                   <TextInput
                     id="tenderTitle"
+                    {...lens.prop('tenderTitle').toProps()}
                     value={tenderTitleValue}
                     onValueChange={setTenderTitleValue}
                     placeholder={t(
                       'tendersPage.newTender.tenderTitlePlaceholder',
                     )}
-                    isRequired
                   />
                 </LabeledInput>
 
@@ -155,15 +196,16 @@ export const NewTenderPage = () => {
                   htmlFor="tenderDescription"
                   label={t('tendersPage.newTender.tenderDescriptionLabel')}
                   cx={styles.inputLabel}
+                  {...lens.prop('tenderDescription').toProps()}
                 >
                   <TextArea
                     id="tenderDescription"
+                    {...lens.prop('tenderDescription').toProps()}
                     value={tenderDescription}
                     onValueChange={setTenderDescription}
                     placeholder={t(
                       'tendersPage.newTender.tenderDescriptionPlaceholder',
                     )}
-                    isRequired
                   />
                 </LabeledInput>
               </FlexCell>
@@ -186,13 +228,14 @@ export const NewTenderPage = () => {
                         'tendersPage.newTender.tenderValidityPeriodLabel',
                       )}
                       cx={styles.inputLabel}
+                      {...lens.prop('tenderValidity').toProps()}
                     >
                       <RangeDatePicker
                         id="tenderValidity"
+                        {...lens.prop('tenderValidity').toProps()}
                         value={tenderValidityPeriod}
                         onValueChange={setTenderValidityPeriod}
                         format="MMM D, YYYY"
-                        isRequired
                       />
                     </LabeledInput>
                   </FlexCell>
@@ -207,9 +250,11 @@ export const NewTenderPage = () => {
                         'tendersPage.newTender.tenderExpectedDeliveryLabelSidenote',
                       )}
                       cx={styles.inputLabel}
+                      {...lens.prop('tenderExpectedDelivery').toProps()}
                     >
                       <DatePicker
                         id="tenderExpectedDelivery"
+                        {...lens.prop('tenderExpectedDelivery').toProps()}
                         value={expectedDeliveryDate}
                         onValueChange={setExpectedDeliveryDate}
                         format="MMM D, YYYY"
@@ -232,9 +277,11 @@ export const NewTenderPage = () => {
                         'tendersPage.newTender.tenderCategoryLabelSidenote',
                       )}
                       cx={styles.inputLabel}
+                      {...lens.prop('tenderCategory').toProps()}
                     >
                       <PickerInput
                         id="tenderCategory"
+                        {...lens.prop('tenderCategory').toProps()}
                         dataSource={dataSource}
                         value={tenderCategory}
                         onValueChange={setTenderCategory}
@@ -309,42 +356,29 @@ export const NewTenderPage = () => {
                 />
                 <FlexRow alignItems="top">
                   <FlexCell width="100%" grow={1}>
-                    {(cityId || addressValue || commentsValue) && (
-                      <>
-                        <Panel cx={styles.orderDetailsWrapper}>
-                          {(cityId || addressValue) && (
-                            <Text cx={styles.ownerDetails}>
-                              {t(
-                                'tendersPage.newTender.tenderLocationAddressLine',
-                              )}
-                            </Text>
-                          )}
-                          {commentsValue && (
-                            <Text cx={styles.ownerDetails}>
-                              {t(
-                                'tendersPage.newTender.tenderLocationComments',
-                              )}
-                            </Text>
-                          )}
-                        </Panel>
-                        <Panel cx={styles.orderDetailsWrapper}>
-                          <Text cx={styles.ownerDetails}>
-                            {cityId || addressValue
-                              ? `${process.env.REACT_APP_LOCATION}`
-                              : ''}
-                            {cityId ? `, ${getCityById()?.name}` : undefined}
-                            {addressValue ? `, ${getAddressById()?.name}` : ''}
-                          </Text>
-                          {commentsValue && (
-                            <Text cx={styles.ownerDetails}>
-                              {commentsValue}
-                            </Text>
-                          )}
-                        </Panel>
-                      </>
+                    {(cityId || addressValue) && (
+                      <FlexRow cx={styles.locationDetailsRow}>
+                        <Text>
+                          {t('tendersPage.newTender.tenderLocationAddressLine')}
+                        </Text>
+                        <Text>
+                          {(cityId || addressValue) &&
+                            process.env.REACT_APP_LOCATION}
+                          {cityId && `, ${getCityById()?.name}`}
+                          {addressValue && `, ${getAddressById()?.name}`}
+                        </Text>
+                      </FlexRow>
+                    )}
+                    {commentsValue && (
+                      <FlexRow cx={styles.locationDetailsRow}>
+                        <Text>
+                          {t('tendersPage.newTender.tenderLocationComments')}
+                        </Text>
+                        <Text>{commentsValue}</Text>
+                      </FlexRow>
                     )}
                   </FlexCell>
-                  <FlexCell width="100%" grow={1}>
+                  <FlexCell width="100%" grow={1} cx={styles.mapWrapper}>
                     {locationCoordinates && getCityById()?.name && (
                       <MapContainer
                         center={[
@@ -375,36 +409,34 @@ export const NewTenderPage = () => {
                 <Text cx={styles.sectionHeadline}>
                   {t('tendersPage.newTender.tenderOwnerContactSectionTitle')}
                 </Text>
-                <Panel cx={styles.orderDetailsWrapper}>
-                  <Text cx={styles.ownerDetails}>
-                    {t('tendersPage.newTender.tenderOwnerName')}
-                  </Text>
-                  <Text cx={styles.ownerDetails}>
+
+                <FlexRow cx={styles.ownerDetailsRow}>
+                  <Text>{t('tendersPage.newTender.tenderOwnerName')}</Text>
+                  <Text>{`${given_name} ${family_name}`}</Text>
+                </FlexRow>
+                <FlexRow cx={styles.ownerDetailsRow}>
+                  <Text>
                     {t('tendersPage.newTender.tenderOwnerOrganisation')}
                   </Text>
-                  <Text cx={styles.ownerDetails}>
-                    {t('tendersPage.newTender.tenderOwnerEmail')}
-                  </Text>
-                </Panel>
-                <Panel cx={styles.orderDetailsWrapper}>
-                  <Text cx={styles.ownerDetails}>
-                    {`${given_name} ${family_name}`}
-                  </Text>
-                  <Text cx={styles.ownerDetails}>
-                    {`Regional Culture Center`}
-                  </Text>
-                  <Text cx={styles.ownerDetails}>{email}</Text>
-                </Panel>
+                  <Text>{`Regional Culture Center`}</Text>
+                </FlexRow>
+                <FlexRow cx={styles.ownerDetailsRow}>
+                  <Text>{t('tendersPage.newTender.tenderOwnerEmail')}</Text>
+                  <Text>{email}</Text>
+                </FlexRow>
 
-                <Alert color="warning" cx={styles.emailInfoAlert}>
-                  <Checkbox
-                    label={t(
-                      'tendersPage.newTender.tenderOwnerEmailAvailabilityCheckbox',
-                    )}
-                    value={emailSharingAgreement}
-                    onValueChange={setEmailSharingAgreement}
-                  />
-                </Alert>
+                <FlexCell width="100%">
+                  <Alert color="warning" cx={styles.emailInfoAlert}>
+                    <Checkbox
+                      label={t(
+                        'tendersPage.newTender.tenderOwnerEmailAvailabilityCheckbox',
+                      )}
+                      {...lens.prop('emailSharingAgreement').toProps()}
+                      value={emailSharingAgreement}
+                      onValueChange={setEmailSharingAgreement}
+                    />
+                  </Alert>
+                </FlexCell>
               </FlexCell>
             </FlexRow>
 
@@ -440,7 +472,7 @@ export const NewTenderPage = () => {
           <Button
             color="primary"
             caption={t('tendersPage.newTender.pageFormFooterCreateCta')}
-            onClick={() => null}
+            onClick={save}
           />
         </FlexRow>
       </Panel>

@@ -44,9 +44,19 @@
   width: max-content;
 }
 
-.ownerDetails {
-  padding-top: 6px;
+.ownerDetailsRow,
+.locationDetailsRow {
+  padding-top: 0px;
   padding-bottom: 6px;
+  align-items: flex-start;
+  div {
+    min-width: 132px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  div:first-child {
+    color: var(--night600);
+  }
 }
 
 .emailInfoAlert {
@@ -81,12 +91,16 @@
   margin-top: 12px;
 }
 
-.mapWrapper {
-  margin-left: 24px;
-}
-
 @media only screen and (max-device-width: 1227px) {
   .wrapper {
     margin: 36px 24px 60px;
+  }
+  .mapWrapper {
+    display: none;
+  }
+
+  .ownerDetailsRow,
+  .locationDetailsRow {
+    flex-direction: column;
   }
 }

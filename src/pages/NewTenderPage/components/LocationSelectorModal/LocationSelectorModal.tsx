@@ -15,51 +15,69 @@ import {
 } from '@epam/uui';
 import styles from './LocationSelectorModal.module.scss';
 
-import { Dispatch, SetStateAction, useState } from 'react';
 import { IModal, useArrayDataSource } from '@epam/uui-core';
 import 'dayjs/locale/ru';
 import { FlexSpacer } from '@epam/uui-components';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { LatLngExpression } from 'leaflet';
+import L, { LatLngLiteral } from 'leaflet';
 import citiesDB from './cities.json';
-import { pickerItemType } from '../../../../types';
-import { MapCordsController } from '../MapCordsController/MapCordsController';
+import { AddressItemType, CityItemType } from '../../../../types';
 import { useTranslation } from 'react-i18next';
+import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
+import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
+import { Dispatch, SetStateAction, useState } from 'react';
+import { DraggableMarker } from '../MapCordsController/MapCordsController';
 
-const cityList: pickerItemType[] = citiesDB;
-const addressList: pickerItemType[] = [{ id: 1, name: 'Mediteranska, 8525' }];
+const DefaultIcon = L.icon({
+  iconUrl: MarkerIcon,
+  shadowUrl: MarkerIconShadow,
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
+
+export const cityList: CityItemType[] = citiesDB;
+export const addressList: AddressItemType[] = [
+  { id: 1, name: 'Mediteranska, 8525' },
+];
+
+const getCityById = (id: number) => {
+  return cityList.find((city) => city.id === id);
+};
+
+type LocationSelectorModalType = {
+  modalProps: IModal<string>;
+  cityId?: number;
+  addressValue?: number;
+  commentsValue: string;
+  locationCoordinates: LatLngLiteral | undefined;
+  setCommentsValue: Dispatch<SetStateAction<string>>;
+  setCityId: Dispatch<SetStateAction<number | undefined>>;
+  setAddressValue: Dispatch<SetStateAction<number | undefined>>;
+  setLocationCoordinates: Dispatch<SetStateAction<LatLngLiteral | undefined>>;
+};
 
 export function LocationSelectorModal({
   modalProps,
-  commentsValue,
-  cityValue,
+  cityId,
   addressValue,
-  cordsValue,
+  commentsValue,
+  locationCoordinates,
   setCommentsValue,
-  setCityValue,
+  setCityId,
   setAddressValue,
-  setCordsValue,
-}: {
-  modalProps: IModal<string>;
-  commentsValue: string;
-  cityValue?: pickerItemType;
-  addressValue?: pickerItemType;
-  cordsValue: LatLngExpression;
-  setCommentsValue: Dispatch<SetStateAction<string>>;
-  setCityValue: Dispatch<SetStateAction<pickerItemType | undefined>>;
-  setAddressValue: Dispatch<SetStateAction<pickerItemType | undefined>>;
-  setCordsValue: Dispatch<SetStateAction<LatLngExpression>>;
-}) {
-  const { t } = useTranslation();
-  const [commentsModalValue, setCommentsModalValue] = useState(commentsValue);
-  const [cordsModalValue] = useState(cordsValue);
-  const [cityModalValue, setCityModalValue] = useState<
-    pickerItemType | undefined
-  >(cityValue);
+  setLocationCoordinates,
+}: LocationSelectorModalType) {
+  const [cityIdModal, setCityIdModal] = useState<number | undefined>(cityId);
   const [addressModalValue, setAddressModalValue] = useState<
-    pickerItemType | undefined
+    number | undefined
   >(addressValue);
+  const [commentsModalValue, setCommentsModalValue] = useState(commentsValue);
+  const [locationCoordinatesModal, setLocationCoordinatesModal] = useState<
+    LatLngLiteral | undefined
+  >(locationCoordinates);
+
+  const { t } = useTranslation();
   const cityDataSource = useArrayDataSource(
     {
       items: cityList,
@@ -75,11 +93,19 @@ export function LocationSelectorModal({
   );
 
   const saveValues = () => {
-    setCommentsValue(commentsModalValue);
-    setCityValue(cityModalValue);
-    setAddressValue(addressModalValue);
-    setCordsValue(cordsModalValue);
-    modalProps.success('Success action');
+    if (cityIdModal) {
+      setCommentsValue(commentsModalValue);
+      setCityId(cityIdModal);
+      setAddressValue(addressModalValue);
+      setLocationCoordinates(locationCoordinatesModal);
+      modalProps.success('Success action');
+    }
+  };
+
+  const onCityValueChange = (id: number) => {
+    setCityIdModal(id);
+    const selectedCity = getCityById(id);
+    setLocationCoordinatesModal(selectedCity ?? { lat: 0, lng: 0 });
   };
 
   return (
@@ -120,17 +146,16 @@ export function LocationSelectorModal({
                     <PickerInput
                       id="cityInput"
                       dataSource={cityDataSource}
-                      value={cityModalValue}
-                      onValueChange={setCityModalValue}
-                      getName={(item: pickerItemType | undefined) => item!.name}
+                      value={cityIdModal}
+                      onValueChange={onCityValueChange}
                       entityName="City"
                       selectionMode="single"
-                      valueType="entity"
+                      valueType="id"
                       sorting={{ field: 'name', direction: 'asc' }}
-                      emptyValue={null}
                       placeholder={t(
                         'tendersPage.newTender.tenderLocationModal.cityInputPlaceholder',
                       )}
+                      isRequired
                     />
                   </LabeledInput>
                   <LabeledInput
@@ -148,29 +173,31 @@ export function LocationSelectorModal({
                       dataSource={addressDataSource}
                       value={addressModalValue}
                       onValueChange={setAddressModalValue}
-                      getName={(item: pickerItemType | undefined) => item!.name}
                       entityName="Address"
                       selectionMode="single"
-                      valueType="entity"
+                      valueType="id"
                       sorting={{ field: 'name', direction: 'asc' }}
                       placeholder={t(
                         'tendersPage.newTender.tenderLocationModal.addressInputPlaceholder',
                       )}
-                      emptyValue={null}
                     />
                   </LabeledInput>
                 </FlexCell>
                 <FlexCell width="100%">
                   <Panel cx={styles.mapWrapper}>
-                    {cityModalValue && (
+                    {locationCoordinatesModal && (
                       <MapContainer
-                        center={[cityModalValue.lat!, cityModalValue.lng!]}
+                        center={locationCoordinatesModal}
                         zoom={13}
                         scrollWheelZoom={false}
                         style={{ height: '234px', width: '100%' }}
                       >
                         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                        <MapCordsController cityCords={cityModalValue} />
+
+                        <DraggableMarker
+                          position={locationCoordinatesModal}
+                          setPosition={setLocationCoordinatesModal}
+                        />
                       </MapContainer>
                     )}
                   </Panel>
@@ -189,7 +216,7 @@ export function LocationSelectorModal({
                     cx={styles.commentsInputWrapper}
                   >
                     <TextArea
-                      value={commentsModalValue}
+                      value={commentsModalValue ?? ''}
                       onValueChange={setCommentsModalValue}
                       placeholder={t(
                         'tendersPage.newTender.tenderLocationModal.commentsInputPlaceholder',

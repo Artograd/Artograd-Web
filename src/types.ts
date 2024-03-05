@@ -1,3 +1,5 @@
+import { LatLngLiteral } from 'leaflet';
+
 export enum Status {
   GATHERING = 'gathering',
   VOTING = 'voting',
@@ -42,9 +44,17 @@ export type Tender = {
   proposals: Proposals[];
 };
 
-export type pickerItemType = {
+export type AddressItemType = {
   name: string;
-  lat?: number;
-  lng?: number;
+  id?: number;
+};
+
+export type CategoryItemType = {
+  name: string;
+  id?: number;
+};
+
+export type CityItemType = LatLngLiteral & {
+  name: string;
   id?: number;
 };

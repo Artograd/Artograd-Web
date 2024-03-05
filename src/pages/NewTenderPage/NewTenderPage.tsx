@@ -29,22 +29,33 @@ import {
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import 'dayjs/locale/ru';
-import { FlexSpacer, i18n } from '@epam/uui-components';
+import { FlexSpacer } from '@epam/uui-components';
 import { ReactComponent as navigationBack } from '@epam/assets/icons/common/navigation-back-18.svg';
 import { FileUpload } from './components/FileUpload/FileUpload';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { LatLngExpression } from 'leaflet';
-import { pickerItemType } from '../../types';
+import L, { LatLngLiteral } from 'leaflet';
+import { CategoryItemType } from '../../types';
 import { MapCordsController } from './components/MapCordsController/MapCordsController';
-import { LocationSelectorModal } from './components/LocationSelectorModal/LocationSelectorModal';
+import {
+  LocationSelectorModal,
+  addressList,
+  cityList,
+} from './components/LocationSelectorModal/LocationSelectorModal';
+import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
+import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
 
-const categoryList: pickerItemType[] = [
+const DefaultIcon = L.icon({
+  iconUrl: MarkerIcon,
+  shadowUrl: MarkerIconShadow,
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
+
+const categoryList: CategoryItemType[] = [
   { id: 1, name: 'Outdoors' },
   { id: 2, name: 'Sculptures' },
 ];
-
-i18n.datePicker.locale = 'ru';
 
 export const NewTenderPage = () => {
   const { t } = useTranslation();
@@ -54,25 +65,32 @@ export const NewTenderPage = () => {
     (state: RootState) => state.identity,
   );
 
-  //   STATES
-  const [attachments, setAttachments] = useState<FileCardItem[]>([]);
-  const [descriptionValue, setDescriptionValue] = useState('');
-  const [titleValue, setTitleValue] = useState<string | undefined>('');
-  const [date, setDate] = useState<string | null>('');
-  const [commentsValue, setCommentsValue] = useState('');
-  const [cordsValue, setCordsValue] = useState<LatLngExpression>([
-    42.28364, 18.872,
-  ]);
-  const [cityValue, setCityValue] = useState<pickerItemType | undefined>();
-  const [addressValue, setAddressValue] = useState<
-    pickerItemType | undefined
+  //   MAIN TENDER STATES
+  const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
+    [],
+  );
+  const [tenderDescription, setTenderDescription] = useState('');
+  const [tenderTitleValue, setTenderTitleValue] = useState<string | undefined>(
+    '',
+  );
+  const [expectedDeliveryDate, setExpectedDeliveryDate] = useState<
+    string | null
+  >('');
+  const [emailSharingAgreement, setEmailSharingAgreement] = useState(false);
+  const [tenderCategory, setTenderCategory] = useState<unknown[]>([]);
+  const [tenderValidityPeriod, setTenderValidityPeriod] =
+    useState<RangeDatePickerValue>({
+      from: '',
+      to: '',
+    });
+
+  // ADDRESS STATES
+  const [commentsValue, setCommentsValue] = useState<string>('');
+  const [cityId, setCityId] = useState<number | undefined>();
+  const [addressValue, setAddressValue] = useState<number | undefined>();
+  const [locationCoordinates, setLocationCoordinates] = useState<
+    LatLngLiteral | undefined
   >();
-  const [checkBoxValue, setCheckBoxValue] = useState(false);
-  const [categoryValue, setCategoryValue] = useState<unknown[]>([]);
-  const [rangeValue, setRangeValue] = useState<RangeDatePickerValue>({
-    from: '',
-    to: '',
-  });
 
   const dataSource = useArrayDataSource(
     {
@@ -89,6 +107,14 @@ export const NewTenderPage = () => {
     pickerPlaceholderTo: t(
       'tendersPage.newTender.tenderValidityPeriodToPlaceholder',
     ),
+  };
+
+  const getCityById = () => {
+    return cityList.find((city) => city.id === cityId);
+  };
+
+  const getAddressById = () => {
+    return addressList.find((address) => address.id === addressValue);
   };
 
   return (
@@ -116,11 +142,12 @@ export const NewTenderPage = () => {
                 >
                   <TextInput
                     id="tenderTitle"
-                    value={titleValue}
-                    onValueChange={setTitleValue}
+                    value={tenderTitleValue}
+                    onValueChange={setTenderTitleValue}
                     placeholder={t(
                       'tendersPage.newTender.tenderTitlePlaceholder',
                     )}
+                    isRequired
                   />
                 </LabeledInput>
 
@@ -131,11 +158,12 @@ export const NewTenderPage = () => {
                 >
                   <TextArea
                     id="tenderDescription"
-                    value={descriptionValue}
-                    onValueChange={setDescriptionValue}
+                    value={tenderDescription}
+                    onValueChange={setTenderDescription}
                     placeholder={t(
                       'tendersPage.newTender.tenderDescriptionPlaceholder',
                     )}
+                    isRequired
                   />
                 </LabeledInput>
               </FlexCell>
@@ -161,9 +189,10 @@ export const NewTenderPage = () => {
                     >
                       <RangeDatePicker
                         id="tenderValidity"
-                        value={rangeValue}
-                        onValueChange={setRangeValue}
+                        value={tenderValidityPeriod}
+                        onValueChange={setTenderValidityPeriod}
                         format="MMM D, YYYY"
+                        isRequired
                       />
                     </LabeledInput>
                   </FlexCell>
@@ -181,8 +210,8 @@ export const NewTenderPage = () => {
                     >
                       <DatePicker
                         id="tenderExpectedDelivery"
-                        value={date}
-                        onValueChange={setDate}
+                        value={expectedDeliveryDate}
+                        onValueChange={setExpectedDeliveryDate}
                         format="MMM D, YYYY"
                         placeholder={t('global.datePickerPlaceholder')}
                       />
@@ -207,11 +236,9 @@ export const NewTenderPage = () => {
                       <PickerInput
                         id="tenderCategory"
                         dataSource={dataSource}
-                        value={categoryValue}
-                        onValueChange={setCategoryValue}
-                        getName={(item: pickerItemType | undefined) =>
-                          item!.name
-                        }
+                        value={tenderCategory}
+                        onValueChange={setTenderCategory}
+                        getName={(item: CategoryItemType) => item?.name}
                         entityName="category"
                         selectionMode="multi"
                         valueType="id"
@@ -222,6 +249,7 @@ export const NewTenderPage = () => {
                       />
                     </LabeledInput>
                   </FlexCell>
+
                   <FlexCell width="100%" grow={1} />
                 </FlexRow>
               </FlexCell>
@@ -235,7 +263,7 @@ export const NewTenderPage = () => {
 
                 <LinkButton
                   caption={
-                    cityValue?.name || addressValue?.name || commentsValue
+                    getCityById()?.name || addressValue || commentsValue
                       ? t('tendersPage.newTender.tenderEditLocationLink')
                       : t('tendersPage.newTender.tenderIndicateLink')
                   }
@@ -245,14 +273,14 @@ export const NewTenderPage = () => {
                       .show<string>((props) => (
                         <LocationSelectorModal
                           modalProps={props}
+                          cityId={cityId}
                           addressValue={addressValue}
-                          cityValue={cityValue}
                           commentsValue={commentsValue}
-                          cordsValue={cordsValue}
-                          setAddressValue={setAddressValue}
-                          setCityValue={setCityValue}
+                          locationCoordinates={locationCoordinates}
                           setCommentsValue={setCommentsValue}
-                          setCordsValue={setCordsValue}
+                          setCityId={setCityId}
+                          setAddressValue={setAddressValue}
+                          setLocationCoordinates={setLocationCoordinates}
                         />
                       ))
                       .then((result) => {
@@ -281,10 +309,10 @@ export const NewTenderPage = () => {
                 />
                 <FlexRow alignItems="top">
                   <FlexCell width="100%" grow={1}>
-                    {(cityValue || addressValue || commentsValue) && (
+                    {(cityId || addressValue || commentsValue) && (
                       <>
                         <Panel cx={styles.orderDetailsWrapper}>
-                          {(cityValue || addressValue) && (
+                          {(cityId || addressValue) && (
                             <Text cx={styles.ownerDetails}>
                               {t(
                                 'tendersPage.newTender.tenderLocationAddressLine',
@@ -299,18 +327,13 @@ export const NewTenderPage = () => {
                             </Text>
                           )}
                         </Panel>
-
                         <Panel cx={styles.orderDetailsWrapper}>
                           <Text cx={styles.ownerDetails}>
-                            {cityValue?.name || addressValue?.name
+                            {cityId || addressValue
                               ? `${process.env.REACT_APP_LOCATION}`
                               : ''}
-                            {cityValue?.name
-                              ? `, ${cityValue?.name}`
-                              : undefined}
-                            {addressValue?.name
-                              ? `, ${addressValue?.name}`
-                              : ''}
+                            {cityId ? `, ${getCityById()?.name}` : undefined}
+                            {addressValue ? `, ${getAddressById()?.name}` : ''}
                           </Text>
                           {commentsValue && (
                             <Text cx={styles.ownerDetails}>
@@ -322,15 +345,24 @@ export const NewTenderPage = () => {
                     )}
                   </FlexCell>
                   <FlexCell width="100%" grow={1}>
-                    {cordsValue && cityValue?.name && (
+                    {locationCoordinates && getCityById()?.name && (
                       <MapContainer
-                        center={[cityValue.lat!, cityValue.lng!]}
+                        center={[
+                          locationCoordinates.lat,
+                          locationCoordinates.lng,
+                        ]}
                         zoom={13}
                         scrollWheelZoom={false}
                         style={{ height: '111px', width: '100%' }}
                       >
                         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                        <MapCordsController cityCords={cityValue} />
+                        <MapCordsController cityCords={locationCoordinates} />
+                        <Marker
+                          position={[
+                            locationCoordinates.lat,
+                            locationCoordinates.lng,
+                          ]}
+                        />
                       </MapContainer>
                     )}
                   </FlexCell>
@@ -369,8 +401,8 @@ export const NewTenderPage = () => {
                     label={t(
                       'tendersPage.newTender.tenderOwnerEmailAvailabilityCheckbox',
                     )}
-                    value={checkBoxValue}
-                    onValueChange={setCheckBoxValue}
+                    value={emailSharingAgreement}
+                    onValueChange={setEmailSharingAgreement}
                   />
                 </Alert>
               </FlexCell>
@@ -382,8 +414,8 @@ export const NewTenderPage = () => {
                   {t('tendersPage.newTender.tenderAdditionalInformationLabel')}
                 </Text>
                 <FileUpload
-                  attachments={attachments}
-                  setAttachments={setAttachments}
+                  attachments={tenderAttachments}
+                  setAttachments={setTenderAttachments}
                 />
               </FlexCell>
             </FlexRow>
@@ -395,7 +427,7 @@ export const NewTenderPage = () => {
             fill="outline"
             color="secondary"
             caption={t('tendersPage.newTender.pageFormFooterCancelCta')}
-            onClick={() => null}
+            link={{ pathname: '/tenders' }}
           />
           <FlexSpacer />
           <Button

@@ -1,19 +1,60 @@
-import { useEffect } from 'react';
-import { useMapEvent } from 'react-leaflet';
-import { pickerItemType } from '../../../../types';
+import { Dispatch, SetStateAction, useEffect, useMemo, useRef } from 'react';
+import { Marker, useMapEvent } from 'react-leaflet';
+import { LatLngLiteral, Marker as MarkerType } from 'leaflet';
 
 export const MapCordsController = ({
   cityCords,
 }: {
-  cityCords: pickerItemType;
+  cityCords?: LatLngLiteral;
 }) => {
+  if (cityCords) {
+    const map = useMapEvent('click', () => {
+      map.setView([cityCords.lat, cityCords.lng], 13);
+    });
+
+    useEffect(() => {
+      map.setView([cityCords.lat, cityCords.lng], 13);
+    }, [cityCords]);
+  }
+
+  return null;
+};
+
+export const DraggableMarker = ({
+  position = { lat: 0, lng: 0 },
+  setPosition,
+}: {
+  position?: LatLngLiteral;
+  setPosition: Dispatch<SetStateAction<LatLngLiteral | undefined>>;
+}) => {
+  const markerRef = useRef<MarkerType>(null);
+  const eventHandlers = useMemo(
+    () => ({
+      dragend() {
+        const marker = markerRef.current;
+        const markerCordinates = marker?.getLatLng();
+        if (markerCordinates) {
+          setPosition(markerCordinates);
+        }
+      },
+    }),
+    [],
+  );
+
   const map = useMapEvent('click', () => {
-    map.setView({ lat: cityCords.lat!, lng: cityCords.lng! });
+    map.setView([position.lat, position.lng], 13);
   });
 
   useEffect(() => {
-    map.setView({ lat: cityCords.lat!, lng: cityCords.lng! });
-  }, [cityCords]);
+    map.setView([position.lat, position.lng], 13);
+  }, [position]);
 
-  return null;
+  return (
+    <Marker
+      draggable
+      eventHandlers={eventHandlers}
+      position={position}
+      ref={markerRef}
+    />
+  );
 };

@@ -119,8 +119,10 @@ export function LocationSelectorModal({
 
   const onCityValueChange = (city: CityItemType) => {
     setCityNameModal(city);
-    const selectedCity = getCityById(city.id);
-    setLocationCoordinatesModal(selectedCity ?? { lat: 0, lng: 0 });
+    const selectedCity = getCityById(city?.id);
+    setLocationCoordinatesModal(
+      selectedCity ?? { lat: 42.44714809298988, lng: 19.260063171386722 },
+    );
   };
 
   const { lens, save } = useForm<LocationSelectorFormType>({

@@ -21,7 +21,7 @@ export const MapCordsController = ({
 };
 
 export const DraggableMarker = ({
-  position = { lat: 0, lng: 0 },
+  position = { lat: 42.5, lng: 19.3 },
   setPosition,
 }: {
   position?: LatLngLiteral;

@@ -3,7 +3,6 @@ import {
   Button,
   Checkbox,
   DatePicker,
-  ErrorNotification,
   FileCardItem,
   FlexCell,
   FlexRow,
@@ -37,7 +36,7 @@ import { FileUpload } from './components/FileUpload/FileUpload';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
-import { CategoryItemType } from '../../types';
+import { AddressItemType, CategoryItemType, CityItemType } from '../../types';
 import { MapCordsController } from './components/MapCordsController/MapCordsController';
 import {
   LocationSelectorModal,
@@ -62,16 +61,23 @@ const categoryList: CategoryItemType[] = [
 type NewTenderFormType = {
   tenderTitle?: string;
   tenderDescription?: string;
-  tenderValidity?: string;
+  tenderValidity?: RangeDatePickerValue;
   tenderExpectedDelivery?: string;
   tenderCategory?: string[];
   emailSharingAgreement?: boolean;
+  locationCityName?: CityItemType;
+  locationComments?: string;
+  locationAddress?: number;
+  locationCoordinates?: LatLngLiteral;
+  ownerFirstName?: string;
+  ownerLastName?: string;
+  ownerEmail?: string;
+  ownerOrganization?: string;
 };
 
 export const NewTenderPage = () => {
   const { t } = useTranslation();
   const { uuiModals, uuiNotifications } = useUuiContext();
-  const svc = useUuiContext();
 
   const { family_name, given_name, email } = useSelector(
     (state: RootState) => state.identity,
@@ -81,25 +87,13 @@ export const NewTenderPage = () => {
   const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
     [],
   );
-  const [tenderDescription, setTenderDescription] = useState('');
-  const [tenderTitleValue, setTenderTitleValue] = useState<string | undefined>(
-    '',
-  );
-  const [expectedDeliveryDate, setExpectedDeliveryDate] = useState<
-    string | null
-  >('');
-  const [emailSharingAgreement, setEmailSharingAgreement] = useState(false);
-  const [tenderCategory, setTenderCategory] = useState<unknown[]>([]);
-  const [tenderValidityPeriod, setTenderValidityPeriod] =
-    useState<RangeDatePickerValue>({
-      from: '',
-      to: '',
-    });
 
   // ADDRESS STATES
   const [commentsValue, setCommentsValue] = useState<string>('');
-  const [cityId, setCityId] = useState<number | undefined>();
-  const [addressValue, setAddressValue] = useState<number | undefined>();
+  const [cityName, setCityName] = useState<CityItemType | undefined>();
+  const [addressValue, setAddressValue] = useState<
+    AddressItemType | undefined
+  >();
   const [locationCoordinates, setLocationCoordinates] = useState<
     LatLngLiteral | undefined
   >();
@@ -122,28 +116,41 @@ export const NewTenderPage = () => {
   };
 
   const getCityById = () => {
-    return cityList.find((city) => city.id === cityId);
+    return cityList.find((city) => city.id === cityName?.id);
   };
 
   const getAddressById = () => {
-    return addressList.find((address) => address.id === addressValue);
+    return addressList.find((address) => address.id === addressValue?.id);
+  };
+
+  const initialValues: NewTenderFormType = {
+    tenderTitle: '',
+    tenderDescription: '',
+    tenderValidity: { from: '', to: '' },
+    tenderExpectedDelivery: '',
+    tenderCategory: undefined,
+    emailSharingAgreement: false,
+    locationCityName: undefined,
+    locationComments: '',
+    locationAddress: undefined,
+    locationCoordinates: undefined,
+    ownerFirstName: given_name,
+    ownerLastName: family_name,
+    ownerEmail: email,
+    ownerOrganization: 'Regional Culture Center',
   };
 
   const { lens, save } = useForm<NewTenderFormType>({
-    value: {},
-    onSave: (person) => Promise.resolve({ form: person }),
-    onSuccess: () =>
-      svc.uuiNotifications.show((props) => (
-        <SuccessNotification {...props}>
-          <Text>Form saved</Text>
-        </SuccessNotification>
-      )),
-    onError: () =>
-      svc.uuiNotifications.show((props) => (
-        <ErrorNotification {...props}>
-          <Text>Error on save</Text>
-        </ErrorNotification>
-      )),
+    value: initialValues,
+    onSave: (tender) => Promise.resolve({ form: tender }),
+    onSuccess: (form) =>
+      console.log(':::form', {
+        ...form,
+        locationCoordinates,
+        locationAddress: addressValue,
+        locationComments: commentsValue,
+        locationCityName: cityName,
+      }),
     getMetadata: () => ({
       props: {
         tenderTitle: { isRequired: true },
@@ -152,9 +159,17 @@ export const NewTenderPage = () => {
         tenderExpectedDelivery: { isRequired: false },
         tenderCategory: { isRequired: false },
         emailSharingAgreement: { isRequired: false },
+        locationCityName: { isRequired: false },
+        locationComments: { isRequired: false },
+        locationAddress: { isRequired: false },
+        locationCoordinated: { isRequired: false },
+        ownerFirstName: { isRequired: false },
+        ownerLastName: { isRequired: false },
+        ownerEmail: { isRequired: false },
+        ownerOrganization: { isRequired: false },
       },
     }),
-    settingsKey: 'basic-form-example',
+    settingsKey: 'new-tender-form',
   });
 
   return (
@@ -184,8 +199,6 @@ export const NewTenderPage = () => {
                   <TextInput
                     id="tenderTitle"
                     {...lens.prop('tenderTitle').toProps()}
-                    value={tenderTitleValue}
-                    onValueChange={setTenderTitleValue}
                     placeholder={t(
                       'tendersPage.newTender.tenderTitlePlaceholder',
                     )}
@@ -201,8 +214,6 @@ export const NewTenderPage = () => {
                   <TextArea
                     id="tenderDescription"
                     {...lens.prop('tenderDescription').toProps()}
-                    value={tenderDescription}
-                    onValueChange={setTenderDescription}
                     placeholder={t(
                       'tendersPage.newTender.tenderDescriptionPlaceholder',
                     )}
@@ -233,8 +244,6 @@ export const NewTenderPage = () => {
                       <RangeDatePicker
                         id="tenderValidity"
                         {...lens.prop('tenderValidity').toProps()}
-                        value={tenderValidityPeriod}
-                        onValueChange={setTenderValidityPeriod}
                         format="MMM D, YYYY"
                       />
                     </LabeledInput>
@@ -255,8 +264,6 @@ export const NewTenderPage = () => {
                       <DatePicker
                         id="tenderExpectedDelivery"
                         {...lens.prop('tenderExpectedDelivery').toProps()}
-                        value={expectedDeliveryDate}
-                        onValueChange={setExpectedDeliveryDate}
                         format="MMM D, YYYY"
                         placeholder={t('global.datePickerPlaceholder')}
                       />
@@ -283,8 +290,6 @@ export const NewTenderPage = () => {
                         id="tenderCategory"
                         {...lens.prop('tenderCategory').toProps()}
                         dataSource={dataSource}
-                        value={tenderCategory}
-                        onValueChange={setTenderCategory}
                         getName={(item: CategoryItemType) => item?.name}
                         entityName="category"
                         selectionMode="multi"
@@ -320,12 +325,12 @@ export const NewTenderPage = () => {
                       .show<string>((props) => (
                         <LocationSelectorModal
                           modalProps={props}
-                          cityId={cityId}
+                          cityName={cityName}
                           addressValue={addressValue}
                           commentsValue={commentsValue}
                           locationCoordinates={locationCoordinates}
                           setCommentsValue={setCommentsValue}
-                          setCityId={setCityId}
+                          setCityName={setCityName}
                           setAddressValue={setAddressValue}
                           setLocationCoordinates={setLocationCoordinates}
                         />
@@ -356,15 +361,15 @@ export const NewTenderPage = () => {
                 />
                 <FlexRow alignItems="top">
                   <FlexCell width="100%" grow={1}>
-                    {(cityId || addressValue) && (
+                    {(cityName || addressValue) && (
                       <FlexRow cx={styles.locationDetailsRow}>
                         <Text>
                           {t('tendersPage.newTender.tenderLocationAddressLine')}
                         </Text>
                         <Text>
-                          {(cityId || addressValue) &&
+                          {(cityName || addressValue) &&
                             process.env.REACT_APP_LOCATION}
-                          {cityId && `, ${getCityById()?.name}`}
+                          {cityName && `, ${getCityById()?.name}`}
                           {addressValue && `, ${getAddressById()?.name}`}
                         </Text>
                       </FlexRow>
@@ -418,7 +423,7 @@ export const NewTenderPage = () => {
                   <Text>
                     {t('tendersPage.newTender.tenderOwnerOrganisation')}
                   </Text>
-                  <Text>{`Regional Culture Center`}</Text>
+                  <Text>Regional Culture Center</Text>
                 </FlexRow>
                 <FlexRow cx={styles.ownerDetailsRow}>
                   <Text>{t('tendersPage.newTender.tenderOwnerEmail')}</Text>
@@ -432,8 +437,6 @@ export const NewTenderPage = () => {
                         'tendersPage.newTender.tenderOwnerEmailAvailabilityCheckbox',
                       )}
                       {...lens.prop('emailSharingAgreement').toProps()}
-                      value={emailSharingAgreement}
-                      onValueChange={setEmailSharingAgreement}
                     />
                   </Alert>
                 </FlexCell>
@@ -472,7 +475,7 @@ export const NewTenderPage = () => {
           <Button
             color="primary"
             caption={t('tendersPage.newTender.pageFormFooterCreateCta')}
-            onClick={save}
+            onClick={() => save()}
           />
         </FlexRow>
       </Panel>

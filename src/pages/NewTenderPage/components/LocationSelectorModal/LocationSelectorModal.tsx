@@ -45,19 +45,19 @@ export const addressList: AddressItemType[] = [
   { id: 1, name: 'Mediteranska, 8525' },
 ];
 
-const getCityById = (id: number) => {
-  return cityList.find((city) => city.id === id);
+const getCityById = (city?: number) => {
+  return cityList.find((cityArray) => cityArray.id === city);
 };
 
 type LocationSelectorModalType = {
   modalProps: IModal<string>;
-  cityId?: number;
-  addressValue?: number;
+  cityName?: CityItemType;
+  addressValue?: AddressItemType;
   commentsValue: string;
   locationCoordinates: LatLngLiteral | undefined;
   setCommentsValue: Dispatch<SetStateAction<string>>;
-  setCityId: Dispatch<SetStateAction<number | undefined>>;
-  setAddressValue: Dispatch<SetStateAction<number | undefined>>;
+  setCityName: Dispatch<SetStateAction<CityItemType | undefined>>;
+  setAddressValue: Dispatch<SetStateAction<AddressItemType | undefined>>;
   setLocationCoordinates: Dispatch<SetStateAction<LatLngLiteral | undefined>>;
 };
 
@@ -70,18 +70,20 @@ type LocationSelectorFormType = {
 
 export function LocationSelectorModal({
   modalProps,
-  cityId,
+  cityName,
   addressValue,
   commentsValue,
   locationCoordinates,
   setCommentsValue,
-  setCityId,
+  setCityName,
   setAddressValue,
   setLocationCoordinates,
 }: LocationSelectorModalType) {
-  const [cityIdModal, setCityIdModal] = useState<number | undefined>(cityId);
+  const [cityNameModal, setCityNameModal] = useState<CityItemType | undefined>(
+    cityName,
+  );
   const [addressModalValue, setAddressModalValue] = useState<
-    number | undefined
+    AddressItemType | undefined
   >(addressValue);
   const [commentsModalValue, setCommentsModalValue] = useState(commentsValue);
   const [locationCoordinatesModal, setLocationCoordinatesModal] = useState<
@@ -106,25 +108,25 @@ export function LocationSelectorModal({
 
   const saveValues = () => {
     save();
-    if (cityIdModal) {
+    if (cityNameModal) {
       setCommentsValue(commentsModalValue);
-      setCityId(cityIdModal);
+      setCityName(cityNameModal);
       setAddressValue(addressModalValue);
       setLocationCoordinates(locationCoordinatesModal);
       modalProps.success('Success action');
     }
   };
 
-  const onCityValueChange = (id: number) => {
-    setCityIdModal(id);
-    const selectedCity = getCityById(id);
+  const onCityValueChange = (city: CityItemType) => {
+    setCityNameModal(city);
+    const selectedCity = getCityById(city.id);
     setLocationCoordinatesModal(selectedCity ?? { lat: 0, lng: 0 });
   };
 
   const { lens, save } = useForm<LocationSelectorFormType>({
     value: {},
-    onSave: (person) =>
-      Promise.resolve({ form: person }) /* place your save api call here */,
+    onSave: (location) =>
+      Promise.resolve({ form: location }) /* place your save api call here */,
     onSuccess: () =>
       svc.uuiNotifications.show((props) => (
         <SuccessNotification {...props}>
@@ -145,7 +147,7 @@ export function LocationSelectorModal({
         comments: { isRequired: false },
       },
     }),
-    settingsKey: 'basic-form-example',
+    settingsKey: 'location-selector-form',
   });
 
   return (
@@ -190,11 +192,11 @@ export function LocationSelectorModal({
                       id="cityInput"
                       {...lens.prop('city').toProps()}
                       dataSource={cityDataSource}
-                      value={cityIdModal}
+                      value={cityNameModal}
                       onValueChange={onCityValueChange}
                       entityName="City"
                       selectionMode="single"
-                      valueType="id"
+                      valueType="entity"
                       sorting={{ field: 'name', direction: 'asc' }}
                       placeholder={t(
                         'tendersPage.newTender.tenderLocationModal.cityInputPlaceholder',
@@ -220,7 +222,7 @@ export function LocationSelectorModal({
                       onValueChange={setAddressModalValue}
                       entityName="Address"
                       selectionMode="single"
-                      valueType="id"
+                      valueType="entity"
                       sorting={{ field: 'name', direction: 'asc' }}
                       placeholder={t(
                         'tendersPage.newTender.tenderLocationModal.addressInputPlaceholder',

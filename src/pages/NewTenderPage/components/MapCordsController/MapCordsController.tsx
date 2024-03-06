@@ -9,11 +9,11 @@ export const MapCordsController = ({
 }) => {
   if (cityCords) {
     const map = useMapEvent('click', () => {
-      map.setView([cityCords.lat, cityCords.lng], 13);
+      map.setView([cityCords.lat, cityCords.lng]);
     });
 
     useEffect(() => {
-      map.setView([cityCords.lat, cityCords.lng], 13);
+      map.setView([cityCords.lat, cityCords.lng]);
     }, [cityCords]);
   }
 
@@ -42,11 +42,11 @@ export const DraggableMarker = ({
   );
 
   const map = useMapEvent('click', () => {
-    map.setView([position.lat, position.lng], 13);
+    map.setView([position.lat, position.lng]);
   });
 
   useEffect(() => {
-    map.setView([position.lat, position.lng], 13);
+    map.setView([position.lat, position.lng]);
   }, [position]);
 
   return (

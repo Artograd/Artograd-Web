@@ -54,8 +54,16 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const categoryList: CategoryItemType[] = [
-  { id: 1, name: 'Outdoors' },
-  { id: 2, name: 'Sculptures' },
+  { id: 0, name: 'Sculptures' },
+  { id: 1, name: 'Mosaics' },
+  { id: 2, name: 'Murals' },
+  { id: 3, name: 'Graffiti/Street Art' },
+  { id: 4, name: 'Functional Art' },
+  { id: 5, name: 'Interactive Installations' },
+  { id: 6, name: 'Botanical Art' },
+  { id: 7, name: 'Water Features' },
+  { id: 8, name: 'Themed Gardens' },
+  { id: 9, name: 'Recycled/Upcycled Art' },
 ];
 
 type NewTenderFormType = {

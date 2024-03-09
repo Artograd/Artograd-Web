@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { Step } from '../Step';
-import EmptyIcon from '../../../../../images/empty.svg';
-import { testWrapper } from '../../../../../utils/testWrapper';
+import EmptyIcon from '../../../images/empty.svg';
+import { testWrapper } from '../../../utils/testWrapper';
 import { createMemoryHistory } from 'history';
 
 const mockData = {

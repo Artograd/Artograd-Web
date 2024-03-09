@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import EmptyIcon from '../images/empty.svg';
-import { Step as StepComponent } from '../pages/HomePage/components/Step/Step';
+import { Step as StepComponent } from '../components/Step/Step';
 
 const meta = {
   title: 'Pages/Homepage/Step',

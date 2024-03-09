@@ -11,9 +11,9 @@ import { ReactComponent as ProfileIcon } from '@epam/assets/icons/common/social-
 import { ReactComponent as SettingsIcon } from '@epam/assets/icons/common/action-settings-18.svg';
 import { ReactComponent as BellIcon } from '@epam/assets/icons/common/bell-18.svg';
 import { ReactComponent as LogoutIcon } from '@epam/assets/icons/common/navigation-logout-18.svg';
-import { identityState, saveUserData } from '../../../store/identitySlice';
+import { identityState, saveUserData } from '../../store/identitySlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../store/store';
+import { RootState } from '../../store/store';
 import { useHistory } from 'react-router-dom';
 import styles from './Avatar.module.scss';
 import { useTranslation } from 'react-i18next';

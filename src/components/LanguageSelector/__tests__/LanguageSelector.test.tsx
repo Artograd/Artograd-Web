@@ -1,6 +1,6 @@
 import { LanguageSelector } from '../LanguageSelector';
 import { createMemoryHistory } from 'history';
-import { testWrapper } from '../../../../utils/testWrapper';
+import { testWrapper } from '../../../utils/testWrapper';
 
 const mockGetItem = jest.fn();
 const mockSetItem = jest.fn();

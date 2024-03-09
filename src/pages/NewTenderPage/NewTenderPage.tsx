@@ -32,17 +32,17 @@ import { RootState } from '../../store/store';
 import 'dayjs/locale/ru';
 import { FlexSpacer } from '@epam/uui-components';
 import { ReactComponent as navigationBack } from '@epam/assets/icons/common/navigation-back-18.svg';
-import { FileUpload } from './components/FileUpload/FileUpload';
+import { FileUpload } from '../../components/FileUpload/FileUpload';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
 import { AddressItemType, CategoryItemType, CityItemType } from '../../types';
-import { MapCordsController } from './components/MapCordsController/MapCordsController';
+import { MapCordsController } from '../../components/MapCordsController/MapCordsController';
 import {
   LocationSelectorModal,
   addressList,
   cityList,
-} from './components/LocationSelectorModal/LocationSelectorModal';
+} from '../../components/LocationSelectorModal/LocationSelectorModal';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
 

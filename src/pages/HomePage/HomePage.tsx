@@ -3,7 +3,7 @@ import styles from './HomePage.module.scss';
 import DragAndDropIcon from '../../images/draganddrop.svg';
 import EmptyIcon from '../../images/empty.svg';
 import LaptopIcon from '../../images/laptop.svg';
-import { Step } from './components/Step/Step';
+import { Step } from '../../components/Step/Step';
 import { useTranslation, Trans } from 'react-i18next';
 
 const cognitoSignUpUrl = `${

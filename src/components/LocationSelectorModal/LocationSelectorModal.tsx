@@ -26,7 +26,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
 import citiesDB from './cities.json';
-import { AddressItemType, CityItemType } from '../../../../types';
+import { AddressItemType, CityItemType } from '../../types';
 import { useTranslation } from 'react-i18next';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';

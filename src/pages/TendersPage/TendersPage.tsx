@@ -16,7 +16,6 @@ export const TendersPage = () => {
   );
   const isOfficer = userRoles?.includes('Officials');
 
-  console.log(':::isOfficer', isOfficer);
   return (
     <Panel cx={styles.wrapper}>
       <FlexRow>

@@ -15,8 +15,8 @@ import { useTranslation } from 'react-i18next';
 
 import { RootState } from '../store/store';
 import { useSelector } from 'react-redux';
-import { Avatar } from './components/Avatar/Avatar';
-import { LanguageSelector } from './components/LanguageSelector/LanguageSelector';
+import { Avatar } from '../components/Avatar/Avatar';
+import { LanguageSelector } from '../components/LanguageSelector/LanguageSelector';
 
 const cognitoLoginUrl = `${
   process.env.REACT_APP_LOGIN_URL

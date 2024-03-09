@@ -1,7 +1,7 @@
 import { Avatar } from '../Avatar';
 import { createMemoryHistory } from 'history';
-import { testWrapper } from '../../../../utils/testWrapper';
-import { identityState } from '../../../../store/identitySlice';
+import { testWrapper } from '../../../utils/testWrapper';
+import { identityState } from '../../../store/identitySlice';
 import { screen, userEvent } from '@epam/uui-test-utils';
 
 describe('Avatar', () => {
@@ -20,6 +20,7 @@ describe('Avatar', () => {
           ...identityState,
           given_name: 'test',
           family_name: 'user',
+          email: 'email@email.com',
         },
       },
     });

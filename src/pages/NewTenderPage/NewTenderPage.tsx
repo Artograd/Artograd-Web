@@ -281,9 +281,6 @@ export const NewTenderPage = () => {
                       )}
                       cx={styles.inputLabel}
                       {...lens.prop('tenderValidity').toProps()}
-                      info={t(
-                        'tendersPage.newTender.tenderValidityPeriodLabelTooltipText',
-                      )}
                     >
                       <RangeDatePicker
                         id="tenderValidity"
@@ -308,9 +305,6 @@ export const NewTenderPage = () => {
                       )}
                       cx={styles.inputLabel}
                       {...lens.prop('tenderExpectedDelivery').toProps()}
-                      info={t(
-                        'tendersPage.newTender.tenderExpectedDeliveryLabelTooltipText',
-                      )}
                     >
                       <DatePicker
                         id="tenderExpectedDelivery"

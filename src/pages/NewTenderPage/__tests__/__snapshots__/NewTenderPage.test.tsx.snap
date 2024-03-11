@@ -1,0 +1,1374 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Not found page renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="uui-panel nNCe-- wrapper uEZmHy"
+      >
+        <a
+          class="uui-button-box uui-enabled -clickable uui-anchor uui-link_button iTxfW2 uui-size-36 uui-has-left-icon uui-no-right-icon uui-color-primary pageBackCta"
+          href=""
+          tabindex="0"
+        >
+          <div
+            class="Prmk3w uui-icon uui-enabled"
+          >
+            <svg
+              class=""
+            >
+              navigation-back-18.svg
+            </svg>
+          </div>
+          <div
+            class="uui-caption"
+          >
+            Back
+          </div>
+        </a>
+        <div
+          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV pageTitle doyi1y"
+        >
+          Create New Tender
+        </div>
+        <div
+          class="uui-panel nNCe-- contentWrapper uEZmHy"
+        >
+          <div
+            class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+          >
+            <div
+              class="contentBody"
+              style="min-width: 0; flex-basis: 100%;"
+            >
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-basis: 100%;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                  >
+                    Primary Tender Information
+                  </div>
+                  <div
+                    class="tNXKDT cqsR8q OhBval inputLabel"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                          for="tenderTitle"
+                        >
+                          Tender Title
+                          <span
+                            class="uui-labeled-input-asterisk"
+                          >
+                            *
+                          </span>
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          data-testid="tender-title-input"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            id="tenderTitle"
+                            placeholder="Enter a text"
+                            required=""
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tNXKDT cqsR8q OhBval inputLabel"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                          for="tenderDescription"
+                        >
+                          Tender Description
+                          <span
+                            class="uui-labeled-input-asterisk"
+                          >
+                            *
+                          </span>
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="Bo8Y6e uui-input-box PgE9Za cc-iMy azbYHN"
+                          data-testid="tender-description-input"
+                          tabindex="-1"
+                        >
+                          <textarea
+                            class="-clickable QMkP3L uui-input"
+                            id="tenderDescription"
+                            placeholder="Type a text"
+                            required=""
+                            tabindex="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-basis: 100%;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                  >
+                    Tender Details
+                  </div>
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                  >
+                    <div
+                      class="rangeDatePickerWrapper"
+                      style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                    >
+                      <div
+                        class="tNXKDT cqsR8q OhBval inputLabel"
+                      >
+                        <div
+                          class="uui-label-top"
+                        >
+                          <div
+                            class="ASCPqT"
+                          >
+                            <label
+                              class="uui-label"
+                              for="tenderValidity"
+                            >
+                              Tender Validity Period
+                              <span
+                                class="uui-labeled-input-asterisk"
+                              >
+                                *
+                              </span>
+                              <svg
+                                class="uui-labeled-input-info-icon"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7 12h2V7H7v5ZM8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8Zm0 15c-3.859 0-7-3.141-7-7s3.141-7 7-7 7 3.141 7 7-3.141 7-7 7ZM7 6h2V4H7v2Z"
+                                />
+                              </svg>
+                            </label>
+                          </div>
+                          <div>
+                            <div
+                              class="SPq1MU"
+                            >
+                              <div
+                                class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR -AB84m fkZRa9"
+                                data-testid="tender-validity-from-input"
+                                tabindex="-1"
+                              >
+                                <div
+                                  class="Prmk3w uui-icon uui-enabled"
+                                >
+                                  <svg
+                                    class=""
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M14 3V1h-2v2H6V1H4v2C3 3 2 4 2 5v10c0 1 1 2 2 2h10c1 0 2-1 2-2V5c0-1-1-2-2-2zm0 12-10 .048V7h10v8z"
+                                      fill-rule="evenodd"
+                                    />
+                                  </svg>
+                                </div>
+                                <input
+                                  aria-invalid="false"
+                                  class="uui-input"
+                                  id="tenderValidity"
+                                  placeholder="From"
+                                  tabindex="0"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                              <div
+                                class="_2BpPsG"
+                              />
+                              <div
+                                class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR -AB84m fkZRa9"
+                                data-testid="tender-validity-to-input"
+                                tabindex="-1"
+                              >
+                                <input
+                                  aria-invalid="false"
+                                  class="uui-input"
+                                  placeholder="To"
+                                  tabindex="0"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class=""
+                      style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                    >
+                      <div
+                        class="tNXKDT cqsR8q OhBval inputLabel"
+                      >
+                        <div
+                          class="uui-label-top"
+                        >
+                          <div
+                            class="ASCPqT"
+                          >
+                            <label
+                              class="uui-label"
+                              for="tenderExpectedDelivery"
+                            >
+                              Expected Delivery
+                              <svg
+                                class="uui-labeled-input-info-icon"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7 12h2V7H7v5ZM8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8Zm0 15c-3.859 0-7-3.141-7-7s3.141-7 7-7 7 3.141 7 7-3.141 7-7 7ZM7 6h2V4H7v2Z"
+                                />
+                              </svg>
+                            </label>
+                            <div
+                              class="CcZAjD"
+                            />
+                            <div
+                              class="uui-labeled-input-sidenote"
+                            >
+                              This field is optional
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                              data-testid="tender-expected-delivery-input"
+                              tabindex="-1"
+                            >
+                              <div
+                                class="Prmk3w uui-icon uui-enabled"
+                              >
+                                <svg
+                                  class=""
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M14 3V1h-2v2H6V1H4v2C3 3 2 4 2 5v10c0 1 1 2 2 2h10c1 0 2-1 2-2V5c0-1-1-2-2-2zm0 12-10 .048V7h10v8z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </div>
+                              <input
+                                aria-invalid="false"
+                                class="uui-input"
+                                id="tenderExpectedDelivery"
+                                placeholder="MMM D, YYYY"
+                                tabindex="0"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                  >
+                    <div
+                      class="categoryPickerWrapper"
+                      style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                    >
+                      <div
+                        class="tNXKDT cqsR8q OhBval inputLabel"
+                      >
+                        <div
+                          class="uui-label-top"
+                        >
+                          <div
+                            class="ASCPqT"
+                          >
+                            <label
+                              class="uui-label"
+                              for="tenderCategory"
+                            >
+                              Category
+                            </label>
+                            <div
+                              class="CcZAjD"
+                            />
+                            <div
+                              class="uui-labeled-input-sidenote"
+                            >
+                              This field is optional
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                              tabindex="0"
+                            >
+                              <div
+                                class="rWm8MA _3RetBX"
+                              >
+                                <input
+                                  aria-haspopup="true"
+                                  autocomplete="no"
+                                  class="uui-input"
+                                  id="tenderCategory"
+                                  placeholder="Please select category(s)"
+                                  readonly=""
+                                  tabindex="-1"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                              <div
+                                class="PELu7x"
+                              >
+                                <div
+                                  class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                                >
+                                  <svg
+                                    class=""
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                      fill-rule="evenodd"
+                                    />
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class=""
+                      style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-basis: 100%;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                  >
+                    Art Object Location
+                  </div>
+                  <button
+                    class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary indicateLink"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="uui-caption"
+                    >
+                      Indicate location
+                    </div>
+                  </button>
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB CKBzOM"
+                  >
+                    <div
+                      class=""
+                      style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                    />
+                    <div
+                      class="mapWrapper"
+                      style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-basis: 100%;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                  >
+                    Tender Owner Contact Information
+                  </div>
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
+                  >
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                    >
+                      Contact person
+                    </div>
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                    >
+                      test user
+                    </div>
+                  </div>
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
+                  >
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                    >
+                      Organisation
+                    </div>
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                    >
+                      Regional Culture Center
+                    </div>
+                  </div>
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
+                  >
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                    >
+                      Email
+                    </div>
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                    >
+                      email@email.com
+                    </div>
+                  </div>
+                  <div
+                    class=""
+                    style="min-width: 0; flex-basis: 100%;"
+                  >
+                    <div
+                      class="uui-alert XNat-I _9APrWp uui-color-warning emailInfoAlert wuGYSa"
+                      role="alert"
+                    >
+                      <div
+                        class="ABTbTQ"
+                      >
+                        <div
+                          class="WE48bd"
+                        >
+                          <label
+                            class="HgvTIN uui-checkbox-container w9Tz3K QSUSrB uui-color-primary -clickable"
+                          >
+                            <div
+                              class="uui-checkbox"
+                            >
+                              <input
+                                aria-checked="false"
+                                tabindex="0"
+                                type="checkbox"
+                              />
+                            </div>
+                            <div
+                              class="uui-input-label"
+                            >
+                              Show my email as means of contact in the tender description.
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-basis: 100%;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                  >
+                    Additional Information
+                  </div>
+                  <div
+                    class="F2HsOX"
+                  >
+                    <div
+                      class="U-cB83"
+                    >
+                      <div
+                        class="uui-flex-row kfXZUl bich2Z _5Jq2IB RkwqFu"
+                      >
+                        <div
+                          class="Prmk3w uui-icon uui-enabled J9uq-r"
+                        >
+                          <svg
+                            class=""
+                            height="16"
+                            viewBox="0 0 24 16"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14 9v4h-4V9H7l5-5 5 5m2.35-2.97A7.49 7.49 0 0 0 12 0C9.11 0 6.6 1.64 5.35 4.03A6.004 6.004 0 0 0 6 16h13a5 5 0 0 0 5-5c0-2.64-2.05-4.78-4.65-4.97Z"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography Y3TuJR xhqm1P yHeE5G doyi1y"
+                        >
+                          Drop files to attach or
+                        </div>
+                        <div>
+                          <input
+                            class="CyS8CT"
+                            multiple=""
+                            type="file"
+                          />
+                          <div
+                            class="uui-typography uui-typography-size-14"
+                          >
+                            <button
+                              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary y3LcPj"
+                              tabindex="0"
+                              type="button"
+                            >
+                              <div
+                                class="uui-caption"
+                              >
+                                browse
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="Ka60RD uui-text uui-color-tertiary uui-font-weight-400 uui-font-style-normal uui-typography Y3TuJR xhqm1P doyi1y"
+                      >
+                        Up to 10 files. Limit for 1 file is 50 Mb
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="uui-panel nNCe-- separator uEZmHy"
+          />
+          <div
+            class="uui-flex-row kfXZUl _7f-LqE contentFooter _5Jq2IB RkwqFu"
+          >
+            <a
+              class="uui-button-box uui-enabled -clickable uui-anchor VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36"
+              href=""
+              tabindex="0"
+            >
+              <div
+                class="uui-caption"
+              >
+                Cancel
+              </div>
+            </a>
+            <div
+              class="CcZAjD"
+            />
+            <button
+              class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36 draftCta"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Save as Draft
+              </div>
+            </button>
+            <button
+              class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
+              data-testid="form-submit"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Create Tender
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="uui-panel nNCe-- wrapper uEZmHy"
+    >
+      <a
+        class="uui-button-box uui-enabled -clickable uui-anchor uui-link_button iTxfW2 uui-size-36 uui-has-left-icon uui-no-right-icon uui-color-primary pageBackCta"
+        href=""
+        tabindex="0"
+      >
+        <div
+          class="Prmk3w uui-icon uui-enabled"
+        >
+          <svg
+            class=""
+          >
+            navigation-back-18.svg
+          </svg>
+        </div>
+        <div
+          class="uui-caption"
+        >
+          Back
+        </div>
+      </a>
+      <div
+        class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV pageTitle doyi1y"
+      >
+        Create New Tender
+      </div>
+      <div
+        class="uui-panel nNCe-- contentWrapper uEZmHy"
+      >
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class="contentBody"
+            style="min-width: 0; flex-basis: 100%;"
+          >
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class=""
+                style="min-width: 0; flex-basis: 100%;"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                >
+                  Primary Tender Information
+                </div>
+                <div
+                  class="tNXKDT cqsR8q OhBval inputLabel"
+                >
+                  <div
+                    class="uui-label-top"
+                  >
+                    <div
+                      class="ASCPqT"
+                    >
+                      <label
+                        class="uui-label"
+                        for="tenderTitle"
+                      >
+                        Tender Title
+                        <span
+                          class="uui-labeled-input-asterisk"
+                        >
+                          *
+                        </span>
+                      </label>
+                    </div>
+                    <div>
+                      <div
+                        class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                        data-testid="tender-title-input"
+                        tabindex="-1"
+                      >
+                        <input
+                          aria-invalid="false"
+                          class="uui-input"
+                          id="tenderTitle"
+                          placeholder="Enter a text"
+                          required=""
+                          tabindex="0"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tNXKDT cqsR8q OhBval inputLabel"
+                >
+                  <div
+                    class="uui-label-top"
+                  >
+                    <div
+                      class="ASCPqT"
+                    >
+                      <label
+                        class="uui-label"
+                        for="tenderDescription"
+                      >
+                        Tender Description
+                        <span
+                          class="uui-labeled-input-asterisk"
+                        >
+                          *
+                        </span>
+                      </label>
+                    </div>
+                    <div>
+                      <div
+                        class="Bo8Y6e uui-input-box PgE9Za cc-iMy azbYHN"
+                        data-testid="tender-description-input"
+                        tabindex="-1"
+                      >
+                        <textarea
+                          class="-clickable QMkP3L uui-input"
+                          id="tenderDescription"
+                          placeholder="Type a text"
+                          required=""
+                          tabindex="0"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class=""
+                style="min-width: 0; flex-basis: 100%;"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                >
+                  Tender Details
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="rangeDatePickerWrapper"
+                    style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval inputLabel"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                            for="tenderValidity"
+                          >
+                            Tender Validity Period
+                            <span
+                              class="uui-labeled-input-asterisk"
+                            >
+                              *
+                            </span>
+                            <svg
+                              class="uui-labeled-input-info-icon"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M7 12h2V7H7v5ZM8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8Zm0 15c-3.859 0-7-3.141-7-7s3.141-7 7-7 7 3.141 7 7-3.141 7-7 7ZM7 6h2V4H7v2Z"
+                              />
+                            </svg>
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="SPq1MU"
+                          >
+                            <div
+                              class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR -AB84m fkZRa9"
+                              data-testid="tender-validity-from-input"
+                              tabindex="-1"
+                            >
+                              <div
+                                class="Prmk3w uui-icon uui-enabled"
+                              >
+                                <svg
+                                  class=""
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M14 3V1h-2v2H6V1H4v2C3 3 2 4 2 5v10c0 1 1 2 2 2h10c1 0 2-1 2-2V5c0-1-1-2-2-2zm0 12-10 .048V7h10v8z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </div>
+                              <input
+                                aria-invalid="false"
+                                class="uui-input"
+                                id="tenderValidity"
+                                placeholder="From"
+                                tabindex="0"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                            <div
+                              class="_2BpPsG"
+                            />
+                            <div
+                              class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR -AB84m fkZRa9"
+                              data-testid="tender-validity-to-input"
+                              tabindex="-1"
+                            >
+                              <input
+                                aria-invalid="false"
+                                class="uui-input"
+                                placeholder="To"
+                                tabindex="0"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval inputLabel"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                            for="tenderExpectedDelivery"
+                          >
+                            Expected Delivery
+                            <svg
+                              class="uui-labeled-input-info-icon"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M7 12h2V7H7v5ZM8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8Zm0 15c-3.859 0-7-3.141-7-7s3.141-7 7-7 7 3.141 7 7-3.141 7-7 7ZM7 6h2V4H7v2Z"
+                              />
+                            </svg>
+                          </label>
+                          <div
+                            class="CcZAjD"
+                          />
+                          <div
+                            class="uui-labeled-input-sidenote"
+                          >
+                            This field is optional
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            data-testid="tender-expected-delivery-input"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="Prmk3w uui-icon uui-enabled"
+                            >
+                              <svg
+                                class=""
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M14 3V1h-2v2H6V1H4v2C3 3 2 4 2 5v10c0 1 1 2 2 2h10c1 0 2-1 2-2V5c0-1-1-2-2-2zm0 12-10 .048V7h10v8z"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </div>
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              id="tenderExpectedDelivery"
+                              placeholder="MMM D, YYYY"
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="categoryPickerWrapper"
+                    style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval inputLabel"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                            for="tenderCategory"
+                          >
+                            Category
+                          </label>
+                          <div
+                            class="CcZAjD"
+                          />
+                          <div
+                            class="uui-labeled-input-sidenote"
+                          >
+                            This field is optional
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                            tabindex="0"
+                          >
+                            <div
+                              class="rWm8MA _3RetBX"
+                            >
+                              <input
+                                aria-haspopup="true"
+                                autocomplete="no"
+                                class="uui-input"
+                                id="tenderCategory"
+                                placeholder="Please select category(s)"
+                                readonly=""
+                                tabindex="-1"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                            <div
+                              class="PELu7x"
+                            >
+                              <div
+                                class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                              >
+                                <svg
+                                  class=""
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class=""
+                style="min-width: 0; flex-basis: 100%;"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                >
+                  Art Object Location
+                </div>
+                <button
+                  class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary indicateLink"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Indicate location
+                  </div>
+                </button>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB CKBzOM"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                  />
+                  <div
+                    class="mapWrapper"
+                    style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class=""
+                style="min-width: 0; flex-basis: 100%;"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                >
+                  Tender Owner Contact Information
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                  >
+                    Contact person
+                  </div>
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                  >
+                    test user
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                  >
+                    Organisation
+                  </div>
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                  >
+                    Regional Culture Center
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                  >
+                    Email
+                  </div>
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                  >
+                    email@email.com
+                  </div>
+                </div>
+                <div
+                  class=""
+                  style="min-width: 0; flex-basis: 100%;"
+                >
+                  <div
+                    class="uui-alert XNat-I _9APrWp uui-color-warning emailInfoAlert wuGYSa"
+                    role="alert"
+                  >
+                    <div
+                      class="ABTbTQ"
+                    >
+                      <div
+                        class="WE48bd"
+                      >
+                        <label
+                          class="HgvTIN uui-checkbox-container w9Tz3K QSUSrB uui-color-primary -clickable"
+                        >
+                          <div
+                            class="uui-checkbox"
+                          >
+                            <input
+                              aria-checked="false"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                          </div>
+                          <div
+                            class="uui-input-label"
+                          >
+                            Show my email as means of contact in the tender description.
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class=""
+                style="min-width: 0; flex-basis: 100%;"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
+                >
+                  Additional Information
+                </div>
+                <div
+                  class="F2HsOX"
+                >
+                  <div
+                    class="U-cB83"
+                  >
+                    <div
+                      class="uui-flex-row kfXZUl bich2Z _5Jq2IB RkwqFu"
+                    >
+                      <div
+                        class="Prmk3w uui-icon uui-enabled J9uq-r"
+                      >
+                        <svg
+                          class=""
+                          height="16"
+                          viewBox="0 0 24 16"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 9v4h-4V9H7l5-5 5 5m2.35-2.97A7.49 7.49 0 0 0 12 0C9.11 0 6.6 1.64 5.35 4.03A6.004 6.004 0 0 0 6 16h13a5 5 0 0 0 5-5c0-2.64-2.05-4.78-4.65-4.97Z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography Y3TuJR xhqm1P yHeE5G doyi1y"
+                      >
+                        Drop files to attach or
+                      </div>
+                      <div>
+                        <input
+                          class="CyS8CT"
+                          multiple=""
+                          type="file"
+                        />
+                        <div
+                          class="uui-typography uui-typography-size-14"
+                        >
+                          <button
+                            class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary y3LcPj"
+                            tabindex="0"
+                            type="button"
+                          >
+                            <div
+                              class="uui-caption"
+                            >
+                              browse
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="Ka60RD uui-text uui-color-tertiary uui-font-weight-400 uui-font-style-normal uui-typography Y3TuJR xhqm1P doyi1y"
+                    >
+                      Up to 10 files. Limit for 1 file is 50 Mb
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="uui-panel nNCe-- separator uEZmHy"
+        />
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE contentFooter _5Jq2IB RkwqFu"
+        >
+          <a
+            class="uui-button-box uui-enabled -clickable uui-anchor VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36"
+            href=""
+            tabindex="0"
+          >
+            <div
+              class="uui-caption"
+            >
+              Cancel
+            </div>
+          </a>
+          <div
+            class="CcZAjD"
+          />
+          <button
+            class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36 draftCta"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="uui-caption"
+            >
+              Save as Draft
+            </div>
+          </button>
+          <button
+            class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
+            data-testid="form-submit"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="uui-caption"
+            >
+              Create Tender
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByAria": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByRoleAndText": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByAria": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByRoleAndText": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByAria": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByRoleAndText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByAria": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByRoleAndText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByAria": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByRoleAndText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByAria": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByRoleAndText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

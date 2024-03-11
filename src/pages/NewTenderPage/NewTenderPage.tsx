@@ -45,6 +45,7 @@ import {
 } from '../../components/LocationSelectorModal/LocationSelectorModal';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
+import axios from 'axios';
 
 const DefaultIcon = L.icon({
   iconUrl: MarkerIcon,
@@ -71,7 +72,7 @@ type NewTenderFormType = {
   tenderDescription?: string;
   tenderValidity?: RangeDatePickerValue;
   tenderExpectedDelivery?: string;
-  tenderCategory?: string[];
+  tenderCategory?: number[];
   emailSharingAgreement?: boolean;
   locationCityName?: CityItemType;
   locationComments?: string;
@@ -131,6 +132,10 @@ export const NewTenderPage = () => {
     return addressList.find((address) => address.id === addressValue?.id);
   };
 
+  const getCategoryById = (id: number) => {
+    return categoryList.find((category) => category.id === id);
+  };
+
   const initialValues: NewTenderFormType = {
     tenderTitle: '',
     tenderDescription: '',
@@ -152,13 +157,39 @@ export const NewTenderPage = () => {
     value: initialValues,
     onSave: (tender) => Promise.resolve({ form: tender }),
     onSuccess: (form) =>
-      console.log(':::form', {
-        ...form,
-        locationCoordinates,
-        locationAddress: addressValue,
-        locationComments: commentsValue,
-        locationCityName: cityName,
-      }),
+      axios.post(
+        'https://t8g5g9h07h.execute-api.eu-central-1.amazonaws.com/api/tenders',
+        {
+          title: form.tenderTitle,
+          description: form.tenderDescription,
+          submissionStart: form.tenderValidity?.from,
+          submissionEnd: form.tenderValidity?.to,
+          expectedDelivery: form.tenderExpectedDelivery,
+          category: form.tenderCategory?.map(
+            (tenderCategory) => getCategoryById(tenderCategory)?.name,
+          ),
+          location: {
+            nestedLocation: {
+              name: cityName?.name,
+            },
+            geoPosition: {
+              latitude: cityName?.lat,
+              longitude: cityName?.lng,
+            },
+            addressLine: addressValue?.name,
+            addressComment: commentsValue,
+          },
+          ownerName: `${form.ownerFirstName} ${form.ownerLastName}`,
+          ownerId: 'string',
+          organization: form.ownerOrganization,
+          ownerEmail: form.ownerEmail,
+          showEmail: form.emailSharingAgreement,
+          files: ['string'],
+          coverUrl: 'string',
+          status: 'string',
+          id: 'string',
+        },
+      ),
     getMetadata: () => ({
       props: {
         tenderTitle: { isRequired: true },
@@ -210,6 +241,7 @@ export const NewTenderPage = () => {
                     placeholder={t(
                       'tendersPage.newTender.tenderTitlePlaceholder',
                     )}
+                    rawProps={{ 'data-testid': `tender-title-input` }}
                   />
                 </LabeledInput>
 
@@ -225,6 +257,7 @@ export const NewTenderPage = () => {
                     placeholder={t(
                       'tendersPage.newTender.tenderDescriptionPlaceholder',
                     )}
+                    rawProps={{ 'data-testid': `tender-description-input` }}
                   />
                 </LabeledInput>
               </FlexCell>
@@ -256,6 +289,10 @@ export const NewTenderPage = () => {
                         id="tenderValidity"
                         {...lens.prop('tenderValidity').toProps()}
                         format="MMM D, YYYY"
+                        rawProps={{
+                          from: { 'data-testid': `tender-validity-from-input` },
+                          to: { 'data-testid': `tender-validity-to-input` },
+                        }}
                       />
                     </LabeledInput>
                   </FlexCell>
@@ -280,6 +317,11 @@ export const NewTenderPage = () => {
                         {...lens.prop('tenderExpectedDelivery').toProps()}
                         format="MMM D, YYYY"
                         placeholder={t('global.datePickerPlaceholder')}
+                        rawProps={{
+                          input: {
+                            'data-testid': `tender-expected-delivery-input`,
+                          },
+                        }}
                       />
                     </LabeledInput>
                   </FlexCell>
@@ -490,6 +532,7 @@ export const NewTenderPage = () => {
             color="primary"
             caption={t('tendersPage.newTender.pageFormFooterCreateCta')}
             onClick={() => save()}
+            rawProps={{ 'data-testid': `form-submit` }}
           />
         </FlexRow>
       </Panel>

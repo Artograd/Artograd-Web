@@ -1,0 +1,1172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location Selector Modal renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    style="overflow: hidden;"
+  >
+    <div>
+      <div
+        class="Pu1YxZ _36SlXK"
+        style="z-index: 1000;"
+      >
+        <div
+          aria-label="Click to close a modal"
+          class="uui-modal-blocker"
+        />
+        <div
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+        <div
+          data-focus-lock-disabled="false"
+        >
+          <div
+            aria-modal="true"
+            class="uui-modal-window _4FWiuv -TpFL5 uEZmHy"
+            role="dialog"
+            style="width: 753px; height: auto;"
+          >
+            <div
+              class="uui-panel nNCe-- nJp05d uEZmHy"
+            >
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE QjrJq4 kxaOed _4iILhV BRv7OH _4FWiuv X4eqw- _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography Y3TuJR _9VGu-f Rcc41K doyi1y"
+                >
+                  Indicate location
+                </div>
+                <div
+                  class="CcZAjD"
+                />
+                <div
+                  class=""
+                  style="min-width: 0; flex-shrink: 0; flex-basis: auto;"
+                >
+                  <button
+                    aria-label="Close modal"
+                    class="uui-button-box uui-enabled -clickable _0pc0E8 uui-icon_button uui-color-neutral jWV8Xb"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="Prmk3w uui-icon uui-enabled"
+                    >
+                      <svg
+                        class=""
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="_9arQdK OH5WQB uui-scroll-bars uui-shadow-top uui-shadow-bottom"
+                style="position: relative; overflow: hidden; width: 100%; height: 100%; display: flex;"
+              >
+                <div
+                  style="position: relative; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: 0px; margin-bottom: 0px; flex: 1 1 auto;"
+                >
+                  <div
+                    class="uui-panel nNCe-- TmSty- uEZmHy"
+                  >
+                    <div
+                      class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB CKBzOM"
+                    >
+                      <div
+                        class=""
+                        style="min-width: 0; flex-basis: 100%;"
+                      >
+                        <div
+                          class="tNXKDT cqsR8q OhBval modalInputLabel"
+                        >
+                          <div
+                            class="uui-label-top"
+                          >
+                            <div
+                              class="ASCPqT"
+                            >
+                              <label
+                                class="uui-label"
+                                for="countryInput"
+                              >
+                                Country
+                              </label>
+                            </div>
+                            <div>
+                              <div
+                                class="VJ2Cla uui-input-box uui-disabled NPdboF kBLuie p-89oR"
+                                tabindex="-1"
+                              >
+                                <input
+                                  aria-disabled="true"
+                                  aria-invalid="false"
+                                  class="uui-input"
+                                  disabled=""
+                                  id="countryInput"
+                                  placeholder="Please type text"
+                                  tabindex="-1"
+                                  type="text"
+                                  value="Montenegro"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="tNXKDT cqsR8q OhBval modalInputLabel"
+                        >
+                          <div
+                            class="uui-label-top"
+                          >
+                            <div
+                              class="ASCPqT"
+                            >
+                              <label
+                                class="uui-label"
+                                for="cityInput"
+                              >
+                                City / Region
+                                <span
+                                  class="uui-labeled-input-asterisk"
+                                >
+                                  *
+                                </span>
+                              </label>
+                            </div>
+                            <div>
+                              <div
+                                class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                                data-testid="city-selector-input"
+                                tabindex="0"
+                              >
+                                <div
+                                  class="rWm8MA"
+                                >
+                                  <input
+                                    aria-haspopup="true"
+                                    autocomplete="no"
+                                    class="uui-input _4-lVKC -tX49A uui-placeholder"
+                                    id="cityInput"
+                                    placeholder="Podgorica"
+                                    tabindex="-1"
+                                    type="text"
+                                    value="city-name"
+                                  />
+                                </div>
+                                <div
+                                  class="PELu7x"
+                                >
+                                  <div
+                                    aria-label="Clear"
+                                    class="Prmk3w uui-icon uui-enabled -clickable uui-icon-cancel -clickable"
+                                    role="button"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      class=""
+                                      height="18"
+                                      viewBox="0 0 18 18"
+                                      width="18"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M14.25 4.808 13.193 3.75 9 7.942 4.808 3.75 3.75 4.808 7.942 9 3.75 13.193l1.058 1.057L9 10.057l4.193 4.193 1.057-1.057L10.057 9z"
+                                        fill-rule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                  <div
+                                    class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                                  >
+                                    <svg
+                                      class=""
+                                      height="18"
+                                      viewBox="0 0 18 18"
+                                      width="18"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                        fill-rule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="tNXKDT cqsR8q OhBval modalInputLabel"
+                        >
+                          <div
+                            class="uui-label-top"
+                          >
+                            <div
+                              class="ASCPqT"
+                            >
+                              <label
+                                class="uui-label"
+                                for="addressInput"
+                              >
+                                Address line
+                              </label>
+                              <div
+                                class="CcZAjD"
+                              />
+                              <div
+                                class="uui-labeled-input-sidenote"
+                              >
+                                This field is optional
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                                data-testid="address-selector-input"
+                                tabindex="0"
+                              >
+                                <div
+                                  class="rWm8MA"
+                                >
+                                  <input
+                                    aria-haspopup="true"
+                                    autocomplete="no"
+                                    class="uui-input _4-lVKC -tX49A uui-placeholder"
+                                    id="addressInput"
+                                    placeholder="address value"
+                                    tabindex="-1"
+                                    type="text"
+                                    value="address value"
+                                  />
+                                </div>
+                                <div
+                                  class="PELu7x"
+                                >
+                                  <div
+                                    aria-label="Clear"
+                                    class="Prmk3w uui-icon uui-enabled -clickable uui-icon-cancel -clickable"
+                                    role="button"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      class=""
+                                      height="18"
+                                      viewBox="0 0 18 18"
+                                      width="18"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M14.25 4.808 13.193 3.75 9 7.942 4.808 3.75 3.75 4.808 7.942 9 3.75 13.193l1.058 1.057L9 10.057l4.193 4.193 1.057-1.057L10.057 9z"
+                                        fill-rule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                  <div
+                                    class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                                  >
+                                    <svg
+                                      class=""
+                                      height="18"
+                                      viewBox="0 0 18 18"
+                                      width="18"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                        fill-rule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class=""
+                        style="min-width: 0; flex-basis: 100%;"
+                      >
+                        <div
+                          class="uui-panel nNCe-- mapWrapper uEZmHy"
+                        >
+                          <div
+                            class="leaflet-container leaflet-touch leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                            style="height: 234px; width: 100%; position: relative;"
+                            tabindex="0"
+                          >
+                            <div
+                              class="leaflet-pane leaflet-map-pane"
+                              style="left: 0px; top: 0px;"
+                            >
+                              <div
+                                class="leaflet-pane leaflet-tile-pane"
+                              >
+                                <div
+                                  class="leaflet-layer "
+                                  style="z-index: 1;"
+                                >
+                                  <div
+                                    class="leaflet-tile-container leaflet-zoom-animated"
+                                    style="z-index: 18; left: 0px; top: 0px;"
+                                  >
+                                    <img
+                                      alt=""
+                                      class="leaflet-tile"
+                                      src="https://a.tile.openstreetmap.org/13/4095/4095.png"
+                                      style="width: 256px; height: 256px; left: -256px; top: -256px;"
+                                    />
+                                    <img
+                                      alt=""
+                                      class="leaflet-tile"
+                                      src="https://b.tile.openstreetmap.org/13/4096/4095.png"
+                                      style="width: 256px; height: 256px; left: 0px; top: -256px;"
+                                    />
+                                    <img
+                                      alt=""
+                                      class="leaflet-tile"
+                                      src="https://b.tile.openstreetmap.org/13/4095/4096.png"
+                                      style="width: 256px; height: 256px; left: -256px; top: 0px;"
+                                    />
+                                    <img
+                                      alt=""
+                                      class="leaflet-tile"
+                                      src="https://c.tile.openstreetmap.org/13/4096/4096.png"
+                                      style="width: 256px; height: 256px; left: 0px; top: 0px;"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="leaflet-pane leaflet-overlay-pane"
+                              />
+                              <div
+                                class="leaflet-pane leaflet-shadow-pane"
+                              >
+                                <img
+                                  alt=""
+                                  class="leaflet-marker-shadow leaflet-zoom-hide"
+                                  src="marker-shadow.png"
+                                  style="left: 0px; top: 0px;"
+                                />
+                              </div>
+                              <div
+                                class="leaflet-pane leaflet-marker-pane"
+                              >
+                                <img
+                                  alt="Marker"
+                                  class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive leaflet-marker-draggable"
+                                  role="button"
+                                  src="marker-icon.png"
+                                  style="left: 0px; top: 0px; z-index: 0;"
+                                  tabindex="0"
+                                />
+                              </div>
+                              <div
+                                class="leaflet-pane leaflet-tooltip-pane"
+                              />
+                              <div
+                                class="leaflet-pane leaflet-popup-pane"
+                              />
+                            </div>
+                            <div
+                              class="leaflet-control-container"
+                            >
+                              <div
+                                class="leaflet-top leaflet-left"
+                              >
+                                <div
+                                  class="leaflet-control-zoom leaflet-bar leaflet-control"
+                                >
+                                  <a
+                                    aria-disabled="false"
+                                    aria-label="Zoom in"
+                                    class="leaflet-control-zoom-in"
+                                    href="#"
+                                    role="button"
+                                    title="Zoom in"
+                                  >
+                                    <span
+                                      aria-hidden="true"
+                                    >
+                                      +
+                                    </span>
+                                  </a>
+                                  <a
+                                    aria-disabled="false"
+                                    aria-label="Zoom out"
+                                    class="leaflet-control-zoom-out"
+                                    href="#"
+                                    role="button"
+                                    title="Zoom out"
+                                  >
+                                    <span
+                                      aria-hidden="true"
+                                    >
+                                      −
+                                    </span>
+                                  </a>
+                                </div>
+                              </div>
+                              <div
+                                class="leaflet-top leaflet-right"
+                              />
+                              <div
+                                class="leaflet-bottom leaflet-left"
+                              />
+                              <div
+                                class="leaflet-bottom leaflet-right"
+                              >
+                                <div
+                                  class="leaflet-control-attribution leaflet-control"
+                                >
+                                  <a
+                                    href="https://leafletjs.com"
+                                    title="A JavaScript library for interactive maps"
+                                  >
+                                    Leaflet
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                    >
+                      <div
+                        class=""
+                        style="min-width: 0; flex-basis: 100%;"
+                      >
+                        <div
+                          class="tNXKDT cqsR8q OhBval commentsInputWrapper"
+                        >
+                          <div
+                            class="uui-label-top"
+                          >
+                            <div
+                              class="ASCPqT"
+                            >
+                              <label
+                                class="uui-label"
+                                for="commentsInput"
+                              >
+                                Comments
+                              </label>
+                              <div
+                                class="CcZAjD"
+                              />
+                              <div
+                                class="uui-labeled-input-sidenote"
+                              >
+                                This field is optional
+                              </div>
+                            </div>
+                            <div>
+                              <div
+                                class="Bo8Y6e uui-input-box PgE9Za cc-iMy azbYHN"
+                                tabindex="-1"
+                              >
+                                <textarea
+                                  class="-clickable QMkP3L uui-input"
+                                  id="commentsInput"
+                                  placeholder="Type text"
+                                  tabindex="0"
+                                >
+                                  comments value
+                                </textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-track-horizontal"
+                  style="position: absolute; height: 6px; display: none;"
+                >
+                  <div
+                    class="uui-thumb-horizontal"
+                  />
+                </div>
+                <div
+                  class="uui-track-vertical"
+                  style="position: absolute; width: 6px; display: none;"
+                >
+                  <div
+                    class="uui-thumb-vertical"
+                  />
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE QjrJq4 GgJ6XF BRv7OH _4FWiuv LQkGe- H1BRlU _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="CcZAjD"
+                />
+                <button
+                  class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-accent uui-size-36"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Confirm Location
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="Pu1YxZ _36SlXK"
+      style="z-index: 1000;"
+    >
+      <div
+        aria-label="Click to close a modal"
+        class="uui-modal-blocker"
+      />
+      <div
+        data-focus-guard="true"
+        style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+        tabindex="0"
+      />
+      <div
+        data-focus-lock-disabled="false"
+      >
+        <div
+          aria-modal="true"
+          class="uui-modal-window _4FWiuv -TpFL5 uEZmHy"
+          role="dialog"
+          style="width: 753px; height: auto;"
+        >
+          <div
+            class="uui-panel nNCe-- nJp05d uEZmHy"
+          >
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE QjrJq4 kxaOed _4iILhV BRv7OH _4FWiuv X4eqw- _5Jq2IB RkwqFu"
+            >
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography Y3TuJR _9VGu-f Rcc41K doyi1y"
+              >
+                Indicate location
+              </div>
+              <div
+                class="CcZAjD"
+              />
+              <div
+                class=""
+                style="min-width: 0; flex-shrink: 0; flex-basis: auto;"
+              >
+                <button
+                  aria-label="Close modal"
+                  class="uui-button-box uui-enabled -clickable _0pc0E8 uui-icon_button uui-color-neutral jWV8Xb"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="Prmk3w uui-icon uui-enabled"
+                  >
+                    <svg
+                      class=""
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="_9arQdK OH5WQB uui-scroll-bars uui-shadow-top uui-shadow-bottom"
+              style="position: relative; overflow: hidden; width: 100%; height: 100%; display: flex;"
+            >
+              <div
+                style="position: relative; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: 0px; margin-bottom: 0px; flex: 1 1 auto;"
+              >
+                <div
+                  class="uui-panel nNCe-- TmSty- uEZmHy"
+                >
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB CKBzOM"
+                  >
+                    <div
+                      class=""
+                      style="min-width: 0; flex-basis: 100%;"
+                    >
+                      <div
+                        class="tNXKDT cqsR8q OhBval modalInputLabel"
+                      >
+                        <div
+                          class="uui-label-top"
+                        >
+                          <div
+                            class="ASCPqT"
+                          >
+                            <label
+                              class="uui-label"
+                              for="countryInput"
+                            >
+                              Country
+                            </label>
+                          </div>
+                          <div>
+                            <div
+                              class="VJ2Cla uui-input-box uui-disabled NPdboF kBLuie p-89oR"
+                              tabindex="-1"
+                            >
+                              <input
+                                aria-disabled="true"
+                                aria-invalid="false"
+                                class="uui-input"
+                                disabled=""
+                                id="countryInput"
+                                placeholder="Please type text"
+                                tabindex="-1"
+                                type="text"
+                                value="Montenegro"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tNXKDT cqsR8q OhBval modalInputLabel"
+                      >
+                        <div
+                          class="uui-label-top"
+                        >
+                          <div
+                            class="ASCPqT"
+                          >
+                            <label
+                              class="uui-label"
+                              for="cityInput"
+                            >
+                              City / Region
+                              <span
+                                class="uui-labeled-input-asterisk"
+                              >
+                                *
+                              </span>
+                            </label>
+                          </div>
+                          <div>
+                            <div
+                              class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                              data-testid="city-selector-input"
+                              tabindex="0"
+                            >
+                              <div
+                                class="rWm8MA"
+                              >
+                                <input
+                                  aria-haspopup="true"
+                                  autocomplete="no"
+                                  class="uui-input _4-lVKC -tX49A uui-placeholder"
+                                  id="cityInput"
+                                  placeholder="Podgorica"
+                                  tabindex="-1"
+                                  type="text"
+                                  value="city-name"
+                                />
+                              </div>
+                              <div
+                                class="PELu7x"
+                              >
+                                <div
+                                  aria-label="Clear"
+                                  class="Prmk3w uui-icon uui-enabled -clickable uui-icon-cancel -clickable"
+                                  role="button"
+                                  tabindex="-1"
+                                >
+                                  <svg
+                                    class=""
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M14.25 4.808 13.193 3.75 9 7.942 4.808 3.75 3.75 4.808 7.942 9 3.75 13.193l1.058 1.057L9 10.057l4.193 4.193 1.057-1.057L10.057 9z"
+                                      fill-rule="evenodd"
+                                    />
+                                  </svg>
+                                </div>
+                                <div
+                                  class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                                >
+                                  <svg
+                                    class=""
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                      fill-rule="evenodd"
+                                    />
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tNXKDT cqsR8q OhBval modalInputLabel"
+                      >
+                        <div
+                          class="uui-label-top"
+                        >
+                          <div
+                            class="ASCPqT"
+                          >
+                            <label
+                              class="uui-label"
+                              for="addressInput"
+                            >
+                              Address line
+                            </label>
+                            <div
+                              class="CcZAjD"
+                            />
+                            <div
+                              class="uui-labeled-input-sidenote"
+                            >
+                              This field is optional
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                              data-testid="address-selector-input"
+                              tabindex="0"
+                            >
+                              <div
+                                class="rWm8MA"
+                              >
+                                <input
+                                  aria-haspopup="true"
+                                  autocomplete="no"
+                                  class="uui-input _4-lVKC -tX49A uui-placeholder"
+                                  id="addressInput"
+                                  placeholder="address value"
+                                  tabindex="-1"
+                                  type="text"
+                                  value="address value"
+                                />
+                              </div>
+                              <div
+                                class="PELu7x"
+                              >
+                                <div
+                                  aria-label="Clear"
+                                  class="Prmk3w uui-icon uui-enabled -clickable uui-icon-cancel -clickable"
+                                  role="button"
+                                  tabindex="-1"
+                                >
+                                  <svg
+                                    class=""
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M14.25 4.808 13.193 3.75 9 7.942 4.808 3.75 3.75 4.808 7.942 9 3.75 13.193l1.058 1.057L9 10.057l4.193 4.193 1.057-1.057L10.057 9z"
+                                      fill-rule="evenodd"
+                                    />
+                                  </svg>
+                                </div>
+                                <div
+                                  class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                                >
+                                  <svg
+                                    class=""
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                      fill-rule="evenodd"
+                                    />
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class=""
+                      style="min-width: 0; flex-basis: 100%;"
+                    >
+                      <div
+                        class="uui-panel nNCe-- mapWrapper uEZmHy"
+                      >
+                        <div
+                          class="leaflet-container leaflet-touch leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                          style="height: 234px; width: 100%; position: relative;"
+                          tabindex="0"
+                        >
+                          <div
+                            class="leaflet-pane leaflet-map-pane"
+                            style="left: 0px; top: 0px;"
+                          >
+                            <div
+                              class="leaflet-pane leaflet-tile-pane"
+                            >
+                              <div
+                                class="leaflet-layer "
+                                style="z-index: 1;"
+                              >
+                                <div
+                                  class="leaflet-tile-container leaflet-zoom-animated"
+                                  style="z-index: 18; left: 0px; top: 0px;"
+                                >
+                                  <img
+                                    alt=""
+                                    class="leaflet-tile"
+                                    src="https://a.tile.openstreetmap.org/13/4095/4095.png"
+                                    style="width: 256px; height: 256px; left: -256px; top: -256px;"
+                                  />
+                                  <img
+                                    alt=""
+                                    class="leaflet-tile"
+                                    src="https://b.tile.openstreetmap.org/13/4096/4095.png"
+                                    style="width: 256px; height: 256px; left: 0px; top: -256px;"
+                                  />
+                                  <img
+                                    alt=""
+                                    class="leaflet-tile"
+                                    src="https://b.tile.openstreetmap.org/13/4095/4096.png"
+                                    style="width: 256px; height: 256px; left: -256px; top: 0px;"
+                                  />
+                                  <img
+                                    alt=""
+                                    class="leaflet-tile"
+                                    src="https://c.tile.openstreetmap.org/13/4096/4096.png"
+                                    style="width: 256px; height: 256px; left: 0px; top: 0px;"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="leaflet-pane leaflet-overlay-pane"
+                            />
+                            <div
+                              class="leaflet-pane leaflet-shadow-pane"
+                            >
+                              <img
+                                alt=""
+                                class="leaflet-marker-shadow leaflet-zoom-hide"
+                                src="marker-shadow.png"
+                                style="left: 0px; top: 0px;"
+                              />
+                            </div>
+                            <div
+                              class="leaflet-pane leaflet-marker-pane"
+                            >
+                              <img
+                                alt="Marker"
+                                class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive leaflet-marker-draggable"
+                                role="button"
+                                src="marker-icon.png"
+                                style="left: 0px; top: 0px; z-index: 0;"
+                                tabindex="0"
+                              />
+                            </div>
+                            <div
+                              class="leaflet-pane leaflet-tooltip-pane"
+                            />
+                            <div
+                              class="leaflet-pane leaflet-popup-pane"
+                            />
+                          </div>
+                          <div
+                            class="leaflet-control-container"
+                          >
+                            <div
+                              class="leaflet-top leaflet-left"
+                            >
+                              <div
+                                class="leaflet-control-zoom leaflet-bar leaflet-control"
+                              >
+                                <a
+                                  aria-disabled="false"
+                                  aria-label="Zoom in"
+                                  class="leaflet-control-zoom-in"
+                                  href="#"
+                                  role="button"
+                                  title="Zoom in"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    +
+                                  </span>
+                                </a>
+                                <a
+                                  aria-disabled="false"
+                                  aria-label="Zoom out"
+                                  class="leaflet-control-zoom-out"
+                                  href="#"
+                                  role="button"
+                                  title="Zoom out"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    −
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                            <div
+                              class="leaflet-top leaflet-right"
+                            />
+                            <div
+                              class="leaflet-bottom leaflet-left"
+                            />
+                            <div
+                              class="leaflet-bottom leaflet-right"
+                            >
+                              <div
+                                class="leaflet-control-attribution leaflet-control"
+                              >
+                                <a
+                                  href="https://leafletjs.com"
+                                  title="A JavaScript library for interactive maps"
+                                >
+                                  Leaflet
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                  >
+                    <div
+                      class=""
+                      style="min-width: 0; flex-basis: 100%;"
+                    >
+                      <div
+                        class="tNXKDT cqsR8q OhBval commentsInputWrapper"
+                      >
+                        <div
+                          class="uui-label-top"
+                        >
+                          <div
+                            class="ASCPqT"
+                          >
+                            <label
+                              class="uui-label"
+                              for="commentsInput"
+                            >
+                              Comments
+                            </label>
+                            <div
+                              class="CcZAjD"
+                            />
+                            <div
+                              class="uui-labeled-input-sidenote"
+                            >
+                              This field is optional
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="Bo8Y6e uui-input-box PgE9Za cc-iMy azbYHN"
+                              tabindex="-1"
+                            >
+                              <textarea
+                                class="-clickable QMkP3L uui-input"
+                                id="commentsInput"
+                                placeholder="Type text"
+                                tabindex="0"
+                              >
+                                comments value
+                              </textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-track-horizontal"
+                style="position: absolute; height: 6px; display: none;"
+              >
+                <div
+                  class="uui-thumb-horizontal"
+                />
+              </div>
+              <div
+                class="uui-track-vertical"
+                style="position: absolute; width: 6px; display: none;"
+              >
+                <div
+                  class="uui-thumb-vertical"
+                />
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE QjrJq4 GgJ6XF BRv7OH _4FWiuv LQkGe- H1BRlU _5Jq2IB RkwqFu"
+            >
+              <div
+                class="CcZAjD"
+              />
+              <button
+                class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="uui-caption"
+                >
+                  Cancel
+                </div>
+              </button>
+              <button
+                class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-accent uui-size-36"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="uui-caption"
+                >
+                  Confirm Location
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-focus-guard="true"
+        style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+        tabindex="0"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByAria": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByRoleAndText": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByAria": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByRoleAndText": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByAria": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByRoleAndText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByAria": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByRoleAndText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByAria": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByRoleAndText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByAria": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByRoleAndText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

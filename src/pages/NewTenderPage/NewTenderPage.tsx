@@ -46,6 +46,8 @@ import {
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import dayjs, { Dayjs } from 'dayjs';
 
 const DefaultIcon = L.icon({
   iconUrl: MarkerIcon,
@@ -86,6 +88,7 @@ type NewTenderFormType = {
 
 export const NewTenderPage = () => {
   const { t } = useTranslation();
+  const history = useHistory();
   const { uuiModals, uuiNotifications } = useUuiContext();
 
   const { family_name, given_name, email } = useSelector(
@@ -153,43 +156,48 @@ export const NewTenderPage = () => {
     ownerOrganization: 'Regional Culture Center',
   };
 
-  const { lens, save } = useForm<NewTenderFormType>({
+  const {
+    lens,
+    save,
+    value: formValues,
+  } = useForm<NewTenderFormType>({
     value: initialValues,
     onSave: (tender) => Promise.resolve({ form: tender }),
     onSuccess: (form) =>
-      axios.post(
-        'https://t8g5g9h07h.execute-api.eu-central-1.amazonaws.com/api/tenders',
-        {
-          title: form.tenderTitle,
-          description: form.tenderDescription,
-          submissionStart: form.tenderValidity?.from,
-          submissionEnd: form.tenderValidity?.to,
-          expectedDelivery: form.tenderExpectedDelivery,
-          category: form.tenderCategory?.map(
-            (tenderCategory) => getCategoryById(tenderCategory)?.name,
-          ),
-          location: {
-            nestedLocation: {
-              name: cityName?.name,
+      axios
+        .post(
+          'https://t8g5g9h07h.execute-api.eu-central-1.amazonaws.com/api/tenders',
+          {
+            title: form.tenderTitle,
+            description: form.tenderDescription,
+            submissionStart: form.tenderValidity?.from,
+            submissionEnd: form.tenderValidity?.to,
+            expectedDelivery: form.tenderExpectedDelivery,
+            category: form.tenderCategory?.map(
+              (tenderCategory) => getCategoryById(tenderCategory)?.name,
+            ),
+            location: {
+              nestedLocation: {
+                name: cityName?.name,
+              },
+              geoPosition: {
+                latitude: cityName?.lat,
+                longitude: cityName?.lng,
+              },
+              addressLine: addressValue?.name,
+              addressComment: commentsValue,
             },
-            geoPosition: {
-              latitude: cityName?.lat,
-              longitude: cityName?.lng,
-            },
-            addressLine: addressValue?.name,
-            addressComment: commentsValue,
+            ownerName: `${form.ownerFirstName} ${form.ownerLastName}`,
+            ownerId: 'string',
+            organization: form.ownerOrganization,
+            ownerEmail: form.ownerEmail,
+            showEmail: form.emailSharingAgreement,
+            files: ['string'],
+            coverUrl: 'string',
+            status: 'string',
           },
-          ownerName: `${form.ownerFirstName} ${form.ownerLastName}`,
-          ownerId: 'string',
-          organization: form.ownerOrganization,
-          ownerEmail: form.ownerEmail,
-          showEmail: form.emailSharingAgreement,
-          files: ['string'],
-          coverUrl: 'string',
-          status: 'string',
-          id: 'string',
-        },
-      ),
+        )
+        .then(() => history.push('/tenders')),
     getMetadata: () => ({
       props: {
         tenderTitle: { isRequired: true },
@@ -316,6 +324,14 @@ export const NewTenderPage = () => {
                             'data-testid': `tender-expected-delivery-input`,
                           },
                         }}
+                        filter={(day: Dayjs) =>
+                          day.valueOf() >=
+                          dayjs(
+                            formValues.tenderValidity?.to
+                              ? formValues.tenderValidity?.to
+                              : undefined,
+                          ).valueOf()
+                        }
                       />
                     </LabeledInput>
                   </FlexCell>

@@ -96,6 +96,7 @@ export const NewTenderPage = () => {
   );
 
   //   MAIN TENDER STATES
+  const [isLoading, setIsLoading] = useState(true);
   const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
     [],
   );
@@ -197,7 +198,11 @@ export const NewTenderPage = () => {
             status: 'string',
           },
         )
-        .then(() => history.push('/tenders')),
+        .then(() => {
+          history.push('/tenders');
+          setIsLoading(false);
+        })
+        .catch(() => setIsLoading(false)),
     getMetadata: () => ({
       props: {
         tenderTitle: { isRequired: true },
@@ -218,6 +223,11 @@ export const NewTenderPage = () => {
     }),
     settingsKey: 'new-tender-form',
   });
+
+  const onFormSubmit = () => {
+    setIsLoading(true);
+    save();
+  };
 
   return (
     <Panel cx={styles.wrapper}>
@@ -529,6 +539,7 @@ export const NewTenderPage = () => {
             color="secondary"
             caption={t('tendersPage.newTender.pageFormFooterCancelCta')}
             link={{ pathname: '/tenders' }}
+            isDisabled={isLoading}
           />
           <FlexSpacer />
           <Button
@@ -537,12 +548,14 @@ export const NewTenderPage = () => {
             caption={t('tendersPage.newTender.pageFormFooterDraftCta')}
             onClick={() => null}
             cx={styles.draftCta}
+            isDisabled={isLoading}
           />
           <Button
             color="primary"
             caption={t('tendersPage.newTender.pageFormFooterCreateCta')}
-            onClick={() => save()}
+            onClick={() => onFormSubmit()}
             rawProps={{ 'data-testid': `form-submit` }}
+            isDisabled={isLoading}
           />
         </FlexRow>
       </Panel>

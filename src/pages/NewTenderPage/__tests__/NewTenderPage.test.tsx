@@ -2,7 +2,7 @@ import { NewTenderPage } from '../NewTenderPage';
 import { createMemoryHistory } from 'history';
 import { testWrapper } from '../../../utils/testWrapper';
 import { identityState } from '../../../store/identitySlice';
-import { fireEvent, screen } from '@epam/uui-test-utils';
+import { act, fireEvent, screen, userEvent } from '@epam/uui-test-utils';
 
 const formData = {
   title: 'test tender title',
@@ -78,5 +78,30 @@ describe('Not found page', () => {
     });
 
     fireEvent.click(screen.getByTestId('form-submit'));
+  });
+
+  it('should display selected location', async () => {
+    const cityName = 'Bar';
+    const address = 'Mediteranska, 8525';
+    const commentsText = 'comment';
+
+    act(async () => {
+      await testWrapper({
+        component: <NewTenderPage />,
+        history,
+        state: initialStateWithOfficerUserData,
+      });
+      fireEvent.click(screen.getByText('Indicate location'));
+      fireEvent.click(screen.getByTestId('city-selector-input'));
+      fireEvent.click(screen.getByText(cityName));
+      fireEvent.click(screen.getByTestId('address-selector-input'));
+      fireEvent.click(screen.getByText(address));
+      await userEvent.type(screen.getByRole('textbox'), commentsText);
+      fireEvent.click(screen.getByText('Confirm Location'));
+
+      expect(screen.getByText(cityName)).toBeInTheDocument();
+      expect(screen.getByText(address)).toBeInTheDocument();
+      expect(screen.getByText(commentsText)).toBeInTheDocument();
+    });
   });
 });

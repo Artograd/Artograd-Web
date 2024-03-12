@@ -168,23 +168,12 @@ Object {
                               class="uui-label"
                               for="tenderValidity"
                             >
-                              Tender Validity Period
+                              Proposals Submission Period
                               <span
                                 class="uui-labeled-input-asterisk"
                               >
                                 *
                               </span>
-                              <svg
-                                class="uui-labeled-input-info-icon"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M7 12h2V7H7v5ZM8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8Zm0 15c-3.859 0-7-3.141-7-7s3.141-7 7-7 7 3.141 7 7-3.141 7-7 7ZM7 6h2V4H7v2Z"
-                                />
-                              </svg>
                             </label>
                           </div>
                           <div>
@@ -261,18 +250,7 @@ Object {
                               class="uui-label"
                               for="tenderExpectedDelivery"
                             >
-                              Expected Delivery
-                              <svg
-                                class="uui-labeled-input-info-icon"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M7 12h2V7H7v5ZM8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8Zm0 15c-3.859 0-7-3.141-7-7s3.141-7 7-7 7 3.141 7 7-3.141 7-7 7ZM7 6h2V4H7v2Z"
-                                />
-                              </svg>
+                              Expected Readiness
                             </label>
                             <div
                               class="CcZAjD"
@@ -820,23 +798,12 @@ Object {
                             class="uui-label"
                             for="tenderValidity"
                           >
-                            Tender Validity Period
+                            Proposals Submission Period
                             <span
                               class="uui-labeled-input-asterisk"
                             >
                               *
                             </span>
-                            <svg
-                              class="uui-labeled-input-info-icon"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M7 12h2V7H7v5ZM8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8Zm0 15c-3.859 0-7-3.141-7-7s3.141-7 7-7 7 3.141 7 7-3.141 7-7 7ZM7 6h2V4H7v2Z"
-                              />
-                            </svg>
                           </label>
                         </div>
                         <div>
@@ -913,18 +880,7 @@ Object {
                             class="uui-label"
                             for="tenderExpectedDelivery"
                           >
-                            Expected Delivery
-                            <svg
-                              class="uui-labeled-input-info-icon"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M7 12h2V7H7v5ZM8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8Zm0 15c-3.859 0-7-3.141-7-7s3.141-7 7-7 7 3.141 7 7-3.141 7-7 7ZM7 6h2V4H7v2Z"
-                              />
-                            </svg>
+                            Expected Readiness
                           </label>
                           <div
                             class="CcZAjD"

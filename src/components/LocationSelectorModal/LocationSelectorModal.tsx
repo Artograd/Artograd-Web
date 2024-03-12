@@ -30,7 +30,7 @@ import { AddressItemType, CityItemType } from '../../types';
 import { useTranslation } from 'react-i18next';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
-import { Dispatch, SetStateAction, useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { DraggableMarker } from '../MapCordsController/MapCordsController';
 
 const DefaultIcon = L.icon({
@@ -79,7 +79,6 @@ export function LocationSelectorModal({
   setAddressValue,
   setLocationCoordinates,
 }: LocationSelectorModalType) {
-  const portalTargetRef = useRef<HTMLDivElement>();
   const [cityNameModal, setCityNameModal] = useState<CityItemType | undefined>(
     cityName,
   );
@@ -190,7 +189,6 @@ export function LocationSelectorModal({
                     )}
                     cx={styles.modalInputLabel}
                     {...lens.prop('city').toProps()}
-                    ref={portalTargetRef}
                   >
                     <PickerInput
                       id="cityInput"
@@ -208,7 +206,6 @@ export function LocationSelectorModal({
                       rawProps={{
                         input: { 'data-testid': `city-selector-input` },
                       }}
-                      portalTarget={portalTargetRef.current}
                     />
                   </LabeledInput>
                   <LabeledInput

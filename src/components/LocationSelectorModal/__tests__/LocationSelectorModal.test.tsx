@@ -4,7 +4,7 @@ import {
   LocationSelectorModal,
   LocationSelectorModalType,
 } from '../LocationSelectorModal';
-import { fireEvent, screen } from '@epam/uui-test-utils';
+import { act, fireEvent, screen, userEvent } from '@epam/uui-test-utils';
 
 const mockData: LocationSelectorModalType = {
   modalProps: { key: '1', zIndex: 1000, success: jest.fn(), abort: jest.fn() },
@@ -34,12 +34,28 @@ describe('Location Selector Modal', () => {
 
   test('should select city', async () => {
     const history = createMemoryHistory();
+    const cityName = 'Bar';
+    const address = 'Mediteranska, 8525';
+    const commentsText = 'comment';
 
-    await testWrapper({
-      component: <LocationSelectorModal {...mockData} />,
-      history,
+    act(async () => {
+      await testWrapper({
+        component: <LocationSelectorModal {...mockData} />,
+        history,
+      });
+
+      fireEvent.click(screen.getByTestId('city-selector-input'));
+      fireEvent.click(screen.getByText(cityName));
+      fireEvent.click(screen.getByTestId('address-selector-input'));
+      fireEvent.click(screen.getByText(address));
+      await userEvent.type(screen.getByRole('textbox'), commentsText);
+      fireEvent.click(screen.getByText('Confirm Location'));
+
+      expect(mockData.setLocationCoordinates).toHaveBeenCalledTimes(1);
+      expect(mockData.setAddressValue).toHaveBeenCalledTimes(1);
+      expect(mockData.setCityName).toHaveBeenCalledTimes(1);
+      expect(mockData.setCommentsValue).toHaveBeenCalledTimes(1);
+      expect(mockData.modalProps.success).toHaveBeenCalledTimes(1);
     });
-
-    fireEvent.click(screen.getByTestId('city-selector-input'));
   });
 });

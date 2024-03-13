@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 
-const tendersListLength = 1;
+const tendersListLength = 0;
 
 export const TendersPage = () => {
   const history = useHistory();

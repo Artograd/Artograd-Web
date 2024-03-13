@@ -22,7 +22,7 @@
 }
 
 .tenders {
-  margin: 0 355px;
+  margin: 0 auto;
   text-align: center;
   button {
     margin: 0 auto;
@@ -39,10 +39,17 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px auto;
   color: var(--night600);
+  max-width: 500px;
 }
 
 .headerTendersCta {
   float: right;
+}
+
+@media only screen and (max-device-width: 1227px) {
+  .wrapper {
+    margin: 36px 30px 60px;
+  }
 }

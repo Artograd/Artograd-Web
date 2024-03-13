@@ -103,6 +103,11 @@
         "commentsInputLabelSidenote": "This field is optional",
         "confirmCta": "Confirm Location",
         "cancelCta": "Cancel"
+      },
+      "beforeLeave": {
+        "message": "Would you like to leave the page? Unsaved data will be lost.",
+        "saveCta": "Stay",
+        "discardCta": "Leave"
       }
     }
   }

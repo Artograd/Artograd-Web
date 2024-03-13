@@ -87,10 +87,10 @@ export const NewTenderPage = () => {
   const history = useHistory();
   const { uuiModals, uuiNotifications } = useUuiContext();
 
+  // SELECTORS
   const { family_name, given_name, email } = useSelector(
     (state: RootState) => state.identity,
   );
-
   const userOrganization = useSelector(
     (state: RootState) => state.identity['custom:organization'],
   );
@@ -113,31 +113,6 @@ export const NewTenderPage = () => {
     LatLngLiteral | undefined
   >();
 
-  const dataSource = useArrayDataSource(
-    {
-      items: categoryList,
-    },
-    [],
-  );
-
-  i18nFromUui.rangeDatePicker = {
-    ...i18nFromUui.rangeDatePicker,
-    pickerPlaceholderFrom: t(
-      'tendersPage.newTender.tenderValidityPeriodFromPlaceholder',
-    ),
-    pickerPlaceholderTo: t(
-      'tendersPage.newTender.tenderValidityPeriodToPlaceholder',
-    ),
-  };
-
-  const getCityById = () => {
-    return listOfCities?.find((city) => city.id === cityName?.id);
-  };
-
-  const getCategoryById = (id: number) => {
-    return categoryList.find((category) => category.id === id);
-  };
-
   const initialValues: NewTenderFormType = {
     tenderTitle: '',
     tenderDescription: '',
@@ -153,6 +128,21 @@ export const NewTenderPage = () => {
     ownerLastName: family_name,
     ownerEmail: email,
     ownerOrganization: userOrganization,
+  };
+
+  const dataSource = useArrayDataSource(
+    {
+      items: categoryList,
+    },
+    [],
+  );
+
+  const getCityById = () => {
+    return listOfCities?.find((city) => city.id === cityName?.id);
+  };
+
+  const getCategoryById = (id: number) => {
+    return categoryList.find((category) => category.id === id);
   };
 
   const {
@@ -234,6 +224,24 @@ export const NewTenderPage = () => {
       )
       .then((response) => setListOfCities(response.data));
   }, []);
+
+  // UUI Component Localization
+  i18nFromUui.rangeDatePicker = {
+    ...i18nFromUui.rangeDatePicker,
+    pickerPlaceholderFrom: t(
+      'tendersPage.newTender.tenderValidityPeriodFromPlaceholder',
+    ),
+    pickerPlaceholderTo: t(
+      'tendersPage.newTender.tenderValidityPeriodToPlaceholder',
+    ),
+  };
+
+  i18nFromUui.form.modals = {
+    ...i18nFromUui.form.modals,
+    beforeLeaveMessage: t('tendersPage.newTender.beforeLeave.message'),
+    saveButton: t('tendersPage.newTender.beforeLeave.saveCta'),
+    discardButton: t('tendersPage.newTender.beforeLeave.discardCta'),
+  };
 
   return (
     <Panel cx={styles.wrapper}>

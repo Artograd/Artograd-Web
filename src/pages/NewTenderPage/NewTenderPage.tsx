@@ -96,7 +96,7 @@ export const NewTenderPage = () => {
   );
 
   //   MAIN TENDER STATES
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
     [],
   );

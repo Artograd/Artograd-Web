@@ -22,7 +22,7 @@ export const Avatar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { family_name, given_name, email } = useSelector(
+  const { family_name, given_name, email, picture } = useSelector(
     (state: RootState) => state.identity,
   );
   const logOut = async () => {
@@ -45,11 +45,7 @@ export const Avatar = () => {
       <Dropdown
         key="avatar"
         renderTarget={(props) => (
-          <MainMenuAvatar
-            avatarUrl="https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4"
-            isDropdown
-            {...props}
-          />
+          <MainMenuAvatar avatarUrl={picture} isDropdown {...props} />
         )}
         renderBody={(props) => (
           <DropdownMenuBody {...props} cx={styles.userMenu}>

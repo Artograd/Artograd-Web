@@ -7,6 +7,7 @@ const ORIGIN = process.env.REACT_APP_PUBLIC_URL || '';
 
 let tempIdCount = 0;
 const fileSizeLimit = 1024 * 1024 * 1;
+const fileAmountLimit = 10;
 
 export const FileUpload = ({
   attachments,
@@ -50,7 +51,7 @@ export const FileUpload = ({
         progress: 0,
         size: file.size,
       };
-      if (file.size <= fileSizeLimit) {
+      if (file.size <= fileSizeLimit || files.length <= fileAmountLimit) {
         newAttachments.push(newFile);
         uuiApi
           .uploadFile(ORIGIN.concat('/upload/uploadFileMock'), file, {
@@ -81,7 +82,7 @@ export const FileUpload = ({
         onUploadFiles={uploadFile}
         infoText={t(
           'tendersPage.newTender.tenderAdditionalInformationInfotext',
-          { fileSizeLimit: fileSizeLimit / 1024 / 1024 },
+          { fileSizeLimit: fileSizeLimit / 1024 / 1024, fileAmountLimit },
         )}
       />
 

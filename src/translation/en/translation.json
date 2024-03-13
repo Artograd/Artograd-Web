@@ -82,7 +82,7 @@
       "tenderOwnerEmail": "Email",
       "tenderOwnerEmailAvailabilityCheckbox": "Show my email as means of contact in the tender description.",
       "tenderAdditionalInformationLabel": "Additional Information",
-      "tenderAdditionalInformationInfotext": "Up to 10 files. Limit for 1 file is {{fileSizeLimit}} Mb",
+      "tenderAdditionalInformationInfotext": "Up to {{fileAmountLimit}} files. Limit for 1 file is {{fileSizeLimit}} Mb",
       "tenderAdditionalInformationLabelText": "Drop files to attach or",
       "tenderAdditionalInformationLink": "browse",
       "pageFormFooterCancelCta": "Cancel",

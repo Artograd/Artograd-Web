@@ -53,3 +53,14 @@ export type CityItemType = LatLngLiteral & {
   name: string;
   id?: number;
 };
+
+export enum TenderStatus {
+  DRAFT = 'DRAFT',
+  PUBLISHED = 'PUBLISHED',
+  IDEATION = 'IDEATION',
+  VOTING = 'VOTING',
+  SELECTION = 'SELECTION',
+  CANCELLED = 'CANCELLED',
+  CLOSED = 'CLOSED',
+  DELETED = 'DELETED',
+}

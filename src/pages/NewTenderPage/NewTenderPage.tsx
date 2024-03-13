@@ -36,7 +36,7 @@ import { FileUpload } from '../../components/FileUpload/FileUpload';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
-import { CategoryItemType, CityItemType } from '../../types';
+import { CategoryItemType, CityItemType, TenderStatus } from '../../types';
 import { MapCordsController } from '../../components/MapCordsController/MapCordsController';
 import { LocationSelectorModal } from '../../components/LocationSelectorModal/LocationSelectorModal';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -97,6 +97,7 @@ export const NewTenderPage = () => {
 
   //   MAIN TENDER STATES
   const [isLoading, setIsLoading] = useState(false);
+  const [tenderStatus, setTenderStatus] = useState(TenderStatus.PUBLISHED);
   const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
     [],
   );
@@ -192,7 +193,7 @@ export const NewTenderPage = () => {
             showEmail: form.emailSharingAgreement,
             files: ['string'],
             coverUrl: 'string',
-            status: 'string',
+            status: tenderStatus,
           },
         )
         .then(() => {
@@ -222,7 +223,7 @@ export const NewTenderPage = () => {
   });
 
   const onFormSubmit = () => {
-    setIsLoading(true);
+    setTenderStatus(TenderStatus.DRAFT);
     save();
   };
 
@@ -309,6 +310,7 @@ export const NewTenderPage = () => {
                         id="tenderValidity"
                         {...lens.prop('tenderValidity').toProps()}
                         format="MMM D, YYYY"
+                        isRequired
                         rawProps={{
                           from: { 'data-testid': `tender-validity-from-input` },
                           to: { 'data-testid': `tender-validity-to-input` },
@@ -557,14 +559,14 @@ export const NewTenderPage = () => {
             fill="outline"
             color="secondary"
             caption={t('tendersPage.newTender.pageFormFooterDraftCta')}
-            onClick={() => null}
+            onClick={() => onFormSubmit()}
             cx={styles.draftCta}
             isDisabled={isLoading}
           />
           <Button
             color="primary"
             caption={t('tendersPage.newTender.pageFormFooterCreateCta')}
-            onClick={() => onFormSubmit()}
+            onClick={() => save()}
             rawProps={{ 'data-testid': `form-submit` }}
             isDisabled={isLoading}
           />

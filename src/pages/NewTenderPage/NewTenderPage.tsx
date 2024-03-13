@@ -95,6 +95,10 @@ export const NewTenderPage = () => {
     (state: RootState) => state.identity,
   );
 
+  const userOrganization = useSelector(
+    (state: RootState) => state.identity['custom:organization'],
+  );
+
   //   MAIN TENDER STATES
   const [isLoading, setIsLoading] = useState(true);
   const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
@@ -154,7 +158,7 @@ export const NewTenderPage = () => {
     ownerFirstName: given_name,
     ownerLastName: family_name,
     ownerEmail: email,
-    ownerOrganization: 'Regional Culture Center',
+    ownerOrganization: userOrganization,
   };
 
   const {
@@ -490,21 +494,26 @@ export const NewTenderPage = () => {
                 <Text cx={styles.sectionHeadline}>
                   {t('tendersPage.newTender.tenderOwnerContactSectionTitle')}
                 </Text>
-
-                <FlexRow cx={styles.ownerDetailsRow}>
-                  <Text>{t('tendersPage.newTender.tenderOwnerName')}</Text>
-                  <Text>{`${given_name} ${family_name}`}</Text>
-                </FlexRow>
-                <FlexRow cx={styles.ownerDetailsRow}>
-                  <Text>
-                    {t('tendersPage.newTender.tenderOwnerOrganisation')}
-                  </Text>
-                  <Text>Regional Culture Center</Text>
-                </FlexRow>
-                <FlexRow cx={styles.ownerDetailsRow}>
-                  <Text>{t('tendersPage.newTender.tenderOwnerEmail')}</Text>
-                  <Text>{email}</Text>
-                </FlexRow>
+                {(given_name || family_name) && (
+                  <FlexRow cx={styles.ownerDetailsRow}>
+                    <Text>{t('tendersPage.newTender.tenderOwnerName')}</Text>
+                    <Text>{`${given_name} ${family_name}`}</Text>
+                  </FlexRow>
+                )}
+                {userOrganization && (
+                  <FlexRow cx={styles.ownerDetailsRow}>
+                    <Text>
+                      {t('tendersPage.newTender.tenderOwnerOrganisation')}
+                    </Text>
+                    <Text>{userOrganization}</Text>
+                  </FlexRow>
+                )}
+                {email && (
+                  <FlexRow cx={styles.ownerDetailsRow}>
+                    <Text>{t('tendersPage.newTender.tenderOwnerEmail')}</Text>
+                    <Text>{email}</Text>
+                  </FlexRow>
+                )}
 
                 <FlexCell width="100%">
                   <Alert color="warning" cx={styles.emailInfoAlert}>

@@ -5,6 +5,7 @@ import { persistReducer } from 'redux-persist';
 export type IdentityStateType = {
   'cognito:username': string;
   'cognito:groups': string[];
+  'custom:organization': string;
   email: string;
   email_verified: boolean;
   family_name: string;
@@ -22,6 +23,7 @@ export type InitialStateType = {
 export const identityState: IdentityStateType = {
   'cognito:username': '',
   'cognito:groups': [''],
+  'custom:organization': '',
   email: '',
   email_verified: false,
   family_name: '',

@@ -84,7 +84,7 @@
       "tenderOwnerEmail": "Электронная почта",
       "tenderOwnerEmailAvailabilityCheckbox": "Укажите мою электронную почту в качестве средства связи в описании тендера.",
       "tenderAdditionalInformationLabel": "Дополнительная информация",
-      "tenderAdditionalInformationInfotext": "До 10 файлов. Лимит на 1 файл 50 Мб.",
+      "tenderAdditionalInformationInfotext": "До 10 файлов. Лимит на 1 файл {{fileSizeLimit}} Мб.",
       "tenderAdditionalInformationLabelText": "Перетащите файлы, чтобы прикрепить или",
       "tenderAdditionalInformationLink": "просматривать",
       "pageFormFooterCancelCta": "Отменить",

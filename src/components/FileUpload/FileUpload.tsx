@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 const ORIGIN = process.env.REACT_APP_PUBLIC_URL || '';
 
 let tempIdCount = 0;
+const fileSizeLimit = 1024 * 1024 * 1;
 
 export const FileUpload = ({
   attachments,
@@ -49,19 +50,20 @@ export const FileUpload = ({
         progress: 0,
         size: file.size,
       };
-      newAttachments.push(newFile);
-
-      uuiApi
-        .uploadFile(ORIGIN.concat('/upload/uploadFileMock'), file, {
-          onProgress: (progress) => trackProgress(progress, tempId),
-          getXHR: (xhr) => {
-            newFile.abortXHR = () => xhr.abort();
-          },
-        })
-        .then((res) => updateFile({ ...res, progress: 100 }, tempId))
-        .catch((err) =>
-          updateFile({ ...newFile, progress: 100, error: err.error }, tempId),
-        );
+      if (file.size <= fileSizeLimit) {
+        newAttachments.push(newFile);
+        uuiApi
+          .uploadFile(ORIGIN.concat('/upload/uploadFileMock'), file, {
+            onProgress: (progress) => trackProgress(progress, tempId),
+            getXHR: (xhr) => {
+              newFile.abortXHR = () => xhr.abort();
+            },
+          })
+          .then((res) => updateFile({ ...res, progress: 100 }, tempId))
+          .catch((err) =>
+            updateFile({ ...newFile, progress: 100, error: err.error }, tempId),
+          );
+      }
     });
 
     setAttachments(newAttachments);
@@ -79,6 +81,7 @@ export const FileUpload = ({
         onUploadFiles={uploadFile}
         infoText={t(
           'tendersPage.newTender.tenderAdditionalInformationInfotext',
+          { fileSizeLimit: fileSizeLimit / 1024 / 1024 },
         )}
       />
 

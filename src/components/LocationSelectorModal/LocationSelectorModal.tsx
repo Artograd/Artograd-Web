@@ -25,7 +25,6 @@ import { FlexSpacer } from '@epam/uui-components';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
-import citiesDB from './cities.json';
 import { CityItemType } from '../../types';
 import { useTranslation } from 'react-i18next';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -40,18 +39,13 @@ const DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-export const cityList: CityItemType[] = citiesDB;
-
-const getCityById = (city?: number) => {
-  return cityList.find((cityArray) => cityArray.id === city);
-};
-
 export type LocationSelectorModalType = {
   modalProps: IModal<string>;
   cityName?: CityItemType;
   addressValue?: string;
   commentsValue: string;
   locationCoordinates: LatLngLiteral | undefined;
+  listOfCities?: CityItemType[];
   setCommentsValue: Dispatch<SetStateAction<string>>;
   setCityName: Dispatch<SetStateAction<CityItemType | undefined>>;
   setAddressValue: Dispatch<SetStateAction<string | undefined>>;
@@ -71,6 +65,7 @@ export function LocationSelectorModal({
   addressValue,
   commentsValue,
   locationCoordinates,
+  listOfCities = [],
   setCommentsValue,
   setCityName,
   setAddressValue,
@@ -91,10 +86,14 @@ export function LocationSelectorModal({
   const svc = useUuiContext();
   const cityDataSource = useArrayDataSource(
     {
-      items: cityList,
+      items: listOfCities,
     },
     [],
   );
+
+  const getCityById = (city?: number) => {
+    return listOfCities.find((cityArray) => cityArray.id === city);
+  };
 
   const saveValues = () => {
     save();

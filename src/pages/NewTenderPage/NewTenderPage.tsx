@@ -21,7 +21,7 @@ import {
 } from '@epam/uui';
 import styles from './NewTenderPage.module.scss';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   RangeDatePickerValue,
   useArrayDataSource,
@@ -38,10 +38,7 @@ import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
 import { CategoryItemType, CityItemType } from '../../types';
 import { MapCordsController } from '../../components/MapCordsController/MapCordsController';
-import {
-  LocationSelectorModal,
-  cityList,
-} from '../../components/LocationSelectorModal/LocationSelectorModal';
+import { LocationSelectorModal } from '../../components/LocationSelectorModal/LocationSelectorModal';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
 import axios from 'axios';
@@ -105,6 +102,9 @@ export const NewTenderPage = () => {
   );
 
   // ADDRESS STATES
+  const [listOfCities, setListOfCities] = useState<CityItemType[] | undefined>(
+    [],
+  );
   const [commentsValue, setCommentsValue] = useState<string>('');
   const [cityName, setCityName] = useState<CityItemType | undefined>();
   const [addressValue, setAddressValue] = useState<string | undefined>();
@@ -130,7 +130,7 @@ export const NewTenderPage = () => {
   };
 
   const getCityById = () => {
-    return cityList.find((city) => city.id === cityName?.id);
+    return listOfCities?.find((city) => city.id === cityName?.id);
   };
 
   const getCategoryById = (id: number) => {
@@ -225,6 +225,14 @@ export const NewTenderPage = () => {
     setIsLoading(true);
     save();
   };
+
+  useEffect(() => {
+    axios
+      .get(
+        'https://t8g5g9h07h.execute-api.eu-central-1.amazonaws.com/api/cities',
+      )
+      .then((response) => setListOfCities(response.data));
+  }, []);
 
   return (
     <Panel cx={styles.wrapper}>
@@ -402,6 +410,7 @@ export const NewTenderPage = () => {
                           addressValue={addressValue}
                           commentsValue={commentsValue}
                           locationCoordinates={locationCoordinates}
+                          listOfCities={listOfCities}
                           setCommentsValue={setCommentsValue}
                           setCityName={setCityName}
                           setAddressValue={setAddressValue}

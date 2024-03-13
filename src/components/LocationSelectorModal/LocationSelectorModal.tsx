@@ -26,7 +26,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
 import citiesDB from './cities.json';
-import { AddressItemType, CityItemType } from '../../types';
+import { CityItemType } from '../../types';
 import { useTranslation } from 'react-i18next';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -41,9 +41,6 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 export const cityList: CityItemType[] = citiesDB;
-export const addressList: AddressItemType[] = [
-  { id: 1, name: 'Mediteranska, 8525' },
-];
 
 const getCityById = (city?: number) => {
   return cityList.find((cityArray) => cityArray.id === city);
@@ -52,12 +49,12 @@ const getCityById = (city?: number) => {
 export type LocationSelectorModalType = {
   modalProps: IModal<string>;
   cityName?: CityItemType;
-  addressValue?: AddressItemType;
+  addressValue?: string;
   commentsValue: string;
   locationCoordinates: LatLngLiteral | undefined;
   setCommentsValue: Dispatch<SetStateAction<string>>;
   setCityName: Dispatch<SetStateAction<CityItemType | undefined>>;
-  setAddressValue: Dispatch<SetStateAction<AddressItemType | undefined>>;
+  setAddressValue: Dispatch<SetStateAction<string | undefined>>;
   setLocationCoordinates: Dispatch<SetStateAction<LatLngLiteral | undefined>>;
 };
 
@@ -83,7 +80,7 @@ export function LocationSelectorModal({
     cityName,
   );
   const [addressModalValue, setAddressModalValue] = useState<
-    AddressItemType | undefined
+    string | undefined
   >(addressValue);
   const [commentsModalValue, setCommentsModalValue] = useState(commentsValue);
   const [locationCoordinatesModal, setLocationCoordinatesModal] = useState<
@@ -95,13 +92,6 @@ export function LocationSelectorModal({
   const cityDataSource = useArrayDataSource(
     {
       items: cityList,
-    },
-    [],
-  );
-
-  const addressDataSource = useArrayDataSource(
-    {
-      items: addressList,
     },
     [],
   );
@@ -219,22 +209,15 @@ export function LocationSelectorModal({
                     cx={styles.modalInputLabel}
                     {...lens.prop('address').toProps()}
                   >
-                    <PickerInput
+                    <TextInput
                       id="addressInput"
-                      dataSource={addressDataSource}
                       {...lens.prop('address').toProps()}
                       value={addressModalValue}
                       onValueChange={setAddressModalValue}
-                      entityName="Address"
-                      selectionMode="single"
-                      valueType="entity"
-                      sorting={{ field: 'name', direction: 'asc' }}
                       placeholder={t(
                         'tendersPage.newTender.tenderLocationModal.addressInputPlaceholder',
                       )}
-                      rawProps={{
-                        input: { 'data-testid': `address-selector-input` },
-                      }}
+                      rawProps={{ 'data-testid': `address-input` }}
                     />
                   </LabeledInput>
                 </FlexCell>

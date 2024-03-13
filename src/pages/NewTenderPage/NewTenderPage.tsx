@@ -36,11 +36,10 @@ import { FileUpload } from '../../components/FileUpload/FileUpload';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
-import { AddressItemType, CategoryItemType, CityItemType } from '../../types';
+import { CategoryItemType, CityItemType } from '../../types';
 import { MapCordsController } from '../../components/MapCordsController/MapCordsController';
 import {
   LocationSelectorModal,
-  addressList,
   cityList,
 } from '../../components/LocationSelectorModal/LocationSelectorModal';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -78,7 +77,7 @@ type NewTenderFormType = {
   emailSharingAgreement?: boolean;
   locationCityName?: CityItemType;
   locationComments?: string;
-  locationAddress?: number;
+  locationAddress?: string;
   locationCoordinates?: LatLngLiteral;
   ownerFirstName?: string;
   ownerLastName?: string;
@@ -108,9 +107,7 @@ export const NewTenderPage = () => {
   // ADDRESS STATES
   const [commentsValue, setCommentsValue] = useState<string>('');
   const [cityName, setCityName] = useState<CityItemType | undefined>();
-  const [addressValue, setAddressValue] = useState<
-    AddressItemType | undefined
-  >();
+  const [addressValue, setAddressValue] = useState<string | undefined>();
   const [locationCoordinates, setLocationCoordinates] = useState<
     LatLngLiteral | undefined
   >();
@@ -134,10 +131,6 @@ export const NewTenderPage = () => {
 
   const getCityById = () => {
     return cityList.find((city) => city.id === cityName?.id);
-  };
-
-  const getAddressById = () => {
-    return addressList.find((address) => address.id === addressValue?.id);
   };
 
   const getCategoryById = (id: number) => {
@@ -189,7 +182,7 @@ export const NewTenderPage = () => {
                 latitude: cityName?.lat,
                 longitude: cityName?.lng,
               },
-              addressLine: addressValue?.name,
+              addressLine: addressValue,
               addressComment: commentsValue,
             },
             ownerName: `${form.ownerFirstName} ${form.ownerLastName}`,
@@ -450,7 +443,7 @@ export const NewTenderPage = () => {
                           {(cityName || addressValue) &&
                             process.env.REACT_APP_LOCATION}
                           {cityName && `, ${getCityById()?.name}`}
-                          {addressValue && `, ${getAddressById()?.name}`}
+                          {addressValue && `, ${addressValue}`}
                         </Text>
                       </FlexRow>
                     )}

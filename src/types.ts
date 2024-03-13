@@ -44,11 +44,6 @@ export type Tender = {
   proposals: Proposals[];
 };
 
-export type AddressItemType = {
-  name: string;
-  id?: number;
-};
-
 export type CategoryItemType = {
   name: string;
   id?: number;

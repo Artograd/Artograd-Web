@@ -20,7 +20,7 @@ import {
   useForm,
 } from '@epam/uui';
 import styles from './NewTenderPage.module.scss';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import {
   RangeDatePickerValue,
@@ -101,6 +101,8 @@ export const NewTenderPage = () => {
   const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
     [],
   );
+
+  console.log(':::atach', tenderAttachments);
 
   // ADDRESS STATES
   const [listOfCities, setListOfCities] = useState<CityItemType[] | undefined>(
@@ -333,9 +335,14 @@ export const NewTenderPage = () => {
                       label={t(
                         'tendersPage.newTender.tenderExpectedDeliveryLabel',
                       )}
-                      sidenote={t(
-                        'tendersPage.newTender.tenderExpectedDeliveryLabelSidenote',
-                      )}
+                      sidenote={
+                        <Trans
+                          i18nKey="tendersPage.newTender.tenderExpectedDeliveryLabelSidenote"
+                          components={{
+                            i: <span className={styles.sideNote} />,
+                          }}
+                        />
+                      }
                       cx={styles.inputLabel}
                       {...lens.prop('tenderExpectedDelivery').toProps()}
                     >
@@ -371,9 +378,14 @@ export const NewTenderPage = () => {
                     <LabeledInput
                       htmlFor="tenderCategory"
                       label={t('tendersPage.newTender.tenderCategoryLabel')}
-                      sidenote={t(
-                        'tendersPage.newTender.tenderCategoryLabelSidenote',
-                      )}
+                      sidenote={
+                        <Trans
+                          components={{
+                            i: <span className={styles.sideNote} />,
+                          }}
+                          i18nKey="tendersPage.newTender.tenderCategoryLabelSidenote"
+                        />
+                      }
                       cx={styles.inputLabel}
                       {...lens.prop('tenderCategory').toProps()}
                     >

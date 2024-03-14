@@ -47,6 +47,7 @@
 .ownerDetailsRow,
 .locationDetailsRow {
   padding-top: 0px;
+  min-height: 24px !important;
   padding-bottom: 6px;
   align-items: flex-start;
   div {
@@ -89,6 +90,17 @@
 
 .commentsInputWrapper {
   margin-top: 12px;
+}
+
+.sideNote {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: var(--night600);
+  font-family: var(--uui-font);
 }
 
 @media only screen and (max-device-width: 1227px) {

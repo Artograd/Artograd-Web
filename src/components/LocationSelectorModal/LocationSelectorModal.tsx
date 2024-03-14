@@ -26,7 +26,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
 import { CityItemType } from '../../types';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
 import { Dispatch, SetStateAction, useState } from 'react';
@@ -202,9 +202,14 @@ export function LocationSelectorModal({
                     label={t(
                       'tendersPage.newTender.tenderLocationModal.addressInputLabel',
                     )}
-                    sidenote={t(
-                      'tendersPage.newTender.tenderLocationModal.addressInputLabelSidenote',
-                    )}
+                    sidenote={
+                      <Trans
+                        i18nKey="tendersPage.newTender.tenderLocationModal.addressInputLabelSidenote"
+                        components={{
+                          i: <span className={styles.sideNote} />,
+                        }}
+                      />
+                    }
                     cx={styles.modalInputLabel}
                     {...lens.prop('address').toProps()}
                   >
@@ -246,9 +251,14 @@ export function LocationSelectorModal({
                     label={t(
                       'tendersPage.newTender.tenderLocationModal.commentsInputLabel',
                     )}
-                    sidenote={t(
-                      'tendersPage.newTender.tenderLocationModal.commentsInputLabelSidenote',
-                    )}
+                    sidenote={
+                      <Trans
+                        i18nKey="tendersPage.newTender.tenderLocationModal.commentsInputLabelSidenote"
+                        components={{
+                          i: <span className={styles.sideNote} />,
+                        }}
+                      />
+                    }
                     htmlFor="commentsInput"
                     cx={styles.commentsInputWrapper}
                     {...lens.prop('comments').toProps()}

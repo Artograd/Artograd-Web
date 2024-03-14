@@ -255,11 +255,11 @@ Object {
                             <div
                               class="CcZAjD"
                             />
-                            <div
-                              class="uui-labeled-input-sidenote"
+                            <span
+                              class="sideNote"
                             >
                               This field is optional
-                            </div>
+                            </span>
                           </div>
                           <div>
                             <div
@@ -323,11 +323,11 @@ Object {
                             <div
                               class="CcZAjD"
                             />
-                            <div
-                              class="uui-labeled-input-sidenote"
+                            <span
+                              class="sideNote"
                             >
                               This field is optional
-                            </div>
+                            </span>
                           </div>
                           <div>
                             <div
@@ -874,11 +874,11 @@ Object {
                           <div
                             class="CcZAjD"
                           />
-                          <div
-                            class="uui-labeled-input-sidenote"
+                          <span
+                            class="sideNote"
                           >
                             This field is optional
-                          </div>
+                          </span>
                         </div>
                         <div>
                           <div
@@ -942,11 +942,11 @@ Object {
                           <div
                             class="CcZAjD"
                           />
-                          <div
-                            class="uui-labeled-input-sidenote"
+                          <span
+                            class="sideNote"
                           >
                             This field is optional
-                          </div>
+                          </span>
                         </div>
                         <div>
                           <div

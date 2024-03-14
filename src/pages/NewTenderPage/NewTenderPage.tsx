@@ -181,7 +181,7 @@ export const NewTenderPage = () => {
             organization: form.ownerOrganization,
             ownerEmail: form.ownerEmail,
             showEmail: form.emailSharingAgreement,
-            files: ['string'],
+            files: tenderAttachments,
             coverUrl: 'string',
             status: tenderStatus,
           },

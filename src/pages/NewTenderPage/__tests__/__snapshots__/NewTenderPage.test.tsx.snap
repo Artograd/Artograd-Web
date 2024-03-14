@@ -450,20 +450,6 @@ Object {
                     <div
                       class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
                     >
-                      Organisation
-                    </div>
-                    <div
-                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                    >
-                      Regional Culture Center
-                    </div>
-                  </div>
-                  <div
-                    class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
-                  >
-                    <div
-                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                    >
                       Email
                     </div>
                     <div
@@ -578,7 +564,7 @@ Object {
                       <div
                         class="Ka60RD uui-text uui-color-tertiary uui-font-weight-400 uui-font-style-normal uui-typography Y3TuJR xhqm1P doyi1y"
                       >
-                        Up to 10 files. Limit for 1 file is 50 Mb
+                        Up to 10 files. Limit for 1 file is 1 Mb
                       </div>
                     </div>
                   </div>
@@ -593,6 +579,7 @@ Object {
             class="uui-flex-row kfXZUl _7f-LqE contentFooter _5Jq2IB RkwqFu"
           >
             <a
+              aria-disabled="false"
               class="uui-button-box uui-enabled -clickable uui-anchor VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36"
               href=""
               tabindex="0"
@@ -607,6 +594,7 @@ Object {
               class="CcZAjD"
             />
             <button
+              aria-disabled="false"
               class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36 draftCta"
               tabindex="0"
               type="button"
@@ -618,6 +606,7 @@ Object {
               </div>
             </button>
             <button
+              aria-disabled="false"
               class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
               data-testid="form-submit"
               tabindex="0"
@@ -1080,20 +1069,6 @@ Object {
                   <div
                     class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
                   >
-                    Organisation
-                  </div>
-                  <div
-                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                  >
-                    Regional Culture Center
-                  </div>
-                </div>
-                <div
-                  class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
-                >
-                  <div
-                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                  >
                     Email
                   </div>
                   <div
@@ -1208,7 +1183,7 @@ Object {
                     <div
                       class="Ka60RD uui-text uui-color-tertiary uui-font-weight-400 uui-font-style-normal uui-typography Y3TuJR xhqm1P doyi1y"
                     >
-                      Up to 10 files. Limit for 1 file is 50 Mb
+                      Up to 10 files. Limit for 1 file is 1 Mb
                     </div>
                   </div>
                 </div>
@@ -1223,6 +1198,7 @@ Object {
           class="uui-flex-row kfXZUl _7f-LqE contentFooter _5Jq2IB RkwqFu"
         >
           <a
+            aria-disabled="false"
             class="uui-button-box uui-enabled -clickable uui-anchor VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36"
             href=""
             tabindex="0"
@@ -1237,6 +1213,7 @@ Object {
             class="CcZAjD"
           />
           <button
+            aria-disabled="false"
             class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36 draftCta"
             tabindex="0"
             type="button"
@@ -1248,6 +1225,7 @@ Object {
             </div>
           </button>
           <button
+            aria-disabled="false"
             class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
             data-testid="form-submit"
             tabindex="0"

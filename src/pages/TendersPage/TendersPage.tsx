@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 
-const tendersListLength = 0;
+const tendersListLength = 1;
 
 export const TendersPage = () => {
   const history = useHistory();
@@ -26,7 +26,7 @@ export const TendersPage = () => {
         </FlexCell>
         <FlexSpacer />
         <FlexCell width="100%">
-          {tendersListLength >= 1 && isOfficer && (
+          {tendersListLength >= tendersListLength && isOfficer && (
             <Button
               color="accent"
               caption={t('tendersPage.tenders.tendersCta')}

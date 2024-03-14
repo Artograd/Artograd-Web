@@ -15,7 +15,7 @@ Object {
           <img
             class="hd78KB"
             height="36"
-            src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4"
+            src="https://static.cdn.epam.com/uploads/690afa39a93c88c4dd13758fe1d869d5/EPM-UUI/Images/avatar_placeholder.jpg"
             width="36"
           />
           <div>
@@ -51,7 +51,7 @@ Object {
         <img
           class="hd78KB"
           height="36"
-          src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4"
+          src="https://static.cdn.epam.com/uploads/690afa39a93c88c4dd13758fe1d869d5/EPM-UUI/Images/avatar_placeholder.jpg"
           width="36"
         />
         <div>

@@ -160,7 +160,7 @@ Object {
                                     autocomplete="no"
                                     class="uui-input _4-lVKC -tX49A uui-placeholder"
                                     id="cityInput"
-                                    placeholder="Podgorica"
+                                    placeholder="city-name"
                                     tabindex="-1"
                                     type="text"
                                     value="city-name"
@@ -235,63 +235,19 @@ Object {
                             </div>
                             <div>
                               <div
-                                class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
-                                data-testid="address-selector-input"
-                                tabindex="0"
+                                class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                                data-testid="address-input"
+                                tabindex="-1"
                               >
-                                <div
-                                  class="rWm8MA"
-                                >
-                                  <input
-                                    aria-haspopup="true"
-                                    autocomplete="no"
-                                    class="uui-input _4-lVKC -tX49A uui-placeholder"
-                                    id="addressInput"
-                                    placeholder="address value"
-                                    tabindex="-1"
-                                    type="text"
-                                    value="address value"
-                                  />
-                                </div>
-                                <div
-                                  class="PELu7x"
-                                >
-                                  <div
-                                    aria-label="Clear"
-                                    class="Prmk3w uui-icon uui-enabled -clickable uui-icon-cancel -clickable"
-                                    role="button"
-                                    tabindex="-1"
-                                  >
-                                    <svg
-                                      class=""
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M14.25 4.808 13.193 3.75 9 7.942 4.808 3.75 3.75 4.808 7.942 9 3.75 13.193l1.058 1.057L9 10.057l4.193 4.193 1.057-1.057L10.057 9z"
-                                        fill-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </div>
-                                  <div
-                                    class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
-                                  >
-                                    <svg
-                                      class=""
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
-                                        fill-rule="evenodd"
-                                      />
-                                    </svg>
-                                  </div>
-                                </div>
+                                <input
+                                  aria-invalid="false"
+                                  class="uui-input"
+                                  id="addressInput"
+                                  placeholder="Please select Address"
+                                  tabindex="0"
+                                  type="text"
+                                  value="[object Object]"
+                                />
                               </div>
                             </div>
                           </div>
@@ -710,7 +666,7 @@ Object {
                                   autocomplete="no"
                                   class="uui-input _4-lVKC -tX49A uui-placeholder"
                                   id="cityInput"
-                                  placeholder="Podgorica"
+                                  placeholder="city-name"
                                   tabindex="-1"
                                   type="text"
                                   value="city-name"
@@ -785,63 +741,19 @@ Object {
                           </div>
                           <div>
                             <div
-                              class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
-                              data-testid="address-selector-input"
-                              tabindex="0"
+                              class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                              data-testid="address-input"
+                              tabindex="-1"
                             >
-                              <div
-                                class="rWm8MA"
-                              >
-                                <input
-                                  aria-haspopup="true"
-                                  autocomplete="no"
-                                  class="uui-input _4-lVKC -tX49A uui-placeholder"
-                                  id="addressInput"
-                                  placeholder="address value"
-                                  tabindex="-1"
-                                  type="text"
-                                  value="address value"
-                                />
-                              </div>
-                              <div
-                                class="PELu7x"
-                              >
-                                <div
-                                  aria-label="Clear"
-                                  class="Prmk3w uui-icon uui-enabled -clickable uui-icon-cancel -clickable"
-                                  role="button"
-                                  tabindex="-1"
-                                >
-                                  <svg
-                                    class=""
-                                    height="18"
-                                    viewBox="0 0 18 18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M14.25 4.808 13.193 3.75 9 7.942 4.808 3.75 3.75 4.808 7.942 9 3.75 13.193l1.058 1.057L9 10.057l4.193 4.193 1.057-1.057L10.057 9z"
-                                      fill-rule="evenodd"
-                                    />
-                                  </svg>
-                                </div>
-                                <div
-                                  class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
-                                >
-                                  <svg
-                                    class=""
-                                    height="18"
-                                    viewBox="0 0 18 18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
-                                      fill-rule="evenodd"
-                                    />
-                                  </svg>
-                                </div>
-                              </div>
+                              <input
+                                aria-invalid="false"
+                                class="uui-input"
+                                id="addressInput"
+                                placeholder="Please select Address"
+                                tabindex="0"
+                                type="text"
+                                value="[object Object]"
+                              />
                             </div>
                           </div>
                         </div>

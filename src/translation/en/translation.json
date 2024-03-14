@@ -108,6 +108,18 @@
         "message": "Would you like to leave the page? Unsaved data will be lost.",
         "saveCta": "Stay",
         "discardCta": "Leave"
+      },
+      "categories": {
+        "sculptures": "Sculptures",
+        "mosaics": "Mosaics",
+        "murals": "Murals",
+        "graffiti": "Graffiti/Street Art",
+        "functionalArt": "Functional Art",
+        "interactiveInstallations": "Interactive Installations",
+        "botanicalArt": "Botanical Art",
+        "waterFeatures": "Water Features",
+        "themedGardens": "Themed Gardens",
+        "recycled": "Recycled/Upcycled Art"
       }
     }
   }

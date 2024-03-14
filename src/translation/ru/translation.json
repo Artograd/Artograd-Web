@@ -70,10 +70,10 @@
       "tenderValidityPeriodFromPlaceholder": "От",
       "tenderValidityPeriodToPlaceholder": "До",
       "tenderExpectedDeliveryLabel": "Ожидаемая готовность",
-      "tenderExpectedDeliveryLabelSidenote": "Это поле является необязательным",
+      "tenderExpectedDeliveryLabelSidenote": "<i>Это поле является необязательным</i>",
       "tenderExpectedDeliveryLabelTooltipText": "Эта подсказка может быть полезна",
       "tenderCategoryLabel": "Категория",
-      "tenderCategoryLabelSidenote": "Это поле является необязательным",
+      "tenderCategoryLabelSidenote": "<i>Это поле является необязательным</i>",
       "tenderCategoryPlaceholder": "Пожалуйста, выберите категорию(и)",
       "tenderLocationSectionTitle": "Расположение арт-объекта",
       "tenderIndicateLink": "Укажите местоположение",
@@ -99,10 +99,10 @@
         "cityInputPlaceholder": "Пожалуйста выберите Город / Регион",
         "addressInputLabel": "Адрес",
         "addressInputPlaceholder": "Пожалуйста выберите Адрес",
-        "addressInputLabelSidenote": "Это поле является необязательным",
+        "addressInputLabelSidenote": "<i>Это поле является необязательным</i>",
         "commentsInputLabel": "Комментарии",
         "commentsInputPlaceholder": "Введите текст",
-        "commentsInputLabelSidenote": "Это поле является необязательным",
+        "commentsInputLabelSidenote": "<i>Это поле является необязательным</i>",
         "confirmCta": "Потвердить локацию",
         "cancelCta": "Отменить"
       },
@@ -110,6 +110,18 @@
         "message": "Хотите покинуть страницу? Несохраненные данные будут потеряны.",
         "saveCta": "Остаться",
         "discardCta": "Покинуть"
+      },
+      "categories": {
+        "sculptures": "Скульптуры",
+        "mosaics": "Мозаика",
+        "murals": "Фрески",
+        "graffiti": "Граффити/Стрит-арт",
+        "functionalArt": "Функциональное искусство",
+        "interactiveInstallations": "Интерактивные инсталляции",
+        "botanicalArt": "Ботаническое Искусство",
+        "waterFeatures": "Особенности воды",
+        "themedGardens": "Тематические сады",
+        "recycled": "Переработанное/переработанное искусство"
       }
     }
   }

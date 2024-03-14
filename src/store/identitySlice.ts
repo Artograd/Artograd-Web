@@ -15,6 +15,7 @@ export type IdentityStateType = {
   phone_number_verified: boolean;
   isLoggedIn: boolean;
   picture?: string;
+  sub?: string;
 };
 
 export type InitialStateType = {
@@ -34,6 +35,7 @@ export const identityState: IdentityStateType = {
   phone_number_verified: false,
   isLoggedIn: false,
   picture: '',
+  sub: '',
 };
 
 export const initialState: InitialStateType = {

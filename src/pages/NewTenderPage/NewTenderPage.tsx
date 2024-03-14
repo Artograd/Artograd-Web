@@ -52,20 +52,8 @@ const DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const categoryList: CategoryItemType[] = [
-  { id: 0, name: 'Sculptures' },
-  { id: 1, name: 'Mosaics' },
-  { id: 2, name: 'Murals' },
-  { id: 3, name: 'Graffiti/Street Art' },
-  { id: 4, name: 'Functional Art' },
-  { id: 5, name: 'Interactive Installations' },
-  { id: 6, name: 'Botanical Art' },
-  { id: 7, name: 'Water Features' },
-  { id: 8, name: 'Themed Gardens' },
-  { id: 9, name: 'Recycled/Upcycled Art' },
-];
-
 type NewTenderFormType = {
+  sub?: string;
   tenderTitle?: string;
   tenderDescription?: string;
   tenderValidity?: RangeDatePickerValue;
@@ -88,7 +76,7 @@ export const NewTenderPage = () => {
   const { uuiModals, uuiNotifications } = useUuiContext();
 
   // SELECTORS
-  const { family_name, given_name, email } = useSelector(
+  const { family_name, given_name, email, sub } = useSelector(
     (state: RootState) => state.identity,
   );
   const userOrganization = useSelector(
@@ -102,7 +90,7 @@ export const NewTenderPage = () => {
     [],
   );
 
-  console.log(':::atach', tenderAttachments);
+  console.log(':::tender attachments', tenderAttachments);
 
   // ADDRESS STATES
   const [listOfCities, setListOfCities] = useState<CityItemType[] | undefined>(
@@ -116,6 +104,7 @@ export const NewTenderPage = () => {
   >();
 
   const initialValues: NewTenderFormType = {
+    sub: '',
     tenderTitle: '',
     tenderDescription: '',
     tenderValidity: { from: '', to: '' },
@@ -131,6 +120,22 @@ export const NewTenderPage = () => {
     ownerEmail: email,
     ownerOrganization: userOrganization,
   };
+
+  const categoryList: CategoryItemType[] = [
+    { id: 0, name: t('tendersPage.newTender.categories.sculptures') },
+    { id: 1, name: t('tendersPage.newTender.categories.mosaics') },
+    { id: 2, name: t('tendersPage.newTender.categories.murals') },
+    { id: 3, name: t('tendersPage.newTender.categories.graffiti') },
+    { id: 4, name: t('tendersPage.newTender.categories.functionalArt') },
+    {
+      id: 5,
+      name: t('tendersPage.newTender.categories.interactiveInstallations'),
+    },
+    { id: 6, name: t('tendersPage.newTender.categories.botanicalArt') },
+    { id: 7, name: t('tendersPage.newTender.categories.waterFeatures') },
+    { id: 8, name: t('tendersPage.newTender.categories.themedGardens') },
+    { id: 9, name: t('tendersPage.newTender.categories.recycled') },
+  ];
 
   const dataSource = useArrayDataSource(
     {
@@ -179,9 +184,8 @@ export const NewTenderPage = () => {
               addressComment: commentsValue,
             },
             ownerName: `${form.ownerFirstName} ${form.ownerLastName}`,
-            ownerId: 'string',
+            ownerId: sub,
             organization: form.ownerOrganization,
-            ownerEmail: form.ownerEmail,
             showEmail: form.emailSharingAgreement,
             files: tenderAttachments,
             coverUrl: 'string',
@@ -207,7 +211,6 @@ export const NewTenderPage = () => {
         locationCoordinated: { isRequired: false },
         ownerFirstName: { isRequired: false },
         ownerLastName: { isRequired: false },
-        ownerEmail: { isRequired: false },
         ownerOrganization: { isRequired: false },
       },
     }),

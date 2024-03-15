@@ -122,19 +122,19 @@ export const NewTenderPage = () => {
   };
 
   const categoryList: CategoryItemType[] = [
-    { id: 0, name: t('tendersPage.newTender.categories.sculptures') },
-    { id: 1, name: t('tendersPage.newTender.categories.mosaics') },
-    { id: 2, name: t('tendersPage.newTender.categories.murals') },
-    { id: 3, name: t('tendersPage.newTender.categories.graffiti') },
-    { id: 4, name: t('tendersPage.newTender.categories.functionalArt') },
+    { id: 0, name: 'tendersPage.newTender.categories.sculptures' },
+    { id: 1, name: 'tendersPage.newTender.categories.mosaics' },
+    { id: 2, name: 'tendersPage.newTender.categories.murals' },
+    { id: 3, name: 'tendersPage.newTender.categories.graffiti' },
+    { id: 4, name: 'tendersPage.newTender.categories.functionalArt' },
     {
       id: 5,
-      name: t('tendersPage.newTender.categories.interactiveInstallations'),
+      name: 'tendersPage.newTender.categories.interactiveInstallations',
     },
-    { id: 6, name: t('tendersPage.newTender.categories.botanicalArt') },
-    { id: 7, name: t('tendersPage.newTender.categories.waterFeatures') },
-    { id: 8, name: t('tendersPage.newTender.categories.themedGardens') },
-    { id: 9, name: t('tendersPage.newTender.categories.recycled') },
+    { id: 6, name: 'tendersPage.newTender.categories.botanicalArt' },
+    { id: 7, name: 'tendersPage.newTender.categories.waterFeatures' },
+    { id: 8, name: 'tendersPage.newTender.categories.themedGardens' },
+    { id: 9, name: 'tendersPage.newTender.categories.recycled' },
   ];
 
   const dataSource = useArrayDataSource(
@@ -146,10 +146,6 @@ export const NewTenderPage = () => {
 
   const getCityById = () => {
     return listOfCities?.find((city) => city.id === cityName?.id);
-  };
-
-  const getCategoryById = (id: number) => {
-    return categoryList.find((category) => category.id === id);
   };
 
   const {
@@ -169,9 +165,7 @@ export const NewTenderPage = () => {
             submissionStart: form.tenderValidity?.from,
             submissionEnd: form.tenderValidity?.to,
             expectedDelivery: form.tenderExpectedDelivery,
-            category: form.tenderCategory?.map(
-              (tenderCategory) => getCategoryById(tenderCategory)?.name,
-            ),
+            category: form.tenderCategory,
             location: {
               nestedLocation: {
                 name: cityName?.name,
@@ -321,9 +315,9 @@ export const NewTenderPage = () => {
                     >
                       <RangeDatePicker
                         id="tenderValidity"
+                        isRequired
                         {...lens.prop('tenderValidity').toProps()}
                         format="MMM D, YYYY"
-                        isRequired
                         rawProps={{
                           from: { 'data-testid': `tender-validity-from-input` },
                           to: { 'data-testid': `tender-validity-to-input` },
@@ -396,7 +390,7 @@ export const NewTenderPage = () => {
                         id="tenderCategory"
                         {...lens.prop('tenderCategory').toProps()}
                         dataSource={dataSource}
-                        getName={(item: CategoryItemType) => item?.name}
+                        getName={(item: CategoryItemType) => t(item?.name)}
                         entityName="category"
                         selectionMode="multi"
                         valueType="id"

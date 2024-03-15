@@ -57,7 +57,7 @@ export const FileUpload = ({
           newAttachments.push(newFile);
           uuiApi
             .uploadFile(
-              ORIGIN.concat(`/uploadFile/tenderFolder/${filesDirectoryId}`),
+              ORIGIN.concat(`/uploadFile/${filesDirectoryId}`),
               file,
               {
                 onProgress: (progress) => trackProgress(progress, tempId),

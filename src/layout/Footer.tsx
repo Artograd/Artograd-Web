@@ -9,7 +9,7 @@ import {
 } from '@epam/uui';
 import { AdaptiveItemProps, MainMenuLogo } from '@epam/uui-components';
 import { useTranslation } from 'react-i18next';
-import styles from './Footer.module.scss';
+import styles from './Layout.module.scss';
 import { useHistory } from 'react-router-dom';
 
 export const Footer = () => {

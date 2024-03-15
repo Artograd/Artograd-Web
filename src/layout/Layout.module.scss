@@ -1,0 +1,22 @@
+.footer {
+  top: 0 !important;
+}
+
+.footerLink {
+  color: #20f2ff;
+}
+
+.signInButton {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.signUpButton {
+  margin-right: 12px;
+}
+
+.blocker {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}

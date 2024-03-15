@@ -10,7 +10,7 @@ import {
 } from '@epam/uui';
 import { AdaptiveItemProps, MainMenuLogo } from '@epam/uui-components';
 import { useLocation, useHistory } from 'react-router-dom';
-import styles from './Header.module.scss';
+import styles from './Layout.module.scss';
 import { useTranslation } from 'react-i18next';
 
 import { RootState } from '../store/store';

@@ -27,7 +27,7 @@ import {
   useArrayDataSource,
   useUuiContext,
 } from '@epam/uui-core';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import 'dayjs/locale/ru';
 import { FlexSpacer } from '@epam/uui-components';
@@ -44,6 +44,7 @@ import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import dayjs, { Dayjs } from 'dayjs';
+import { isPageLoading } from '../../store/helpersSlice';
 
 const DefaultIcon = L.icon({
   iconUrl: MarkerIcon,
@@ -72,6 +73,7 @@ type NewTenderFormType = {
 
 export const NewTenderPage = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   const history = useHistory();
   const { uuiModals, uuiNotifications } = useUuiContext();
 
@@ -84,13 +86,10 @@ export const NewTenderPage = () => {
   );
 
   //   MAIN TENDER STATES
-  const [isLoading, setIsLoading] = useState(false);
   const [tenderStatus, setTenderStatus] = useState(TenderStatus.PUBLISHED);
   const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
     [],
   );
-
-  console.log(':::tender attachments', tenderAttachments);
 
   // ADDRESS STATES
   const [listOfCities, setListOfCities] = useState<CityItemType[] | undefined>(
@@ -188,9 +187,9 @@ export const NewTenderPage = () => {
         )
         .then(() => {
           history.push('/tenders');
-          setIsLoading(false);
+          dispatch(isPageLoading(false));
         })
-        .catch(() => setIsLoading(false)),
+        .catch(() => dispatch(isPageLoading(false))),
     getMetadata: () => ({
       props: {
         tenderTitle: { isRequired: true },
@@ -212,6 +211,12 @@ export const NewTenderPage = () => {
   });
 
   const onFormSubmit = () => {
+    dispatch(isPageLoading(true));
+    save();
+  };
+
+  const onDraftFormSubmit = () => {
+    dispatch(isPageLoading(true));
     setTenderStatus(TenderStatus.DRAFT);
     save();
   };
@@ -569,23 +574,20 @@ export const NewTenderPage = () => {
             color="secondary"
             caption={t('tendersPage.newTender.pageFormFooterCancelCta')}
             link={{ pathname: '/tenders' }}
-            isDisabled={isLoading}
           />
           <FlexSpacer />
           <Button
             fill="outline"
             color="secondary"
             caption={t('tendersPage.newTender.pageFormFooterDraftCta')}
-            onClick={() => onFormSubmit()}
+            onClick={() => onDraftFormSubmit()}
             cx={styles.draftCta}
-            isDisabled={isLoading}
           />
           <Button
             color="primary"
             caption={t('tendersPage.newTender.pageFormFooterCreateCta')}
-            onClick={() => save()}
+            onClick={() => onFormSubmit()}
             rawProps={{ 'data-testid': `form-submit` }}
-            isDisabled={isLoading}
           />
         </FlexRow>
       </Panel>

@@ -77,10 +77,10 @@ export const NewTenderPage = () => {
 
   // SELECTORS
   const { family_name, given_name, email, sub } = useSelector(
-    (state: RootState) => state.identity,
+    (state: RootState) => state.identity.userData,
   );
   const userOrganization = useSelector(
-    (state: RootState) => state.identity['custom:organization'],
+    (state: RootState) => state.identity.userData['custom:organization'],
   );
 
   //   MAIN TENDER STATES

@@ -12,7 +12,7 @@ export const TendersPage = () => {
   const history = useHistory();
   const { t } = useTranslation();
   const userRoles = useSelector(
-    (state: RootState) => state?.identity?.['cognito:groups'],
+    (state: RootState) => state?.identity?.userData['cognito:groups'],
   );
   const isOfficer = userRoles?.includes('Officials');
 

@@ -11,7 +11,10 @@ import { ReactComponent as ProfileIcon } from '@epam/assets/icons/common/social-
 import { ReactComponent as SettingsIcon } from '@epam/assets/icons/common/action-settings-18.svg';
 import { ReactComponent as BellIcon } from '@epam/assets/icons/common/bell-18.svg';
 import { ReactComponent as LogoutIcon } from '@epam/assets/icons/common/navigation-logout-18.svg';
-import { identityState, saveUserData } from '../../store/identitySlice';
+import {
+  initialState as initialIdentityState,
+  saveUserData,
+} from '../../store/identitySlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { useHistory } from 'react-router-dom';
@@ -23,11 +26,11 @@ export const Avatar = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const { family_name, given_name, email, picture } = useSelector(
-    (state: RootState) => state.identity,
+    (state: RootState) => state.identity.userData,
   );
   const logOut = async () => {
     // clear identity state to the initial
-    dispatch(saveUserData(identityState));
+    dispatch(saveUserData(initialIdentityState));
     // revoke cognito token and clear tokens from localStorage
     localStorage.removeItem('id_token');
     localStorage.removeItem('refresh_token');

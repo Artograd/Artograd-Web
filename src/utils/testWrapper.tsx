@@ -6,7 +6,7 @@ import { store } from '../store/store';
 import { MemoryRouter } from 'react-router-dom';
 import { createStore } from '@reduxjs/toolkit';
 import identityReducer, {
-  InitialStateType,
+  IdentityStateType,
   initialState,
 } from '../store/identitySlice';
 
@@ -19,7 +19,7 @@ export const testWrapper = async ({
   component: React.JSX.Element;
   history: MemoryHistory<unknown>;
   path?: string;
-  state?: InitialStateType;
+  state?: IdentityStateType;
 }) => {
   return path ? (
     <Provider store={store}>

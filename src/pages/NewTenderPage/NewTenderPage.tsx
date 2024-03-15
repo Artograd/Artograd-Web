@@ -182,7 +182,7 @@ export const NewTenderPage = () => {
             ownerId: sub,
             organization: form.ownerOrganization,
             showEmail: form.emailSharingAgreement,
-            files: tenderAttachments,
+            files: tenderAttachments.map(attachment => attachment.path),
             coverUrl: 'string',
             status: tenderStatus,
             filesDirectoryId,

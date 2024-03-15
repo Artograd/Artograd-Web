@@ -3,8 +3,6 @@ import { useUuiContext } from '@epam/uui-core';
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const ORIGIN = process.env.REACT_APP_PUBLIC_URL || '';
-
 let tempIdCount = 0;
 const fileSizeLimit = 1024 * 1024 * 1;
 const fileAmountLimit = 10;
@@ -57,11 +55,12 @@ export const FileUpload = ({
           newAttachments.push(newFile);
           uuiApi
             .uploadFile(
-              ORIGIN.concat(`/uploadFile/${filesDirectoryId}`),
+              `https://t8g5g9h07h.execute-api.eu-central-1.amazonaws.com/api/uploadFile/${filesDirectoryId}/docs`,
               file,
               {
                 onProgress: (progress) => trackProgress(progress, tempId),
                 getXHR: (xhr) => {
+                  xhr.withCredentials = false;
                   newFile.abortXHR = () => xhr.abort();
                 },
               },

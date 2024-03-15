@@ -11,9 +11,11 @@ const fileAmountLimit = 10;
 
 export const FileUpload = ({
   attachments,
+  filesDirectoryId,
   setAttachments,
 }: {
   attachments: FileCardItem[];
+  filesDirectoryId: string;
   setAttachments: Dispatch<SetStateAction<FileCardItem[]>>;
 }) => {
   const { t } = useTranslation();
@@ -54,12 +56,16 @@ export const FileUpload = ({
         if (file.size <= fileSizeLimit) {
           newAttachments.push(newFile);
           uuiApi
-            .uploadFile(ORIGIN.concat('/upload/uploadFileMock'), file, {
-              onProgress: (progress) => trackProgress(progress, tempId),
-              getXHR: (xhr) => {
-                newFile.abortXHR = () => xhr.abort();
+            .uploadFile(
+              ORIGIN.concat(`/uploadFile/${filesDirectoryId}/subFolder`),
+              file,
+              {
+                onProgress: (progress) => trackProgress(progress, tempId),
+                getXHR: (xhr) => {
+                  newFile.abortXHR = () => xhr.abort();
+                },
               },
-            })
+            )
             .then((res) => updateFile({ ...res, progress: 100 }, tempId))
             .catch((err) =>
               updateFile(

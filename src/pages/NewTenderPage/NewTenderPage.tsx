@@ -45,6 +45,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import dayjs, { Dayjs } from 'dayjs';
 import { isPageLoading } from '../../store/helpersSlice';
+import { v4 as uuidv4 } from 'uuid';
 
 const DefaultIcon = L.icon({
   iconUrl: MarkerIcon,
@@ -76,6 +77,7 @@ export const NewTenderPage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { uuiModals, uuiNotifications } = useUuiContext();
+  const filesDirectoryId = uuidv4().replaceAll('-', '');
 
   // SELECTORS
   const { family_name, given_name, email, sub } = useSelector(
@@ -183,6 +185,7 @@ export const NewTenderPage = () => {
             files: tenderAttachments,
             coverUrl: 'string',
             status: tenderStatus,
+            filesDirectoryId,
           },
         )
         .then(() => {
@@ -562,6 +565,7 @@ export const NewTenderPage = () => {
                 <FileUpload
                   attachments={tenderAttachments}
                   setAttachments={setTenderAttachments}
+                  filesDirectoryId={filesDirectoryId}
                 />
               </FlexCell>
             </FlexRow>

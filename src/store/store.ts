@@ -10,10 +10,11 @@ import {
 } from 'redux-persist';
 import identityReducer from './identitySlice';
 import helpersReducer from './helpersSlice';
-import storage from 'redux-persist/lib/storage/session';
+import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
   key: 'root',
+  version: 1,
   storage,
 };
 

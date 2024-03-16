@@ -153,6 +153,7 @@ export const NewTenderPage = () => {
     lens,
     save,
     value: formValues,
+    isInvalid,
   } = useForm<NewTenderFormType>({
     value: initialValues,
     onSave: (tender) => Promise.resolve({ form: tender }),
@@ -182,7 +183,7 @@ export const NewTenderPage = () => {
             ownerId: sub,
             organization: form.ownerOrganization,
             showEmail: form.emailSharingAgreement,
-            files: tenderAttachments.map(attachment => attachment.path),
+            files: tenderAttachments.map((attachment) => attachment.path),
             coverUrl: 'string',
             status: tenderStatus,
             filesDirectoryId,
@@ -249,6 +250,12 @@ export const NewTenderPage = () => {
     saveButton: t('tendersPage.newTender.beforeLeave.saveCta'),
     discardButton: t('tendersPage.newTender.beforeLeave.discardCta'),
   };
+
+  useEffect(() => {
+    if (isInvalid) {
+      dispatch(isPageLoading(false));
+    }
+  }, [isInvalid]);
 
   return (
     <Panel cx={styles.wrapper}>

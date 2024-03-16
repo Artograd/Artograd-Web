@@ -1,6 +1,13 @@
-import { DropSpot, FileCard, FileCardItem, i18n } from '@epam/uui';
+import {
+  DropSpot,
+  FileCard,
+  FileCardItem,
+  i18n,
+  Text,
+  ErrorAlert,
+} from '@epam/uui';
 import { useUuiContext } from '@epam/uui-core';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 let tempIdCount = 0;
@@ -18,6 +25,8 @@ export const FileUpload = ({
 }) => {
   const { t } = useTranslation();
   const { uuiApi } = useUuiContext();
+  const [isFileLimitReached, setIsFileLimitReached] = useState(false);
+  const [isFileSizeLimitReached, setIsFileSizeLimitReached] = useState(false);
 
   const trackProgress = (progress: number, id: number) => {
     setAttachments((progressAttachments) =>
@@ -34,24 +43,30 @@ export const FileUpload = ({
   };
 
   const deleteFile = (file: FileCardItem) => {
+    setIsFileLimitReached(false);
     setAttachments((deleteAttachments) =>
       deleteAttachments.filter((item) => item.id !== file.id),
     );
   };
 
   const uploadFile = (files: File[]) => {
-    if (files.length <= fileAmountLimit) {
+    setIsFileLimitReached(false);
+    setIsFileSizeLimitReached(false);
+    if (
+      files.length <= fileAmountLimit &&
+      attachments.length <= fileAmountLimit - 1
+    ) {
       const newAttachments = [...attachments];
       files.map((file: File) => {
-        const tempId = tempIdCount - 1;
-        tempIdCount -= 1;
-        const newFile: FileCardItem = {
-          id: tempId,
-          name: file.name,
-          progress: 0,
-          size: file.size,
-        };
         if (file.size <= fileSizeLimit) {
+          const tempId = tempIdCount - 1;
+          tempIdCount -= 1;
+          const newFile: FileCardItem = {
+            id: tempId,
+            name: file.name,
+            progress: 0,
+            size: file.size,
+          };
           newAttachments.push(newFile);
           uuiApi
             .uploadFile(
@@ -72,10 +87,14 @@ export const FileUpload = ({
                 tempId,
               ),
             );
+        } else {
+          setIsFileSizeLimitReached(true);
         }
       });
 
       setAttachments(newAttachments);
+    } else {
+      setIsFileLimitReached(true);
     }
   };
 
@@ -98,6 +117,16 @@ export const FileUpload = ({
       {attachments.map((file, index) => (
         <FileCard key={index} file={file} onClick={() => deleteFile(file)} />
       ))}
+      {isFileLimitReached && (
+        <ErrorAlert>
+          <Text size="30">{t('global.fileUpload.fileLimitErrorText')}</Text>
+        </ErrorAlert>
+      )}
+      {isFileSizeLimitReached && (
+        <ErrorAlert>
+          <Text size="30">{t('global.fileUpload.fileSizeLimitErrorText')}</Text>
+        </ErrorAlert>
+      )}
     </>
   );
 };

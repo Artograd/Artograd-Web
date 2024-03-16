@@ -18,6 +18,10 @@
         "privatePolicyCta": "Privacy policy",
         "cookiePolicyCta": "Cookies policy"
       }
+    },
+    "fileUpload": {
+      "fileLimitErrorText": "You have reached the limit of the number of possible attached files",
+      "fileSizeLimitErrorText": "The uploaded file exceeded the limit of uploading allowed size"
     }
   },
   "homepage": {

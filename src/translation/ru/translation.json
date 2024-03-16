@@ -18,6 +18,10 @@
         "privatePolicyCta": "Политика конфиденциальности",
         "cookiePolicyCta": "Политика использования файлов cookie"
       }
+    },
+    "fileUpload": {
+      "fileLimitErrorText": "Вы достигли предела количества возможных прикрепленных файлов",
+      "fileSizeLimitErrorText": "Загруженный файл превысил разрешенный размер загрузки"
     }
   },
   "homepage": {

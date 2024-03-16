@@ -55,7 +55,7 @@ export const FileUpload = ({
           newAttachments.push(newFile);
           uuiApi
             .uploadFile(
-              `https://t8g5g9h07h.execute-api.eu-central-1.amazonaws.com/api/uploadFile/${filesDirectoryId}/docs`,
+              `${process.env.REACT_APP_BACKEND_URL}/uploadFile/${filesDirectoryId}/docs`,
               file,
               {
                 onProgress: (progress) => trackProgress(progress, tempId),

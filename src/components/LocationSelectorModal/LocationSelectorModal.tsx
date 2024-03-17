@@ -32,12 +32,12 @@ import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { DraggableMarker } from '../MapCordsController/MapCordsController';
 
-const DefaultIcon = L.icon({
+const MapMarkerIcon = L.icon({
   iconUrl: MarkerIcon,
   shadowUrl: MarkerIconShadow,
 });
 
-L.Marker.prototype.options.icon = DefaultIcon;
+L.Marker.prototype.options.icon = MapMarkerIcon;
 
 export type LocationSelectorModalType = {
   modalProps: IModal<string>;

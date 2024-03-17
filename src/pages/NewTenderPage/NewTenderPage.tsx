@@ -8,6 +8,10 @@ import {
   FlexRow,
   LabeledInput,
   LinkButton,
+  ModalBlocker,
+  ModalFooter,
+  ModalHeader,
+  ModalWindow,
   Panel,
   PickerInput,
   RangeDatePicker,
@@ -21,7 +25,7 @@ import {
 } from '@epam/uui';
 import styles from './NewTenderPage.module.scss';
 import { Trans, useTranslation } from 'react-i18next';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   RangeDatePickerValue,
   useArrayDataSource,
@@ -47,12 +51,12 @@ import dayjs, { Dayjs } from 'dayjs';
 import { isPageLoading } from '../../store/helpersSlice';
 import { v4 as uuidv4 } from 'uuid';
 
-const DefaultIcon = L.icon({
+const MapMarkerIcon = L.icon({
   iconUrl: MarkerIcon,
   shadowUrl: MarkerIconShadow,
 });
 
-L.Marker.prototype.options.icon = DefaultIcon;
+L.Marker.prototype.options.icon = MapMarkerIcon;
 
 type NewTenderFormType = {
   sub?: string;
@@ -77,17 +81,22 @@ export const NewTenderPage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { uuiModals, uuiNotifications } = useUuiContext();
+  const uuiContext = useUuiContext();
   const filesDirectoryId = uuidv4().replaceAll('-', '');
 
   // SELECTORS
-  const { family_name, given_name, email, sub } = useSelector(
+  const { family_name, given_name, email } = useSelector(
     (state: RootState) => state.identity.userData,
   );
   const userOrganization = useSelector(
     (state: RootState) => state.identity.userData['custom:organization'],
   );
+  const username = useSelector(
+    (state: RootState) => state.identity.userData['cognito:username'],
+  );
 
   //   MAIN TENDER STATES
+  const [saveWithErrors, setSaveWithErrors] = useState(false);
   const [tenderStatus, setTenderStatus] = useState(TenderStatus.PUBLISHED);
   const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
     [],
@@ -104,7 +113,11 @@ export const NewTenderPage = () => {
     LatLngLiteral | undefined
   >();
 
-  const initialValues: NewTenderFormType = {
+  const getCityById = () => {
+    return listOfCities?.find((city) => city.id === cityName?.id);
+  };
+
+  const formInitialValues: NewTenderFormType = {
     sub: '',
     tenderTitle: '',
     tenderDescription: '',
@@ -122,6 +135,116 @@ export const NewTenderPage = () => {
     ownerOrganization: userOrganization,
   };
 
+  // FORM FUNCTIONS
+  const beforeLeave = useCallback((): Promise<boolean> => {
+    return uuiContext.uuiModals.show<boolean>((modalProps) => (
+      <ModalBlocker {...modalProps}>
+        <ModalWindow>
+          <Panel background="surface-main">
+            <ModalHeader
+              title={t('tendersPage.newTender.beforeLeave.message')}
+              onClose={() => modalProps.abort()}
+            />
+            <ModalFooter>
+              <FlexSpacer />
+              <Button
+                color="secondary"
+                fill="outline"
+                caption={t('tendersPage.newTender.beforeLeave.discardCta')}
+                onClick={() => {
+                  modalProps.abort();
+                  setSaveWithErrors(true);
+                  history.push('/tenders');
+                }}
+              />
+              <Button
+                color="accent"
+                caption={t('tendersPage.newTender.beforeLeave.saveCta')}
+                onClick={() => modalProps.abort()}
+              />
+            </ModalFooter>
+          </Panel>
+        </ModalWindow>
+      </ModalBlocker>
+    ));
+  }, [uuiContext.uuiModals]);
+
+  const {
+    lens,
+    save,
+    value: formValues,
+    isInvalid,
+  } = useForm<NewTenderFormType>({
+    value: formInitialValues,
+    onSave: (tender) =>
+      saveWithErrors
+        ? Promise.reject(new Error())
+        : Promise.resolve({ form: tender }),
+    onError: () => history.push('/tenders'),
+    onSuccess: (form) =>
+      axios
+        .post(`${process.env.REACT_APP_BACKEND_URL}/tenders`, {
+          title: form.tenderTitle,
+          description: form.tenderDescription,
+          submissionStart: form.tenderValidity?.from,
+          submissionEnd: form.tenderValidity?.to,
+          expectedDelivery: form.tenderExpectedDelivery,
+          category: form.tenderCategory,
+          location: {
+            nestedLocation: {
+              name: cityName?.name,
+            },
+            geoPosition: {
+              latitude: cityName?.lat,
+              longitude: cityName?.lng,
+            },
+            addressLine: addressValue,
+            addressComment: commentsValue,
+          },
+          ownerName: `${form.ownerFirstName} ${form.ownerLastName}`,
+          ownerId: username,
+          organization: form.ownerOrganization,
+          showEmail: form.emailSharingAgreement,
+          files: tenderAttachments.map((attachment) => attachment.path),
+          coverUrl: 'string',
+          status: tenderStatus,
+          filesDirectoryId,
+        })
+        .then(() => {
+          history.push('/tenders');
+          dispatch(isPageLoading(false));
+        })
+        .catch(() => dispatch(isPageLoading(false))),
+    getMetadata: () => ({
+      props: {
+        tenderTitle: { isRequired: true },
+        tenderDescription: { isRequired: true },
+        tenderValidity: { isRequired: true },
+        tenderExpectedDelivery: { isRequired: false },
+        tenderCategory: { isRequired: false },
+        emailSharingAgreement: { isRequired: false },
+        locationCityName: { isRequired: false },
+        locationComments: { isRequired: false },
+        locationAddress: { isRequired: false },
+        locationCoordinated: { isRequired: false },
+        ownerFirstName: { isRequired: false },
+        ownerLastName: { isRequired: false },
+        ownerOrganization: { isRequired: false },
+      },
+    }),
+    beforeLeave: beforeLeave,
+    settingsKey: 'new-tender-form',
+  });
+
+  // request list of cities on page load
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/cities`)
+      .then((response) => setListOfCities(response.data))
+      .catch(() => setListOfCities([]));
+  }, []);
+
+  // CATEGORIES LIST PROVIDER
   const categoryList: CategoryItemType[] = [
     { id: 0, name: 'tendersPage.newTender.categories.sculptures' },
     { id: 1, name: 'tendersPage.newTender.categories.mosaics' },
@@ -145,93 +268,28 @@ export const NewTenderPage = () => {
     [],
   );
 
-  const getCityById = () => {
-    return listOfCities?.find((city) => city.id === cityName?.id);
-  };
-
-  const {
-    lens,
-    save,
-    value: formValues,
-    isInvalid,
-  } = useForm<NewTenderFormType>({
-    value: initialValues,
-    onSave: (tender) => Promise.resolve({ form: tender }),
-    onSuccess: (form) =>
-      axios
-        .post(
-          'https://t8g5g9h07h.execute-api.eu-central-1.amazonaws.com/api/tenders',
-          {
-            title: form.tenderTitle,
-            description: form.tenderDescription,
-            submissionStart: form.tenderValidity?.from,
-            submissionEnd: form.tenderValidity?.to,
-            expectedDelivery: form.tenderExpectedDelivery,
-            category: form.tenderCategory,
-            location: {
-              nestedLocation: {
-                name: cityName?.name,
-              },
-              geoPosition: {
-                latitude: cityName?.lat,
-                longitude: cityName?.lng,
-              },
-              addressLine: addressValue,
-              addressComment: commentsValue,
-            },
-            ownerName: `${form.ownerFirstName} ${form.ownerLastName}`,
-            ownerId: sub,
-            organization: form.ownerOrganization,
-            showEmail: form.emailSharingAgreement,
-            files: tenderAttachments.map((attachment) => attachment.path),
-            coverUrl: 'string',
-            status: tenderStatus,
-            filesDirectoryId,
-          },
-        )
-        .then(() => {
-          history.push('/tenders');
-          dispatch(isPageLoading(false));
-        })
-        .catch(() => dispatch(isPageLoading(false))),
-    getMetadata: () => ({
-      props: {
-        tenderTitle: { isRequired: true },
-        tenderDescription: { isRequired: true },
-        tenderValidity: { isRequired: true },
-        tenderExpectedDelivery: { isRequired: false },
-        tenderCategory: { isRequired: false },
-        emailSharingAgreement: { isRequired: false },
-        locationCityName: { isRequired: false },
-        locationComments: { isRequired: false },
-        locationAddress: { isRequired: false },
-        locationCoordinated: { isRequired: false },
-        ownerFirstName: { isRequired: false },
-        ownerLastName: { isRequired: false },
-        ownerOrganization: { isRequired: false },
-      },
-    }),
-    settingsKey: 'new-tender-form',
-  });
-
+  // FORM SUBMISSION
   const onFormSubmit = () => {
-    dispatch(isPageLoading(true));
+    if (!isInvalid) {
+      dispatch(isPageLoading(true));
+    }
     save();
   };
 
   const onDraftFormSubmit = () => {
-    dispatch(isPageLoading(true));
+    if (!isInvalid) {
+      dispatch(isPageLoading(true));
+    }
     setTenderStatus(TenderStatus.DRAFT);
     save();
   };
 
   useEffect(() => {
-    axios
-      .get(
-        'https://t8g5g9h07h.execute-api.eu-central-1.amazonaws.com/api/cities',
-      )
-      .then((response) => setListOfCities(response.data));
-  }, []);
+    console.log(':::isInvalid', isInvalid);
+    if (isInvalid) {
+      dispatch(isPageLoading(false));
+    }
+  }, [isInvalid]);
 
   // UUI Component Localization
   i18nFromUui.rangeDatePicker = {
@@ -250,12 +308,6 @@ export const NewTenderPage = () => {
     saveButton: t('tendersPage.newTender.beforeLeave.saveCta'),
     discardButton: t('tendersPage.newTender.beforeLeave.discardCta'),
   };
-
-  useEffect(() => {
-    if (isInvalid) {
-      dispatch(isPageLoading(false));
-    }
-  }, [isInvalid]);
 
   return (
     <Panel cx={styles.wrapper}>
@@ -276,13 +328,11 @@ export const NewTenderPage = () => {
                 </Text>
 
                 <LabeledInput
-                  htmlFor="tenderTitle"
                   label={t('tendersPage.newTender.tenderTitleLabel')}
                   cx={styles.inputLabel}
                   {...lens.prop('tenderTitle').toProps()}
                 >
                   <TextInput
-                    id="tenderTitle"
                     {...lens.prop('tenderTitle').toProps()}
                     placeholder={t(
                       'tendersPage.newTender.tenderTitlePlaceholder',
@@ -292,13 +342,11 @@ export const NewTenderPage = () => {
                 </LabeledInput>
 
                 <LabeledInput
-                  htmlFor="tenderDescription"
                   label={t('tendersPage.newTender.tenderDescriptionLabel')}
                   cx={styles.inputLabel}
                   {...lens.prop('tenderDescription').toProps()}
                 >
                   <TextArea
-                    id="tenderDescription"
                     {...lens.prop('tenderDescription').toProps()}
                     placeholder={t(
                       'tendersPage.newTender.tenderDescriptionPlaceholder',
@@ -321,7 +369,6 @@ export const NewTenderPage = () => {
                     cx={styles.rangeDatePickerWrapper}
                   >
                     <LabeledInput
-                      htmlFor="tenderValidity"
                       label={t(
                         'tendersPage.newTender.tenderValidityPeriodLabel',
                       )}
@@ -329,8 +376,6 @@ export const NewTenderPage = () => {
                       {...lens.prop('tenderValidity').toProps()}
                     >
                       <RangeDatePicker
-                        id="tenderValidity"
-                        isRequired
                         {...lens.prop('tenderValidity').toProps()}
                         format="MMM D, YYYY"
                         rawProps={{
@@ -343,7 +388,6 @@ export const NewTenderPage = () => {
 
                   <FlexCell width="100%" grow={1}>
                     <LabeledInput
-                      htmlFor="tenderExpectedDelivery"
                       label={t(
                         'tendersPage.newTender.tenderExpectedDeliveryLabel',
                       )}
@@ -359,7 +403,6 @@ export const NewTenderPage = () => {
                       {...lens.prop('tenderExpectedDelivery').toProps()}
                     >
                       <DatePicker
-                        id="tenderExpectedDelivery"
                         {...lens.prop('tenderExpectedDelivery').toProps()}
                         format="MMM D, YYYY"
                         placeholder={t('global.datePickerPlaceholder')}
@@ -388,7 +431,6 @@ export const NewTenderPage = () => {
                     cx={styles.categoryPickerWrapper}
                   >
                     <LabeledInput
-                      htmlFor="tenderCategory"
                       label={t('tendersPage.newTender.tenderCategoryLabel')}
                       sidenote={
                         <Trans
@@ -402,7 +444,6 @@ export const NewTenderPage = () => {
                       {...lens.prop('tenderCategory').toProps()}
                     >
                       <PickerInput
-                        id="tenderCategory"
                         {...lens.prop('tenderCategory').toProps()}
                         dataSource={dataSource}
                         getName={(item: CategoryItemType) => t(item?.name)}

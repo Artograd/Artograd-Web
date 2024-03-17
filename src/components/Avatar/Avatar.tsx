@@ -14,6 +14,7 @@ import { ReactComponent as LogoutIcon } from '@epam/assets/icons/common/navigati
 import {
   initialState as initialIdentityState,
   saveUserData,
+  userLogin,
 } from '../../store/identitySlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
@@ -30,6 +31,7 @@ export const Avatar = () => {
   );
   const logOut = async () => {
     // clear identity state to the initial
+    dispatch(userLogin(false));
     dispatch(saveUserData(initialIdentityState));
     // revoke cognito token and clear tokens from localStorage
     localStorage.removeItem('id_token');

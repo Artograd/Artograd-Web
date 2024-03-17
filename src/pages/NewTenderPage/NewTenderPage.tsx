@@ -83,6 +83,7 @@ export const NewTenderPage = () => {
   const { uuiModals, uuiNotifications } = useUuiContext();
   const uuiContext = useUuiContext();
   const filesDirectoryId = uuidv4().replaceAll('-', '');
+  const idToken = localStorage.getItem('id_token');
 
   // SELECTORS
   const { family_name, given_name, email } = useSelector(
@@ -211,7 +212,10 @@ export const NewTenderPage = () => {
           snapFiles: tenderAttachments.map((attachment) => attachment.snapPath),
           status: tenderStatus,
           filesDirectoryId,
-        })
+        }, {
+		  headers: {
+		    Authorization: `Bearer ${idToken}`
+		  }})
         .then(() => {
           history.push('/tenders');
           dispatch(isPageLoading(false));

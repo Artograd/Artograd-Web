@@ -190,16 +190,18 @@ export const NewTenderPage = () => {
           submissionEnd: form.tenderValidity?.to,
           expectedDelivery: form.tenderExpectedDelivery,
           category: form.tenderCategory,
+          locationLeafId: cityName?.id,
           location: {
             nestedLocation: {
               name: cityName?.name,
+              id: cityName?.id
             },
             geoPosition: {
               latitude: cityName?.lat,
-              longitude: cityName?.lng,
+              longitude: cityName?.lng
             },
             addressLine: addressValue,
-            addressComment: commentsValue,
+            addressComment: commentsValue
           },
           ownerName: `${form.ownerFirstName} ${form.ownerLastName}`,
           ownerId: username,

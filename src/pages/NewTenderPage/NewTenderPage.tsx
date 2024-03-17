@@ -3,7 +3,6 @@ import {
   Button,
   Checkbox,
   DatePicker,
-  FileCardItem,
   FlexCell,
   FlexRow,
   LabeledInput,
@@ -23,6 +22,7 @@ import {
   i18n as i18nFromUui,
   useForm,
 } from '@epam/uui';
+import { CustomFileCardItem } from '../../components/FileUpload/CustomFileCardItem';
 import styles from './NewTenderPage.module.scss';
 import { Trans, useTranslation } from 'react-i18next';
 import { useCallback, useEffect, useState } from 'react';
@@ -98,7 +98,7 @@ export const NewTenderPage = () => {
   //   MAIN TENDER STATES
   const [saveWithErrors, setSaveWithErrors] = useState(false);
   const [tenderStatus, setTenderStatus] = useState(TenderStatus.PUBLISHED);
-  const [tenderAttachments, setTenderAttachments] = useState<FileCardItem[]>(
+  const [tenderAttachments, setTenderAttachments] = useState<CustomFileCardItem[]>(
     [],
   );
 
@@ -206,7 +206,7 @@ export const NewTenderPage = () => {
           organization: form.ownerOrganization,
           showEmail: form.emailSharingAgreement,
           files: tenderAttachments.map((attachment) => attachment.path),
-          coverUrl: 'string',
+          snapFiles: tenderAttachments.map((attachment) => attachment.snapPath),
           status: tenderStatus,
           filesDirectoryId,
         })

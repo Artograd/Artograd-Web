@@ -97,10 +97,12 @@ export const FileUpload = ({
             .finally(() => dispatch(isPageLoading(false)));
         } else {
           setIsFileSizeLimitReached(true);
+          dispatch(isPageLoading(false));
         }
       });
       setAttachments(newAttachments);
     } else {
+      dispatch(isPageLoading(false));
       setIsFileLimitReached(true);
     }
   };

@@ -64,3 +64,21 @@ export enum TenderStatus {
   CLOSED = 'CLOSED',
   DELETED = 'DELETED',
 }
+
+export type NewTenderFormType = {
+  sub?: string;
+  tenderTitle?: string;
+  tenderDescription?: string;
+  tenderValidity?: { from: string; to: string };
+  tenderExpectedDelivery?: string;
+  tenderCategory?: number[];
+  emailSharingAgreement?: boolean;
+  locationCityName?: CityItemType;
+  locationComments?: string;
+  locationAddress?: string;
+  locationCoordinates?: LatLngLiteral;
+  ownerFirstName?: string;
+  ownerLastName?: string;
+  ownerEmail?: string;
+  ownerOrganization?: string;
+};

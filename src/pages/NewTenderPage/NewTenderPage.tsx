@@ -26,11 +26,7 @@ import { CustomFileCardItem } from '../../components/FileUpload/CustomFileCardIt
 import styles from './NewTenderPage.module.scss';
 import { Trans, useTranslation } from 'react-i18next';
 import { useCallback, useEffect, useState } from 'react';
-import {
-  RangeDatePickerValue,
-  useArrayDataSource,
-  useUuiContext,
-} from '@epam/uui-core';
+import { useArrayDataSource, useUuiContext } from '@epam/uui-core';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import 'dayjs/locale/ru';
@@ -40,16 +36,21 @@ import { FileUpload } from '../../components/FileUpload/FileUpload';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L, { LatLngLiteral } from 'leaflet';
-import { CategoryItemType, CityItemType, TenderStatus } from '../../types';
+import {
+  CategoryItemType,
+  CityItemType,
+  NewTenderFormType,
+  TenderStatus,
+} from '../../types';
 import { MapCordsController } from '../../components/MapCordsController/MapCordsController';
 import { LocationSelectorModal } from '../../components/LocationSelectorModal/LocationSelectorModal';
 import MarkerIcon from 'leaflet/dist/images/marker-icon.png';
 import MarkerIconShadow from 'leaflet/dist/images/marker-shadow.png';
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import dayjs, { Dayjs } from 'dayjs';
 import { isPageLoading } from '../../store/helpersSlice';
 import { v4 as uuidv4 } from 'uuid';
+import { addNewTender, getCityList } from '../../requests';
 
 const MapMarkerIcon = L.icon({
   iconUrl: MarkerIcon,
@@ -58,23 +59,11 @@ const MapMarkerIcon = L.icon({
 
 L.Marker.prototype.options.icon = MapMarkerIcon;
 
-type NewTenderFormType = {
-  sub?: string;
-  tenderTitle?: string;
-  tenderDescription?: string;
-  tenderValidity?: RangeDatePickerValue;
-  tenderExpectedDelivery?: string;
-  tenderCategory?: number[];
-  emailSharingAgreement?: boolean;
-  locationCityName?: CityItemType;
-  locationComments?: string;
-  locationAddress?: string;
-  locationCoordinates?: LatLngLiteral;
-  ownerFirstName?: string;
-  ownerLastName?: string;
-  ownerEmail?: string;
-  ownerOrganization?: string;
-};
+const cognitoLoginUrl = `${
+  process.env.REACT_APP_LOGIN_URL
+}&redirect_uri=${encodeURIComponent(
+  window.location.origin + process.env.REACT_APP_REDIRECT_PAGE ?? '',
+)}`;
 
 export const NewTenderPage = () => {
   const { t } = useTranslation();
@@ -83,7 +72,6 @@ export const NewTenderPage = () => {
   const { uuiModals, uuiNotifications } = useUuiContext();
   const uuiContext = useUuiContext();
   const filesDirectoryId = uuidv4().replaceAll('-', '');
-  const idToken = localStorage.getItem('id_token');
 
   // SELECTORS
   const { family_name, given_name, email } = useSelector(
@@ -99,9 +87,9 @@ export const NewTenderPage = () => {
   //   MAIN TENDER STATES
   const [saveWithErrors, setSaveWithErrors] = useState(false);
   const [tenderStatus, setTenderStatus] = useState(TenderStatus.PUBLISHED);
-  const [tenderAttachments, setTenderAttachments] = useState<CustomFileCardItem[]>(
-    [],
-  );
+  const [tenderAttachments, setTenderAttachments] = useState<
+    CustomFileCardItem[]
+  >([]);
 
   // ADDRESS STATES
   const [listOfCities, setListOfCities] = useState<CityItemType[] | undefined>(
@@ -116,24 +104,6 @@ export const NewTenderPage = () => {
 
   const getCityById = () => {
     return listOfCities?.find((city) => city.id === cityName?.id);
-  };
-
-  const formInitialValues: NewTenderFormType = {
-    sub: '',
-    tenderTitle: '',
-    tenderDescription: '',
-    tenderValidity: { from: '', to: '' },
-    tenderExpectedDelivery: '',
-    tenderCategory: undefined,
-    emailSharingAgreement: false,
-    locationCityName: undefined,
-    locationComments: '',
-    locationAddress: undefined,
-    locationCoordinates: undefined,
-    ownerFirstName: given_name,
-    ownerLastName: family_name,
-    ownerEmail: email,
-    ownerOrganization: userOrganization,
   };
 
   // FORM FUNCTIONS
@@ -176,51 +146,33 @@ export const NewTenderPage = () => {
     value: formValues,
     isInvalid,
   } = useForm<NewTenderFormType>({
-    value: formInitialValues,
+    value: {},
     onSave: (tender) =>
       saveWithErrors
         ? Promise.reject(new Error())
         : Promise.resolve({ form: tender }),
     onError: () => history.push('/tenders'),
     onSuccess: (form) =>
-      axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/tenders`, {
-          title: form.tenderTitle,
-          description: form.tenderDescription,
-          submissionStart: form.tenderValidity?.from,
-          submissionEnd: form.tenderValidity?.to,
-          expectedDelivery: form.tenderExpectedDelivery,
-          category: form.tenderCategory,
-          locationLeafId: cityName?.id,
-          location: {
-            nestedLocation: {
-              name: cityName?.name,
-              id: cityName?.id
-            },
-            geoPosition: {
-              latitude: cityName?.lat,
-              longitude: cityName?.lng
-            },
-            addressLine: addressValue,
-            addressComment: commentsValue
-          },
-          ownerName: `${form.ownerFirstName} ${form.ownerLastName}`,
-          ownerId: username,
-          organization: form.ownerOrganization,
-          showEmail: form.emailSharingAgreement,
-          files: tenderAttachments.map((attachment) => attachment.path),
-          snapFiles: tenderAttachments.map((attachment) => attachment.snapPath),
-          status: tenderStatus,
-          filesDirectoryId,
-        }, {
-		  headers: {
-		    Authorization: `Bearer ${idToken}`
-		  }})
+      addNewTender({
+        formData: form,
+        cityData: cityName,
+        tenderAttachments,
+        addressValue,
+        commentsValue,
+        tenderStatus,
+        filesDirectoryId,
+        username,
+      })
         .then(() => {
           history.push('/tenders');
           dispatch(isPageLoading(false));
         })
-        .catch(() => dispatch(isPageLoading(false))),
+        .catch((error) => {
+          if (error.response && error.response.status === 502) {
+            window.location.replace(cognitoLoginUrl);
+          }
+          dispatch(isPageLoading(false));
+        }),
     getMetadata: () => ({
       props: {
         tenderTitle: { isRequired: true },
@@ -244,9 +196,8 @@ export const NewTenderPage = () => {
 
   // request list of cities on page load
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/cities`)
-      .then((response) => setListOfCities(response.data))
+    getCityList()
+      .then((response) => setListOfCities(response))
       .catch(() => setListOfCities([]));
   }, []);
 
@@ -291,7 +242,6 @@ export const NewTenderPage = () => {
   };
 
   useEffect(() => {
-    console.log(':::isInvalid', isInvalid);
     if (isInvalid) {
       dispatch(isPageLoading(false));
     }
@@ -378,8 +328,8 @@ export const NewTenderPage = () => {
                       label={t(
                         'tendersPage.newTender.tenderValidityPeriodLabel',
                       )}
-                      cx={styles.inputLabel}
                       {...lens.prop('tenderValidity').toProps()}
+                      cx={styles.inputLabel}
                     >
                       <RangeDatePicker
                         {...lens.prop('tenderValidity').toProps()}

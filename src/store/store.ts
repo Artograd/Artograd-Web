@@ -8,14 +8,27 @@ import {
   REGISTER,
   persistReducer,
 } from 'redux-persist';
-import identityReducer from './identitySlice';
+import identityReducer, {
+  initialState as identityInitialState,
+} from './identitySlice';
 import helpersReducer from './helpersSlice';
 import storage from 'redux-persist/lib/storage';
+import expireReducer from 'redux-persist-expire';
+
+const tokenExpiration = Number(localStorage.getItem('expires_in'));
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
+  transforms: [
+    expireReducer('identity', {
+      persistedAtKey: 'loadedAt',
+      expireSeconds: tokenExpiration,
+      expiredState: identityInitialState,
+      autoExpire: true,
+    }),
+  ],
 };
 
 const rootReducer = combineReducers({

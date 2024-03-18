@@ -51,6 +51,11 @@ import dayjs, { Dayjs } from 'dayjs';
 import { isPageLoading } from '../../store/helpersSlice';
 import { v4 as uuidv4 } from 'uuid';
 import { addNewTender, getCityList } from '../../requests';
+import {
+  saveUserData,
+  userLogin,
+  initialState as initialIdentityState,
+} from '../../store/identitySlice';
 
 const MapMarkerIcon = L.icon({
   iconUrl: MarkerIcon,
@@ -170,6 +175,8 @@ export const NewTenderPage = () => {
         .catch((error) => {
           if (error.response && error.response.status === 502) {
             window.location.replace(cognitoLoginUrl);
+            dispatch(userLogin(false));
+            dispatch(saveUserData(initialIdentityState));
           }
           dispatch(isPageLoading(false));
         }),

@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 let tempIdCount = 0;
 const fileSizeLimit = 1024 * 1024 * 1;
 const fileAmountLimit = 10;
+const idToken = localStorage.getItem('id_token');
 
 export const FileUpload = ({
   attachments,
@@ -75,6 +76,7 @@ export const FileUpload = ({
               {
                 onProgress: (progress) => trackProgress(progress, tempId),
                 getXHR: (xhr) => {
+                  xhr.setRequestHeader('Authorization', `Bearer ${idToken}`);
                   xhr.withCredentials = false;
                   newFile.abortXHR = () => xhr.abort();
                 },

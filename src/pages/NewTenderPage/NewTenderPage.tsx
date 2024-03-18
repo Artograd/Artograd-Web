@@ -128,15 +128,16 @@ export const NewTenderPage = () => {
                 fill="outline"
                 caption={t('tendersPage.newTender.beforeLeave.discardCta')}
                 onClick={() => {
-                  modalProps.abort();
+                  modalProps.success(false);
                   setSaveWithErrors(true);
-                  history.push('/tenders');
                 }}
               />
               <Button
                 color="accent"
                 caption={t('tendersPage.newTender.beforeLeave.saveCta')}
-                onClick={() => modalProps.abort()}
+                onClick={() => {
+                  modalProps.abort();
+                }}
               />
             </ModalFooter>
           </Panel>

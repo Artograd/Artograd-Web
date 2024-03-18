@@ -9,6 +9,8 @@ import {
 import { useUuiContext } from '@epam/uui-core';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { isPageLoading } from '../../store/helpersSlice';
 
 let tempIdCount = 0;
 const fileSizeLimit = 1024 * 1024 * 1;
@@ -26,6 +28,7 @@ export const FileUpload = ({
 }) => {
   const { t } = useTranslation();
   const { uuiApi } = useUuiContext();
+  const dispatch = useDispatch();
   const [isFileLimitReached, setIsFileLimitReached] = useState(false);
   const [isFileSizeLimitReached, setIsFileSizeLimitReached] = useState(false);
 
@@ -57,6 +60,7 @@ export const FileUpload = ({
       files.length <= fileAmountLimit &&
       attachments.length <= fileAmountLimit - 1
     ) {
+      dispatch(isPageLoading(true));
       const newAttachments = [...attachments];
       files.map((file: File) => {
         if (file.size <= fileSizeLimit) {
@@ -83,17 +87,18 @@ export const FileUpload = ({
               },
             )
             .then((res) => updateFile({ ...res, progress: 100 }, tempId))
-            .catch((err) =>
+            .catch((err) => {
               updateFile(
                 { ...newFile, progress: 100, error: err.error },
                 tempId,
-              ),
-            );
+              );
+              dispatch(isPageLoading(false));
+            })
+            .finally(() => dispatch(isPageLoading(false)));
         } else {
           setIsFileSizeLimitReached(true);
         }
       });
-
       setAttachments(newAttachments);
     } else {
       setIsFileLimitReached(true);

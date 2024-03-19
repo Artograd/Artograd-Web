@@ -153,6 +153,7 @@ export const NewTenderPage = () => {
     isInvalid,
   } = useForm<NewTenderFormType>({
     value: {},
+    validationOn: 'save',
     onSave: (tender) =>
       saveWithErrors
         ? Promise.reject(new Error())
@@ -185,7 +186,15 @@ export const NewTenderPage = () => {
       props: {
         tenderTitle: { isRequired: true },
         tenderDescription: { isRequired: true },
-        tenderValidity: { isRequired: true },
+        tenderValidity: {
+          validators: [
+            (value) => [
+              !value?.to &&
+                !value?.from &&
+                t('global.lenses.isRequiredMessage'),
+            ],
+          ],
+        },
         tenderExpectedDelivery: { isRequired: false },
         tenderCategory: { isRequired: false },
         emailSharingAgreement: { isRequired: false },
@@ -266,11 +275,9 @@ export const NewTenderPage = () => {
     ),
   };
 
-  i18nFromUui.form.modals = {
-    ...i18nFromUui.form.modals,
-    beforeLeaveMessage: t('tendersPage.newTender.beforeLeave.message'),
-    saveButton: t('tendersPage.newTender.beforeLeave.saveCta'),
-    discardButton: t('tendersPage.newTender.beforeLeave.discardCta'),
+  i18nFromUui.lenses.validation = {
+    ...i18nFromUui.lenses.validation,
+    isRequiredMessage: t('global.lenses.isRequiredMessage'),
   };
 
   return (
@@ -346,6 +353,9 @@ export const NewTenderPage = () => {
                           from: { 'data-testid': `tender-validity-from-input` },
                           to: { 'data-testid': `tender-validity-to-input` },
                         }}
+                        filter={(day: Dayjs) =>
+                          day.valueOf() >= dayjs().subtract(1, 'day').valueOf()
+                        }
                       />
                     </LabeledInput>
                   </FlexCell>

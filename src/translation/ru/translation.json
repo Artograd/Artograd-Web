@@ -22,6 +22,9 @@
     "fileUpload": {
       "fileLimitErrorText": "Вы достигли предела количества возможных прикрепленных файлов",
       "fileSizeLimitErrorText": "Загруженный файл превысил разрешенный размер загрузки"
+    },
+    "lenses": {
+      "isRequiredMessage": "Поле обязательно для заполнения"
     }
   },
   "homepage": {

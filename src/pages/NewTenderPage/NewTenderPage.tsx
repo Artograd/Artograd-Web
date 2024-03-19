@@ -184,8 +184,20 @@ export const NewTenderPage = () => {
         }),
     getMetadata: () => ({
       props: {
-        tenderTitle: { isRequired: true },
-        tenderDescription: { isRequired: true },
+        tenderTitle: {
+          validators: [
+            (value) => [
+              !value && !value && t('global.lenses.isRequiredMessage'),
+            ],
+          ],
+        },
+        tenderDescription: {
+          validators: [
+            (value) => [
+              !value && !value && t('global.lenses.isRequiredMessage'),
+            ],
+          ],
+        },
         tenderValidity: {
           validators: [
             (value) => [

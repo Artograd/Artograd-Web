@@ -133,7 +133,13 @@ export function LocationSelectorModal({
     getMetadata: () => ({
       props: {
         country: { isRequired: false },
-        city: { isRequired: true },
+        city: {
+          validators: [
+            (value) => [
+              !value && !value && t('global.lenses.isRequiredMessage'),
+            ],
+          ],
+        },
         address: { isRequired: false },
         comments: { isRequired: false },
       },

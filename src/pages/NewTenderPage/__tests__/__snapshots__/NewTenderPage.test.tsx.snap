@@ -66,14 +66,8 @@ Object {
                       >
                         <label
                           class="uui-label"
-                          for="tenderTitle"
                         >
                           Tender Title
-                          <span
-                            class="uui-labeled-input-asterisk"
-                          >
-                            *
-                          </span>
                         </label>
                       </div>
                       <div>
@@ -85,9 +79,7 @@ Object {
                           <input
                             aria-invalid="false"
                             class="uui-input"
-                            id="tenderTitle"
                             placeholder="Enter a text"
-                            required=""
                             tabindex="0"
                             type="text"
                             value=""
@@ -107,14 +99,8 @@ Object {
                       >
                         <label
                           class="uui-label"
-                          for="tenderDescription"
                         >
                           Tender Description
-                          <span
-                            class="uui-labeled-input-asterisk"
-                          >
-                            *
-                          </span>
                         </label>
                       </div>
                       <div>
@@ -125,9 +111,7 @@ Object {
                         >
                           <textarea
                             class="-clickable QMkP3L uui-input"
-                            id="tenderDescription"
                             placeholder="Type a text"
-                            required=""
                             tabindex="0"
                           />
                         </div>
@@ -166,14 +150,8 @@ Object {
                           >
                             <label
                               class="uui-label"
-                              for="tenderValidity"
                             >
                               Proposals Submission Period
-                              <span
-                                class="uui-labeled-input-asterisk"
-                              >
-                                *
-                              </span>
                             </label>
                           </div>
                           <div>
@@ -204,7 +182,6 @@ Object {
                                 <input
                                   aria-invalid="false"
                                   class="uui-input"
-                                  id="tenderValidity"
                                   placeholder="From"
                                   tabindex="0"
                                   type="text"
@@ -248,7 +225,6 @@ Object {
                           >
                             <label
                               class="uui-label"
-                              for="tenderExpectedDelivery"
                             >
                               Expected Readiness
                             </label>
@@ -286,7 +262,6 @@ Object {
                               <input
                                 aria-invalid="false"
                                 class="uui-input"
-                                id="tenderExpectedDelivery"
                                 placeholder="MMM D, YYYY"
                                 tabindex="0"
                                 type="text"
@@ -316,7 +291,6 @@ Object {
                           >
                             <label
                               class="uui-label"
-                              for="tenderCategory"
                             >
                               Category
                             </label>
@@ -341,7 +315,6 @@ Object {
                                   aria-haspopup="true"
                                   autocomplete="no"
                                   class="uui-input"
-                                  id="tenderCategory"
                                   placeholder="Please select category(s)"
                                   readonly=""
                                   tabindex="-1"
@@ -429,34 +402,6 @@ Object {
                     class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
                   >
                     Tender Owner Contact Information
-                  </div>
-                  <div
-                    class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
-                  >
-                    <div
-                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                    >
-                      Contact person
-                    </div>
-                    <div
-                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                    >
-                      test user
-                    </div>
-                  </div>
-                  <div
-                    class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
-                  >
-                    <div
-                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                    >
-                      Email
-                    </div>
-                    <div
-                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                    >
-                      email@email.com
-                    </div>
                   </div>
                   <div
                     class=""
@@ -579,7 +524,6 @@ Object {
             class="uui-flex-row kfXZUl _7f-LqE contentFooter _5Jq2IB RkwqFu"
           >
             <a
-              aria-disabled="false"
               class="uui-button-box uui-enabled -clickable uui-anchor VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36"
               href=""
               tabindex="0"
@@ -594,7 +538,6 @@ Object {
               class="CcZAjD"
             />
             <button
-              aria-disabled="false"
               class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36 draftCta"
               tabindex="0"
               type="button"
@@ -606,7 +549,6 @@ Object {
               </div>
             </button>
             <button
-              aria-disabled="false"
               class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
               data-testid="form-submit"
               tabindex="0"
@@ -685,14 +627,8 @@ Object {
                     >
                       <label
                         class="uui-label"
-                        for="tenderTitle"
                       >
                         Tender Title
-                        <span
-                          class="uui-labeled-input-asterisk"
-                        >
-                          *
-                        </span>
                       </label>
                     </div>
                     <div>
@@ -704,9 +640,7 @@ Object {
                         <input
                           aria-invalid="false"
                           class="uui-input"
-                          id="tenderTitle"
                           placeholder="Enter a text"
-                          required=""
                           tabindex="0"
                           type="text"
                           value=""
@@ -726,14 +660,8 @@ Object {
                     >
                       <label
                         class="uui-label"
-                        for="tenderDescription"
                       >
                         Tender Description
-                        <span
-                          class="uui-labeled-input-asterisk"
-                        >
-                          *
-                        </span>
                       </label>
                     </div>
                     <div>
@@ -744,9 +672,7 @@ Object {
                       >
                         <textarea
                           class="-clickable QMkP3L uui-input"
-                          id="tenderDescription"
                           placeholder="Type a text"
-                          required=""
                           tabindex="0"
                         />
                       </div>
@@ -785,14 +711,8 @@ Object {
                         >
                           <label
                             class="uui-label"
-                            for="tenderValidity"
                           >
                             Proposals Submission Period
-                            <span
-                              class="uui-labeled-input-asterisk"
-                            >
-                              *
-                            </span>
                           </label>
                         </div>
                         <div>
@@ -823,7 +743,6 @@ Object {
                               <input
                                 aria-invalid="false"
                                 class="uui-input"
-                                id="tenderValidity"
                                 placeholder="From"
                                 tabindex="0"
                                 type="text"
@@ -867,7 +786,6 @@ Object {
                         >
                           <label
                             class="uui-label"
-                            for="tenderExpectedDelivery"
                           >
                             Expected Readiness
                           </label>
@@ -905,7 +823,6 @@ Object {
                             <input
                               aria-invalid="false"
                               class="uui-input"
-                              id="tenderExpectedDelivery"
                               placeholder="MMM D, YYYY"
                               tabindex="0"
                               type="text"
@@ -935,7 +852,6 @@ Object {
                         >
                           <label
                             class="uui-label"
-                            for="tenderCategory"
                           >
                             Category
                           </label>
@@ -960,7 +876,6 @@ Object {
                                 aria-haspopup="true"
                                 autocomplete="no"
                                 class="uui-input"
-                                id="tenderCategory"
                                 placeholder="Please select category(s)"
                                 readonly=""
                                 tabindex="-1"
@@ -1048,34 +963,6 @@ Object {
                   class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV sectionHeadline doyi1y"
                 >
                   Tender Owner Contact Information
-                </div>
-                <div
-                  class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
-                >
-                  <div
-                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                  >
-                    Contact person
-                  </div>
-                  <div
-                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                  >
-                    test user
-                  </div>
-                </div>
-                <div
-                  class="uui-flex-row kfXZUl _7f-LqE ownerDetailsRow _5Jq2IB RkwqFu"
-                >
-                  <div
-                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                  >
-                    Email
-                  </div>
-                  <div
-                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
-                  >
-                    email@email.com
-                  </div>
                 </div>
                 <div
                   class=""
@@ -1198,7 +1085,6 @@ Object {
           class="uui-flex-row kfXZUl _7f-LqE contentFooter _5Jq2IB RkwqFu"
         >
           <a
-            aria-disabled="false"
             class="uui-button-box uui-enabled -clickable uui-anchor VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36"
             href=""
             tabindex="0"
@@ -1213,7 +1099,6 @@ Object {
             class="CcZAjD"
           />
           <button
-            aria-disabled="false"
             class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-secondary uui-size-36 draftCta"
             tabindex="0"
             type="button"
@@ -1225,7 +1110,6 @@ Object {
             </div>
           </button>
           <button
-            aria-disabled="false"
             class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
             data-testid="form-submit"
             tabindex="0"

@@ -2,7 +2,7 @@ import { Header } from '../Header';
 import { createMemoryHistory } from 'history';
 import { screen, fireEvent } from '@epam/uui-test-utils';
 import { testWrapper } from '../../utils/testWrapper';
-import { identityState } from '../../store/identitySlice';
+import { initialState } from '../../utils/testWrapper';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -80,8 +80,9 @@ describe('Layout header', () => {
         component: <Header />,
         history,
         state: {
+          ...initialState,
           identity: {
-            ...identityState,
+            ...initialState.identity,
             isLoggedIn: true,
           },
         },
@@ -107,8 +108,9 @@ describe('Layout header', () => {
       component: <Header />,
       history,
       state: {
+        ...initialState,
         identity: {
-          ...identityState,
+          ...initialState.identity,
           isLoggedIn: true,
         },
       },

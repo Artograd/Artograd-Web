@@ -139,11 +139,6 @@ Object {
                                 for="cityInput"
                               >
                                 City / Region
-                                <span
-                                  class="uui-labeled-input-asterisk"
-                                >
-                                  *
-                                </span>
                               </label>
                             </div>
                             <div>
@@ -645,11 +640,6 @@ Object {
                               for="cityInput"
                             >
                               City / Region
-                              <span
-                                class="uui-labeled-input-asterisk"
-                              >
-                                *
-                              </span>
                             </label>
                           </div>
                           <div>

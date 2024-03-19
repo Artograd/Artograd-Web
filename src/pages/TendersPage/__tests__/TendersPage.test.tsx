@@ -1,16 +1,17 @@
 import { TendersPage } from '../TendersPage';
 import { createMemoryHistory } from 'history';
-import { testWrapper } from '../../../utils/testWrapper';
-import { identityState } from '../../../store/identitySlice';
+import { initialState, testWrapper } from '../../../utils/testWrapper';
 import { fireEvent, screen } from '@epam/uui-test-utils';
+import { RootState } from '../../../store/store';
 
-const initialStateWithOfficerUserData = {
+const initialStateWithOfficerUserData: RootState = {
+  ...initialState,
   identity: {
-    ...identityState,
-    given_name: 'test',
-    family_name: 'user',
-    email: 'email@email.com',
-    'cognito:groups': ['Officials'],
+    ...initialState.identity,
+    userData: {
+      ...initialState.identity.userData,
+      'cognito:groups': ['Officials'],
+    },
   },
 };
 

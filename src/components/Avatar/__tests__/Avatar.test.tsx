@@ -1,8 +1,21 @@
 import { Avatar } from '../Avatar';
 import { createMemoryHistory } from 'history';
 import { testWrapper } from '../../../utils/testWrapper';
-import { identityState } from '../../../store/identitySlice';
+import { initialState } from '../../../utils/testWrapper';
 import { act, fireEvent, screen, userEvent } from '@epam/uui-test-utils';
+
+const testInitialState = {
+  ...initialState,
+  identity: {
+    ...initialState.identity,
+    userData: {
+      ...initialState.identity.userData,
+      given_name: 'test',
+      family_name: 'user',
+      email: 'email@email.com',
+    },
+  },
+};
 
 describe('Avatar', () => {
   const history = createMemoryHistory();
@@ -15,14 +28,7 @@ describe('Avatar', () => {
     const component = await testWrapper({
       component: <Avatar />,
       history,
-      state: {
-        identity: {
-          ...identityState,
-          given_name: 'test',
-          family_name: 'user',
-          email: 'email@email.com',
-        },
-      },
+      state: testInitialState,
     });
     await act(async () => {
       user.click(screen.getByTestId('user-avatar'));
@@ -38,14 +44,7 @@ describe('Avatar', () => {
       await testWrapper({
         component: <Avatar />,
         history,
-        state: {
-          identity: {
-            ...identityState,
-            given_name: 'test',
-            family_name: 'user',
-            email: 'email@email.com',
-          },
-        },
+        state: testInitialState,
       });
 
       fireEvent.click(screen.getByTestId('user-avatar'));

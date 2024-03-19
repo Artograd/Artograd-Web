@@ -1,7 +1,7 @@
 import { NewTenderPage } from '../NewTenderPage';
 import { createMemoryHistory } from 'history';
 import { testWrapper } from '../../../utils/testWrapper';
-import { identityState } from '../../../store/identitySlice';
+import { initialState } from '../../../utils/testWrapper';
 import { act, fireEvent, screen, userEvent } from '@epam/uui-test-utils';
 
 const formData = {
@@ -17,8 +17,9 @@ const formData = {
 };
 
 const initialStateWithOfficerUserData = {
+  ...initialState,
   identity: {
-    ...identityState,
+    ...initialState.identity,
     given_name: formData.ownerFirstName,
     family_name: formData.ownerLastName,
     email: formData.ownerEmail,

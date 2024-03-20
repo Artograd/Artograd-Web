@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { TenderStatus } from '../../types';
-import dayjs from 'dayjs';
+import { TenderCard } from './TenderCard';
 
 const tendersListLength = 1;
 // temp mock data
@@ -81,93 +81,6 @@ export const TendersPage = () => {
         ))}
       </Panel>
     </Panel>
-  );
-};
-
-type LocationType = {
-  nestedLocation: {
-    _id: string;
-    name: string;
-  };
-  geoPosition: {
-    latitude: string;
-    longitude: string;
-  };
-  addressLine: string;
-  addressComment: string;
-};
-
-type TenderCardProps = {
-  organization: string;
-  submissionStart: string;
-  submissionEnd: string;
-  files: string[];
-  status: string;
-  category: string[];
-  location: LocationType;
-  expectedDelivery: string;
-  title: string;
-  description: string;
-};
-
-const TenderCard = ({
-  organization,
-  submissionStart,
-  submissionEnd,
-  files,
-  status,
-  category,
-  location,
-  expectedDelivery,
-  title,
-  description,
-}: TenderCardProps) => {
-  return (
-    // CARD
-    <FlexRow>
-      {/* content */}
-      <FlexCell width="100%">
-        {/* meta first row */}
-        <FlexRow>
-          {/* meta */}
-          <FlexCell width="auto">
-            Posted by: {organization} | Tender validity period:
-            {`
-            ${dayjs(Number(submissionStart)).format('D MMM YYYY')} - ${dayjs(
-              Number(submissionEnd),
-            ).format('D MMM YYYY')}`}{' '}
-            | {files.length}
-          </FlexCell>
-          <FlexSpacer />
-          {/* status */}
-          <FlexCell width="auto">{status}</FlexCell>
-        </FlexRow>
-        {/* meta second row */}
-        <FlexRow>
-          {/* meta */}
-          <FlexCell width="auto">
-            {category.map((category) => category)} |{' '}
-            {`${process.env.REACT_APP_LOCATION}, ${location.nestedLocation.name}`}
-          </FlexCell>
-          <FlexSpacer />
-          {/* expected readiness */}
-          <FlexCell width="auto">
-            Expected readiness:{' '}
-            {dayjs(Number(expectedDelivery)).format('D MMM YYYY')}
-          </FlexCell>
-        </FlexRow>
-        {/* title */}
-        <FlexRow>{title}</FlexRow>
-        {/* description */}
-        <FlexRow>{description}</FlexRow>
-        {/* submitted proposals title with button */}
-        <FlexRow>Submitted proposals</FlexRow>
-        {/* proposals cards */}
-        <FlexRow>No proposals submitted yet.</FlexRow>
-      </FlexCell>
-      {/* 3 dots menu */}
-      <FlexCell>...</FlexCell>
-    </FlexRow>
   );
 };
 

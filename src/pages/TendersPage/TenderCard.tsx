@@ -13,6 +13,8 @@ import { DropdownBodyProps } from '@epam/uui-core';
 import { ReactComponent as DeleteIcon } from '@epam/assets/icons/common/action-delete-18.svg';
 import { ReactComponent as ExportIcon } from '@epam/assets/icons/common/file-export-18.svg';
 import { ReactComponent as MenuIcon } from '@epam/assets/icons/common/navigation-more_vert-18.svg';
+import { getCategoryName } from '../../utils/getCategoryName';
+import { useTranslation } from 'react-i18next';
 
 type LocationType = {
   nestedLocation: {
@@ -60,6 +62,7 @@ export const TenderCard = ({
       </DropdownMenuBody>
     );
   };
+  const { t } = useTranslation();
   return (
     // CARD
     <FlexRow cx={styles.wrapper}>
@@ -85,7 +88,10 @@ export const TenderCard = ({
         <FlexRow cx={styles.meta}>
           {/* meta */}
           <FlexCell width="auto">
-            {category.map((category) => category)} |{' '}
+            {category.map((category) => (
+              <>{t(`${getCategoryName(category)?.name}`)}</>
+            ))}{' '}
+            |{' '}
             {`${process.env.REACT_APP_LOCATION}, ${location.nestedLocation.name}`}
           </FlexCell>
           <FlexSpacer />

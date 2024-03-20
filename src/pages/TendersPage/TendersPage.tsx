@@ -6,8 +6,44 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { TenderStatus } from '../../types';
+import dayjs from 'dayjs';
 
 const tendersListLength = 1;
+// temp mock data
+const mockData = [
+  {
+    _id: '65faecb9ee16c743fc5cfe93',
+    title: 'Architectural decoration of the embankment',
+    description:
+      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
+    submissionStart: '1711324800000',
+    submissionEnd: '1711670400000',
+    expectedDelivery: '1711756800000',
+    category: ['1', '9', '0'],
+    location: {
+      nestedLocation: {
+        _id: '65f181408de8fcd02bd9930b',
+        name: 'Baošići',
+      },
+      geoPosition: {
+        latitude: '42.4429',
+        longitude: '18.627',
+      },
+      addressLine: 'wqertyuiytr 22',
+      addressComment: 'wertyuiytr',
+    },
+    locationLeafId: '65f181408de8fcd02bd9930b',
+    showEmail: true,
+    files: ['1', '2', '3'],
+    snapFiles: [],
+    status: TenderStatus.IDEATION,
+    ownerName: 'undefined undefined',
+    ownerId: 'qwerty',
+    createdAt: '1710943414607',
+    modifiedAt: '1710943414607',
+    organization: 'Testing organization',
+  },
+];
 
 export const TendersPage = () => {
   const history = useHistory();
@@ -39,34 +75,53 @@ export const TendersPage = () => {
         </FlexCell>
       </FlexRow>
       <Panel cx={styles.contentWrapper}>
-        <NoTenders />
-        <TenderCard />
+        {tendersListLength >= 1 && isOfficer && <NoTenders />}
+        {mockData.map((tender) => (
+          <TenderCard {...tender} />
+        ))}
       </Panel>
     </Panel>
   );
 };
 
-const mockData = {
-  postedBy: 'regional office',
-  tenderValidity: {
-    from: '10 Feb 2024',
-    to: '20 Mar 2024',
-  },
-  readiness: '15 Feb 2024',
-  attachments: ['1', '2', '3'],
-  status: TenderStatus.IDEATION,
-  categories: ['Sculpture', 'Outdoors'],
-  location: {
-    country: 'Montenegro',
-    city: 'Kotor',
-  },
-  title: 'Architectural decoration of the embankment',
-  description:
-    'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-  proposals: [],
+type LocationType = {
+  nestedLocation: {
+    _id: string;
+    name: string;
+  };
+  geoPosition: {
+    latitude: string;
+    longitude: string;
+  };
+  addressLine: string;
+  addressComment: string;
 };
 
-const TenderCard = () => {
+type TenderCardProps = {
+  organization: string;
+  submissionStart: string;
+  submissionEnd: string;
+  files: string[];
+  status: string;
+  category: string[];
+  location: LocationType;
+  expectedDelivery: string;
+  title: string;
+  description: string;
+};
+
+const TenderCard = ({
+  organization,
+  submissionStart,
+  submissionEnd,
+  files,
+  status,
+  category,
+  location,
+  expectedDelivery,
+  title,
+  description,
+}: TenderCardProps) => {
   return (
     // CARD
     <FlexRow>
@@ -76,32 +131,35 @@ const TenderCard = () => {
         <FlexRow>
           {/* meta */}
           <FlexCell width="auto">
-            Posted by: {mockData.postedBy} | Tender validity period:
+            Posted by: {organization} | Tender validity period:
             {`
-            ${mockData.tenderValidity.from} - ${mockData.tenderValidity.to}`}{' '}
-            | {mockData.attachments.length}
+            ${dayjs(Number(submissionStart)).format('D MMM YYYY')} - ${dayjs(
+              Number(submissionEnd),
+            ).format('D MMM YYYY')}`}{' '}
+            | {files.length}
           </FlexCell>
           <FlexSpacer />
           {/* status */}
-          <FlexCell width="auto">{mockData.status}</FlexCell>
+          <FlexCell width="auto">{status}</FlexCell>
         </FlexRow>
         {/* meta second row */}
         <FlexRow>
           {/* meta */}
           <FlexCell width="auto">
-            {mockData.categories.map((category) => category)} |{' '}
-            {`${mockData.location.country}, ${mockData.location.city}`}
+            {category.map((category) => category)} |{' '}
+            {`${process.env.REACT_APP_LOCATION}, ${location.nestedLocation.name}`}
           </FlexCell>
           <FlexSpacer />
           {/* expected readiness */}
           <FlexCell width="auto">
-            Expected readiness: {mockData.readiness}
+            Expected readiness:{' '}
+            {dayjs(Number(expectedDelivery)).format('D MMM YYYY')}
           </FlexCell>
         </FlexRow>
         {/* title */}
-        <FlexRow>{mockData.title}</FlexRow>
+        <FlexRow>{title}</FlexRow>
         {/* description */}
-        <FlexRow>{mockData.description}</FlexRow>
+        <FlexRow>{description}</FlexRow>
         {/* submitted proposals title with button */}
         <FlexRow>Submitted proposals</FlexRow>
         {/* proposals cards */}
@@ -116,30 +174,24 @@ const TenderCard = () => {
 const NoTenders = () => {
   const history = useHistory();
   const { t } = useTranslation();
-  const userRoles = useSelector(
-    (state: RootState) => state?.identity?.userData['cognito:groups'],
-  );
-  const isOfficer = userRoles?.includes('Officials');
   return (
     <FlexRow>
-      {tendersListLength >= 1 && isOfficer && (
-        <FlexCell cx={styles.tenders} width="100%" textAlign="center">
-          <img className={styles.emptyFolderIcon} src={EmptyFolderIcon} />
-          <Text cx={styles.tendersTitle}>
-            {t('tendersPage.tenders.tendersTitle')}
-          </Text>
-          <Text cx={styles.tendersDescription}>
-            {t('tendersPage.tenders.tendersDescription')}
-          </Text>
+      <FlexCell cx={styles.tenders} width="100%" textAlign="center">
+        <img className={styles.emptyFolderIcon} src={EmptyFolderIcon} />
+        <Text cx={styles.tendersTitle}>
+          {t('tendersPage.tenders.tendersTitle')}
+        </Text>
+        <Text cx={styles.tendersDescription}>
+          {t('tendersPage.tenders.tendersDescription')}
+        </Text>
 
-          <Button
-            color="accent"
-            caption={t('tendersPage.tenders.tendersCta')}
-            onClick={() => history.push('/tenders/new')}
-            rawProps={{ 'data-testid': `content-create-new-tender-cta` }}
-          />
-        </FlexCell>
-      )}
+        <Button
+          color="accent"
+          caption={t('tendersPage.tenders.tendersCta')}
+          onClick={() => history.push('/tenders/new')}
+          rawProps={{ 'data-testid': `content-create-new-tender-cta` }}
+        />
+      </FlexCell>
     </FlexRow>
   );
 };

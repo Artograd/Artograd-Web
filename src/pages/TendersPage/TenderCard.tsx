@@ -12,7 +12,6 @@ import dayjs from 'dayjs';
 import styles from './TenderCard.module.scss';
 import { DropdownBodyProps } from '@epam/uui-core';
 import { ReactComponent as DeleteIcon } from '@epam/assets/icons/common/action-delete-18.svg';
-import { ReactComponent as ExportIcon } from '@epam/assets/icons/common/file-export-18.svg';
 import { ReactComponent as MenuIcon } from '@epam/assets/icons/common/navigation-more_vert-18.svg';
 import { ReactComponent as RightChevronIcon } from '@epam/assets/icons/common/navigation-chevron-right-18.svg';
 import { ReactComponent as AttachmentIcon } from '@epam/assets/icons/common/file-attachment-12.svg';
@@ -63,7 +62,6 @@ export const TenderCard = ({
   const renderThirdDropdownBody = (props: DropdownBodyProps) => {
     return (
       <DropdownMenuBody {...props} rawProps={{ style: { padding: 0 } }}>
-        <DropdownMenuButton caption="Export" icon={ExportIcon} />
         <DropdownMenuButton caption="Delete" icon={DeleteIcon} />
       </DropdownMenuBody>
     );
@@ -78,7 +76,7 @@ export const TenderCard = ({
         {/* meta first row */}
         <FlexRow cx={styles.meta}>
           {/* meta */}
-          <FlexCell width="auto">
+          <FlexCell width="auto" cx={styles.flex}>
             <span className={styles.dimmed}>Posted by:</span> {organization}
             <Dot />
             <span className={styles.dimmed}>Tender validity period:</span>
@@ -100,23 +98,25 @@ export const TenderCard = ({
           {/* status */}
           <FlexCell width="auto" cx={styles.status}>
             <Dot />
-            {status}
+            {status.toLowerCase()}
           </FlexCell>
         </FlexRow>
         {/* meta second row */}
         <FlexRow cx={styles.meta}>
           {/* meta */}
-          <FlexCell width="auto">
-            {category.map((category) => (
-              <Badge
-                size="18"
-                color="neutral"
-                fill="solid"
-                icon={AttachmentIcon}
-                caption={t(`${getCategoryName(category)?.name}`)}
-                cx={styles.filesAmountBadge}
-              />
-            ))}
+          <FlexCell width="auto" cx={styles.flex}>
+            <span className={`${styles.categories} ${styles.flex}`}>
+              {category.map((category) => (
+                <Badge
+                  size="18"
+                  color="neutral"
+                  fill="solid"
+                  icon={AttachmentIcon}
+                  caption={t(`${getCategoryName(category)?.name}`)}
+                  cx={styles.categoryBadge}
+                />
+              ))}
+            </span>
             <Dot />
             {`${process.env.REACT_APP_LOCATION}, ${location.nestedLocation.name}`}
           </FlexCell>
@@ -151,7 +151,11 @@ export const TenderCard = ({
         )}
       </FlexCell>
       {/* 3 dots menu */}
-      <FlexCell cx={styles.optionsCtaWrapper}>
+      <FlexCell
+        cx={styles.optionsCtaWrapper}
+        width="auto"
+        alignSelf="flex-start"
+      >
         <Dropdown
           renderBody={renderThirdDropdownBody}
           renderTarget={(props) => (
@@ -161,6 +165,7 @@ export const TenderCard = ({
               icon={MenuIcon}
               size="36"
               isDropdown={false}
+              cx={styles.optionCta}
             />
           )}
           placement="bottom-end"

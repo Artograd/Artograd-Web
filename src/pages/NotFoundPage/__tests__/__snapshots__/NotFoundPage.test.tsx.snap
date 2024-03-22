@@ -6,18 +6,18 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="uui-panel Dy3NM- wrapper _54i0RB"
+        class="uui-panel nNCe-- wrapper uEZmHy"
       >
         <img
           src="error.svg"
         />
         <div
-          class="ZTInfz uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography NTnjYI oep1Ot QL0z0q En3MXG"
+          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
         >
           Page not found!
         </div>
         <button
-          class="uui-button-box uui-enabled -clickable EBheCm pSu6kE uui-button uui-fill-solid uui-color-accent uui-size-36"
+          class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-accent uui-size-36"
           data-testid="not-found-cta"
           tabindex="0"
           type="button"
@@ -33,18 +33,18 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="uui-panel Dy3NM- wrapper _54i0RB"
+      class="uui-panel nNCe-- wrapper uEZmHy"
     >
       <img
         src="error.svg"
       />
       <div
-        class="ZTInfz uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography NTnjYI oep1Ot QL0z0q En3MXG"
+        class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
       >
         Page not found!
       </div>
       <button
-        class="uui-button-box uui-enabled -clickable EBheCm pSu6kE uui-button uui-fill-solid uui-color-accent uui-size-36"
+        class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-accent uui-size-36"
         data-testid="not-found-cta"
         tabindex="0"
         type="button"

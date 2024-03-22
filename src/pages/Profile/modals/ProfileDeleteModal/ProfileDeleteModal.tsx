@@ -49,9 +49,13 @@ export function DeleteProfileModal(modalProps: IModal<{ delete: string }>) {
             onClose={() => modalProps.abort()}
           />
           <ScrollBars hasTopShadow hasBottomShadow>
+            <FlexRow padding="24">
+              <Text>
+                When you delete account, all created tenders and related proposals will be permanently removed. This action cannot be undone.
+              </Text>
+            </FlexRow>
             <FlexRow padding="24" vPadding="12">
               <FlexCell grow={1}>
-                <Text></Text>
                 <LabeledInput
                   label="Type ‘Delete’ to confirm action"
                   {...lens.prop('delete').toProps()}

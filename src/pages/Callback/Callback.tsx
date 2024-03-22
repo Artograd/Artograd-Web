@@ -15,6 +15,7 @@ export const CallbackPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  // TODO: REPLACE WITH AXIOS
   fetch(
     `${process.env.REACT_APP_TOKEN_URL}&redirect_uri=${
       window.location.origin + process.env.REACT_APP_REDIRECT_PAGE
@@ -27,9 +28,11 @@ export const CallbackPage = () => {
         const decoded = jwtDecode(data.id_token);
         dispatch(saveUserData(decoded));
         dispatch(userLogin(true));
+        console.log(data);
         localStorage.setItem('refresh_token', data.refresh_token);
         localStorage.setItem('access_token', data.access_token);
         localStorage.setItem('id_token', data.id_token);
+        localStorage.setItem('expires_in', data.expires_in);
       }
     })
     .catch(() => history.push('/error'))

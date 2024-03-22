@@ -31,7 +31,7 @@ export const ProfileOverview = () => {
     readyArtObjects,
     company,
   } = useSelector(
-    (state: RootState) => state.persistedProfileOverviewReducer.profileOverview,
+    (state: RootState) => state.profileOverview.profileOverview,
   );
 
   const { uuiModals, uuiNotifications } = useUuiContext();

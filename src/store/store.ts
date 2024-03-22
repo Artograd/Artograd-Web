@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
   FLUSH,
   REHYDRATE,
@@ -6,26 +6,44 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-  persistCombineReducers,
+  persistReducer,
 } from 'redux-persist';
-import { persistedIdentityReducer } from './identitySlice';
-import { persistedProfileOverviewReducer } from './slices/profileOverviewSlice';
+import identityReducer, {
+  initialState as identityInitialState,
+} from './identitySlice';
+import helpersReducer from './helpersSlice';
 import storage from 'redux-persist/lib/storage';
-import { persistedProfileInformationReducer } from './slices/ProfileInformationSlice';
+import expireReducer from 'redux-persist-expire';
+import profileOverviewReducer from './slices/profileOverviewSlice';
+import profileInformationReducer from './slices/profileInformationSlice';
+
+const tokenExpiration = Number(localStorage.getItem('expires_in'));
 
 const persistConfig = {
   key: 'root',
+  version: 1,
   storage,
+  transforms: [
+    expireReducer('identity', {
+      persistedAtKey: 'loadedAt',
+      expireSeconds: tokenExpiration,
+      expiredState: identityInitialState,
+      autoExpire: true,
+    }),
+  ],
 };
 
-const reducer = persistCombineReducers(persistConfig, {
-  persistedIdentityReducer,
-  persistedProfileOverviewReducer,
-  persistedProfileInformationReducer,
+export const rootReducer = combineReducers({
+  identity: identityReducer,
+  helpers: helpersReducer,
+  profileOverview: profileOverviewReducer,
+  profileInformation: profileInformationReducer,
 });
 
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 export const store = configureStore({
-  reducer: reducer,
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

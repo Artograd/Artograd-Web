@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
-interface ProfileInformationState {
+interface profileInformationState {
   firstName: string;
   lastName: string;
   company: string;
@@ -13,10 +13,10 @@ interface ProfileInformationState {
 }
 
 interface profileInformation {
-  profileInformation: ProfileInformationState;
+  profileInformation: profileInformationState;
 }
 
-const profileInformationState: ProfileInformationState = {
+const profileInformationState: profileInformationState = {
   firstName: 'Name',
   lastName: 'Second Name',
   company: 'Test Company',
@@ -26,7 +26,7 @@ const profileInformationState: ProfileInformationState = {
   socialMedia: {},
 };
 
-const initialState: profileInformation = {
+export const initialState: profileInformation = {
   profileInformation: profileInformationState,
 };
 

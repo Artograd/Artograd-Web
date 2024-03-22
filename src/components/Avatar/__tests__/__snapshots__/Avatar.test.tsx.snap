@@ -6,21 +6,21 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="uui-panel Dy3NM- _54i0RB"
+        class="uui-panel nNCe-- uEZmHy"
         data-testid="user-avatar"
       >
         <button
-          class="BiIACD -clickable"
+          class="-Ar0uP -clickable"
         >
           <img
-            class="eio9JD"
+            class="hd78KB"
             height="36"
-            src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4"
+            src="https://static.cdn.epam.com/uploads/690afa39a93c88c4dd13758fe1d869d5/EPM-UUI/Images/avatar_placeholder.jpg"
             width="36"
           />
           <div>
             <div
-              class="kb-S-l uui-icon uui-enabled"
+              class="Prmk3w uui-icon uui-enabled"
             >
               <svg
                 class=""
@@ -42,21 +42,21 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="uui-panel Dy3NM- _54i0RB"
+      class="uui-panel nNCe-- uEZmHy"
       data-testid="user-avatar"
     >
       <button
-        class="BiIACD -clickable"
+        class="-Ar0uP -clickable"
       >
         <img
-          class="eio9JD"
+          class="hd78KB"
           height="36"
-          src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4"
+          src="https://static.cdn.epam.com/uploads/690afa39a93c88c4dd13758fe1d869d5/EPM-UUI/Images/avatar_placeholder.jpg"
           width="36"
         />
         <div>
           <div
-            class="kb-S-l uui-icon uui-enabled"
+            class="Prmk3w uui-icon uui-enabled"
           >
             <svg
               class=""

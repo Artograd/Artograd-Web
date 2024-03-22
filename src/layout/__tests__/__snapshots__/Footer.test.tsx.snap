@@ -10,34 +10,34 @@ Object {
         style="min-width: 0; flex-basis: 0px;"
       >
         <nav
-          class="cIyvAa uui-main_menu uui-mainmenu-container Qonjm4"
+          class="oWtJtA uui-main_menu uui-mainmenu-container yvgPcw"
         >
           <div
-            class="QFvWHT rnyczA"
+            class="wxJmc8 _7zh34y"
           >
             <div
-              class="uui-flex-row TtA74w _3odmFf"
+              class="uui-flex-row _5Jq2IB RkwqFu"
             >
               <div
                 data-testid="footer-logo-image"
               >
                 <a
                   aria-disabled="true"
-                  class="uui-button-box uui-disabled -clickable uui-anchor grqyCP GiETOh"
+                  class="uui-button-box uui-disabled -clickable uui-anchor WiTwhP z3KHzf"
                   tabindex="-1"
                 >
                   <img
                     alt="Main Menu Logo"
-                    class="KnIMMk"
-                    src="artograd.logo.svg"
+                    class="PCaaX2"
+                    src="/artograd.logo.svg"
                   />
                 </a>
               </div>
               <div
-                class="G9zrcQ"
+                class="CcZAjD"
               />
               <span
-                class="uui-button-box uui-enabled _9OkE-9 d7THM-"
+                class="uui-button-box uui-enabled YhOZc4 w-FQr6"
                 role="menuitem"
                 tabindex="-1"
               >
@@ -48,10 +48,10 @@ Object {
                 </div>
               </span>
               <div
-                class="G9zrcQ"
+                class="CcZAjD"
               />
               <button
-                class="uui-button-box uui-enabled -clickable _9OkE-9 d7THM- footerLink"
+                class="uui-button-box uui-enabled -clickable YhOZc4 w-FQr6 footerLink"
                 role="menuitem"
                 tabindex="0"
                 type="button"
@@ -63,7 +63,7 @@ Object {
                 </div>
               </button>
               <button
-                class="uui-button-box uui-enabled -clickable _9OkE-9 d7THM- footerLink"
+                class="uui-button-box uui-enabled -clickable YhOZc4 w-FQr6 footerLink"
                 role="menuitem"
                 tabindex="0"
                 type="button"
@@ -86,34 +86,34 @@ Object {
       style="min-width: 0; flex-basis: 0px;"
     >
       <nav
-        class="cIyvAa uui-main_menu uui-mainmenu-container Qonjm4"
+        class="oWtJtA uui-main_menu uui-mainmenu-container yvgPcw"
       >
         <div
-          class="QFvWHT rnyczA"
+          class="wxJmc8 _7zh34y"
         >
           <div
-            class="uui-flex-row TtA74w _3odmFf"
+            class="uui-flex-row _5Jq2IB RkwqFu"
           >
             <div
               data-testid="footer-logo-image"
             >
               <a
                 aria-disabled="true"
-                class="uui-button-box uui-disabled -clickable uui-anchor grqyCP GiETOh"
+                class="uui-button-box uui-disabled -clickable uui-anchor WiTwhP z3KHzf"
                 tabindex="-1"
               >
                 <img
                   alt="Main Menu Logo"
-                  class="KnIMMk"
-                  src="artograd.logo.svg"
+                  class="PCaaX2"
+                  src="/artograd.logo.svg"
                 />
               </a>
             </div>
             <div
-              class="G9zrcQ"
+              class="CcZAjD"
             />
             <span
-              class="uui-button-box uui-enabled _9OkE-9 d7THM-"
+              class="uui-button-box uui-enabled YhOZc4 w-FQr6"
               role="menuitem"
               tabindex="-1"
             >
@@ -124,10 +124,10 @@ Object {
               </div>
             </span>
             <div
-              class="G9zrcQ"
+              class="CcZAjD"
             />
             <button
-              class="uui-button-box uui-enabled -clickable _9OkE-9 d7THM- footerLink"
+              class="uui-button-box uui-enabled -clickable YhOZc4 w-FQr6 footerLink"
               role="menuitem"
               tabindex="0"
               type="button"
@@ -139,7 +139,7 @@ Object {
               </div>
             </button>
             <button
-              class="uui-button-box uui-enabled -clickable _9OkE-9 d7THM- footerLink"
+              class="uui-button-box uui-enabled -clickable YhOZc4 w-FQr6 footerLink"
               role="menuitem"
               tabindex="0"
               type="button"

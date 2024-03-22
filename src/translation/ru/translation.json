@@ -1,10 +1,11 @@
 {
   "global": {
+    "datePickerPlaceholder": "МММ Д, ГГГГ",
     "layout": {
       "header": {
         "homepage": "Главная",
         "tenders": "Тендеры",
-        "proposals": "Предложения",
+        "artObjects": "Арт Объекты",
         "signInCta": "Войти",
         "signUpCta": "Зарегистрироваться",
         "profile": "Профиль",
@@ -17,6 +18,13 @@
         "privatePolicyCta": "Политика конфиденциальности",
         "cookiePolicyCta": "Политика использования файлов cookie"
       }
+    },
+    "fileUpload": {
+      "fileLimitErrorText": "Вы достигли предела количества возможных прикрепленных файлов",
+      "fileSizeLimitErrorText": "Загруженный файл превысил разрешенный размер загрузки"
+    },
+    "lenses": {
+      "isRequiredMessage": "Поле обязательно для заполнения"
     }
   },
   "homepage": {
@@ -60,5 +68,81 @@
   "notFoundPage": {
     "title": "Страница не найдена!",
     "cta": "Вернуться на главную"
+  },
+  "tendersPage": {
+    "tenders": {
+      "pageTitle": "Тендеры",
+      "tendersTitle": "Создай свой первый тендер.",
+      "tendersDescription": "Создавая тендер, вы объявляете открытые конкурсы на уличное искусство, приглашаете скульпторов, художников и творцов для улучшения городского пейзажа.",
+      "tendersCta": "Создать новый тендер"
+    },
+    "newTender": {
+      "pageTitle": "Создать новый тендер",
+      "pageBackCta": "Назад",
+      "tenderInformationSectionTitle": "Основная информация о тендере",
+      "tenderTitleLabel": "Название тендера",
+      "tenderTitlePlaceholder": "Введите текст",
+      "tenderDescriptionLabel": "Описание тендера",
+      "tenderDescriptionPlaceholder": "Введите текст",
+      "tenderDetailsSectionTitle": "Детали тендера",
+      "tenderValidityPeriodLabel": "Период подачи предложений",
+      "tenderValidityPeriodLabelTooltipText": "Эта подсказка может быть полезна",
+      "tenderValidityPeriodFromPlaceholder": "От",
+      "tenderValidityPeriodToPlaceholder": "До",
+      "tenderExpectedDeliveryLabel": "Ожидаемая готовность",
+      "tenderExpectedDeliveryLabelSidenote": "<i>Это поле является необязательным</i>",
+      "tenderExpectedDeliveryLabelTooltipText": "Эта подсказка может быть полезна",
+      "tenderCategoryLabel": "Категория",
+      "tenderCategoryLabelSidenote": "<i>Это поле является необязательным</i>",
+      "tenderCategoryPlaceholder": "Пожалуйста, выберите категорию(и)",
+      "tenderLocationSectionTitle": "Расположение арт-объекта",
+      "tenderIndicateLink": "Укажите местоположение",
+      "tenderEditLocationLink": "Исправить локацию",
+      "tenderOwnerContactSectionTitle": "Контактная информация владельца тендера",
+      "tenderOwnerName": "Контактное лицо",
+      "tenderOwnerOrganisation": "Организация",
+      "tenderOwnerEmail": "Электронная почта",
+      "tenderOwnerEmailAvailabilityCheckbox": "Укажите мою электронную почту в качестве средства связи в описании тендера.",
+      "tenderAdditionalInformationLabel": "Дополнительная информация",
+      "tenderAdditionalInformationInfotext": "До {{fileAmountLimit}} файлов. Лимит на 1 файл {{fileSizeLimit}} Мб.",
+      "tenderAdditionalInformationLabelText": "Перетащите файлы, чтобы прикрепить или",
+      "tenderAdditionalInformationLink": "просматривать",
+      "pageFormFooterCancelCta": "Отменить",
+      "pageFormFooterCreateCta": "Создать Тендер",
+      "pageFormFooterDraftCta": "Сохранить как черновик",
+      "tenderLocationAddressLine": "Адрес",
+      "tenderLocationComments": "Комментарии",
+      "tenderLocationModal": {
+        "modalTitle": "Укажите местоположение",
+        "countryInputLabel": "Страна",
+        "cityInputLabel": "Город / Регион",
+        "cityInputPlaceholder": "Пожалуйста выберите Город / Регион",
+        "addressInputLabel": "Адрес",
+        "addressInputPlaceholder": "Пожалуйста выберите Адрес",
+        "addressInputLabelSidenote": "<i>Это поле является необязательным</i>",
+        "commentsInputLabel": "Комментарии",
+        "commentsInputPlaceholder": "Введите текст",
+        "commentsInputLabelSidenote": "<i>Это поле является необязательным</i>",
+        "confirmCta": "Потвердить локацию",
+        "cancelCta": "Отменить"
+      },
+      "beforeLeave": {
+        "message": "Хотите покинуть страницу? Несохраненные данные будут потеряны.",
+        "saveCta": "Остаться",
+        "discardCta": "Покинуть"
+      },
+      "categories": {
+        "sculptures": "Скульптуры",
+        "mosaics": "Мозаика",
+        "murals": "Фрески",
+        "graffiti": "Граффити/Стрит-арт",
+        "functionalArt": "Функциональное искусство",
+        "interactiveInstallations": "Интерактивные инсталляции",
+        "botanicalArt": "Ботаническое Искусство",
+        "waterFeatures": "Особенности воды",
+        "themedGardens": "Тематические сады",
+        "recycled": "Переработанное/переработанное искусство"
+      }
+    }
   }
 }

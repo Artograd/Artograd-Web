@@ -1,0 +1,369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Not found page renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="uui-panel nNCe-- wrapper uEZmHy"
+      >
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-basis: 100%;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV pageTitle doyi1y"
+            >
+              Tenders
+            </div>
+          </div>
+          <div
+            class="CcZAjD"
+          />
+          <div
+            class=""
+            style="min-width: 0; flex-basis: 100%;"
+          />
+        </div>
+        <div
+          class="uui-panel nNCe-- contentWrapper uEZmHy"
+        >
+          <div
+            class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="uui-panel nNCe-- wrapper uEZmHy"
+    >
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+      >
+        <div
+          class=""
+          style="min-width: 0; flex-basis: 100%;"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV pageTitle doyi1y"
+          >
+            Tenders
+          </div>
+        </div>
+        <div
+          class="CcZAjD"
+        />
+        <div
+          class=""
+          style="min-width: 0; flex-basis: 100%;"
+        />
+      </div>
+      <div
+        class="uui-panel nNCe-- contentWrapper uEZmHy"
+      >
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByAria": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByRoleAndText": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByAria": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByRoleAndText": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByAria": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByRoleAndText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByAria": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByRoleAndText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByAria": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByRoleAndText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByAria": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByRoleAndText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Not found page renders correctly for officer role 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="uui-panel nNCe-- wrapper uEZmHy"
+      >
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-basis: 100%;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV pageTitle doyi1y"
+            >
+              Tenders
+            </div>
+          </div>
+          <div
+            class="CcZAjD"
+          />
+          <div
+            class=""
+            style="min-width: 0; flex-basis: 100%;"
+          >
+            <button
+              class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-accent uui-size-36 headerTendersCta"
+              data-testid="header-create-new-tender-cta"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Create New Tender
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="uui-panel nNCe-- contentWrapper uEZmHy"
+        >
+          <div
+            class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+          >
+            <div
+              class="tenders"
+              style="min-width: 0; flex-basis: 100%; text-align: center;"
+            >
+              <img
+                class="emptyFolderIcon"
+                src="emptyFolderIcon.svg"
+              />
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV tendersTitle doyi1y"
+              >
+                Create your first tender.
+              </div>
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV tendersDescription doyi1y"
+              >
+                Creating a tender, you announce open calls for street art, invite sculptors, artists, and creators to enhance the cityscape.
+              </div>
+              <button
+                class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-accent uui-size-36"
+                data-testid="content-create-new-tender-cta"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="uui-caption"
+                >
+                  Create New Tender
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="uui-panel nNCe-- wrapper uEZmHy"
+    >
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+      >
+        <div
+          class=""
+          style="min-width: 0; flex-basis: 100%;"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV pageTitle doyi1y"
+          >
+            Tenders
+          </div>
+        </div>
+        <div
+          class="CcZAjD"
+        />
+        <div
+          class=""
+          style="min-width: 0; flex-basis: 100%;"
+        >
+          <button
+            class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-accent uui-size-36 headerTendersCta"
+            data-testid="header-create-new-tender-cta"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="uui-caption"
+            >
+              Create New Tender
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        class="uui-panel nNCe-- contentWrapper uEZmHy"
+      >
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class="tenders"
+            style="min-width: 0; flex-basis: 100%; text-align: center;"
+          >
+            <img
+              class="emptyFolderIcon"
+              src="emptyFolderIcon.svg"
+            />
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV tendersTitle doyi1y"
+            >
+              Create your first tender.
+            </div>
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV tendersDescription doyi1y"
+            >
+              Creating a tender, you announce open calls for street art, invite sculptors, artists, and creators to enhance the cityscape.
+            </div>
+            <button
+              class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-accent uui-size-36"
+              data-testid="content-create-new-tender-cta"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Create New Tender
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByAria": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByRoleAndText": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByAria": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByRoleAndText": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByAria": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByRoleAndText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByAria": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByRoleAndText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByAria": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByRoleAndText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByAria": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByRoleAndText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

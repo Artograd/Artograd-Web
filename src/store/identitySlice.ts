@@ -1,25 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
-import { persistReducer } from 'redux-persist';
 
-export type IdentityStateType = {
+type UserData = {
   'cognito:username': string;
+  'cognito:groups': string[];
+  'custom:organization': string;
   email: string;
   email_verified: boolean;
   family_name: string;
-  gender: 'male' | 'female' | '';
+  gender: string | 'male' | 'female';
   given_name: string;
   phone_number: string;
   phone_number_verified: boolean;
+  picture?: string;
+  sub?: string;
+};
+
+export type IdentityStateType = {
+  userData: UserData;
   isLoggedIn: boolean;
 };
 
-export type InitialStateType = {
-  identity: IdentityStateType;
-};
-
-export const identityState: IdentityStateType = {
+const userData = {
   'cognito:username': '',
+  'cognito:groups': [''],
+  'custom:organization': '',
   email: '',
   email_verified: false,
   family_name: '',
@@ -27,11 +31,13 @@ export const identityState: IdentityStateType = {
   given_name: '',
   phone_number: '',
   phone_number_verified: false,
-  isLoggedIn: false,
+  picture: '',
+  sub: '',
 };
 
-export const initialState: InitialStateType = {
-  identity: identityState,
+export const initialState: IdentityStateType = {
+  userData: userData,
+  isLoggedIn: false,
 };
 
 export const identitySlice = createSlice({
@@ -39,10 +45,10 @@ export const identitySlice = createSlice({
   initialState,
   reducers: {
     saveUserData: (state, action) => {
-      state.identity = action.payload;
+      state.userData = action.payload;
     },
     userLogin: (state, action) => {
-      state.identity.isLoggedIn = action.payload;
+      state.isLoggedIn = action.payload;
     },
   },
 });
@@ -50,14 +56,3 @@ export const identitySlice = createSlice({
 export const { saveUserData, userLogin } = identitySlice.actions;
 
 export default identitySlice.reducer;
-
-const persistConfig = {
-  key: 'identity',
-  version: 1,
-  storage,
-};
-
-export const persistedIdentityReducer = persistReducer(
-  persistConfig,
-  identitySlice.reducer,
-);

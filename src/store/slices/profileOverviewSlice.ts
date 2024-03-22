@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
-import { persistReducer } from 'redux-persist';
 
 interface ProfileOverviewState {
   avatarUrl: string;
@@ -29,14 +27,8 @@ const profileOverviewState: ProfileOverviewState = {
   readyArtObjects: 0,
 };
 
-const initialState: profileOverview = {
+export const initialState: profileOverview = {
   profileOverview: profileOverviewState,
-};
-
-const persistConfig = {
-  key: 'profileOverview',
-  version: 1,
-  storage,
 };
 
 const profileOverviewSlice = createSlice({
@@ -55,7 +47,3 @@ const profileOverviewSlice = createSlice({
 export const { profileAvatarChanged, profileCompanyUpdate } =
   profileOverviewSlice.actions;
 export default profileOverviewSlice.reducer;
-export const persistedProfileOverviewReducer = persistReducer(
-  persistConfig,
-  profileOverviewSlice.reducer,
-);

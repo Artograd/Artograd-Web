@@ -20,7 +20,7 @@ export const ProfileInformation = () => {
   const { t } = useTranslation();
   const { firstName, lastName, company, title } = useSelector(
     (state: RootState) =>
-      state.persistedProfileInformationReducer.profileInformation,
+      state.profileInformation.profileInformation,
   );
 
   const { lens, save } = useForm({

@@ -10,13 +10,13 @@ import {
 } from '@epam/uui';
 import { AdaptiveItemProps, MainMenuLogo } from '@epam/uui-components';
 import { useLocation, useHistory } from 'react-router-dom';
-import styles from './Header.module.scss';
+import styles from './Layout.module.scss';
 import { useTranslation } from 'react-i18next';
 
 import { RootState } from '../store/store';
 import { useSelector } from 'react-redux';
-import { Avatar } from './components/Avatar/Avatar';
-import { LanguageSelector } from './components/LanguageSelector/LanguageSelector';
+import { Avatar } from '../components/Avatar/Avatar';
+import { LanguageSelector } from '../components/LanguageSelector/LanguageSelector';
 
 const cognitoLoginUrl = `${
   process.env.REACT_APP_LOGIN_URL
@@ -37,7 +37,7 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
   const { t } = useTranslation();
 
   const { isLoggedIn } = useSelector(
-    (state: RootState) => state.persistedIdentityReducer.identity,
+    (state: RootState) => state.identity,
   );
 
   const visitPage = (props: { onClose: () => void }, page: string) => {
@@ -57,8 +57,8 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
         onClick={() => visitPage(props, '/tenders')}
       />
       <BurgerButton
-        caption={t('global.layout.header.proposals')}
-        onClick={() => visitPage(props, '/proposals')}
+        caption={t('global.layout.header.artObjects')}
+        onClick={() => visitPage(props, '/artobjects')}
       />
       {!isLoggedIn && (
         <BurgerButton
@@ -98,7 +98,7 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
             key={p.id}
             onClick={() => history.push('/')}
             rawProps={{ 'data-testid': `header-logo-image` }}
-            logoUrl="artograd.logo.svg"
+            logoUrl="/artograd.logo.svg"
           />
         ),
       },
@@ -123,20 +123,20 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
             key={p.id}
             onClick={() => history.push('/tenders')}
             caption={t('global.layout.header.tenders')}
-            isLinkActive={location.pathname === '/tenders'}
+            isLinkActive={location.pathname.includes('tenders')}
             cx={styles.menuPageLink}
           />
         ),
       },
       {
-        id: 'proposalsMenuItem',
+        id: 'artObjectsMenuItem',
         priority: 3,
         render: (p) => (
           <MainMenuButton
             key={p.id}
-            onClick={() => history.push('/proposals')}
-            caption={t('global.layout.header.proposals')}
-            isLinkActive={location.pathname === '/proposals'}
+            onClick={() => history.push('/artobjects')}
+            caption={t('global.layout.header.artObjects')}
+            isLinkActive={location.pathname === '/artobjects'}
             cx={styles.menuPageLink}
           />
         ),
@@ -207,7 +207,7 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
             key={p.id}
             onClick={() => history.push('/')}
             rawProps={{ 'data-testid': `header-logo-image` }}
-            logoUrl="artograd.logo.svg"
+            logoUrl="/artograd.logo.svg"
           />
         ),
       },
@@ -232,20 +232,20 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
             key={p.id}
             onClick={() => history.push('/tenders')}
             caption={t('global.layout.header.tenders')}
-            isLinkActive={location.pathname === '/tenders'}
+            isLinkActive={location.pathname.includes('tenders')}
             cx={styles.menuPageLink}
           />
         ),
       },
       {
-        id: 'proposalsMenuItem',
+        id: 'artObjectsMenuItem',
         priority: 3,
         render: (p) => (
           <MainMenuButton
             key={p.id}
-            onClick={() => history.push('/proposals')}
-            caption={t('global.layout.header.proposals')}
-            isLinkActive={location.pathname === '/proposals'}
+            onClick={() => history.push('/artobjects')}
+            caption={t('global.layout.header.artObjects')}
+            isLinkActive={location.pathname === '/artobjects'}
             cx={styles.menuPageLink}
           />
         ),

@@ -1,0 +1,45 @@
+.wrapper {
+  background: #ffffff;
+  padding: 24px 0;
+}
+
+.avatar {
+  width: 100%;
+}
+
+.profileName {
+  font-size: 24px;
+  color: #0853c1;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.profileRole {
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+//.panel {
+//  padding: 15px 10px;
+//}
+
+.divider {
+  width: 100%;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: 1px solid var(--uui-divider);
+}
+
+.overviewSectionName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.overviewSectionItem {
+  font-size: 12px;
+  font-weight: 600;
+}

@@ -22,6 +22,8 @@ import { store } from './store/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
+import { ProfilePage } from './pages/Profile/ProfilePage';
+import { Modals } from '@epam/uui-components';
 
 const history = createBrowserHistory();
 const router = new HistoryAdaptedRouter(history);
@@ -40,10 +42,12 @@ const UuiEnhancedApp = () => {
                 <Switch>
                   <Route exact path="/" component={HomePage} />
                   <Route exact path="/callback" component={CallbackPage} />
+                  <Route exact path="/profile" component={ProfilePage} />
                   <Route path="*" component={ErrorPage} />
                 </Switch>
               </Layout>
             </Router>
+            <Modals />
           </ErrorHandler>
         </UuiContext.Provider>
       </PersistGate>

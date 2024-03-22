@@ -36,7 +36,9 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
 
   const { t } = useTranslation();
 
-  const { isLoggedIn } = useSelector((state: RootState) => state.identity);
+  const { isLoggedIn } = useSelector(
+    (state: RootState) => state.persistedIdentityReducer.identity,
+  );
 
   const visitPage = (props: { onClose: () => void }, page: string) => {
     props.onClose;
@@ -244,6 +246,19 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
             onClick={() => history.push('/proposals')}
             caption={t('global.layout.header.proposals')}
             isLinkActive={location.pathname === '/proposals'}
+            cx={styles.menuPageLink}
+          />
+        ),
+      },
+      {
+        id: 'profileMenuItem',
+        priority: 3,
+        render: (p) => (
+          <MainMenuButton
+            key={p.id}
+            onClick={() => history.push('/profile')}
+            caption={t('global.layout.header.profile')}
+            isLinkActive={location.pathname === '/profile'}
             cx={styles.menuPageLink}
           />
         ),

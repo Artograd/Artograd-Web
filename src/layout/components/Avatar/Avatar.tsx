@@ -23,7 +23,7 @@ export const Avatar = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const { family_name, given_name, email } = useSelector(
-    (state: RootState) => state.identity,
+    (state: RootState) => state.persistedIdentityReducer.identity,
   );
   const logOut = async () => {
     // clear identity state to the initial

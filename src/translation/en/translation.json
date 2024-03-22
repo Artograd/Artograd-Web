@@ -44,6 +44,19 @@
       "stepLinkText5": "Donate to Support Art"
     }
   },
+  "profilePage": {
+    "My Profile": "My Profile",
+    "My Tenders": "My Tenders",
+    "Active tenders": "Active tenders",
+    "Others": "Others",
+    "My Art Objects": "My Art Objects",
+    "Active art objects": "Active art objects",
+    "Ready art objects": "Ready art objects",
+    "Basic Information": "Basic Information",
+    "Delete account": "Delete account",
+    "Delete": "Delete",
+    "Cancel": "Cancel"
+  },
   "notFoundPage": {
     "title": "Page not found!",
     "cta": "Return to homepage"

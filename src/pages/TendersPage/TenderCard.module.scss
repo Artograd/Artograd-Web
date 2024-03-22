@@ -1,6 +1,5 @@
 .wrapper {
   border-radius: 3px;
-  border: 1px solid red;
   margin: 0 24px;
   box-shadow: 0px 1.9649122953414917px 3.9298245906829834px 0px #1d1e261a;
   box-shadow: 0px 0px 1.9649122953414917px 0px #1d1e260d;
@@ -9,7 +8,6 @@
 
 .content {
   margin: 18px;
-  border: 1px solid blue;
 }
 
 .optionsCtaWrapper {
@@ -38,4 +36,30 @@
   font-weight: 400;
   line-height: 24px;
   color: var(--night950);
+}
+
+.proposalsLabel {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--night800);
+}
+
+.noProposalsInfoText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--night600);
+}
+
+.filesAmountBadge {
+  width: fit-content;
+  display: inline-flex;
+}
+
+.status {
+  text-transform: lowercase;
+  &:first-letter {
+    text-transform: capitalize;
+  }
 }

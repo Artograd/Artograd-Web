@@ -1,4 +1,5 @@
 import {
+  Badge,
   Button,
   Dropdown,
   DropdownMenuBody,
@@ -13,8 +14,11 @@ import { DropdownBodyProps } from '@epam/uui-core';
 import { ReactComponent as DeleteIcon } from '@epam/assets/icons/common/action-delete-18.svg';
 import { ReactComponent as ExportIcon } from '@epam/assets/icons/common/file-export-18.svg';
 import { ReactComponent as MenuIcon } from '@epam/assets/icons/common/navigation-more_vert-18.svg';
+import { ReactComponent as RightChevronIcon } from '@epam/assets/icons/common/navigation-chevron-right-18.svg';
+import { ReactComponent as AttachmentIcon } from '@epam/assets/icons/common/file-attachment-12.svg';
 import { getCategoryName } from '../../utils/getCategoryName';
 import { useTranslation } from 'react-i18next';
+import { Proposals } from '../../types';
 
 type LocationType = {
   nestedLocation: {
@@ -40,6 +44,7 @@ type TenderCardProps = {
   expectedDelivery: string;
   title: string;
   description: string;
+  proposals: Proposals[];
 };
 
 export const TenderCard = ({
@@ -53,6 +58,7 @@ export const TenderCard = ({
   expectedDelivery,
   title,
   description,
+  proposals,
 }: TenderCardProps) => {
   const renderThirdDropdownBody = (props: DropdownBodyProps) => {
     return (
@@ -63,6 +69,7 @@ export const TenderCard = ({
     );
   };
   const { t } = useTranslation();
+  const isProposalsExist = proposals.length === 0;
   return (
     // CARD
     <FlexRow cx={styles.wrapper}>
@@ -72,26 +79,45 @@ export const TenderCard = ({
         <FlexRow cx={styles.meta}>
           {/* meta */}
           <FlexCell width="auto">
-            <span className={styles.dimmed}>Posted by:</span> {organization} |
+            <span className={styles.dimmed}>Posted by:</span> {organization}
+            <Dot />
             <span className={styles.dimmed}>Tender validity period:</span>
             {`
               ${dayjs(Number(submissionStart)).format('D MMM YYYY')} - ${dayjs(
               Number(submissionEnd),
-            ).format('D MMM YYYY')}`}{' '}
-            | {files.length}
+            ).format('D MMM YYYY')}`}
+            <Dot />
+            <Badge
+              size="18"
+              color="neutral"
+              fill="solid"
+              icon={AttachmentIcon}
+              caption={files.length}
+              cx={styles.filesAmountBadge}
+            />
           </FlexCell>
           <FlexSpacer />
           {/* status */}
-          <FlexCell width="auto">{status}</FlexCell>
+          <FlexCell width="auto" cx={styles.status}>
+            <Dot />
+            {status}
+          </FlexCell>
         </FlexRow>
         {/* meta second row */}
         <FlexRow cx={styles.meta}>
           {/* meta */}
           <FlexCell width="auto">
             {category.map((category) => (
-              <>{t(`${getCategoryName(category)?.name}`)}</>
-            ))}{' '}
-            |{' '}
+              <Badge
+                size="18"
+                color="neutral"
+                fill="solid"
+                icon={AttachmentIcon}
+                caption={t(`${getCategoryName(category)?.name}`)}
+                cx={styles.filesAmountBadge}
+              />
+            ))}
+            <Dot />
             {`${process.env.REACT_APP_LOCATION}, ${location.nestedLocation.name}`}
           </FlexCell>
           <FlexSpacer />
@@ -106,9 +132,23 @@ export const TenderCard = ({
         {/* description */}
         <FlexRow cx={styles.description}>{description}</FlexRow>
         {/* submitted proposals title with button */}
-        <FlexRow>Submitted proposals</FlexRow>
+        <FlexRow cx={styles.proposalsLabel}>
+          Submitted proposals {!isProposalsExist && `(${proposals.length})`}
+          <Button
+            icon={RightChevronIcon}
+            iconPosition="right"
+            caption="View all"
+            fill="ghost"
+            onClick={() => null}
+            isDisabled={isProposalsExist}
+          />
+        </FlexRow>
         {/* proposals cards */}
-        <FlexRow>No proposals submitted yet.</FlexRow>
+        {isProposalsExist && (
+          <FlexRow cx={styles.noProposalsInfoText}>
+            No proposals submitted yet.
+          </FlexRow>
+        )}
       </FlexCell>
       {/* 3 dots menu */}
       <FlexCell cx={styles.optionsCtaWrapper}>
@@ -127,5 +167,20 @@ export const TenderCard = ({
         />
       </FlexCell>
     </FlexRow>
+  );
+};
+
+const Dot = () => {
+  return (
+    <span
+      style={{
+        height: '6px',
+        width: '6px',
+        backgroundColor: '#bbb',
+        borderRadius: '50%',
+        display: 'inline-block',
+        margin: 'auto 6px',
+      }}
+    ></span>
   );
 };

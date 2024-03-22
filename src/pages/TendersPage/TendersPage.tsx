@@ -42,6 +42,7 @@ const mockData = [
     createdAt: '1710943414607',
     modifiedAt: '1710943414607',
     organization: 'Testing organization',
+    proposals: [],
   },
 ];
 

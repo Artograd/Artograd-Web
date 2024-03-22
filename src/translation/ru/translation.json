@@ -25,6 +25,16 @@
     },
     "lenses": {
       "isRequiredMessage": "Поле обязательно для заполнения"
+    },
+    "statuses": {
+      "draft": "Черновик",
+      "published": "Опубликовано",
+      "ideation": "Идея",
+      "voting": "Голосование",
+      "selection": "Выбор",
+      "cancelled": "Отменено",
+      "closed": "Закрыто",
+      "deleted": "Удалено"
     }
   },
   "homepage": {

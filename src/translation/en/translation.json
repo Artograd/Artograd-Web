@@ -25,6 +25,16 @@
     },
     "lenses": {
       "isRequiredMessage": "The field is mandatory"
+    },
+    "statuses": {
+      "draft": "Draft",
+      "published": "Published",
+      "ideation": "Ideation",
+      "voting": "Voting",
+      "selection": "Selection",
+      "cancelled": "Cancelled",
+      "closed": "Closed",
+      "deleted": "Deleted"
     }
   },
   "homepage": {

@@ -15,9 +15,11 @@ import { ReactComponent as DeleteIcon } from '@epam/assets/icons/common/action-d
 import { ReactComponent as MenuIcon } from '@epam/assets/icons/common/navigation-more_vert-18.svg';
 import { ReactComponent as RightChevronIcon } from '@epam/assets/icons/common/navigation-chevron-right-18.svg';
 import { ReactComponent as AttachmentIcon } from '@epam/assets/icons/common/file-attachment-12.svg';
+import { ReactComponent as AttentionIcon } from '@epam/assets/icons/common/notification-error-outline-18.svg';
+import { ReactComponent as GeoLocationIcon } from '@epam/assets/icons/common/communication-geo_tag-18.svg';
 import { getCategoryName } from '../../utils/getCategoryName';
 import { useTranslation } from 'react-i18next';
-import { Proposals } from '../../types';
+import { Proposals, TenderStatus } from '../../types';
 
 type LocationType = {
   nestedLocation: {
@@ -37,7 +39,7 @@ type TenderCardProps = {
   submissionStart: string;
   submissionEnd: string;
   files: string[];
-  status: string;
+  status: TenderStatus;
   category: string[];
   location: LocationType;
   expectedDelivery: string;
@@ -96,9 +98,24 @@ export const TenderCard = ({
           </FlexCell>
           <FlexSpacer />
           {/* status */}
-          <FlexCell width="auto" cx={styles.status}>
-            <Dot />
-            {status.toLowerCase()}
+          <FlexCell
+            width="auto"
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            {status === TenderStatus.SELECTION && (
+              <Button
+                icon={AttentionIcon}
+                iconPosition="left"
+                caption="Action required"
+                fill="ghost"
+                onClick={() => null}
+                cx={styles.actionRequiredCta}
+              />
+            )}
+            <span className={styles.flex}>
+              <Dot status={status} />
+              {t(`global.statuses.${status.toLowerCase()}`)}
+            </span>
           </FlexCell>
         </FlexRow>
         {/* meta second row */}
@@ -111,13 +128,13 @@ export const TenderCard = ({
                   size="18"
                   color="neutral"
                   fill="solid"
-                  icon={AttachmentIcon}
                   caption={t(`${getCategoryName(category)?.name}`)}
                   cx={styles.categoryBadge}
                 />
               ))}
             </span>
             <Dot />
+            <GeoLocationIcon className={styles.geoLocationIcon} />
             {`${process.env.REACT_APP_LOCATION}, ${location.nestedLocation.name}`}
           </FlexCell>
           <FlexSpacer />
@@ -132,19 +149,21 @@ export const TenderCard = ({
         {/* description */}
         <FlexRow cx={styles.description}>{description}</FlexRow>
         {/* submitted proposals title with button */}
-        <FlexRow cx={styles.proposalsLabel}>
-          Submitted proposals {!isProposalsExist && `(${proposals.length})`}
-          <Button
-            icon={RightChevronIcon}
-            iconPosition="right"
-            caption="View all"
-            fill="ghost"
-            onClick={() => null}
-            isDisabled={isProposalsExist}
-          />
-        </FlexRow>
+        {status !== TenderStatus.DRAFT && (
+          <FlexRow cx={styles.proposalsLabel}>
+            Submitted proposals {!isProposalsExist && `(${proposals.length})`}
+            <Button
+              icon={RightChevronIcon}
+              iconPosition="right"
+              caption="View all"
+              fill="ghost"
+              onClick={() => null}
+              isDisabled={isProposalsExist}
+            />
+          </FlexRow>
+        )}
         {/* proposals cards */}
-        {isProposalsExist && (
+        {isProposalsExist && status !== TenderStatus.DRAFT && (
           <FlexRow cx={styles.noProposalsInfoText}>
             No proposals submitted yet.
           </FlexRow>
@@ -175,17 +194,35 @@ export const TenderCard = ({
   );
 };
 
-const Dot = () => {
+const Dot = ({ status }: { status?: TenderStatus }) => {
+  const determineColor = () => {
+    switch (status) {
+      case TenderStatus.IDEATION:
+        return '#006FE5';
+      case TenderStatus.VOTING:
+        return '#B114D1';
+      case TenderStatus.SELECTION:
+        return '#AAEEEE';
+      case TenderStatus.CLOSED:
+        return '#068745';
+      case TenderStatus.DRAFT:
+      case TenderStatus.CANCELLED:
+      default:
+        return '#bbb';
+    }
+  };
   return (
-    <span
-      style={{
-        height: '6px',
-        width: '6px',
-        backgroundColor: '#bbb',
-        borderRadius: '50%',
-        display: 'inline-block',
-        margin: 'auto 6px',
-      }}
-    ></span>
+    <>
+      <span
+        style={{
+          height: '6px',
+          width: '6px',
+          backgroundColor: determineColor(),
+          borderRadius: '50%',
+          display: 'inline-block',
+          margin: 'auto 6px',
+        }}
+      ></span>
+    </>
   );
 };

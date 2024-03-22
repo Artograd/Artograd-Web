@@ -62,10 +62,6 @@
   display: inline-flex;
 }
 
-.status {
-  text-transform: capitalize;
-}
-
 .flex {
   display: flex;
 }
@@ -81,4 +77,12 @@
   svg {
     fill: var(--night950);
   }
+}
+
+.actionRequiredCta {
+  display: flex;
+}
+
+.geoLocationIcon {
+  fill: var(--night500);
 }

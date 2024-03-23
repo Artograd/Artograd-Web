@@ -19,15 +19,15 @@ export type Author = {
 
 export type Proposals = {
   id: number;
-  status: string;
   published: string;
   thumbnail: string;
-  likes: number;
-  liked: boolean;
   selected: boolean;
   title: string;
   description: string;
   authors: Author[];
+  // status: string;
+  // likes: number;
+  // liked: boolean;
 };
 
 export type Tender = {

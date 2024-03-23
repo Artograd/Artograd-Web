@@ -32,7 +32,46 @@ export const mockData = [
     createdAt: '1710943414607',
     modifiedAt: '1710943414607',
     organization: 'Testing organization',
-    proposals: [],
+    proposals: [
+      {
+        id: 1,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: false,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Tatiana Press',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+      {
+        id: 2,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: false,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Gustavo Vetrovs',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+    ],
   },
   {
     _id: '65faecb9ee16c743fc5cfe93',
@@ -65,7 +104,46 @@ export const mockData = [
     createdAt: '1710943414607',
     modifiedAt: '1710943414607',
     organization: 'Testing organization',
-    proposals: [],
+    proposals: [
+      {
+        id: 1,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: false,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Tatiana Press',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+      {
+        id: 2,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: false,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Gustavo Vetrovs',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+    ],
   },
   {
     _id: '65faecb9ee16c743fc5cfe93',
@@ -98,7 +176,65 @@ export const mockData = [
     createdAt: '1710943414607',
     modifiedAt: '1710943414607',
     organization: 'Testing organization',
-    proposals: [],
+    proposals: [
+      {
+        id: 1,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: false,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Tatiana Press',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+      {
+        id: 2,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: false,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Gustavo Vetrovs',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+      {
+        id: 3,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: false,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Corey Ekstrom Bothman',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+    ],
   },
   {
     _id: '65faecb9ee16c743fc5cfe93',
@@ -131,7 +267,46 @@ export const mockData = [
     createdAt: '1710943414607',
     modifiedAt: '1710943414607',
     organization: 'Testing organization',
-    proposals: [],
+    proposals: [
+      {
+        id: 1,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: true,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Tatiana Press',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+      {
+        id: 2,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: false,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Gustavo Vetrovs',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+    ],
   },
   {
     _id: '65faecb9ee16c743fc5cfe93',
@@ -197,6 +372,26 @@ export const mockData = [
     createdAt: '1710943414607',
     modifiedAt: '1710943414607',
     organization: 'Testing organization',
-    proposals: [],
+    proposals: [
+      {
+        id: 1,
+        published: '1706787480000',
+        thumbnail: '',
+        selected: false,
+        title: 'Mural depicting an evening stroll',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit....',
+        authors: [
+          {
+            id: 1,
+            authorPic: '',
+            authorName: 'Tatiana Press',
+            authorRole: 'role',
+            authorLinkedIn: 'linkedin',
+            authorEmail: 'email',
+          },
+        ],
+      },
+    ],
   },
 ];

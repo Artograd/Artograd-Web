@@ -71,7 +71,20 @@
       "pageTitle": "Тендеры",
       "tendersTitle": "Создай свой первый тендер.",
       "tendersDescription": "Создавая тендер, вы объявляете открытые конкурсы на уличное искусство, приглашаете скульпторов, художников и творцов для улучшения городского пейзажа.",
-      "tendersCta": "Создать новый тендер"
+      "tendersCta": "Создать новый тендер",
+      "tenderCard": {
+        "postedBy": "Автор",
+        "tenderValidity": "Срок действия тендера",
+        "readiness": "Ожидаемая готовность",
+        "submittedProposalsLabel": "Поданные предложения",
+        "viewAllSubmittedProposalsCta": "Посмотреть все",
+        "noSubmittedProposals": "Предложений пока не поступало.",
+        "actionRequiredCta": "Требуется действие",
+        "proposals": {
+          "winnerBadge": "Победитель",
+          "viewDetailsCta": "Посмотреть детали"
+        }
+      }
     },
     "newTender": {
       "pageTitle": "Создать новый тендер",

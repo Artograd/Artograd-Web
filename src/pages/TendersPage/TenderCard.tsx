@@ -7,6 +7,7 @@ import {
   FlexCell,
   FlexRow,
   FlexSpacer,
+  Panel,
 } from '@epam/uui';
 import dayjs from 'dayjs';
 import styles from './TenderCard.module.scss';
@@ -17,6 +18,7 @@ import { ReactComponent as RightChevronIcon } from '@epam/assets/icons/common/na
 import { ReactComponent as AttachmentIcon } from '@epam/assets/icons/common/file-attachment-12.svg';
 import { ReactComponent as AttentionIcon } from '@epam/assets/icons/common/notification-error-outline-18.svg';
 import { ReactComponent as GeoLocationIcon } from '@epam/assets/icons/common/communication-geo_tag-18.svg';
+import { ReactComponent as StarIcon } from '@epam/assets/icons/common/fav-rates-star-12.svg';
 import { getCategoryName } from '../../utils/getCategoryName';
 import { useTranslation } from 'react-i18next';
 import { Proposals, TenderStatus } from '../../types';
@@ -79,9 +81,14 @@ export const TenderCard = ({
         <FlexRow cx={styles.meta}>
           {/* meta */}
           <FlexCell width="auto" cx={styles.flex}>
-            <span className={styles.dimmed}>Posted by:</span> {organization}
+            <span className={styles.dimmed}>
+              {t('tendersPage.tenders.tenderCard.postedBy')}:
+            </span>
+            {organization}
             <Dot />
-            <span className={styles.dimmed}>Tender validity period:</span>
+            <span className={styles.dimmed}>
+              {t('tendersPage.tenders.tenderCard.tenderValidity')}:
+            </span>
             {`
               ${dayjs(Number(submissionStart)).format('D MMM YYYY')} - ${dayjs(
               Number(submissionEnd),
@@ -106,7 +113,7 @@ export const TenderCard = ({
               <Button
                 icon={AttentionIcon}
                 iconPosition="left"
-                caption="Action required"
+                caption={t('tendersPage.tenders.tenderCard.actionRequiredCta')}
                 fill="ghost"
                 onClick={() => null}
                 cx={styles.actionRequiredCta}
@@ -140,7 +147,9 @@ export const TenderCard = ({
           <FlexSpacer />
           {/* expected readiness */}
           <FlexCell width="auto">
-            <span className={styles.dimmed}>Expected readiness:</span>{' '}
+            <span className={styles.dimmed}>
+              {t('tendersPage.tenders.tenderCard.readiness')}:
+            </span>
             {dayjs(Number(expectedDelivery)).format('D MMM YYYY')}
           </FlexCell>
         </FlexRow>
@@ -151,11 +160,14 @@ export const TenderCard = ({
         {/* submitted proposals title with button */}
         {status !== TenderStatus.DRAFT && (
           <FlexRow cx={styles.proposalsLabel}>
-            Submitted proposals {!isProposalsExist && `(${proposals.length})`}
+            {t('tendersPage.tenders.tenderCard.submittedProposalsLabel')}
+            {!isProposalsExist && `(${proposals.length})`}
             <Button
               icon={RightChevronIcon}
               iconPosition="right"
-              caption="View all"
+              caption={t(
+                'tendersPage.tenders.tenderCard.viewAllSubmittedProposalsCta',
+              )}
               fill="ghost"
               onClick={() => null}
               isDisabled={isProposalsExist}
@@ -163,11 +175,49 @@ export const TenderCard = ({
           </FlexRow>
         )}
         {/* proposals cards */}
-        {isProposalsExist && status !== TenderStatus.DRAFT && (
+        {isProposalsExist &&
+          status !== TenderStatus.DRAFT &&
+          status !== TenderStatus.CANCELLED && (
+            <FlexRow cx={styles.noProposalsInfoText}>
+              {t('tendersPage.tenders.tenderCard.noSubmittedProposals')}
+            </FlexRow>
+          )}
+        {status === TenderStatus.CLOSED && (
           <FlexRow cx={styles.noProposalsInfoText}>
-            No proposals submitted yet.
+            <Badge
+              size="18"
+              color="info"
+              fill="solid"
+              caption={t(
+                'tendersPage.tenders.tenderCard.proposals.winnerBadge',
+              )}
+              icon={StarIcon}
+              cx={styles.winnerBadge}
+            />
+            <span>
+              {proposals.find((proposal) => proposal.selected)?.title}
+            </span>
+            <Button
+              icon={RightChevronIcon}
+              iconPosition="right"
+              caption={t(
+                'tendersPage.tenders.tenderCard.proposals.viewDetailsCta',
+              )}
+              fill="ghost"
+              onClick={() => null}
+              isDisabled={isProposalsExist}
+            />
           </FlexRow>
         )}
+        {/* proposal cards */}
+        {proposals.map((proposal) => (
+          <Panel>
+            <p>Submitted on: {proposal.published}</p>
+            <p>{proposal.title}</p>
+            <p>{proposal.description}</p>
+            <p>By: {proposal.authors.map((author) => author.authorName)}</p>
+          </Panel>
+        ))}
       </FlexCell>
       {/* 3 dots menu */}
       <FlexCell

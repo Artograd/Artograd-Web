@@ -16,6 +16,7 @@
 
 .dimmed {
   color: var(--night600);
+  margin-right: 2px;
 }
 
 .meta {
@@ -85,4 +86,14 @@
 
 .geoLocationIcon {
   fill: var(--night500);
+}
+
+.winnerBadge {
+  margin-right: 6px;
+  color: var(--cyan-70);
+  background-color: var(--cyan-10);
+  border: 1px solid var(--cyan-20);
+  svg {
+    fill: var(--cyan-70);
+  }
 }

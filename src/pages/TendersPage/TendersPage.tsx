@@ -5,11 +5,8 @@ import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import { TenderCard } from './TenderCard';
+import { TenderCard } from '../../components/TenderCard/TenderCard';
 import { mockData } from './mockData';
-
-const tendersListLength = 1;
-// temp mock data
 
 export const TendersPage = () => {
   const history = useHistory();
@@ -29,7 +26,7 @@ export const TendersPage = () => {
         </FlexCell>
         <FlexSpacer />
         <FlexCell width="100%">
-          {tendersListLength >= 1 && isOfficer && (
+          {mockData.length >= 1 && isOfficer && (
             <Button
               color="accent"
               caption={t('tendersPage.tenders.tendersCta')}
@@ -41,10 +38,12 @@ export const TendersPage = () => {
         </FlexCell>
       </FlexRow>
       <Panel cx={styles.contentWrapper}>
-        {tendersListLength >= 1 && isOfficer && <NoTenders />}
-        {mockData.map((tender) => (
-          <TenderCard {...tender} />
-        ))}
+        <FlexRow>
+          buttons, status selectors, location selector, search input
+        </FlexRow>
+        {mockData.length === 0 && isOfficer && <NoTenders />}
+        {mockData.length >= 1 &&
+          mockData.map((tender) => mockData && <TenderCard {...tender} />)}
       </Panel>
     </Panel>
   );

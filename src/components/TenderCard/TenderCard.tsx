@@ -7,7 +7,6 @@ import {
   FlexCell,
   FlexRow,
   FlexSpacer,
-  Panel,
 } from '@epam/uui';
 import dayjs from 'dayjs';
 import styles from './TenderCard.module.scss';
@@ -22,6 +21,8 @@ import { ReactComponent as StarIcon } from '@epam/assets/icons/common/fav-rates-
 import { getCategoryName } from '../../utils/getCategoryName';
 import { useTranslation } from 'react-i18next';
 import { Proposals, TenderStatus } from '../../types';
+import { Dot } from '../Dot/Dot';
+import { ProposalCard } from '../ProposalCard/ProposalCard';
 
 type LocationType = {
   nestedLocation: {
@@ -37,17 +38,17 @@ type LocationType = {
 };
 
 type TenderCardProps = {
-  organization: string;
-  submissionStart: string;
-  submissionEnd: string;
-  files: string[];
-  status: TenderStatus;
-  category: string[];
-  location: LocationType;
-  expectedDelivery: string;
-  title: string;
-  description: string;
-  proposals: Proposals[];
+  organization?: string;
+  submissionStart?: string;
+  submissionEnd?: string;
+  files?: string[];
+  status?: TenderStatus;
+  category?: string[];
+  location?: LocationType;
+  expectedDelivery?: string;
+  title?: string;
+  description?: string;
+  proposals?: Proposals[];
 };
 
 export const TenderCard = ({
@@ -71,7 +72,7 @@ export const TenderCard = ({
     );
   };
   const { t } = useTranslation();
-  const isProposalsExist = proposals.length === 0;
+  const isProposalsExist = proposals?.length === 0;
   return (
     // CARD
     <FlexRow cx={styles.wrapper}>
@@ -99,7 +100,7 @@ export const TenderCard = ({
               color="neutral"
               fill="solid"
               icon={AttachmentIcon}
-              caption={files.length}
+              caption={files?.length}
               cx={styles.filesAmountBadge}
             />
           </FlexCell>
@@ -121,7 +122,7 @@ export const TenderCard = ({
             )}
             <span className={styles.flex}>
               <Dot status={status} />
-              {t(`global.statuses.${status.toLowerCase()}`)}
+              {t(`global.statuses.${status?.toLowerCase()}`)}
             </span>
           </FlexCell>
         </FlexRow>
@@ -130,7 +131,7 @@ export const TenderCard = ({
           {/* meta */}
           <FlexCell width="auto" cx={styles.flex}>
             <span className={`${styles.categories} ${styles.flex}`}>
-              {category.map((category) => (
+              {category?.map((category) => (
                 <Badge
                   size="18"
                   color="neutral"
@@ -142,7 +143,7 @@ export const TenderCard = ({
             </span>
             <Dot />
             <GeoLocationIcon className={styles.geoLocationIcon} />
-            {`${process.env.REACT_APP_LOCATION}, ${location.nestedLocation.name}`}
+            {`${process.env.REACT_APP_LOCATION}, ${location?.nestedLocation.name}`}
           </FlexCell>
           <FlexSpacer />
           {/* expected readiness */}
@@ -161,7 +162,7 @@ export const TenderCard = ({
         {status !== TenderStatus.DRAFT && (
           <FlexRow cx={styles.proposalsLabel}>
             {t('tendersPage.tenders.tenderCard.submittedProposalsLabel')}
-            {!isProposalsExist && `(${proposals.length})`}
+            {!isProposalsExist && `(${proposals?.length})`}
             <Button
               icon={RightChevronIcon}
               iconPosition="right"
@@ -195,7 +196,7 @@ export const TenderCard = ({
               cx={styles.winnerBadge}
             />
             <span>
-              {proposals.find((proposal) => proposal.selected)?.title}
+              {proposals?.find((proposal) => proposal.selected)?.title}
             </span>
             <Button
               icon={RightChevronIcon}
@@ -210,14 +211,10 @@ export const TenderCard = ({
           </FlexRow>
         )}
         {/* proposal cards */}
-        {proposals.map((proposal) => (
-          <Panel>
-            <p>Submitted on: {proposal.published}</p>
-            <p>{proposal.title}</p>
-            <p>{proposal.description}</p>
-            <p>By: {proposal.authors.map((author) => author.authorName)}</p>
-          </Panel>
-        ))}
+        {status !== TenderStatus.CLOSED &&
+          proposals
+            ?.slice(0, 2)
+            .map((proposal) => <ProposalCard proposal={proposal} />)}
       </FlexCell>
       {/* 3 dots menu */}
       <FlexCell
@@ -241,38 +238,5 @@ export const TenderCard = ({
         />
       </FlexCell>
     </FlexRow>
-  );
-};
-
-const Dot = ({ status }: { status?: TenderStatus }) => {
-  const determineColor = () => {
-    switch (status) {
-      case TenderStatus.IDEATION:
-        return '#006FE5';
-      case TenderStatus.VOTING:
-        return '#B114D1';
-      case TenderStatus.SELECTION:
-        return '#AAEEEE';
-      case TenderStatus.CLOSED:
-        return '#068745';
-      case TenderStatus.DRAFT:
-      case TenderStatus.CANCELLED:
-      default:
-        return '#bbb';
-    }
-  };
-  return (
-    <>
-      <span
-        style={{
-          height: '6px',
-          width: '6px',
-          backgroundColor: determineColor(),
-          borderRadius: '50%',
-          display: 'inline-block',
-          margin: 'auto 6px',
-        }}
-      ></span>
-    </>
   );
 };

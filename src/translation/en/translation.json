@@ -82,7 +82,14 @@
         "actionRequiredCta": "Action required",
         "proposals": {
           "winnerBadge": "Winner",
-          "viewDetailsCta": "View details"
+          "viewDetailsCta": "View details",
+          "by": "By",
+          "submittedOn": "Submitted on",
+          "authorCard": {
+            "company": "Company",
+            "jobTitle": "Job title",
+            "location": "Location"
+          }
         }
       }
     },

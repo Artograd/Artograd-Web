@@ -1,4 +1,12 @@
-import { Button, FlexCell, FlexRow, FlexSpacer, Panel, Text } from '@epam/uui';
+import {
+  Button,
+  FlexCell,
+  FlexRow,
+  FlexSpacer,
+  Paginator,
+  Panel,
+  Text,
+} from '@epam/uui';
 import styles from './TendersPage.module.scss';
 import EmptyFolderIcon from '../../images/emptyFolderIcon.svg';
 import { useHistory } from 'react-router-dom';
@@ -7,10 +15,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { TenderCard } from '../../components/TenderCard/TenderCard';
 import { mockData } from './mockData';
+import { useState } from 'react';
 
 export const TendersPage = () => {
   const history = useHistory();
   const { t } = useTranslation();
+  const [value, onValueChange] = useState<number>(5);
   const userRoles = useSelector(
     (state: RootState) => state?.identity?.userData['cognito:groups'],
   );
@@ -45,6 +55,14 @@ export const TendersPage = () => {
         {mockData.length >= 1 &&
           mockData.map((tender) => mockData && <TenderCard {...tender} />)}
       </Panel>
+      <FlexRow alignItems="center" cx={styles.paginatorWrapper}>
+        <Paginator
+          size="24"
+          totalPages={10}
+          value={value}
+          onValueChange={onValueChange}
+        />
+      </FlexRow>
     </Panel>
   );
 };

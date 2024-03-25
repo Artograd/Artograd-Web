@@ -18,8 +18,10 @@ import { ReactComponent as MailIcon } from '@epam/assets/icons/common/communicat
 import { ReactComponent as FacebookIcon } from '@epam/assets/icons/common/social-network-facebook-18.svg';
 import { ReactComponent as InstagramIcon } from '@epam/assets/icons/common/social-network-instagram-18.svg';
 import { ReactComponent as LinkedInIcon } from '@epam/assets/icons/common/linkedin-18.svg';
+import { useTranslation } from 'react-i18next';
 
 const renderDropdownBody = (props: DropdownBodyProps, name: string) => {
+  const { t } = useTranslation();
   return (
     <DropdownContainer vPadding="24" padding="18" focusLock={false} {...props}>
       <FlexRow alignItems="center" spacing="12">
@@ -43,9 +45,15 @@ const renderDropdownBody = (props: DropdownBodyProps, name: string) => {
       </FlexRow>
       <FlexRow>
         <FlexCell width="auto">
-          <Text cx={styles.authorCardLabel}>Company</Text>
-          <Text cx={styles.authorCardLabel}>Job title</Text>
-          <Text cx={styles.authorCardLabel}>Location</Text>
+          <Text cx={styles.authorCardLabel}>
+            {t('tendersPage.tenders.tenderCard.proposals.authorCard.company')}
+          </Text>
+          <Text cx={styles.authorCardLabel}>
+            {t('tendersPage.tenders.tenderCard.proposals.authorCard.jobTitle')}
+          </Text>
+          <Text cx={styles.authorCardLabel}>
+            {t('tendersPage.tenders.tenderCard.proposals.authorCard.location')}
+          </Text>
         </FlexCell>
         <FlexCell width="auto">
           <Text cx={styles.authorCardContent}>Sculpture & Design Studio</Text>
@@ -92,6 +100,7 @@ const renderTarget = (props: IDropdownToggler, name: string) => {
 
 export const ProposalCard = ({ proposal }: { proposal: Proposals }) => {
   const authorName = proposal.authors[0].authorName;
+  const { t } = useTranslation();
   return (
     <FlexRow>
       <FlexCell width="auto">
@@ -99,8 +108,10 @@ export const ProposalCard = ({ proposal }: { proposal: Proposals }) => {
       </FlexCell>
       <FlexCell width="auto" cx={styles.proposalDetails} alignSelf="flex-start">
         <Text cx={styles.proposalSubmissionText}>
-          <span className={styles.dimmed}>Submitted on</span>:{' '}
-          {`${dayjs(Number(proposal.published)).format('D MMM YYYY')}`}
+          <span className={styles.dimmed}>
+            {t('tendersPage.tenders.tenderCard.proposals.submittedOn')}
+          </span>
+          : {`${dayjs(Number(proposal.published)).format('D MMM YYYY')}`}
         </Text>
         <Text cx={styles.proposalTitle}>{proposal.title}</Text>
         <Text cx={styles.proposalDescription}>
@@ -109,10 +120,11 @@ export const ProposalCard = ({ proposal }: { proposal: Proposals }) => {
         </Text>
         <Text cx={styles.proposalAuthor}>
           <img src={AvatarPic} />
-          <span>By:</span>
+          <span>{t('tendersPage.tenders.tenderCard.proposals.by')}</span>
           <Dropdown
             renderBody={(props) => renderDropdownBody(props, authorName)}
             renderTarget={(props) => renderTarget(props, authorName)}
+            closeOnMouseLeave="boundary"
           />
         </Text>
       </FlexCell>

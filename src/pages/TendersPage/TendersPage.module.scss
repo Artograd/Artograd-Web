@@ -48,6 +48,13 @@
   float: right;
 }
 
+.paginatorWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
 @media only screen and (max-device-width: 1227px) {
   .wrapper {
     margin: 36px 30px 60px;

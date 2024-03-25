@@ -82,7 +82,14 @@
         "actionRequiredCta": "Требуется действие",
         "proposals": {
           "winnerBadge": "Победитель",
-          "viewDetailsCta": "Посмотреть детали"
+          "viewDetailsCta": "Посмотреть детали",
+          "by": "Добавил(-а)",
+          "submittedOn": "Добавленно",
+          "authorCard": {
+            "company": "Компания",
+            "jobTitle": "Должность",
+            "location": "Расположение"
+          }
         }
       }
     },

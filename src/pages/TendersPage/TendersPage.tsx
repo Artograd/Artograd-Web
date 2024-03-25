@@ -1,10 +1,13 @@
 import {
+  Badge,
   Button,
   FlexCell,
   FlexRow,
   FlexSpacer,
   Paginator,
   Panel,
+  PickerInput,
+  SearchInput,
   Text,
 } from '@epam/uui';
 import styles from './TendersPage.module.scss';
@@ -15,16 +18,55 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { TenderCard } from '../../components/TenderCard/TenderCard';
 import { mockData } from './mockData';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { CityItemType, TenderStatus } from '../../types';
+import { useArrayDataSource } from '@epam/uui-core';
+import { getCityList } from '../../requests';
 
 export const TendersPage = () => {
   const history = useHistory();
   const { t } = useTranslation();
   const [value, onValueChange] = useState<number>(5);
+  const [searchValue, onSearchValueChange] = useState<string>();
+  const [listOfCities, setListOfCities] = useState<CityItemType[]>();
+  const [statusFilterValue, onStatusFilterValueChange] = useState<
+    | {
+        id: number;
+        name: string;
+      }[]
+    | unknown[]
+  >([]);
+  const [locationFilterValue, onLocationFilterValueChange] = useState<
+    CityItemType[] | unknown[]
+  >([]);
   const userRoles = useSelector(
     (state: RootState) => state?.identity?.userData['cognito:groups'],
   );
   const isOfficer = userRoles?.includes('Officials');
+  const statusesList = Object.values(TenderStatus).map((status, index) => ({
+    id: index,
+    name: status.toLowerCase(),
+  }));
+
+  const statusesProvider = useArrayDataSource(
+    {
+      items: statusesList,
+    },
+    [],
+  );
+
+  const citiesProvider = useArrayDataSource(
+    {
+      items: listOfCities,
+    },
+    [],
+  );
+
+  useEffect(() => {
+    getCityList()
+      .then((response) => setListOfCities(response))
+      .catch(() => setListOfCities([]));
+  }, []);
 
   return (
     <Panel cx={styles.wrapper}>
@@ -48,8 +90,43 @@ export const TendersPage = () => {
         </FlexCell>
       </FlexRow>
       <Panel cx={styles.contentWrapper}>
-        <FlexRow>
-          buttons, status selectors, location selector, search input
+        <FlexRow cx={styles.filtersWrapper}>
+          <FlexRow cx={styles.creatorFilter}>
+            <Badge color="info" fill="solid" caption="All" />
+            <Badge color="neutral" fill="solid" caption="Created by me" />
+          </FlexRow>
+          <PickerInput
+            dataSource={statusesProvider}
+            value={statusFilterValue}
+            onValueChange={onStatusFilterValueChange}
+            getName={(item: { id: number; name: string }) =>
+              t(`global.statuses.${item.name}`)
+            }
+            entityName="Language level"
+            selectionMode="multi"
+            valueType="id"
+            inputCx={styles.statusInput}
+          />
+          <PickerInput
+            dataSource={citiesProvider}
+            value={locationFilterValue}
+            onValueChange={onLocationFilterValueChange}
+            getName={(item: CityItemType) => item.name}
+            entityName="location"
+            selectionMode="multi"
+            valueType="id"
+            inputCx={styles.citiesInput}
+          />
+          <FlexSpacer />
+          <FlexCell width="auto">
+            <SearchInput
+              value={searchValue}
+              onValueChange={onSearchValueChange}
+              placeholder="Type for search"
+              debounceDelay={1000}
+              cx={styles.searchField}
+            />
+          </FlexCell>
         </FlexRow>
         {mockData.length === 0 && isOfficer && <NoTenders />}
         {mockData.length >= 1 &&

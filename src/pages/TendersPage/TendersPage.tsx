@@ -73,7 +73,7 @@ export const TendersPage = () => {
       <FlexRow>
         <FlexCell width="100%">
           <Text cx={styles.pageTitle}>
-            {t('tendersPage.tenders.pageTitle')}
+            {t('tendersPages.tenders.pageTitle')}
           </Text>
         </FlexCell>
         <FlexSpacer />
@@ -81,7 +81,7 @@ export const TendersPage = () => {
           {mockData.length >= 1 && isOfficer && (
             <Button
               color="accent"
-              caption={t('tendersPage.tenders.tendersCta')}
+              caption={t('tendersPages.tenders.tendersCta')}
               onClick={() => history.push('/tenders/new')}
               rawProps={{ 'data-testid': `header-create-new-tender-cta` }}
               cx={styles.headerTendersCta}
@@ -92,8 +92,16 @@ export const TendersPage = () => {
       <Panel cx={styles.contentWrapper}>
         <FlexRow cx={styles.filtersWrapper}>
           <FlexRow cx={styles.creatorFilter}>
-            <Badge color="info" fill="solid" caption="All" />
-            <Badge color="neutral" fill="solid" caption="Created by me" />
+            <Badge
+              color="info"
+              fill="solid"
+              caption={t('tendersPages.tenders.allCta')}
+            />
+            <Badge
+              color="neutral"
+              fill="solid"
+              caption={t('tendersPages.tenders.createdByMeCta')}
+            />
           </FlexRow>
           <PickerInput
             dataSource={statusesProvider}
@@ -102,27 +110,29 @@ export const TendersPage = () => {
             getName={(item: { id: number; name: string }) =>
               t(`global.statuses.${item.name}`)
             }
-            entityName="Language level"
+            entityName="Status filter"
             selectionMode="multi"
             valueType="id"
             inputCx={styles.statusInput}
+            placeholder={t('tendersPages.tenders.statusFilterPlaceholder')}
           />
           <PickerInput
             dataSource={citiesProvider}
             value={locationFilterValue}
             onValueChange={onLocationFilterValueChange}
             getName={(item: CityItemType) => item.name}
-            entityName="location"
+            entityName="Cities filter"
             selectionMode="multi"
             valueType="id"
             inputCx={styles.citiesInput}
+            placeholder={t('tendersPages.tenders.cityFilterPlaceholder')}
           />
           <FlexSpacer />
           <FlexCell width="auto">
             <SearchInput
               value={searchValue}
               onValueChange={onSearchValueChange}
-              placeholder="Type for search"
+              placeholder={t('tendersPages.tenders.searchInputPlaceholder')}
               debounceDelay={1000}
               cx={styles.searchField}
             />
@@ -152,15 +162,15 @@ const NoTenders = () => {
       <FlexCell cx={styles.tenders} width="100%" textAlign="center">
         <img className={styles.emptyFolderIcon} src={EmptyFolderIcon} />
         <Text cx={styles.tendersTitle}>
-          {t('tendersPage.tenders.tendersTitle')}
+          {t('tendersPages.tenders.tendersTitle')}
         </Text>
         <Text cx={styles.tendersDescription}>
-          {t('tendersPage.tenders.tendersDescription')}
+          {t('tendersPages.tenders.tendersDescription')}
         </Text>
 
         <Button
           color="accent"
-          caption={t('tendersPage.tenders.tendersCta')}
+          caption={t('tendersPages.tenders.tendersCta')}
           onClick={() => history.push('/tenders/new')}
           rawProps={{ 'data-testid': `content-create-new-tender-cta` }}
         />

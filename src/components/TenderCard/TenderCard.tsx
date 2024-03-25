@@ -83,12 +83,12 @@ export const TenderCard = ({
           {/* meta */}
           <FlexCell width="auto" cx={styles.flex}>
             <span className={styles.dimmed}>
-              {t('tendersPage.tenders.tenderCard.postedBy')}:
+              {t('tendersPages.tenders.tenderCard.postedBy')}:
             </span>
             {organization}
             <Dot />
             <span className={styles.dimmed}>
-              {t('tendersPage.tenders.tenderCard.tenderValidity')}:
+              {t('tendersPages.tenders.tenderCard.tenderValidity')}:
             </span>
             {`
               ${dayjs(Number(submissionStart)).format('D MMM YYYY')} - ${dayjs(
@@ -114,7 +114,7 @@ export const TenderCard = ({
               <Button
                 icon={AttentionIcon}
                 iconPosition="left"
-                caption={t('tendersPage.tenders.tenderCard.actionRequiredCta')}
+                caption={t('tendersPages.tenders.tenderCard.actionRequiredCta')}
                 fill="ghost"
                 onClick={() => null}
                 cx={styles.actionRequiredCta}
@@ -149,7 +149,7 @@ export const TenderCard = ({
           {/* expected readiness */}
           <FlexCell width="auto">
             <span className={styles.dimmed}>
-              {t('tendersPage.tenders.tenderCard.readiness')}:
+              {t('tendersPages.tenders.tenderCard.readiness')}:
             </span>
             {dayjs(Number(expectedDelivery)).format('D MMM YYYY')}
           </FlexCell>
@@ -161,13 +161,13 @@ export const TenderCard = ({
         {/* submitted proposals title with button */}
         {status !== TenderStatus.DRAFT && (
           <FlexRow cx={styles.proposalsLabel}>
-            {t('tendersPage.tenders.tenderCard.submittedProposalsLabel')}
+            {t('tendersPages.tenders.tenderCard.submittedProposalsLabel')}
             {!isProposalsExist && `(${proposals?.length})`}
             <Button
               icon={RightChevronIcon}
               iconPosition="right"
               caption={t(
-                'tendersPage.tenders.tenderCard.viewAllSubmittedProposalsCta',
+                'tendersPages.tenders.tenderCard.viewAllSubmittedProposalsCta',
               )}
               fill="ghost"
               onClick={() => null}
@@ -180,7 +180,7 @@ export const TenderCard = ({
           status !== TenderStatus.DRAFT &&
           status !== TenderStatus.CANCELLED && (
             <FlexRow cx={styles.noProposalsInfoText}>
-              {t('tendersPage.tenders.tenderCard.noSubmittedProposals')}
+              {t('tendersPages.tenders.tenderCard.noSubmittedProposals')}
             </FlexRow>
           )}
         {status === TenderStatus.CLOSED && (
@@ -190,7 +190,7 @@ export const TenderCard = ({
               color="info"
               fill="solid"
               caption={t(
-                'tendersPage.tenders.tenderCard.proposals.winnerBadge',
+                'tendersPages.tenders.tenderCard.proposals.winnerBadge',
               )}
               icon={StarIcon}
               cx={styles.winnerBadge}
@@ -202,7 +202,7 @@ export const TenderCard = ({
               icon={RightChevronIcon}
               iconPosition="right"
               caption={t(
-                'tendersPage.tenders.tenderCard.proposals.viewDetailsCta',
+                'tendersPages.tenders.tenderCard.proposals.viewDetailsCta',
               )}
               fill="ghost"
               onClick={() => null}

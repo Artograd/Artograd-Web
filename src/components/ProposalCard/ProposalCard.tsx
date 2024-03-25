@@ -46,13 +46,13 @@ const renderDropdownBody = (props: DropdownBodyProps, name: string) => {
       <FlexRow>
         <FlexCell width="auto">
           <Text cx={styles.authorCardLabel}>
-            {t('tendersPage.tenders.tenderCard.proposals.authorCard.company')}
+            {t('tendersPages.tenders.tenderCard.proposals.authorCard.company')}
           </Text>
           <Text cx={styles.authorCardLabel}>
-            {t('tendersPage.tenders.tenderCard.proposals.authorCard.jobTitle')}
+            {t('tendersPages.tenders.tenderCard.proposals.authorCard.jobTitle')}
           </Text>
           <Text cx={styles.authorCardLabel}>
-            {t('tendersPage.tenders.tenderCard.proposals.authorCard.location')}
+            {t('tendersPages.tenders.tenderCard.proposals.authorCard.location')}
           </Text>
         </FlexCell>
         <FlexCell width="auto">
@@ -109,7 +109,7 @@ export const ProposalCard = ({ proposal }: { proposal: Proposals }) => {
       <FlexCell width="auto" cx={styles.proposalDetails} alignSelf="flex-start">
         <Text cx={styles.proposalSubmissionText}>
           <span className={styles.dimmed}>
-            {t('tendersPage.tenders.tenderCard.proposals.submittedOn')}
+            {t('tendersPages.tenders.tenderCard.proposals.submittedOn')}
           </span>
           : {`${dayjs(Number(proposal.published)).format('D MMM YYYY')}`}
         </Text>
@@ -120,7 +120,7 @@ export const ProposalCard = ({ proposal }: { proposal: Proposals }) => {
         </Text>
         <Text cx={styles.proposalAuthor}>
           <img src={AvatarPic} />
-          <span>{t('tendersPage.tenders.tenderCard.proposals.by')}</span>
+          <span>{t('tendersPages.tenders.tenderCard.proposals.by')}</span>
           <Dropdown
             renderBody={(props) => renderDropdownBody(props, authorName)}
             renderTarget={(props) => renderTarget(props, authorName)}

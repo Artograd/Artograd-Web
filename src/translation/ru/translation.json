@@ -66,7 +66,7 @@
     "title": "Страница не найдена!",
     "cta": "Вернуться на главную"
   },
-  "tendersPage": {
+  "tendersPages": {
     "tenders": {
       "pageTitle": "Тендеры",
       "tendersTitle": "Создай свой первый тендер.",
@@ -91,7 +91,12 @@
             "location": "Расположение"
           }
         }
-      }
+      },
+      "allCta": "Все",
+      "createdByMeCta": "Создано мной",
+      "searchInputPlaceholder": "Введите для поиска",
+      "cityFilterPlaceholder": "Пожалуйста, выберите город",
+      "statusFilterPlaceholder": "Пожалуйста, выберите статус"
     },
     "newTender": {
       "pageTitle": "Создать новый тендер",

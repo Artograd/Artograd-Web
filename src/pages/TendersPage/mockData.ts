@@ -40,16 +40,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Tatiana Press',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 2,
@@ -59,16 +53,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Gustavo Vetrovs',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -78,16 +66,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -97,16 +79,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -116,16 +92,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -135,16 +105,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -154,16 +118,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -173,16 +131,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
     ],
   },
@@ -226,16 +178,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Tatiana Press',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 2,
@@ -245,16 +191,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Gustavo Vetrovs',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -264,16 +204,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -283,16 +217,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -302,16 +230,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -321,16 +243,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -340,16 +256,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -359,16 +269,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -378,16 +282,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -397,16 +295,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -416,16 +308,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -435,16 +321,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
     ],
   },
@@ -488,16 +368,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Tatiana Press',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 2,
@@ -507,16 +381,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Gustavo Vetrovs',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -526,16 +394,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -545,16 +407,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -564,16 +420,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -583,16 +433,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -602,16 +446,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -621,16 +459,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -640,16 +472,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
 
       {
@@ -660,16 +486,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -679,16 +499,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -698,16 +512,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
     ],
   },
@@ -751,16 +559,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Tatiana Press',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 2,
@@ -770,16 +572,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Gustavo Vetrovs',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -789,16 +585,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -808,16 +598,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
 
       {
@@ -828,16 +612,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -847,16 +625,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -866,16 +638,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -885,16 +651,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -904,16 +664,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -923,16 +677,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -942,16 +690,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
       {
         id: 3,
@@ -961,16 +703,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Corey Ekstrom Bothman',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
     ],
   },
@@ -1047,16 +783,10 @@ export const mockData = [
         title: 'Mural depicting an evening stroll',
         description:
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        authors: [
-          {
-            id: 1,
-            authorPic: '',
-            authorName: 'Tatiana Press',
-            authorRole: 'role',
-            authorLinkedIn: 'linkedin',
-            authorEmail: 'email',
-          },
-        ],
+        ownerId: 'qwerty',
+        ownerName: 'Name name',
+        ownerPicture: '',
+        ownerOrg: 'testing org',
       },
     ],
   },

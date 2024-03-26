@@ -23,6 +23,8 @@ import { useTranslation } from 'react-i18next';
 import { Proposals, TenderStatus } from '../../types';
 import { Dot } from '../Dot/Dot';
 import { ProposalCard } from '../ProposalCard/ProposalCard';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 type LocationType = {
   nestedLocation: {
@@ -49,6 +51,7 @@ type TenderCardProps = {
   title?: string;
   description?: string;
   proposals?: Proposals[];
+  ownerId?: string;
 };
 
 export const TenderCard = ({
@@ -63,6 +66,7 @@ export const TenderCard = ({
   title,
   description,
   proposals,
+  ownerId,
 }: TenderCardProps) => {
   const renderThirdDropdownBody = (props: DropdownBodyProps) => {
     return (
@@ -73,6 +77,9 @@ export const TenderCard = ({
   };
   const { t } = useTranslation();
   const isProposalsExist = proposals?.length === 0;
+  const username = useSelector(
+    (state: RootState) => state.identity.userData['cognito:username'],
+  );
   return (
     // CARD
     <FlexRow cx={styles.wrapper}>
@@ -110,7 +117,7 @@ export const TenderCard = ({
             width="auto"
             style={{ display: 'flex', alignItems: 'center' }}
           >
-            {status === TenderStatus.SELECTION && (
+            {status === TenderStatus.SELECTION && ownerId === username && (
               <Button
                 icon={AttentionIcon}
                 iconPosition="left"

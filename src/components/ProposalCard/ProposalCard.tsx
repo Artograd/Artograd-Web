@@ -99,7 +99,6 @@ const renderTarget = (props: IDropdownToggler, name: string) => {
 };
 
 export const ProposalCard = ({ proposal }: { proposal: Proposals }) => {
-  const authorName = proposal.authors[0].authorName;
   const { t } = useTranslation();
   return (
     <FlexRow>
@@ -122,8 +121,10 @@ export const ProposalCard = ({ proposal }: { proposal: Proposals }) => {
           <img src={AvatarPic} />
           <span>{t('tendersPages.tenders.tenderCard.proposals.by')}</span>
           <Dropdown
-            renderBody={(props) => renderDropdownBody(props, authorName)}
-            renderTarget={(props) => renderTarget(props, authorName)}
+            renderBody={(props) =>
+              renderDropdownBody(props, proposal.ownerName)
+            }
+            renderTarget={(props) => renderTarget(props, proposal.ownerName)}
             closeOnMouseLeave="boundary"
           />
         </Text>

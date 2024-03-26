@@ -24,7 +24,10 @@ export type Proposals = {
   selected: boolean;
   title: string;
   description: string;
-  authors: Author[];
+  ownerId: string;
+  ownerName: string;
+  ownerPicture: string;
+  ownerOrg: string;
   // status: string;
   // likes: number;
   // liked: boolean;

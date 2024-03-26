@@ -26,6 +26,7 @@ import { getCityList } from '../../requests';
 export const TendersPage = () => {
   const history = useHistory();
   const { t } = useTranslation();
+  const [isLoading, setIsLoading] = useState(false);
   const [value, onValueChange] = useState<number>(5);
   const [searchValue, onSearchValueChange] = useState<string>();
   const [listOfCities, setListOfCities] = useState<CityItemType[]>();
@@ -62,10 +63,29 @@ export const TendersPage = () => {
     [],
   );
 
+  const moveAttentionRequiredTender = () => {
+    mockData.map((elem, index) => {
+      if (elem.status.toLowerCase() === TenderStatus.SELECTION.toLowerCase()) {
+        mockData.splice(index, 1);
+        mockData.splice(0, 0, elem);
+      }
+    });
+    return mockData;
+  };
+
   useEffect(() => {
+    moveAttentionRequiredTender();
+  }, []);
+
+  useEffect(() => {
+    setIsLoading(true);
     getCityList()
       .then((response) => setListOfCities(response))
-      .catch(() => setListOfCities([]));
+      .then(() => setIsLoading(false))
+      .catch(() => {
+        setListOfCities([]);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
@@ -126,6 +146,8 @@ export const TendersPage = () => {
             valueType="id"
             inputCx={styles.citiesInput}
             placeholder={t('tendersPages.tenders.cityFilterPlaceholder')}
+            sorting={{ field: 'name', direction: 'asc' }}
+            isDisabled={isLoading}
           />
           <FlexSpacer />
           <FlexCell width="auto">

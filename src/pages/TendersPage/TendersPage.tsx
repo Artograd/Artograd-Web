@@ -91,7 +91,7 @@ export const TendersPage = () => {
     getTenders();
   }, []);
 
-  const mockData = testData;
+  const mockData = data;
 
   console.log(testData);
   console.log(data);

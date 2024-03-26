@@ -1,13 +1,5 @@
 import { LatLngLiteral } from 'leaflet';
 
-export enum Status {
-  GATHERING = 'gathering',
-  VOTING = 'voting',
-  INVESTING = 'investing',
-  IMPLEMENTING = 'implementing',
-  DONE = 'done',
-}
-
 export type Author = {
   id: number;
   authorPic: string;
@@ -15,6 +7,19 @@ export type Author = {
   authorRole: string;
   authorLinkedIn: string;
   authorEmail: string;
+};
+
+export type LocationType = {
+  nestedLocation: {
+    _id: string;
+    name: string;
+  };
+  geoPosition: {
+    latitude: string;
+    longitude: string;
+  };
+  addressLine: string;
+  addressComment: string;
 };
 
 export type Proposals = {
@@ -29,19 +34,19 @@ export type Proposals = {
   ownerPicture: string;
   ownerOrg: string;
   // status: string;
-  // likes: number;
+  likes: number;
   // liked: boolean;
 };
 
 export type Tender = {
-  id: number;
+  _id: number;
   tags: string[];
-  location: string;
+  location: LocationType;
   author: string;
   attachments: string[];
   published: string;
   delivery: string;
-  status: Status;
+  status: TenderStatus;
   title: string;
   description: string;
   proposals: Proposals[];

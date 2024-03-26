@@ -19,17 +19,19 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { TenderCard } from '../../components/TenderCard/TenderCard';
-import { mockData } from './mockData';
+import { mockData as testData } from './mockData';
 import { useEffect, useState } from 'react';
-import { CityItemType, TenderStatus } from '../../types';
+import { CityItemType, Tender, TenderStatus } from '../../types';
 import { useArrayDataSource } from '@epam/uui-core';
 import { getCityList } from '../../requests';
+import axios from 'axios';
 
 export const TendersPage = () => {
   const history = useHistory();
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
-  const [value, onValueChange] = useState<number>(5);
+  const [value, onValueChange] = useState<number>(1);
+  const [data, setData] = useState<Tender[]>([]);
   const [searchValue, onSearchValueChange] = useState<string>();
   const [listOfCities, setListOfCities] = useState<CityItemType[]>();
   const [statusFilterValue, onStatusFilterValueChange] = useState<
@@ -65,19 +67,34 @@ export const TendersPage = () => {
     [],
   );
 
-  const moveAttentionRequiredTender = () => {
-    mockData.map((elem, index) => {
-      if (elem.status.toLowerCase() === TenderStatus.SELECTION.toLowerCase()) {
-        mockData.splice(index, 1);
-        mockData.splice(0, 0, elem);
-      }
-    });
-    return mockData;
+  // const moveAttentionRequiredTender = () => {
+  //   mockData.map((elem, index) => {
+  //     if (elem.status.toLowerCase() === TenderStatus.SELECTION.toLowerCase()) {
+  //       mockData.splice(index, 1);
+  //       mockData.splice(0, 0, elem);
+  //     }
+  //   });
+  //   return mockData;
+  // };
+
+  // useEffect(() => {
+  //   moveAttentionRequiredTender();
+  // }, []);
+
+  const getTenders = () => {
+    return axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/tenders`)
+      .then((response) => setData(response.data));
   };
 
   useEffect(() => {
-    moveAttentionRequiredTender();
+    getTenders();
   }, []);
+
+  const mockData = testData;
+
+  console.log(testData);
+  console.log(data);
 
   useEffect(() => {
     setIsLoading(true);
@@ -100,7 +117,7 @@ export const TendersPage = () => {
         </FlexCell>
         <FlexSpacer />
         <FlexCell width="100%">
-          {mockData.length >= 1 && isOfficer && (
+          {mockData?.length >= 1 && isOfficer && (
             <Button
               color="accent"
               caption={t('tendersPages.tenders.tendersCta')}
@@ -172,16 +189,16 @@ export const TendersPage = () => {
             />
           </FlexCell>
         </FlexRow>
-        {mockData.length === 0 && isOfficer && <NoTenders />}
-        {mockData.length >= 1 &&
-          mockData.map(
+        {mockData?.length === 0 && isOfficer && <NoTenders />}
+        {mockData?.length >= 1 &&
+          mockData?.map(
             (tender) => mockData && <TenderCard key={tender._id} {...tender} />,
           )}
       </Panel>
       <FlexRow alignItems="center" cx={styles.paginatorWrapper}>
         <Paginator
           size="24"
-          totalPages={10}
+          totalPages={1}
           value={value}
           onValueChange={onValueChange}
         />

@@ -20,24 +20,11 @@ import { ReactComponent as GeoLocationIcon } from '@epam/assets/icons/common/com
 import { ReactComponent as StarIcon } from '@epam/assets/icons/common/fav-rates-star-12.svg';
 import { getCategoryName } from '../../utils/getCategoryName';
 import { useTranslation } from 'react-i18next';
-import { Proposals, TenderStatus } from '../../types';
+import { LocationType, Proposals, TenderStatus } from '../../types';
 import { Dot } from '../Dot/Dot';
 import { ProposalCard } from '../ProposalCard/ProposalCard';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-
-type LocationType = {
-  nestedLocation: {
-    _id: string;
-    name: string;
-  };
-  geoPosition: {
-    latitude: string;
-    longitude: string;
-  };
-  addressLine: string;
-  addressComment: string;
-};
 
 type TenderCardProps = {
   organization?: string;
@@ -137,30 +124,34 @@ export const TenderCard = ({
         <FlexRow cx={styles.meta}>
           {/* meta */}
           <FlexCell width="auto" cx={styles.flex}>
-            <span className={`${styles.categories} ${styles.flex}`}>
-              {category?.map((category, index) => (
-                <Badge
-                  key={index}
-                  size="18"
-                  color="neutral"
-                  fill="solid"
-                  caption={t(`${getCategoryName(category)?.name}`)}
-                  cx={styles.categoryBadge}
-                />
-              ))}
-            </span>
-            <Dot />
+            {category?.length !== 0 && (
+              <span className={`${styles.categories} ${styles.flex}`}>
+                {category?.map((category, index) => (
+                  <Badge
+                    key={index}
+                    size="18"
+                    color="neutral"
+                    fill="solid"
+                    caption={t(`${getCategoryName(category)?.name}`)}
+                    cx={styles.categoryBadge}
+                  />
+                ))}
+              </span>
+            )}
+            {category?.length !== 0 && <Dot />}
             <GeoLocationIcon className={styles.geoLocationIcon} />
             {`${process.env.REACT_APP_LOCATION}, ${location?.nestedLocation.name}`}
           </FlexCell>
           <FlexSpacer />
           {/* expected readiness */}
-          <FlexCell width="auto">
-            <span className={styles.dimmed}>
-              {t('tendersPages.tenders.tenderCard.readiness')}:
-            </span>
-            {dayjs(Number(expectedDelivery)).format('D MMM YYYY')}
-          </FlexCell>
+          {expectedDelivery && (
+            <FlexCell width="auto">
+              <span className={styles.dimmed}>
+                {t('tendersPages.tenders.tenderCard.readiness')}:
+              </span>
+              {dayjs(Number(expectedDelivery)).format('D MMM YYYY')}
+            </FlexCell>
+          )}
         </FlexRow>
         {/* title */}
         <FlexRow cx={styles.title}>{title}</FlexRow>
@@ -170,7 +161,7 @@ export const TenderCard = ({
         {status !== TenderStatus.DRAFT && (
           <FlexRow cx={styles.proposalsLabel}>
             {t('tendersPages.tenders.tenderCard.submittedProposalsLabel')}
-            {!isProposalsExist && `(${proposals?.length})`}
+            {isProposalsExist && `(${proposals?.length})`}
             <Button
               icon={RightChevronIcon}
               iconPosition="right"

@@ -66,32 +66,28 @@ export const TendersPage = () => {
     [],
   );
 
-  // const moveAttentionRequiredTender = () => {
-  //   mockData.map((elem, index) => {
-  //     if (elem.status.toLowerCase() === TenderStatus.SELECTION.toLowerCase()) {
-  //       mockData.splice(index, 1);
-  //       mockData.splice(0, 0, elem);
-  //     }
-  //   });
-  //   return mockData;
-  // };
-
-  // useEffect(() => {
-  //   moveAttentionRequiredTender();
-  // }, []);
+  const moveAttentionRequiredTender = (tenders: Tender[]) => {
+    tenders.map((tender, index) => {
+      if (
+        tender.status.toLowerCase() === TenderStatus.SELECTION.toLowerCase()
+      ) {
+        tenders.splice(index, 1);
+        tenders.splice(0, 0, tender);
+      }
+    });
+    return tenders;
+  };
 
   const getTenders = () => {
     return axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/tenders`)
-      .then((response) => setData(response.data));
+      .then((response) => moveAttentionRequiredTender(response.data))
+      .then((sortedData) => setData(sortedData));
   };
 
   useEffect(() => {
-    getTenders();
-  }, []);
-
-  useEffect(() => {
     setIsLoading(true);
+    getTenders();
     getCityList()
       .then((response) => setListOfCities(response))
       .then(() => setIsLoading(false))

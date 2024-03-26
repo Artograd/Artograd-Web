@@ -16,6 +16,7 @@ import storage from 'redux-persist/lib/storage';
 import expireReducer from 'redux-persist-expire';
 import profileOverviewReducer from './slices/profileOverviewSlice';
 import profileInformationReducer from './slices/profileInformationSlice';
+import profileFundrasingReducer from './slices/profileFundrasingSlice';
 
 const tokenExpiration = Number(localStorage.getItem('expires_in'));
 
@@ -38,6 +39,7 @@ export const rootReducer = combineReducers({
   helpers: helpersReducer,
   profileOverview: profileOverviewReducer,
   profileInformation: profileInformationReducer,
+  profileFundrasing: profileFundrasingReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

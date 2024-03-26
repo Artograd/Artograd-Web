@@ -5,6 +5,7 @@ import styles from './ProfilePage.module.scss';
 import { ProfileOverview } from './components/ProfileOverview/ProfileOverview';
 import { ProfileDelete } from './components/ProfileDelete/ProfileDelete';
 import { ProfileInformation } from './components/ProfileInformation/ProfileInformation';
+import { ProfileFundraising } from './components/ProfileFundraising/ProfileFundraising';
 
 export const ProfilePage = () => {
   // const history = useHistory();
@@ -21,6 +22,9 @@ export const ProfilePage = () => {
         <FlexCell alignSelf={'flex-start'} grow={3} cx={styles.cell}>
           <FlexRow>
             <ProfileInformation></ProfileInformation>
+          </FlexRow>
+          <FlexRow>
+            <ProfileFundraising></ProfileFundraising>
           </FlexRow>
           <FlexRow>
             <ProfileDelete></ProfileDelete>

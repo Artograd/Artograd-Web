@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+// import { CityItemType } from '../../types';
 
 interface profileInformationState {
   firstName: string;
@@ -9,6 +10,7 @@ interface profileInformationState {
   title: string;
   location: string;
   email: string;
+  showEmail: boolean;
   socialMedia?: { [key: string]: string };
 }
 
@@ -21,8 +23,9 @@ const profileInformationState: profileInformationState = {
   lastName: 'Second Name',
   company: 'Test Company',
   title: '',
-  location: 'string',
-  email: 'string',
+  location: '',
+  email: '',
+  showEmail: false,
   socialMedia: {},
 };
 

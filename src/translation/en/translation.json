@@ -63,7 +63,26 @@
     "Basic Information": "Basic Information",
     "Delete account": "Delete account",
     "Delete": "Delete",
-    "Cancel": "Cancel"
+    "Cancel": "Cancel",
+    "Job Title": "Job Title",
+    "Location": "Location",
+    "Contact Information": "Contact Information",
+    "Work Email": "Work Email",
+    "Additional Links": "Additional Links",
+    "Add another": "Add another",
+    "Fundraising Account Data": "Fundraising Account Data",
+    "Beneficiary": "Beneficiary",
+    "Beneficiary Bank": "Beneficiary Bank",
+    "Bank name": "Bank name",
+    "Account Number": "Account Number",
+    "Enter account number": "Enter account number",
+    "IBAN Number": "IBAN Number",
+    "International bank code": "International bank code",
+    "SWIFT Code": "SWIFT Code",
+    "Enter code": "Enter code",
+    "Change Profile Image": "Change Profile Image",
+    "Change Photo": "Change Photo",
+    "Remove Photo": "Remove Photo"
   },
   "notFoundPage": {
     "title": "Page not found!",
@@ -142,5 +161,6 @@
         "recycled": "Recycled/Upcycled Art"
       }
     }
-  }
+  },
+  "optionalSidenote": "<i>This field is optional</i>"
 }

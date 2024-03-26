@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-type UserData = {
+export type UserData = {
   'cognito:username': string;
   'cognito:groups': string[];
   'custom:organization': string;

@@ -13,9 +13,8 @@ import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { RootState } from '../../../../store/store';
 import { useSelector } from 'react-redux';
-// import { ChangeAvatarModal } from '../../modals/Modal';
 import { useUuiContext } from '@epam/uui-core';
-import { ChangeAvatarModal } from '../../modals/Modal';
+import { ChangeProfileImageModal } from '../../modals/ChangeProfileImageModal/ChangeProfileImageModal';
 
 export const ProfileOverview = () => {
   const { t } = useTranslation();
@@ -36,9 +35,8 @@ export const ProfileOverview = () => {
 
   const { uuiModals, uuiNotifications } = useUuiContext();
   const modalHandler = () => {
-    console.log(123);
     uuiModals
-      .show<string>((props) => <ChangeAvatarModal {...props} />)
+      .show<string>((props) => <ChangeProfileImageModal {...props} />)
       .then((result) => {
         uuiNotifications
           .show((props) => (

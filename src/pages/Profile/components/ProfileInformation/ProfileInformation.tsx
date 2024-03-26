@@ -1,26 +1,37 @@
 import styles from './ProfileInformation.module.scss';
 import {
   Button,
-  ErrorNotification,
   FlexCell,
   FlexRow,
   LabeledInput,
   Panel,
-  SuccessNotification,
   Text,
   TextInput,
   useForm,
+  Alert,
+  Checkbox
 } from '@epam/uui';
-import { useTranslation } from 'react-i18next';
-import { svc } from '../../../../services';
+import { Trans, useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../store/store';
+import { CityItemType } from '../../../../types';
+import { useEffect, useState } from 'react';
+import { getCityList } from '../../../../requests';
+import { LocationInput } from './components/LocationInput/LocationInput'
+import { SocialMediaSelector } from './components/SocialMediaSelector/SocialMediaSelector'
+import { saveProfileData } from '../../../../services/api/profile.api'
+
+
 
 export const ProfileInformation = () => {
   const { t } = useTranslation();
-  const { firstName, lastName, company, title } = useSelector(
+  const { firstName, lastName, company, title, location, email, showEmail } = useSelector(
     (state: RootState) =>
       state.profileInformation.profileInformation,
+  );
+  const [showEmailValue, showEmailChange] = useState<boolean>(showEmail);
+  const username = useSelector(
+    (state: RootState) => state.identity.userData['cognito:username'],
   );
 
   const { lens, save } = useForm({
@@ -29,31 +40,51 @@ export const ProfileInformation = () => {
       lastName,
       company,
       title,
+      location,
+      email,
+      showEmail
     },
-    onSave: (profileInf) =>
-      Promise.resolve({ form: profileInf }) /* place your save api call here */,
-    onSuccess: () =>
-      svc.uuiNotifications.show((props) => (
-        <SuccessNotification {...props}>
-          <Text>Info saved</Text>
-        </SuccessNotification>
-      )),
-    onError: () =>
-      svc.uuiNotifications.show((props) => (
-        <ErrorNotification {...props}>
-          <Text>Error on save</Text>
-        </ErrorNotification>
-      )),
+    onSave: (profileInf) => {
+      console.log('form', profileInf);
+      saveProfileData(username).then(val => {
+        console.log(val);
+      })
+      return Promise.resolve({ form: profileInf }) /* place your save api call here */
+    },
+    onSuccess: () => null,
+    onError: () => null,
     getMetadata: () => ({
       props: {
         firstName: { isRequired: true },
         lastName: { isRequired: true },
         company: { isRequired: false },
         title: { isRequired: false },
+        location: { isRequired: false },
+        email: { isRequired: false },
       },
     }),
     settingsKey: 'basic-form-example',
   });
+
+  const [locationName, setLocation] = useState<CityItemType[]>([]);
+
+  useEffect(() => {
+    getCityList()
+      .then((response) => {
+        console.log(333, response)
+        setLocation(response)
+      })
+      .catch(() => null);
+  }, []);
+
+  function locationSelection(data: any) {
+    lens.update(curent => {
+      return { ... curent, location: data };
+    })
+  }
+  function socialMediaSelection(data: any) {
+    console.log('socialMediaSelection', data);
+  }
 
   return (
     <Panel cx={styles.wrapper} shadow>
@@ -93,9 +124,74 @@ export const ProfileInformation = () => {
       </FlexRow>
       <FlexRow vPadding="12">
         <FlexCell grow={1}>
-          <LabeledInput label="Title" {...lens.prop('title').toProps()}>
+          <LabeledInput label={t('profilePage.Job Title')} sidenote={
+            <Trans
+              components={{
+                i: <span className={styles.sideNote} />,
+              }}
+              i18nKey="optionalSidenote"
+            />
+          } {...lens.prop('title').toProps()}>
             <TextInput placeholder="Title" {...lens.prop('title').toProps()} />
           </LabeledInput>
+        </FlexCell>
+      </FlexRow>
+      <FlexRow vPadding={'12'}>
+        <LocationInput
+          data={locationName}
+          selectedLocation={location}
+          updateLocation={locationSelection}
+        ></LocationInput>
+      </FlexRow>
+      <FlexRow vPadding={'12'}>
+        <Text fontSize={'18'} fontWeight={'600'}>
+          {t('profilePage.Contact Information')}
+        </Text>
+      </FlexRow>
+      <FlexRow>
+        <FlexCell width="auto" grow={1}>
+          <LabeledInput
+            label="Work Email"
+            {...lens.prop('email').toProps()}
+          >
+            <TextInput
+              isReadonly
+              placeholder="Work Email"
+              {...lens.prop('email').toProps()}
+            />
+          </LabeledInput>
+        </FlexCell>
+      </FlexRow>
+      <FlexRow vPadding={'24'}>
+        <FlexCell width="auto" grow={1}>
+          <Alert color="warning">
+            <Text fontSize={'12'}>
+              <LabeledInput>
+                <Checkbox {...lens.prop('showEmail').toProps()} value={showEmailValue}
+                          onValueChange={(value) => showEmailChange(value)}
+                          label="Show my email as means of contact in the tender description." />
+              </LabeledInput>
+            </Text>
+          </Alert>
+        </FlexCell>
+      </FlexRow>
+      <FlexRow vPadding={'12'}>
+        <FlexCell width="auto" grow={1}>
+          <FlexRow>
+            <Text fontSize={'18'} fontWeight={'600'}>
+              {t('profilePage.Additional Links')}
+            </Text>
+          </FlexRow>
+          <FlexRow>
+            <Text fontSize={'14'}>
+              Add links to your portfolio to help people know your work profile better.
+            </Text>
+          </FlexRow>
+          <FlexRow>
+            <SocialMediaSelector
+              socialMediaSelection={socialMediaSelection}
+            ></SocialMediaSelector>
+          </FlexRow>
         </FlexCell>
       </FlexRow>
       <FlexRow>

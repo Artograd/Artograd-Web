@@ -1,9 +1,11 @@
 import {
   Badge,
   Button,
+  ControlGroup,
   FlexCell,
   FlexRow,
   FlexSpacer,
+  InputAddon,
   Paginator,
   Panel,
   PickerInput,
@@ -123,32 +125,42 @@ export const TendersPage = () => {
               caption={t('tendersPages.tenders.createdByMeCta')}
             />
           </FlexRow>
-          <PickerInput
-            dataSource={statusesProvider}
-            value={statusFilterValue}
-            onValueChange={onStatusFilterValueChange}
-            getName={(item: { id: number; name: string }) =>
-              t(`global.statuses.${item.name}`)
-            }
-            entityName="Status filter"
-            selectionMode="multi"
-            valueType="id"
-            inputCx={styles.statusInput}
-            placeholder={t('tendersPages.tenders.statusFilterPlaceholder')}
-          />
-          <PickerInput
-            dataSource={citiesProvider}
-            value={locationFilterValue}
-            onValueChange={onLocationFilterValueChange}
-            getName={(item: CityItemType) => item.name}
-            entityName="Cities filter"
-            selectionMode="multi"
-            valueType="id"
-            inputCx={styles.citiesInput}
-            placeholder={t('tendersPages.tenders.cityFilterPlaceholder')}
-            sorting={{ field: 'name', direction: 'asc' }}
-            isDisabled={isLoading}
-          />
+          <ControlGroup>
+            <InputAddon
+              content={t('tendersPages.tenders.statusFilterPrefix')}
+              cx={styles.prefix}
+            />
+            <PickerInput
+              dataSource={statusesProvider}
+              value={statusFilterValue}
+              onValueChange={onStatusFilterValueChange}
+              getName={(item: { id: number; name: string }) =>
+                t(`global.statuses.${item.name}`)
+              }
+              entityName="Status filter"
+              selectionMode="multi"
+              valueType="id"
+              inputCx={styles.statusInput}
+              placeholder={t('tendersPages.tenders.statusFilterPlaceholder')}
+            />
+            <InputAddon
+              content={t('tendersPages.tenders.cityFilterPrefix')}
+              cx={styles.prefix}
+            />
+            <PickerInput
+              dataSource={citiesProvider}
+              value={locationFilterValue}
+              onValueChange={onLocationFilterValueChange}
+              getName={(item: CityItemType) => item.name}
+              entityName="Cities filter"
+              selectionMode="multi"
+              valueType="id"
+              inputCx={styles.citiesInput}
+              placeholder={t('tendersPages.tenders.cityFilterPlaceholder')}
+              sorting={{ field: 'name', direction: 'asc' }}
+              isDisabled={isLoading}
+            />
+          </ControlGroup>
           <FlexSpacer />
           <FlexCell width="auto">
             <SearchInput
@@ -162,7 +174,9 @@ export const TendersPage = () => {
         </FlexRow>
         {mockData.length === 0 && isOfficer && <NoTenders />}
         {mockData.length >= 1 &&
-          mockData.map((tender) => mockData && <TenderCard {...tender} />)}
+          mockData.map(
+            (tender) => mockData && <TenderCard key={tender._id} {...tender} />,
+          )}
       </Panel>
       <FlexRow alignItems="center" cx={styles.paginatorWrapper}>
         <Paginator

@@ -26,6 +26,8 @@
   line-height: 24px;
   color: var(--night950);
   margin-top: 12px;
+  display: flex;
+  align-items: center;
 }
 
 .proposalDescription {
@@ -83,4 +85,9 @@
 
 .socialIcon {
   fill: var(--electric-50);
+  margin-right: 9px;
+}
+
+.mostLikedBadge {
+  margin-left: 12px;
 }

@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Badge,
   Dropdown,
   DropdownContainer,
   FlexCell,
@@ -18,6 +19,7 @@ import { ReactComponent as MailIcon } from '@epam/assets/icons/common/communicat
 import { ReactComponent as FacebookIcon } from '@epam/assets/icons/common/social-network-facebook-18.svg';
 import { ReactComponent as InstagramIcon } from '@epam/assets/icons/common/social-network-instagram-18.svg';
 import { ReactComponent as LinkedInIcon } from '@epam/assets/icons/common/linkedin-18.svg';
+import { ReactComponent as ThumbUpIcon } from '@epam/assets/icons/common/social-thumb-up-12.svg';
 import { useTranslation } from 'react-i18next';
 
 const renderDropdownBody = (props: DropdownBodyProps, name: string) => {
@@ -112,7 +114,18 @@ export const ProposalCard = ({ proposal }: { proposal: Proposals }) => {
           </span>
           : {`${dayjs(Number(proposal.published)).format('D MMM YYYY')}`}
         </Text>
-        <Text cx={styles.proposalTitle}>{proposal.title}</Text>
+        <Text cx={styles.proposalTitle}>
+          {proposal.title}
+          <Badge
+            size="18"
+            color="info"
+            fill="outline"
+            caption="Most popular votes"
+            cx={styles.mostLikedBadge}
+            icon={ThumbUpIcon}
+          />
+        </Text>
+
         <Text cx={styles.proposalDescription}>
           {`${proposal.description.substring(0, 120)}`}
           {proposal.description.length >= 121 && '...'}

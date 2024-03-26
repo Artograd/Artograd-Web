@@ -96,7 +96,9 @@
       "createdByMeCta": "Created by me",
       "searchInputPlaceholder": "Type for search",
       "cityFilterPlaceholder": "Please select city",
-      "statusFilterPlaceholder": "Please select status"
+      "cityFilterPrefix": "Location",
+      "statusFilterPlaceholder": "Please select status",
+      "statusFilterPrefix": "Status"
     },
     "newTender": {
       "pageTitle": "Create New Tender",

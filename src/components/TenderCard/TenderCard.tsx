@@ -138,8 +138,9 @@ export const TenderCard = ({
           {/* meta */}
           <FlexCell width="auto" cx={styles.flex}>
             <span className={`${styles.categories} ${styles.flex}`}>
-              {category?.map((category) => (
+              {category?.map((category, index) => (
                 <Badge
+                  key={index}
                   size="18"
                   color="neutral"
                   fill="solid"
@@ -220,8 +221,10 @@ export const TenderCard = ({
         {/* proposal cards */}
         {status !== TenderStatus.CLOSED &&
           proposals
-            ?.slice(0, 2)
-            .map((proposal) => <ProposalCard proposal={proposal} />)}
+            ?.slice(0, 3)
+            .map((proposal) => (
+              <ProposalCard key={proposal.id} proposal={proposal} />
+            ))}
       </FlexCell>
       {/* 3 dots menu */}
       <FlexCell

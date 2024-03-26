@@ -44,6 +44,7 @@ export const mockData = [
         ownerName: 'Name name',
         ownerPicture: '',
         ownerOrg: 'testing org',
+        likes: 1,
       },
       {
         id: 2,
@@ -57,89 +58,12 @@ export const mockData = [
         ownerName: 'Name name',
         ownerPicture: '',
         ownerOrg: 'testing org',
-      },
-      {
-        id: 3,
-        published: '1706787480000',
-        thumbnail: '../../images/proposalThumb.png',
-        selected: false,
-        title: 'Mural depicting an evening stroll',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        ownerId: 'qwerty',
-        ownerName: 'Name name',
-        ownerPicture: '',
-        ownerOrg: 'testing org',
-      },
-      {
-        id: 3,
-        published: '1706787480000',
-        thumbnail: '../../images/proposalThumb.png',
-        selected: false,
-        title: 'Mural depicting an evening stroll',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        ownerId: 'qwerty',
-        ownerName: 'Name name',
-        ownerPicture: '',
-        ownerOrg: 'testing org',
-      },
-      {
-        id: 3,
-        published: '1706787480000',
-        thumbnail: '../../images/proposalThumb.png',
-        selected: false,
-        title: 'Mural depicting an evening stroll',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        ownerId: 'qwerty',
-        ownerName: 'Name name',
-        ownerPicture: '',
-        ownerOrg: 'testing org',
-      },
-      {
-        id: 3,
-        published: '1706787480000',
-        thumbnail: '../../images/proposalThumb.png',
-        selected: false,
-        title: 'Mural depicting an evening stroll',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        ownerId: 'qwerty',
-        ownerName: 'Name name',
-        ownerPicture: '',
-        ownerOrg: 'testing org',
-      },
-      {
-        id: 3,
-        published: '1706787480000',
-        thumbnail: '../../images/proposalThumb.png',
-        selected: false,
-        title: 'Mural depicting an evening stroll',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        ownerId: 'qwerty',
-        ownerName: 'Name name',
-        ownerPicture: '',
-        ownerOrg: 'testing org',
-      },
-      {
-        id: 3,
-        published: '1706787480000',
-        thumbnail: '../../images/proposalThumb.png',
-        selected: false,
-        title: 'Mural depicting an evening stroll',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. ',
-        ownerId: 'qwerty',
-        ownerName: 'Name name',
-        ownerPicture: '',
-        ownerOrg: 'testing org',
+        likes: 2,
       },
     ],
   },
   {
-    _id: '65faecb9ee16c743fc5cfe93',
+    _id: '65faecb9ee16c743fc5cfe931',
     title: 'Architectural decoration of the embankment',
     description:
       'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
@@ -210,7 +134,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 4,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -223,7 +147,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 5,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -236,7 +160,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 6,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -249,7 +173,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 7,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -262,7 +186,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 8,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -275,7 +199,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 9,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -288,7 +212,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 10,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -301,7 +225,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 11,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -314,7 +238,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 12,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -329,7 +253,7 @@ export const mockData = [
     ],
   },
   {
-    _id: '65faecb9ee16c743fc5cfe93',
+    _id: '65faecb9ee16c743fc5cfe932',
     title: 'Architectural decoration of the embankment',
     description:
       'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
@@ -400,7 +324,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 4,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -413,7 +337,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 5,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -426,7 +350,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 6,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -439,7 +363,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 7,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -452,7 +376,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 8,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -465,7 +389,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 9,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -479,7 +403,7 @@ export const mockData = [
       },
 
       {
-        id: 3,
+        id: 10,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -492,7 +416,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 11,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -505,7 +429,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 12,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -520,7 +444,7 @@ export const mockData = [
     ],
   },
   {
-    _id: '65faecb9ee16c743fc5cfe93',
+    _id: '65faecb9ee16c743fc5cfe933',
     title: 'Architectural decoration of the embankment',
     description:
       'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
@@ -591,7 +515,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 4,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -605,7 +529,7 @@ export const mockData = [
       },
 
       {
-        id: 3,
+        id: 5,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -618,7 +542,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 6,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -631,7 +555,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 7,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -644,7 +568,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 8,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -657,7 +581,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 9,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -670,7 +594,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 10,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -683,7 +607,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 11,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -696,7 +620,7 @@ export const mockData = [
         ownerOrg: 'testing org',
       },
       {
-        id: 3,
+        id: 12,
         published: '1706787480000',
         thumbnail: '../../images/proposalThumb.png',
         selected: false,
@@ -711,7 +635,7 @@ export const mockData = [
     ],
   },
   {
-    _id: '65faecb9ee16c743fc5cfe93',
+    _id: '65faecb9ee16c743fc5cfe934',
     title: 'Architectural decoration of the embankment',
     description:
       'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
@@ -744,7 +668,7 @@ export const mockData = [
     proposals: [],
   },
   {
-    _id: '65faecb9ee16c743fc5cfe93',
+    _id: '65faecb9ee16c743fc5cfe935',
     title: 'Architectural decoration of the embankment',
     description:
       'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',

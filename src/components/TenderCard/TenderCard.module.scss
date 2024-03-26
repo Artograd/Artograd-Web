@@ -4,14 +4,14 @@
   box-shadow: 0px 1.9649122953414917px 3.9298245906829834px 0px #1d1e261a;
   box-shadow: 0px 0px 1.9649122953414917px 0px #1d1e260d;
   font-family: var(--uui-font);
+  margin-bottom: 6px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .content {
   margin: 18px;
-}
-
-.optionsCtaWrapper {
-  margin-right: 12px;
 }
 
 .dimmed {

@@ -58,7 +58,6 @@
 .statusInput,
 .citiesInput {
   width: 300px;
-  margin-right: 12px;
 }
 
 .filtersWrapper {
@@ -68,12 +67,17 @@
 .creatorFilter span {
   margin-right: 9px;
   &:last-child {
-    margin-right: 36px;
+    margin-right: 24px;
   }
 }
 
 .searchField {
   width: 210px;
+}
+
+.prefix {
+  color: var(--night500);
+  margin-left: 12px;
 }
 
 @media only screen and (max-device-width: 1227px) {

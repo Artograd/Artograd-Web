@@ -19,7 +19,6 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { TenderCard } from '../../components/TenderCard/TenderCard';
-import { mockData as testData } from './mockData';
 import { useEffect, useState } from 'react';
 import { CityItemType, Tender, TenderStatus } from '../../types';
 import { useArrayDataSource } from '@epam/uui-core';
@@ -91,11 +90,6 @@ export const TendersPage = () => {
     getTenders();
   }, []);
 
-  const mockData = data;
-
-  console.log(testData);
-  console.log(data);
-
   useEffect(() => {
     setIsLoading(true);
     getCityList()
@@ -117,7 +111,7 @@ export const TendersPage = () => {
         </FlexCell>
         <FlexSpacer />
         <FlexCell width="100%">
-          {mockData?.length >= 1 && isOfficer && (
+          {data?.length >= 1 && isOfficer && (
             <Button
               color="accent"
               caption={t('tendersPages.tenders.tendersCta')}
@@ -129,71 +123,71 @@ export const TendersPage = () => {
         </FlexCell>
       </FlexRow>
       <Panel cx={styles.contentWrapper}>
-        <FlexRow cx={styles.filtersWrapper}>
-          <FlexRow cx={styles.creatorFilter}>
-            <Badge
-              color="info"
-              fill="solid"
-              caption={t('tendersPages.tenders.allCta')}
-            />
-            <Badge
-              color="neutral"
-              fill="solid"
-              caption={t('tendersPages.tenders.createdByMeCta')}
-            />
+        {data?.length >= 1 && (
+          <FlexRow cx={styles.filtersWrapper}>
+            <FlexRow cx={styles.creatorFilter}>
+              <Badge
+                color="info"
+                fill="solid"
+                caption={t('tendersPages.tenders.allCta')}
+              />
+              <Badge
+                color="neutral"
+                fill="solid"
+                caption={t('tendersPages.tenders.createdByMeCta')}
+              />
+            </FlexRow>
+            <ControlGroup>
+              <InputAddon
+                content={t('tendersPages.tenders.statusFilterPrefix')}
+                cx={styles.prefix}
+              />
+              <PickerInput
+                dataSource={statusesProvider}
+                value={statusFilterValue}
+                onValueChange={onStatusFilterValueChange}
+                getName={(item: { id: number; name: string }) =>
+                  t(`global.statuses.${item.name}`)
+                }
+                entityName="Status filter"
+                selectionMode="multi"
+                valueType="id"
+                inputCx={styles.statusInput}
+                placeholder={t('tendersPages.tenders.statusFilterPlaceholder')}
+              />
+              <InputAddon
+                content={t('tendersPages.tenders.cityFilterPrefix')}
+                cx={styles.prefix}
+              />
+              <PickerInput
+                dataSource={citiesProvider}
+                value={locationFilterValue}
+                onValueChange={onLocationFilterValueChange}
+                getName={(item: CityItemType) => item.name}
+                entityName="Cities filter"
+                selectionMode="multi"
+                valueType="id"
+                inputCx={styles.citiesInput}
+                placeholder={t('tendersPages.tenders.cityFilterPlaceholder')}
+                sorting={{ field: 'name', direction: 'asc' }}
+                isDisabled={isLoading}
+              />
+            </ControlGroup>
+            <FlexSpacer />
+            <FlexCell width="auto">
+              <SearchInput
+                value={searchValue}
+                onValueChange={onSearchValueChange}
+                placeholder={t('tendersPages.tenders.searchInputPlaceholder')}
+                debounceDelay={1000}
+                cx={styles.searchField}
+              />
+            </FlexCell>
           </FlexRow>
-          <ControlGroup>
-            <InputAddon
-              content={t('tendersPages.tenders.statusFilterPrefix')}
-              cx={styles.prefix}
-            />
-            <PickerInput
-              dataSource={statusesProvider}
-              value={statusFilterValue}
-              onValueChange={onStatusFilterValueChange}
-              getName={(item: { id: number; name: string }) =>
-                t(`global.statuses.${item.name}`)
-              }
-              entityName="Status filter"
-              selectionMode="multi"
-              valueType="id"
-              inputCx={styles.statusInput}
-              placeholder={t('tendersPages.tenders.statusFilterPlaceholder')}
-            />
-            <InputAddon
-              content={t('tendersPages.tenders.cityFilterPrefix')}
-              cx={styles.prefix}
-            />
-            <PickerInput
-              dataSource={citiesProvider}
-              value={locationFilterValue}
-              onValueChange={onLocationFilterValueChange}
-              getName={(item: CityItemType) => item.name}
-              entityName="Cities filter"
-              selectionMode="multi"
-              valueType="id"
-              inputCx={styles.citiesInput}
-              placeholder={t('tendersPages.tenders.cityFilterPlaceholder')}
-              sorting={{ field: 'name', direction: 'asc' }}
-              isDisabled={isLoading}
-            />
-          </ControlGroup>
-          <FlexSpacer />
-          <FlexCell width="auto">
-            <SearchInput
-              value={searchValue}
-              onValueChange={onSearchValueChange}
-              placeholder={t('tendersPages.tenders.searchInputPlaceholder')}
-              debounceDelay={1000}
-              cx={styles.searchField}
-            />
-          </FlexCell>
-        </FlexRow>
-        {mockData?.length === 0 && isOfficer && <NoTenders />}
-        {mockData?.length >= 1 &&
-          mockData?.map(
-            (tender) => mockData && <TenderCard key={tender._id} {...tender} />,
-          )}
+        )}
+        {data?.length >= 1 &&
+          data?.map((tender) => <TenderCard key={tender._id} {...tender} />)}
+        {data?.length === 0 && isOfficer && <NoTenders />}
       </Panel>
       <FlexRow alignItems="center" cx={styles.paginatorWrapper}>
         <Paginator

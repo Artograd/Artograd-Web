@@ -74,7 +74,7 @@
       "tendersCta": "Создать новый тендер",
       "tenderCard": {
         "postedBy": "Автор",
-        "tenderValidity": "Срок действия тендера",
+        "tenderValidity": "Срок подачи предложений",
         "readiness": "Ожидаемая готовность",
         "submittedProposalsLabel": "Поданные предложения",
         "viewAllSubmittedProposalsCta": "Посмотреть все",

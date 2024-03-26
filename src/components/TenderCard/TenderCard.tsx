@@ -7,6 +7,7 @@ import {
   FlexCell,
   FlexRow,
   FlexSpacer,
+  LinkButton,
 } from '@epam/uui';
 import dayjs from 'dayjs';
 import styles from './TenderCard.module.scss';
@@ -67,6 +68,7 @@ export const TenderCard = ({
   const username = useSelector(
     (state: RootState) => state.identity.userData['cognito:username'],
   );
+
   return (
     // CARD
     <FlexRow cx={styles.wrapper}>
@@ -85,19 +87,22 @@ export const TenderCard = ({
               {t('tendersPages.tenders.tenderCard.tenderValidity')}:
             </span>
             {`
-              ${dayjs(Number(submissionStart)).format('D MMM YYYY')} - ${dayjs(
-              Number(submissionEnd),
+              ${dayjs(submissionStart).format('D MMM YYYY')} - ${dayjs(
+              submissionEnd,
             ).format('D MMM YYYY')}`}
-            <Dot />
-            <Badge
-              size="18"
-              color="neutral"
-              fill="solid"
-              icon={AttachmentIcon}
-              caption={files?.length}
-              cx={styles.filesAmountBadge}
-            />
+            {files && files?.length >= 1 && <Dot />}
+            {files && files?.length >= 1 && (
+              <Badge
+                size="18"
+                color="neutral"
+                fill="solid"
+                icon={AttachmentIcon}
+                caption={files?.length}
+                cx={styles.filesAmountBadge}
+              />
+            )}
           </FlexCell>
+
           <FlexSpacer />
           {/* status */}
           <FlexCell
@@ -124,7 +129,7 @@ export const TenderCard = ({
         <FlexRow cx={styles.meta}>
           {/* meta */}
           <FlexCell width="auto" cx={styles.flex}>
-            {category?.length !== 0 && (
+            {category && category?.length >= 1 && (
               <span className={`${styles.categories} ${styles.flex}`}>
                 {category?.map((category, index) => (
                   <Badge
@@ -138,7 +143,7 @@ export const TenderCard = ({
                 ))}
               </span>
             )}
-            {category?.length !== 0 && <Dot />}
+            {category && category?.length >= 1 && <Dot />}
             <GeoLocationIcon className={styles.geoLocationIcon} />
             {`${process.env.REACT_APP_LOCATION}, ${location?.nestedLocation.name}`}
           </FlexCell>
@@ -162,15 +167,15 @@ export const TenderCard = ({
           <FlexRow cx={styles.proposalsLabel}>
             {t('tendersPages.tenders.tenderCard.submittedProposalsLabel')}
             {isProposalsExist && `(${proposals?.length})`}
-            <Button
+            <LinkButton
               icon={RightChevronIcon}
               iconPosition="right"
               caption={t(
                 'tendersPages.tenders.tenderCard.viewAllSubmittedProposalsCta',
               )}
-              fill="ghost"
               onClick={() => null}
               isDisabled={isProposalsExist}
+              cx={styles.viewAllCta}
             />
           </FlexRow>
         )}

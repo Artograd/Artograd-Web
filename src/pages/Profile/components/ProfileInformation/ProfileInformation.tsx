@@ -76,7 +76,7 @@ export const ProfileInformation = () => {
         organization: { isRequired: false },
         jobtitle: { isRequired: false },
         location: { isRequired: false },
-        email: { isRequired: false },
+        email: { isRequired: false, isReadonly: true },
         show_email: { isRequired: false },
       },
     }),
@@ -175,7 +175,6 @@ export const ProfileInformation = () => {
             {...lens.prop('email').toProps()}
           >
             <TextInput
-              isReadonly
               placeholder="Work Email"
               {...lens.prop('email').toProps()}
             />

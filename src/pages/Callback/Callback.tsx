@@ -4,7 +4,8 @@ import { jwtDecode } from 'jwt-decode';
 import { useDispatch } from 'react-redux';
 import { saveUserData, userLogin, UserData } from '../../store/identitySlice';
 import { useQuery } from '../../utils/useQuery';
-import { getProfile, handleProfileInfoResponse } from '../../services/api/profile.api'
+import { handleProfileInfoResponse } from '../../services/helpers/profileHelper'
+import { userApi } from '../../services/api/userAPI'
 import { updateProfileInformation } from '../../store/slices/profileInformationSlice';
 import { profileAvatarChanged } from '../../store/slices/profileInformationSlice';
 
@@ -39,7 +40,7 @@ export const CallbackPage = () => {
         localStorage.setItem('expires_in', data.expires_in);
 
         //TODO probably need to move into middleware. RxJS combineLatest?
-        getProfile(decoded['cognito:username']).then((res: any) => {
+        userApi.get(decoded['cognito:username']).then((res: any) => {
           dispatch(updateProfileInformation(handleProfileInfoResponse(res)));
           dispatch(profileAvatarChanged(handleProfileInfoResponse(res)));
         }).catch(()=> null);;

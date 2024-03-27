@@ -19,7 +19,8 @@ import { useEffect, useState } from 'react';
 import { getCityList } from '../../../../requests';
 import { LocationInput } from './components/LocationInput/LocationInput'
 import { SocialMediaSelector } from './components/SocialMediaSelector/SocialMediaSelector'
-import { createProfilePayload, saveProfileData } from '../../../../services/api/profile.api';
+import { createProfilePayload } from '../../../../services/helpers/profileHelper';
+import { userApi } from '../../../../services/api/userAPI';
 import { updateProfileInformation } from '../../../../store/slices/profileInformationSlice';
 
 
@@ -57,8 +58,8 @@ export const ProfileInformation = () => {
       show_email,
       socialMedia
     },
-    onSave: async (profileInf) => {
-      return saveProfileData(username, createProfilePayload(profileInf))
+    onSave: (profileInf) => {
+      return userApi.put(username, createProfilePayload(profileInf))
         .then(() => {
           return Promise.resolve({ form: profileInf });
         })

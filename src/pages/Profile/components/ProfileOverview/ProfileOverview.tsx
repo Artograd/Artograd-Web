@@ -13,7 +13,8 @@ import { RootState } from '../../../../store/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { useUuiContext } from '@epam/uui-core';
 import { ChangeProfileImageModal } from '../../modals/ChangeProfileImageModal/ChangeProfileImageModal';
-import { saveProfileData, createProfilePayload } from '../../../../services/api/profile.api'
+import { createProfilePayload } from '../../../../services/helpers/profileHelper';
+import { userApi } from '../../../../services/api/userAPI';
 import { profileAvatarChanged } from '../../../../store/slices/profileInformationSlice';
 
 export const ProfileOverview = () => {
@@ -44,7 +45,7 @@ export const ProfileOverview = () => {
     uuiModals
       .show<string>((props) => <ChangeProfileImageModal modalProps={props} picture={picture} />)
       .then((picture) => {
-        saveProfileData(username, createProfilePayload({picture: picture || ''})).then(()=>{
+        userApi.put(username, createProfilePayload({picture: picture || ''})).then(()=>{
           dispatch(profileAvatarChanged({picture: picture || ''}));
         })
       }).catch(() => null);

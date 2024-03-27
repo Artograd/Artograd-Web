@@ -1,24 +1,4 @@
-import axios from 'axios';
-
 export const STANDART_ATTR = ['given_name', 'family_name', 'picture', 'email'];
-export const getProfile = (username: string) => {
-  return axios.get(
-    `${process.env.REACT_APP_BACKEND_URL}/users/${username}`,
-  )
-};
-
-export const saveProfileData = (username: string, params: any) => {
-  const idToken = localStorage.getItem('id_token');
-  return axios.put(
-    `${process.env.REACT_APP_BACKEND_URL}/users/${username}`,
-    params,
-    {
-      headers: {
-        Authorization: `Bearer ${idToken}`,
-      },
-    },
-  )
-}
 
 export const createProfilePayload = (data: any) => {
   const payload: any = [];
@@ -64,5 +44,4 @@ export const addCustomPreffix = (data: any) => {
   })
   return formatted;
 }
-
 

@@ -3,6 +3,7 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
 interface profileInformationState {
+  picture: string;
   given_name: string;
   family_name: string;
   'custom:organization': string;
@@ -11,6 +12,10 @@ interface profileInformationState {
   email: string;
   'custom:show_email': boolean;
   socialMedia?: { [key: string]: string };
+  activeTenders: number;
+  others: number;
+  activeArtObjects: number;
+  readyArtObjects: number;
 }
 
 interface profileInformation {
@@ -18,6 +23,7 @@ interface profileInformation {
 }
 
 const profileInformationState: profileInformationState = {
+  picture: '',
   given_name: '',
   family_name: '',
   'custom:organization': '',
@@ -26,6 +32,10 @@ const profileInformationState: profileInformationState = {
   email: '',
   'custom:show_email': false,
   socialMedia: {},
+  activeTenders: 0,
+  others: 0,
+  activeArtObjects: 0,
+  readyArtObjects: 0,
 };
 
 export const initialState: profileInformation = {
@@ -45,10 +55,13 @@ const profileInformationSlice = createSlice({
     updateProfileInformation(state, action) {
       state.profileInformation = action.payload;
     },
+    profileAvatarChanged(state, action) {
+      state.profileInformation.picture = action.payload.picture;
+    },
   },
 });
 
-export const { updateProfileInformation } = profileInformationSlice.actions;
+export const { updateProfileInformation, profileAvatarChanged } = profileInformationSlice.actions;
 export default profileInformationSlice.reducer;
 export const persistedProfileInformationReducer = persistReducer(
   persistConfig,

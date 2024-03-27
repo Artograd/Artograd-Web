@@ -31,7 +31,7 @@ export const saveProfileData = (username: string, params: any) => {
 
 export const createProfilePayload = (data: any) => {
   const payload: any = [];
-  const params = Object.keys(data).filter(val=> data[val]);
+  const params = Object.keys(data);
 
   params.forEach(propertyName=> {
     const isCustom = STANDART_ATTR.includes(propertyName);

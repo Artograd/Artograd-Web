@@ -22,10 +22,9 @@ import { useUuiContext } from '@epam/uui-core';
 
 const fileSizeLimit = 1024 * 1024 * 1;
 
-export function ChangeProfileImageModal(modalProps: IModal<string>) {
-  console.log(modalProps, 333);
+export function ChangeProfileImageModal({modalProps, picture}: {modalProps: IModal<string>, picture: string}) {
   const { t } = useTranslation();
-  const [imgUrl, setImgUrl] = useState<string>('');
+  const [imgUrl, setImgUrl] = useState<string>(picture);
   const username = useSelector(
     (state: RootState) => state.identity.userData['cognito:username'],
   );
@@ -43,17 +42,13 @@ export function ChangeProfileImageModal(modalProps: IModal<string>) {
             xhr.withCredentials = false;
           },
         }).then(res => {
-        console.log('image', res);
         setImgUrl(res.path || '');
       });
     }
   };
 
   const inputRef = createRef<HTMLInputElement>();
-
-  const onClick = () => {
-    inputRef.current?.click();
-  };
+  const onClick = () => inputRef.current?.click();
 
   return (
     <ModalBlocker {...modalProps}>
@@ -65,7 +60,7 @@ export function ChangeProfileImageModal(modalProps: IModal<string>) {
             borderBottom
           />
           <ScrollBars hasTopShadow hasBottomShadow>
-            <FlexRow vPadding="24" padding="12">
+            <FlexRow vPadding="24" padding="24">
               <FlexCell width="auto" grow={1}>
                 <Text>
                   Upload an image as you would like to represent you identity and appear in your Artograd profile

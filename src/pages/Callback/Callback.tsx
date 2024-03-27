@@ -6,7 +6,7 @@ import { saveUserData, userLogin, UserData } from '../../store/identitySlice';
 import { useQuery } from '../../utils/useQuery';
 import { getProfile, handleProfileInfoResponse } from '../../services/api/profile.api'
 import { updateProfileInformation } from '../../store/slices/profileInformationSlice';
-import { profileAvatarChanged } from '../../store/slices/profileOverviewSlice';
+import { profileAvatarChanged } from '../../store/slices/profileInformationSlice';
 
 
 const requestOptions = {

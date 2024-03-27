@@ -14,7 +14,6 @@ import identityReducer, {
 import helpersReducer from './helpersSlice';
 import storage from 'redux-persist/lib/storage';
 import expireReducer from 'redux-persist-expire';
-import profileOverviewReducer from './slices/profileOverviewSlice';
 import profileInformationReducer from './slices/profileInformationSlice';
 import profileFundrasingReducer from './slices/profileFundrasingSlice';
 
@@ -37,7 +36,6 @@ const persistConfig = {
 export const rootReducer = combineReducers({
   identity: identityReducer,
   helpers: helpersReducer,
-  profileOverview: profileOverviewReducer,
   profileInformation: profileInformationReducer,
   profileFundrasing: profileFundrasingReducer
 });

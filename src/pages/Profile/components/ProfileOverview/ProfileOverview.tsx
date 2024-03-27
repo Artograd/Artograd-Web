@@ -14,7 +14,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useUuiContext } from '@epam/uui-core';
 import { ChangeProfileImageModal } from '../../modals/ChangeProfileImageModal/ChangeProfileImageModal';
 import { saveProfileData, createProfilePayload } from '../../../../services/api/profile.api'
-import { profileOverviewUpdate } from '../../../../store/slices/profileOverviewSlice';
+import { profileAvatarChanged } from '../../../../store/slices/profileInformationSlice';
 
 export const ProfileOverview = () => {
   const { t } = useTranslation();
@@ -22,27 +22,30 @@ export const ProfileOverview = () => {
 
   const {
     picture,
-    firstName,
-    lastName,
+    given_name,
+    family_name,
     activeTenders,
     others,
     activeArtObjects,
-    readyArtObjects,
-    company,
+    readyArtObjects
   } = useSelector(
-    (state: RootState) => state.profileOverview.profileOverview,
+    (state: RootState) => state.profileInformation.profileInformation,
+  );
+  const organization = useSelector(
+    (state: RootState) => state.profileInformation.profileInformation['custom:organization'],
   );
   const username = useSelector(
     (state: RootState) => state.identity.userData['cognito:username'],
   );
   const { uuiModals } = useUuiContext();
   const dispatch = useDispatch();
+
   const modalHandler = () => {
     uuiModals
-      .show<string>((props) => <ChangeProfileImageModal {...props} />)
+      .show<string>((props) => <ChangeProfileImageModal modalProps={props} picture={picture} />)
       .then((picture) => {
-        saveProfileData(username, createProfilePayload({picture})).then(()=>{
-          dispatch(profileOverviewUpdate({picture}))
+        saveProfileData(username, createProfilePayload({picture: picture || ''})).then(()=>{
+          dispatch(profileAvatarChanged({picture: picture || ''}));
         })
       }).catch(() => null);
   };
@@ -51,7 +54,6 @@ export const ProfileOverview = () => {
     <Panel cx={styles.wrapper} shadow>
       <FlexRow justifyContent={'center'}>
         <Avatar
-          cx={styles.avatar}
           img={picture}
           size={'90'}
           onClick={modalHandler}
@@ -59,11 +61,11 @@ export const ProfileOverview = () => {
       </FlexRow>
       <FlexRow>
         <Text cx={styles.profileName}>
-          {firstName} {lastName}
+          {given_name} {family_name}
         </Text>
       </FlexRow>
       <FlexRow>
-        <Text cx={styles.profileRole}>{company}</Text>
+        <Text cx={styles.profileRole}>{organization}</Text>
       </FlexRow>
       <FlexRow>
         <div className={styles.divider} />

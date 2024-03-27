@@ -67,3 +67,7 @@ export const getCityList = () => {
     .get(`${process.env.REACT_APP_BACKEND_URL}/cities`)
     .then((response) => response.data);
 };
+
+export const getTenders = () => {
+  return axios.get(`${process.env.REACT_APP_BACKEND_URL}/tenders`);
+};

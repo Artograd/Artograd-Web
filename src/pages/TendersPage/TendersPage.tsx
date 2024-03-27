@@ -22,8 +22,7 @@ import { TenderCard } from '../../components/TenderCard/TenderCard';
 import { useEffect, useState } from 'react';
 import { CityItemType, Tender, TenderStatus } from '../../types';
 import { useArrayDataSource } from '@epam/uui-core';
-import { getCityList } from '../../requests';
-import axios from 'axios';
+import { getCityList, getTenders } from '../../requests';
 
 export const TendersPage = () => {
   const history = useHistory();
@@ -78,16 +77,13 @@ export const TendersPage = () => {
     return tenders;
   };
 
-  const getTenders = () => {
-    return axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/tenders`)
-      .then((response) => moveAttentionRequiredTender(response.data))
-      .then((sortedData) => setData(sortedData));
-  };
-
   useEffect(() => {
     setIsLoading(true);
-    getTenders();
+
+    getTenders()
+      .then((response) => moveAttentionRequiredTender(response.data))
+      .then((sortedData) => setData(sortedData));
+
     getCityList()
       .then((response) => setListOfCities(response))
       .then(() => setIsLoading(false))
@@ -127,11 +123,13 @@ export const TendersPage = () => {
                 fill="solid"
                 caption={t('tendersPages.tenders.allCta')}
               />
-              <Badge
-                color="neutral"
-                fill="solid"
-                caption={t('tendersPages.tenders.createdByMeCta')}
-              />
+              {isOfficer && (
+                <Badge
+                  color="neutral"
+                  fill="solid"
+                  caption={t('tendersPages.tenders.createdByMeCta')}
+                />
+              )}
             </FlexRow>
             <ControlGroup>
               <InputAddon
@@ -185,14 +183,16 @@ export const TendersPage = () => {
           data?.map((tender) => <TenderCard key={tender._id} {...tender} />)}
         {data?.length === 0 && isOfficer && <NoTenders />}
       </Panel>
-      <FlexRow alignItems="center" cx={styles.paginatorWrapper}>
-        <Paginator
-          size="24"
-          totalPages={1}
-          value={value}
-          onValueChange={onValueChange}
-        />
-      </FlexRow>
+      {data?.length >= 1 && (
+        <FlexRow alignItems="center" cx={styles.paginatorWrapper}>
+          <Paginator
+            size="24"
+            totalPages={1}
+            value={value}
+            onValueChange={onValueChange}
+          />
+        </FlexRow>
+      )}
     </Panel>
   );
 };

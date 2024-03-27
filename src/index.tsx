@@ -25,6 +25,7 @@ import { persistStore } from 'redux-persist';
 import { TendersPage } from './pages/TendersPage/TendersPage';
 import { NewTenderPage } from './pages/NewTenderPage/NewTenderPage';
 import { Modals } from '@epam/uui-components';
+import { TenderPage } from './pages/TenderPage/TenderPage';
 
 const history = createBrowserHistory();
 const router = new HistoryAdaptedRouter(history);
@@ -53,6 +54,7 @@ const UuiEnhancedApp = () => {
                   <Route exact path="/" component={HomePage} />
                   <Route exact path="/callback" component={CallbackPage} />
                   <Route exact path="/tenders" component={TendersPage} />
+                  <Route path="/tender/:tenderId" component={TenderPage} />
                   <OfficerRoutes>
                     <Route
                       exact

@@ -17,18 +17,24 @@ import {
 import { FlexSpacer } from '@epam/uui-components';
 import { useTranslation } from 'react-i18next';
 import { userLogin } from '../../../../store/identitySlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../../store/store';
+import { userApi } from '../../../../services/api/userAPI';
 
 export function DeleteProfileModal(modalProps: IModal<{ delete: string }>) {
   const dispatch = useDispatch();
   const { t } = useTranslation();
+  const username = useSelector(
+    (state: RootState) => state.identity.userData['cognito:username'],
+  );
   const { lens, save } = useForm<{ delete: string }>({
     value: { delete: '' },
     onSave: (confirm) => Promise.resolve({ form: confirm }),
     onSuccess: (res) => {
-      // TODO Delete PROFILE API call
-      dispatch(userLogin(false));
-      modalProps.success(res);
+      userApi.delete(username).then(() => {
+        dispatch(userLogin(false));
+        modalProps.success(res);
+      });
     },
     getMetadata: () => ({
       props: {

@@ -1,4 +1,8 @@
 export const STANDART_ATTR = ['given_name', 'family_name', 'picture', 'email'];
+enum checkboxes {
+  email='custom:show_email',
+  bankByDefault='custom:useBankDataByDefault'
+}
 
 export const createProfilePayload = (data: any) => {
   const payload: any = [];
@@ -7,7 +11,7 @@ export const createProfilePayload = (data: any) => {
   params.forEach(propertyName=> {
     const isCustom = STANDART_ATTR.includes(propertyName);
     const name = isCustom ? propertyName : `custom:${propertyName}`;
-    const value = name === 'custom:show_email' ? Number(data[propertyName]) : data[propertyName];
+    const value = (name === checkboxes.email || name === checkboxes.bankByDefault) ? Number(data[propertyName]) : data[propertyName];
 
     if(propertyName ==='socialMedia') {
       value.forEach((item: any) => {

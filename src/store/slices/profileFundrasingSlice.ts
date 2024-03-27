@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 interface profileFundrasingState {
   'custom:bank_use_default': boolean;
-  beneficiary: string;
-  bank: string;
-  account: string;
+  'custom:bank_benefit_name': string;
+  'custom:bank_benefit_bank': string;
+  'custom:bank_account': string;
   'custom:bank_iban': string;
   'custom:bank_swift': string;
 }
@@ -14,9 +14,9 @@ interface profileFundrasing {
 
 const profileFundrasingState = {
   'custom:bank_use_default': false,
-  beneficiary: '',
-  bank: '',
-  account: '',
+  'custom:bank_benefit_name': '',
+  'custom:bank_benefit_bank': '',
+  'custom:bank_account': '',
   'custom:bank_iban': '',
   'custom:bank_swift': '',
 }

@@ -2,7 +2,7 @@ import '@epam/uui-components/styles.css';
 import '@epam/uui/styles.css';
 import '@epam/assets/css/theme/theme_electric.css';
 import './index.module.scss';
-import { ReactNode, StrictMode } from 'react';
+import { ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserHistory } from 'history';
 import { Route, Router, Switch, useHistory } from 'react-router-dom';
@@ -25,6 +25,7 @@ import { persistStore } from 'redux-persist';
 import { TendersPage } from './pages/TendersPage/TendersPage';
 import { NewTenderPage } from './pages/NewTenderPage/NewTenderPage';
 import { Modals } from '@epam/uui-components';
+import { TenderPage } from './pages/TenderPage/TenderPage';
 
 const history = createBrowserHistory();
 const router = new HistoryAdaptedRouter(history);
@@ -53,6 +54,7 @@ const UuiEnhancedApp = () => {
                   <Route exact path="/" component={HomePage} />
                   <Route exact path="/callback" component={CallbackPage} />
                   <Route exact path="/tenders" component={TendersPage} />
+                  <Route path="/tender/:tenderId" component={TenderPage} />
                   <OfficerRoutes>
                     <Route
                       exact
@@ -74,11 +76,7 @@ const UuiEnhancedApp = () => {
 
 const App = () => {
   const root = createRoot(window.document.getElementById('root') as Element);
-  root.render(
-    <StrictMode>
-      <UuiEnhancedApp />
-    </StrictMode>,
-  );
+  root.render(<UuiEnhancedApp />);
 };
 
 App();

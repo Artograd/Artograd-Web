@@ -1,0 +1,93 @@
+.proposalDetails {
+  padding: 18px 18px 24px 18px;
+  box-shadow: 0px 1.9649122953414917px 3.9298245906829834px 0px #1d1e261a;
+  box-shadow: 0px 0px 1.9649122953414917px 0px #1d1e260d;
+
+  div {
+    padding: 0;
+  }
+}
+
+.dimmed {
+  color: var(--night600);
+  margin-right: 2px;
+}
+
+.proposalSubmissionText {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  color: var(--night950);
+}
+
+.proposalTitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--night950);
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.proposalDescription {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--night800);
+  margin-top: 6px;
+}
+
+.proposalAuthor {
+  color: var(--night950);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 12px;
+  display: flex;
+  height: 24px;
+  align-items: center;
+  span {
+    margin: 0 3px;
+  }
+}
+
+.authorInfoLink {
+  border-bottom: 1px dashed var(--electric-50);
+}
+
+.text {
+  padding: 0;
+}
+
+.authorCardLabel {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--night600);
+  margin-right: 6px;
+  padding: 0;
+  &:first-child {
+    margin-top: 12px;
+  }
+}
+
+.authorCardContent {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--night950);
+  padding: 0;
+  &:first-child {
+    margin-top: 12px;
+  }
+}
+
+.socialIcon {
+  fill: var(--electric-50);
+  margin-right: 9px;
+}
+
+.mostLikedBadge {
+  margin-left: 12px;
+}

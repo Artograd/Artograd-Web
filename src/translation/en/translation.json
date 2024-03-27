@@ -21,10 +21,21 @@
     },
     "fileUpload": {
       "fileLimitErrorText": "You have reached the limit of the number of possible attached files",
-      "fileSizeLimitErrorText": "The uploaded file exceeded the limit of uploading allowed size"
+      "fileSizeLimitErrorText": "The uploaded file exceeded the limit of uploading allowed size",
+      "uploadFailed": "Upload failed"
     },
     "lenses": {
       "isRequiredMessage": "The field is mandatory"
+    },
+    "statuses": {
+      "draft": "Draft",
+      "published": "Published",
+      "ideation": "Ideation",
+      "voting": "Voting",
+      "selection": "Selection",
+      "cancelled": "Cancelled",
+      "closed": "Closed",
+      "deleted": "Deleted"
     }
   },
   "homepage": {
@@ -56,12 +67,39 @@
     "title": "Page not found!",
     "cta": "Return to homepage"
   },
-  "tendersPage": {
+  "tendersPages": {
     "tenders": {
       "pageTitle": "Tenders",
       "tendersTitle": "Create your first tender.",
       "tendersDescription": "Creating a tender, you announce open calls for street art, invite sculptors, artists, and creators to enhance the cityscape.",
-      "tendersCta": "Create New Tender"
+      "tendersCta": "Create New Tender",
+      "tenderCard": {
+        "postedBy": "Posted by",
+        "tenderValidity": "Tender validity period",
+        "readiness": "Expected readiness",
+        "submittedProposalsLabel": "Submitted proposals",
+        "viewAllSubmittedProposalsCta": "View all",
+        "noSubmittedProposals": "No proposals submitted yet.",
+        "actionRequiredCta": "Action required",
+        "proposals": {
+          "winnerBadge": "Winner",
+          "viewDetailsCta": "View details",
+          "by": "By",
+          "submittedOn": "Submitted on",
+          "authorCard": {
+            "company": "Company",
+            "jobTitle": "Job title",
+            "location": "Location"
+          }
+        }
+      },
+      "allCta": "All",
+      "createdByMeCta": "Created by me",
+      "searchInputPlaceholder": "Type for search",
+      "cityFilterPlaceholder": "Please select city",
+      "cityFilterPrefix": "Location",
+      "statusFilterPlaceholder": "Please select status",
+      "statusFilterPrefix": "Status"
     },
     "newTender": {
       "pageTitle": "Create New Tender",

@@ -48,6 +48,31 @@
   float: right;
 }
 
+.statusInput,
+.citiesInput {
+  width: 300px;
+}
+
+.filtersWrapper {
+  margin: 15px 24px 30px 24px;
+}
+
+.creatorFilter span {
+  margin-right: 9px;
+  &:last-child {
+    margin-right: 24px;
+  }
+}
+
+.searchField {
+  width: 210px;
+}
+
+.prefix {
+  color: var(--night500);
+  margin-left: 12px;
+}
+
 @media only screen and (max-device-width: 1227px) {
   .wrapper {
     margin: 36px 30px 60px;

@@ -21,10 +21,21 @@
     },
     "fileUpload": {
       "fileLimitErrorText": "Вы достигли предела количества возможных прикрепленных файлов",
-      "fileSizeLimitErrorText": "Загруженный файл превысил разрешенный размер загрузки"
+      "fileSizeLimitErrorText": "Загруженный файл превысил разрешенный размер загрузки",
+      "uploadFailed": "Загрузка не удалась"
     },
     "lenses": {
       "isRequiredMessage": "Поле обязательно для заполнения"
+    },
+    "statuses": {
+      "draft": "Черновик",
+      "published": "Опубликовано",
+      "ideation": "Идея",
+      "voting": "Голосование",
+      "selection": "Выбор",
+      "cancelled": "Отменено",
+      "closed": "Закрыто",
+      "deleted": "Удалено"
     }
   },
   "homepage": {
@@ -56,12 +67,39 @@
     "title": "Страница не найдена!",
     "cta": "Вернуться на главную"
   },
-  "tendersPage": {
+  "tendersPages": {
     "tenders": {
       "pageTitle": "Тендеры",
       "tendersTitle": "Создай свой первый тендер.",
       "tendersDescription": "Создавая тендер, вы объявляете открытые конкурсы на уличное искусство, приглашаете скульпторов, художников и творцов для улучшения городского пейзажа.",
-      "tendersCta": "Создать новый тендер"
+      "tendersCta": "Создать новый тендер",
+      "tenderCard": {
+        "postedBy": "Автор",
+        "tenderValidity": "Срок подачи предложений",
+        "readiness": "Ожидаемая готовность",
+        "submittedProposalsLabel": "Поданные предложения",
+        "viewAllSubmittedProposalsCta": "Посмотреть все",
+        "noSubmittedProposals": "Предложений пока не поступало.",
+        "actionRequiredCta": "Требуется действие",
+        "proposals": {
+          "winnerBadge": "Победитель",
+          "viewDetailsCta": "Посмотреть детали",
+          "by": "Добавил(-а)",
+          "submittedOn": "Добавленно",
+          "authorCard": {
+            "company": "Компания",
+            "jobTitle": "Должность",
+            "location": "Расположение"
+          }
+        }
+      },
+      "allCta": "Все",
+      "createdByMeCta": "Создано мной",
+      "searchInputPlaceholder": "Введите для поиска",
+      "cityFilterPlaceholder": "Пожалуйста, выберите город",
+      "cityFilterPrefix": "Локация",
+      "statusFilterPlaceholder": "Пожалуйста, выберите статус",
+      "statusFilterPrefix": "Статус"
     },
     "newTender": {
       "pageTitle": "Создать новый тендер",
@@ -128,7 +166,7 @@
         "botanicalArt": "Ботаническое Искусство",
         "waterFeatures": "Особенности воды",
         "themedGardens": "Тематические сады",
-        "recycled": "Переработанное/переработанное искусство"
+        "recycled": "Переработанное искусство"
       }
     }
   }

@@ -109,8 +109,15 @@ export const FileUpload = ({
 
   i18n.fileUpload = {
     ...i18n.fileUpload,
-    labelStart: t('tendersPage.newTender.tenderAdditionalInformationLabelText'),
-    browse: t('tendersPage.newTender.tenderAdditionalInformationLink'),
+    labelStart: t(
+      'tendersPages.newTender.tenderAdditionalInformationLabelText',
+    ),
+    browse: t('tendersPages.newTender.tenderAdditionalInformationLink'),
+  };
+
+  i18n.fileCard = {
+    ...i18n.fileCard,
+    failedUploadErrorMessage: t('global.fileUpload.uploadFailed'),
   };
 
   return (
@@ -118,7 +125,7 @@ export const FileUpload = ({
       <DropSpot
         onUploadFiles={uploadFile}
         infoText={t(
-          'tendersPage.newTender.tenderAdditionalInformationInfotext',
+          'tendersPages.newTender.tenderAdditionalInformationInfotext',
           { fileSizeLimit: fileSizeLimit / 1024 / 1024, fileAmountLimit },
         )}
       />

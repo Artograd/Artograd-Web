@@ -26,9 +26,10 @@ import { Dot } from '../Dot/Dot';
 import { ProposalCard } from '../ProposalCard/ProposalCard';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import { useHistory } from 'react-router-dom';
 
 type TenderCardProps = {
-  organization?: string;
+  id: number;
   submissionStart?: string;
   submissionEnd?: string;
   files?: string[];
@@ -40,10 +41,19 @@ type TenderCardProps = {
   description?: string;
   proposals?: Proposals[];
   ownerId?: string;
+  ownerName?: string;
+};
+
+const renderTenderOptionMenu = (props: DropdownBodyProps) => {
+  return (
+    <DropdownMenuBody {...props} rawProps={{ style: { padding: 0 } }}>
+      <DropdownMenuButton caption="Delete" icon={DeleteIcon} />
+    </DropdownMenuBody>
+  );
 };
 
 export const TenderCard = ({
-  organization,
+  id,
   submissionStart,
   submissionEnd,
   files,
@@ -55,15 +65,10 @@ export const TenderCard = ({
   description,
   proposals,
   ownerId,
+  ownerName,
 }: TenderCardProps) => {
-  const renderThirdDropdownBody = (props: DropdownBodyProps) => {
-    return (
-      <DropdownMenuBody {...props} rawProps={{ style: { padding: 0 } }}>
-        <DropdownMenuButton caption="Delete" icon={DeleteIcon} />
-      </DropdownMenuBody>
-    );
-  };
   const { t } = useTranslation();
+  const history = useHistory();
   const isProposalsExist = proposals?.length === 0;
   const username = useSelector(
     (state: RootState) => state.identity.userData['cognito:username'],
@@ -81,7 +86,7 @@ export const TenderCard = ({
             <span className={styles.dimmed}>
               {t('tendersPages.tenders.tenderCard.postedBy')}:
             </span>
-            {organization}
+            {ownerName}
             <Dot />
             <span className={styles.dimmed}>
               {t('tendersPages.tenders.tenderCard.tenderValidity')}:
@@ -145,7 +150,11 @@ export const TenderCard = ({
             )}
             {category && category?.length >= 1 && <Dot />}
             <GeoLocationIcon className={styles.geoLocationIcon} />
-            {`${process.env.REACT_APP_LOCATION}, ${location?.nestedLocation.name}`}
+            {`${process.env.REACT_APP_LOCATION} ${
+              location?.nestedLocation.name
+                ? `, ${location?.nestedLocation.name}`
+                : ''
+            }`}
           </FlexCell>
           <FlexSpacer />
           {/* expected readiness */}
@@ -154,12 +163,17 @@ export const TenderCard = ({
               <span className={styles.dimmed}>
                 {t('tendersPages.tenders.tenderCard.readiness')}:
               </span>
-              {dayjs(Number(expectedDelivery)).format('D MMM YYYY')}
+              {dayjs(expectedDelivery).format('D MMM YYYY')}
             </FlexCell>
           )}
         </FlexRow>
         {/* title */}
-        <FlexRow cx={styles.title}>{title}</FlexRow>
+        <FlexRow
+          cx={styles.title}
+          onClick={() => history.push(`/tender/${id}`)}
+        >
+          {title}
+        </FlexRow>
         {/* description */}
         <FlexRow cx={styles.description}>{description}</FlexRow>
         {/* submitted proposals title with button */}
@@ -229,7 +243,7 @@ export const TenderCard = ({
         alignSelf="flex-start"
       >
         <Dropdown
-          renderBody={renderThirdDropdownBody}
+          renderBody={renderTenderOptionMenu}
           renderTarget={(props) => (
             <Button
               {...props}

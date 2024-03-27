@@ -6,7 +6,6 @@ import {
   FlexRow,
   FlexSpacer,
   InputAddon,
-  Paginator,
   Panel,
   PickerInput,
   SearchInput,
@@ -28,7 +27,6 @@ export const TendersPage = () => {
   const history = useHistory();
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
-  const [value, onValueChange] = useState<number>(1);
   const [data, setData] = useState<Tender[]>([]);
   const [searchValue, onSearchValueChange] = useState<string>();
   const [listOfCities, setListOfCities] = useState<CityItemType[]>();
@@ -180,19 +178,9 @@ export const TendersPage = () => {
           </FlexRow>
         )}
         {data?.length >= 1 &&
-          data?.map((tender) => <TenderCard key={tender._id} {...tender} />)}
+          data?.map((tender) => <TenderCard key={tender.id} {...tender} />)}
         {data?.length === 0 && isOfficer && <NoTenders />}
       </Panel>
-      {data?.length >= 1 && (
-        <FlexRow alignItems="center" cx={styles.paginatorWrapper}>
-          <Paginator
-            size="24"
-            totalPages={1}
-            value={value}
-            onValueChange={onValueChange}
-          />
-        </FlexRow>
-      )}
     </Panel>
   );
 };

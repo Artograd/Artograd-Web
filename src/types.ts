@@ -39,7 +39,7 @@ export type Proposals = {
 };
 
 export type Tender = {
-  _id: number;
+  id: number;
   tags: string[];
   location: LocationType;
   author: string;

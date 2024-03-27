@@ -20,10 +20,21 @@ import { ReactComponent as InfIcon } from '@epam/assets/icons/common/notificatio
 
 export const ProfileFundraising = () => {
   const { t } = useTranslation();
-  const { useBankDataByDefault, beneficiary, bank, account, iban, swift } = useSelector(
+  const { beneficiary, bank, account } = useSelector(
     (state: RootState) =>
       state.profileFundrasing.profileFundrasing,
   );
+
+  const useBankDataByDefault = useSelector(
+    (state: RootState) => state.profileFundrasing.profileFundrasing['custom:bank_use_default'],
+  );
+  const swift = useSelector(
+    (state: RootState) => state.profileFundrasing.profileFundrasing['custom:bank_swift'],
+  );
+  const iban = useSelector(
+    (state: RootState) => state.profileFundrasing.profileFundrasing['custom:bank_iban'],
+  );
+
   const [useBankData, useBankDataChange] = useState<boolean>(useBankDataByDefault);
 
   const { lens, save } = useForm({

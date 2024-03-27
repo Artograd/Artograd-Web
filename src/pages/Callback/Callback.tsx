@@ -30,7 +30,6 @@ export const CallbackPage = () => {
     .then((data) => {
       if (data.id_token) {
         const decoded: UserData = jwtDecode(data.id_token);
-        console.log(111, decoded);
         dispatch(saveUserData(decoded));
         dispatch(userLogin(true));
         console.log(data);
@@ -42,8 +41,8 @@ export const CallbackPage = () => {
         //TODO probably need to move into middleware. RxJS combineLatest?
         getProfile(decoded['cognito:username']).then((res: any) => {
           dispatch(updateProfileInformation(handleProfileInfoResponse(res)));
-          dispatch(profileAvatarChanged(handleProfileInfoResponse(res)))
-        });;
+          dispatch(profileAvatarChanged(handleProfileInfoResponse(res)));
+        }).catch(()=> null);;
       }
     })
     .catch(() => history.push('/error'))

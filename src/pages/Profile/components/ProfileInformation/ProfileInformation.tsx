@@ -19,14 +19,14 @@ import { useEffect, useState } from 'react';
 import { getCityList } from '../../../../requests';
 import { LocationInput } from './components/LocationInput/LocationInput'
 import { SocialMediaSelector } from './components/SocialMediaSelector/SocialMediaSelector'
-import { createProfilePayload, saveProfileData, addCustomPref } from '../../../../services/api/profile.api';
+import { createProfilePayload, saveProfileData } from '../../../../services/api/profile.api';
 import { updateProfileInformation } from '../../../../store/slices/profileInformationSlice';
 
 
 export const ProfileInformation = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { given_name, family_name, email } = useSelector(
+  const { given_name, family_name, email, socialMedia } = useSelector(
     (state: RootState) =>
       state.profileInformation.profileInformation,
   );
@@ -54,19 +54,18 @@ export const ProfileInformation = () => {
       jobtitle,
       location,
       email,
-      show_email
+      show_email,
+      socialMedia
     },
     onSave: async (profileInf) => {
-      try {
-        await saveProfileData(username, createProfilePayload(profileInf));
-        return await Promise.resolve({ form: profileInf });
-      } catch {
-        return await Promise.reject();
-      }
+      return saveProfileData(username, createProfilePayload(profileInf))
+        .then(() => {
+          return Promise.resolve({ form: profileInf });
+        })
+        .catch(()=> Promise.reject());
     },
     onSuccess: (formData) => {
-      dispatch(updateProfileInformation(formData))
-      console.log(555, addCustomPref(formData))
+      dispatch(updateProfileInformation(formData));
     },
     onError: () => null,
     getMetadata: () => ({
@@ -103,7 +102,9 @@ export const ProfileInformation = () => {
     })
   }
   const socialMediaSelection = (data: any) => {
-    console.log('socialMediaSelection', data);
+    lens.update(curent => {
+      return { ... curent, socialMedia: data };
+    })
   }
 
   return (
@@ -207,6 +208,7 @@ export const ProfileInformation = () => {
           </FlexRow>
           <FlexRow>
             <SocialMediaSelector
+              initData={socialMedia}
               socialMediaSelection={socialMediaSelection}
             ></SocialMediaSelector>
           </FlexRow>

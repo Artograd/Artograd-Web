@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 interface profileFundrasingState {
-  useBankDataByDefault: boolean;
+  'custom:bank_use_default': boolean;
   beneficiary: string;
   bank: string;
   account: string;
-  iban: string;
-  swift: string;
+  'custom:bank_iban': string;
+  'custom:bank_swift': string;
 }
 
 interface profileFundrasing {
@@ -13,12 +13,12 @@ interface profileFundrasing {
 }
 
 const profileFundrasingState = {
-  useBankDataByDefault: false,
+  'custom:bank_use_default': false,
   beneficiary: '',
   bank: '',
   account: '',
-  iban: '',
-  swift: '',
+  'custom:bank_iban': '',
+  'custom:bank_swift': '',
 }
 
 export const initialState: profileFundrasing = {

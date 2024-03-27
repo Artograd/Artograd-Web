@@ -115,6 +115,11 @@ export const FileUpload = ({
     browse: t('tendersPages.newTender.tenderAdditionalInformationLink'),
   };
 
+  i18n.fileCard = {
+    ...i18n.fileCard,
+    failedUploadErrorMessage: t('global.fileUpload.uploadFailed'),
+  };
+
   return (
     <>
       <DropSpot

@@ -21,7 +21,8 @@
     },
     "fileUpload": {
       "fileLimitErrorText": "You have reached the limit of the number of possible attached files",
-      "fileSizeLimitErrorText": "The uploaded file exceeded the limit of uploading allowed size"
+      "fileSizeLimitErrorText": "The uploaded file exceeded the limit of uploading allowed size",
+      "uploadFailed": "Upload failed"
     },
     "lenses": {
       "isRequiredMessage": "The field is mandatory"

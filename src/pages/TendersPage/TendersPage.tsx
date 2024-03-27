@@ -9,6 +9,7 @@ import {
   Panel,
   PickerInput,
   SearchInput,
+  Spinner,
   Text,
 } from '@epam/uui';
 import styles from './TendersPage.module.scss';
@@ -22,12 +23,18 @@ import { useEffect, useState } from 'react';
 import { CityItemType, Tender, TenderStatus } from '../../types';
 import { useArrayDataSource } from '@epam/uui-core';
 import { getCityList, getTenders } from '../../requests';
+import axios from 'axios';
 
 export const TendersPage = () => {
   const history = useHistory();
   const { t } = useTranslation();
+
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState<Tender[]>([]);
+  const [isError, setIsError] = useState(false);
+  const [page, setPage] = useState(0);
+  const [tendersList, setTendersList] = useState<Tender[]>([]);
+  // const [noData, setNoData] = useState(false);
+
   const [searchValue, onSearchValueChange] = useState<string>();
   const [listOfCities, setListOfCities] = useState<CityItemType[]>();
   const [statusFilterValue, onStatusFilterValueChange] = useState<
@@ -76,20 +83,51 @@ export const TendersPage = () => {
   };
 
   useEffect(() => {
-    setIsLoading(true);
-
-    getTenders()
+    getTenders(page)
       .then((response) => moveAttentionRequiredTender(response.data))
-      .then((sortedData) => setData(sortedData));
+      .then((sortedData) => setTendersList(sortedData));
 
     getCityList()
       .then((response) => setListOfCities(response))
-      .then(() => setIsLoading(false))
       .catch(() => {
         setListOfCities([]);
-        setIsLoading(false);
       });
   }, []);
+
+  const fetchData = async () => {
+    setIsLoading(true);
+    setIsError(false);
+
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/tenders?page=${page}`)
+      .then((response) => {
+        setTendersList((prevItems) => [...prevItems, ...response.data]);
+        setPage((prevPage) => prevPage + 1);
+      })
+      .catch(() => {
+        setIsLoading(false);
+        setIsError(true);
+      })
+      .finally(() => setIsLoading(false));
+  };
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+        document.documentElement.offsetHeight ||
+      isLoading
+    ) {
+      return;
+    }
+    fetchData();
+  };
+
+  useEffect(() => {
+    if (tendersList.length >= (page + 1) * 10) {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [isLoading]);
 
   return (
     <Panel cx={styles.wrapper}>
@@ -101,7 +139,7 @@ export const TendersPage = () => {
         </FlexCell>
         <FlexSpacer />
         <FlexCell width="100%">
-          {data?.length >= 1 && isOfficer && (
+          {tendersList?.length >= 1 && isOfficer && (
             <Button
               color="accent"
               caption={t('tendersPages.tenders.tendersCta')}
@@ -113,7 +151,7 @@ export const TendersPage = () => {
         </FlexCell>
       </FlexRow>
       <Panel cx={styles.contentWrapper}>
-        {data?.length >= 1 && (
+        {tendersList?.length >= 1 && (
           <FlexRow cx={styles.filtersWrapper}>
             <FlexRow cx={styles.creatorFilter}>
               <Badge
@@ -162,7 +200,6 @@ export const TendersPage = () => {
                 inputCx={styles.citiesInput}
                 placeholder={t('tendersPages.tenders.cityFilterPlaceholder')}
                 sorting={{ field: 'name', direction: 'asc' }}
-                isDisabled={isLoading}
               />
             </ControlGroup>
             <FlexSpacer />
@@ -177,9 +214,20 @@ export const TendersPage = () => {
             </FlexCell>
           </FlexRow>
         )}
-        {data?.length >= 1 &&
-          data?.map((tender) => <TenderCard key={tender.id} {...tender} />)}
-        {data?.length === 0 && isOfficer && <NoTenders />}
+        {tendersList?.length >= 1 &&
+          tendersList?.map((tender) => (
+            <TenderCard key={tender.id} {...tender} />
+          ))}
+        {isLoading && (
+          <FlexRow>
+            <Spinner />
+          </FlexRow>
+        )}
+        {isError && <FlexRow>Oops! Something went wrong.</FlexRow>}
+        {tendersList?.length === 0 && isOfficer && <NoTenders />}
+        {tendersList.length <= (page + 1) * 10 && (
+          <FlexCell textAlign="center">You have reached bottom.</FlexCell>
+        )}
       </Panel>
     </Panel>
   );

@@ -5,23 +5,23 @@ import {
   FlexRow,
   LinkButton,
   Panel,
-  SuccessNotification,
   Text,
-  WarningNotification,
 } from '@epam/uui';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { RootState } from '../../../../store/store';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useUuiContext } from '@epam/uui-core';
 import { ChangeProfileImageModal } from '../../modals/ChangeProfileImageModal/ChangeProfileImageModal';
+import { saveProfileData, createProfilePayload } from '../../../../services/api/profile.api'
+import { profileOverviewUpdate } from '../../../../store/slices/profileOverviewSlice';
 
 export const ProfileOverview = () => {
   const { t } = useTranslation();
   const history = useHistory();
 
   const {
-    avatarUrl,
+    picture,
     firstName,
     lastName,
     activeTenders,
@@ -32,40 +32,27 @@ export const ProfileOverview = () => {
   } = useSelector(
     (state: RootState) => state.profileOverview.profileOverview,
   );
-
-  const { uuiModals, uuiNotifications } = useUuiContext();
+  const username = useSelector(
+    (state: RootState) => state.identity.userData['cognito:username'],
+  );
+  const { uuiModals } = useUuiContext();
+  const dispatch = useDispatch();
   const modalHandler = () => {
     uuiModals
       .show<string>((props) => <ChangeProfileImageModal {...props} />)
-      .then((result) => {
-        uuiNotifications
-          .show((props) => (
-            <SuccessNotification {...props}>
-              <FlexRow alignItems="center">
-                <Text>{result}</Text>
-              </FlexRow>
-            </SuccessNotification>
-          ))
-          .catch(() => {
-            uuiNotifications
-              .show((props) => (
-                <WarningNotification {...props}>
-                  <FlexRow alignItems="center">
-                    <Text>Close action</Text>
-                  </FlexRow>
-                </WarningNotification>
-              ))
-              .catch(() => null);
-          });
-      });
+      .then((picture) => {
+        saveProfileData(username, createProfilePayload({picture})).then(()=>{
+          dispatch(profileOverviewUpdate({picture}))
+        })
+      }).catch(() => null);
   };
 
   return (
     <Panel cx={styles.wrapper} shadow>
-      <FlexRow>
+      <FlexRow justifyContent={'center'}>
         <Avatar
           cx={styles.avatar}
-          img={avatarUrl}
+          img={picture}
           size={'90'}
           onClick={modalHandler}
         ></Avatar>

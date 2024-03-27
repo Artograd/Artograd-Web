@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 interface ProfileOverviewState {
-  avatarUrl: string;
+  picture: string;
   firstName: string;
   lastName: string;
   company: string;
@@ -16,8 +16,7 @@ interface profileOverview {
 }
 
 const profileOverviewState: ProfileOverviewState = {
-  avatarUrl:
-    'https://api.dicebear.com/7.x/pixel-art/svg?seed=Coco&radius=50&backgroundColor=b6e3f4',
+  picture: '',
   firstName: 'Name',
   lastName: 'Second Name',
   company: 'Test Company',
@@ -36,14 +35,14 @@ const profileOverviewSlice = createSlice({
   initialState,
   reducers: {
     profileAvatarChanged(state, action) {
-      state.profileOverview.avatarUrl = action.payload;
+      state.profileOverview.picture = action.payload.picture;
     },
-    profileCompanyUpdate(state, action) {
+    profileOverviewUpdate(state, action) {
       state.profileOverview.company = action.payload;
     },
   },
 });
 
-export const { profileAvatarChanged, profileCompanyUpdate } =
+export const { profileAvatarChanged, profileOverviewUpdate } =
   profileOverviewSlice.actions;
 export default profileOverviewSlice.reducer;

@@ -6,6 +6,7 @@ import { saveUserData, userLogin, UserData } from '../../store/identitySlice';
 import { useQuery } from '../../utils/useQuery';
 import { getProfile, handleProfileInfoResponse } from '../../services/api/profile.api'
 import { updateProfileInformation } from '../../store/slices/profileInformationSlice';
+import { profileAvatarChanged } from '../../store/slices/profileOverviewSlice';
 
 
 const requestOptions = {
@@ -41,6 +42,7 @@ export const CallbackPage = () => {
         //TODO probably need to move into middleware. RxJS combineLatest?
         getProfile(decoded['cognito:username']).then((res: any) => {
           dispatch(updateProfileInformation(handleProfileInfoResponse(res)));
+          dispatch(profileAvatarChanged(handleProfileInfoResponse(res)))
         });;
       }
     })

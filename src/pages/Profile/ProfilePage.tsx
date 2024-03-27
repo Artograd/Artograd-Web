@@ -1,4 +1,3 @@
-// import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FlexCell, FlexRow, Panel, Text } from '@epam/uui';
 import styles from './ProfilePage.module.scss';
@@ -8,7 +7,6 @@ import { ProfileInformation } from './components/ProfileInformation/ProfileInfor
 import { ProfileFundraising } from './components/ProfileFundraising/ProfileFundraising';
 
 export const ProfilePage = () => {
-  // const history = useHistory();
   const { t } = useTranslation();
   return (
     <Panel cx={styles.wrapper}>

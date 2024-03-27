@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import styles from './LocationInput.module.scss';
 import { useArrayDataSource } from "@epam/uui-core";
 import {
@@ -9,15 +9,11 @@ import { useState } from 'react';
 import { CityItemType } from '../../../../../../types';
 
 
-export const LocationInput = ({ data = [], selectedLocation, updateLocation }: {
+export const LocationInput = ({ data, selectedLocation, updateLocation }: {
   data: CityItemType[],
-  selectedLocation: CityItemType | string,
+  selectedLocation: CityItemType | undefined,
   updateLocation: any;
 }) => {
-  const { t } = useTranslation();
-  console.log(222, data, selectedLocation);
-
-  const [selected, setslelectedLocation] = useState<CityItemType | undefined>();
   const cityDataSource = useArrayDataSource(
     {
       items: data,
@@ -25,9 +21,12 @@ export const LocationInput = ({ data = [], selectedLocation, updateLocation }: {
     [],
   );
 
+  const { t } = useTranslation();
+  const [selected, setSelectedLocation] = useState<CityItemType | undefined>(selectedLocation);
+
   const onCityValueChange = (city: CityItemType) => {
-    setslelectedLocation(city);
-    updateLocation(city);
+    setSelectedLocation(city);
+    updateLocation(city?.id);
   };
 
   return (
@@ -36,12 +35,20 @@ export const LocationInput = ({ data = [], selectedLocation, updateLocation }: {
       label={t(
         'profilePage.Location',
       )}
+      sidenote={
+        <Trans
+          components={{
+            i: <span className={styles.sideNote} />,
+          }}
+          i18nKey="optionalSidenote"
+        />
+      }
       cx={styles.modalInputLabel}
     >
       <PickerInput
         id="locationInput"
         dataSource={cityDataSource}
-        value={selected}
+        value={selected || selectedLocation}
         onValueChange={onCityValueChange}
         entityName="Location"
         selectionMode="single"

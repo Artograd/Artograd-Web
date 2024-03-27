@@ -12,77 +12,97 @@ import {
   Checkbox
 } from '@epam/uui';
 import { Trans, useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../../store/store';
 import { CityItemType } from '../../../../types';
 import { useEffect, useState } from 'react';
 import { getCityList } from '../../../../requests';
 import { LocationInput } from './components/LocationInput/LocationInput'
 import { SocialMediaSelector } from './components/SocialMediaSelector/SocialMediaSelector'
-import { saveProfileData } from '../../../../services/api/profile.api'
-
+import { createProfilePayload, saveProfileData, addCustomPref } from '../../../../services/api/profile.api';
+import { updateProfileInformation } from '../../../../store/slices/profileInformationSlice';
 
 
 export const ProfileInformation = () => {
   const { t } = useTranslation();
-  const { firstName, lastName, company, title, location, email, showEmail } = useSelector(
+  const dispatch = useDispatch();
+  const { given_name, family_name, email } = useSelector(
     (state: RootState) =>
       state.profileInformation.profileInformation,
   );
-  const [showEmailValue, showEmailChange] = useState<boolean>(showEmail);
+  const show_email = useSelector(
+    (state: RootState) => state.profileInformation.profileInformation['custom:show_email'],
+  );
+  const location = useSelector(
+    (state: RootState) => state.profileInformation.profileInformation['custom:location'],
+  );
+  const organization = useSelector(
+    (state: RootState) => state.profileInformation.profileInformation['custom:organization'],
+  );
+  const jobtitle = useSelector(
+    (state: RootState) => state.profileInformation.profileInformation['custom:jobtitle'],
+  );
   const username = useSelector(
     (state: RootState) => state.identity.userData['cognito:username'],
   );
 
   const { lens, save } = useForm({
     value: {
-      firstName,
-      lastName,
-      company,
-      title,
+      given_name,
+      family_name,
+      organization,
+      jobtitle,
       location,
       email,
-      showEmail
+      show_email
     },
-    onSave: (profileInf) => {
-      console.log('form', profileInf);
-      saveProfileData(username).then(val => {
-        console.log(val);
-      })
-      return Promise.resolve({ form: profileInf }) /* place your save api call here */
+    onSave: async (profileInf) => {
+      try {
+        await saveProfileData(username, createProfilePayload(profileInf));
+        return await Promise.resolve({ form: profileInf });
+      } catch {
+        return await Promise.reject();
+      }
     },
-    onSuccess: () => null,
+    onSuccess: (formData) => {
+      dispatch(updateProfileInformation(formData))
+      console.log(555, addCustomPref(formData))
+    },
     onError: () => null,
     getMetadata: () => ({
       props: {
-        firstName: { isRequired: true },
-        lastName: { isRequired: true },
-        company: { isRequired: false },
-        title: { isRequired: false },
+        given_name: { isRequired: true },
+        family_name: { isRequired: true },
+        organization: { isRequired: false },
+        jobtitle: { isRequired: false },
         location: { isRequired: false },
         email: { isRequired: false },
+        show_email: { isRequired: false },
       },
     }),
     settingsKey: 'basic-form-example',
   });
 
-  const [locationName, setLocation] = useState<CityItemType[]>([]);
+  const [locationList, setLocationList] = useState<CityItemType[]>([]);
+  const [loc, setLoc] = useState<CityItemType>();
 
   useEffect(() => {
     getCityList()
       .then((response) => {
-        console.log(333, response)
-        setLocation(response)
+        setLocationList(response);
+        setLoc(getCityById(response, location));
       })
       .catch(() => null);
   }, []);
-
-  function locationSelection(data: any) {
+  const getCityById = (locationList:CityItemType[], city?: string) => {
+    return locationList.find((cityArray) => cityArray.id === city);
+  };
+  const locationSelection = (data: any) => {
     lens.update(curent => {
       return { ... curent, location: data };
     })
   }
-  function socialMediaSelection(data: any) {
+  const socialMediaSelection = (data: any) => {
     console.log('socialMediaSelection', data);
   }
 
@@ -95,29 +115,29 @@ export const ProfileInformation = () => {
         <FlexCell width="auto" grow={1}>
           <LabeledInput
             label="First Name"
-            {...lens.prop('firstName').toProps()}
+            {...lens.prop('given_name').toProps()}
           >
             <TextInput
               placeholder="First Name"
-              {...lens.prop('firstName').toProps()}
+              {...lens.prop('given_name').toProps()}
             />
           </LabeledInput>
         </FlexCell>
         <FlexCell width="auto" cx={styles.lastName} grow={1}>
-          <LabeledInput label="Last Name" {...lens.prop('lastName').toProps()}>
+          <LabeledInput label="Last Name" {...lens.prop('family_name').toProps()}>
             <TextInput
               placeholder="Last Name"
-              {...lens.prop('lastName').toProps()}
+              {...lens.prop('family_name').toProps()}
             />
           </LabeledInput>
         </FlexCell>
       </FlexRow>
       <FlexRow vPadding="12">
         <FlexCell grow={1}>
-          <LabeledInput label="Company" {...lens.prop('company').toProps()}>
+          <LabeledInput label="Company" {...lens.prop('organization').toProps()}>
             <TextInput
               placeholder="Company"
-              {...lens.prop('company').toProps()}
+              {...lens.prop('organization').toProps()}
             />
           </LabeledInput>
         </FlexCell>
@@ -131,15 +151,15 @@ export const ProfileInformation = () => {
               }}
               i18nKey="optionalSidenote"
             />
-          } {...lens.prop('title').toProps()}>
-            <TextInput placeholder="Title" {...lens.prop('title').toProps()} />
+          } {...lens.prop('jobtitle').toProps()}>
+            <TextInput placeholder="Title" {...lens.prop('jobtitle').toProps()} />
           </LabeledInput>
         </FlexCell>
       </FlexRow>
       <FlexRow vPadding={'12'}>
         <LocationInput
-          data={locationName}
-          selectedLocation={location}
+          data={locationList}
+          selectedLocation={loc}
           updateLocation={locationSelection}
         ></LocationInput>
       </FlexRow>
@@ -167,8 +187,7 @@ export const ProfileInformation = () => {
           <Alert color="warning">
             <Text fontSize={'12'}>
               <LabeledInput>
-                <Checkbox {...lens.prop('showEmail').toProps()} value={showEmailValue}
-                          onValueChange={(value) => showEmailChange(value)}
+                <Checkbox {...lens.prop('show_email').toProps()}
                           label="Show my email as means of contact in the tender description." />
               </LabeledInput>
             </Text>

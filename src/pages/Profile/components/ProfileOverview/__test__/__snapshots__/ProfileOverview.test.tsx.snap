@@ -1,0 +1,606 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Overview Should create the profile overview component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+      >
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu IO7lfg"
+        >
+          <img
+            class="hd78KB"
+            height="90"
+            src="https://static.cdn.epam.com/uploads/690afa39a93c88c4dd13758fe1d869d5/EPM-UUI/Images/avatar_placeholder.jpg"
+            width="90"
+          />
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileName doyi1y"
+          >
+             
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileRole doyi1y"
+          />
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class="divider"
+          />
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+          >
+            My Tenders
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+          >
+            <button
+              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Active tenders
+              </div>
+            </button>
+          </div>
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+            >
+              0
+            </div>
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+          >
+            <button
+              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+              data-testid="others-id"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Others
+              </div>
+            </button>
+          </div>
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+            >
+              0
+            </div>
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+          >
+            My Art Objects
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+          >
+            <button
+              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Active art objects
+              </div>
+            </button>
+          </div>
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+            >
+              0
+            </div>
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+          >
+            <button
+              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary overviewSectionItem"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Ready art objects
+              </div>
+            </button>
+          </div>
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+            >
+              0
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+      >
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu IO7lfg"
+        >
+          <img
+            class="hd78KB"
+            height="90"
+            src="https://static.cdn.epam.com/uploads/690afa39a93c88c4dd13758fe1d869d5/EPM-UUI/Images/avatar_placeholder.jpg"
+            width="90"
+          />
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileName doyi1y"
+          >
+             
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileRole doyi1y"
+          />
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+        >
+          <div
+            class="divider"
+          />
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+          >
+            My Tenders
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+          >
+            <button
+              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Active tenders
+              </div>
+            </button>
+          </div>
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+            >
+              0
+            </div>
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+          >
+            <button
+              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+              data-testid="others-id"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Others
+              </div>
+            </button>
+          </div>
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+            >
+              0
+            </div>
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+          >
+            My Art Objects
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+          >
+            <button
+              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Active art objects
+              </div>
+            </button>
+          </div>
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+            >
+              0
+            </div>
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+        >
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+          >
+            <button
+              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary overviewSectionItem"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="uui-caption"
+              >
+                Ready art objects
+              </div>
+            </button>
+          </div>
+          <div
+            class=""
+            style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+          >
+            <div
+              class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+            >
+              0
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+    >
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu IO7lfg"
+      >
+        <img
+          class="hd78KB"
+          height="90"
+          src="https://static.cdn.epam.com/uploads/690afa39a93c88c4dd13758fe1d869d5/EPM-UUI/Images/avatar_placeholder.jpg"
+          width="90"
+        />
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+      >
+        <div
+          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileName doyi1y"
+        >
+           
+        </div>
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+      >
+        <div
+          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileRole doyi1y"
+        />
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+      >
+        <div
+          class="divider"
+        />
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+      >
+        <div
+          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+        >
+          My Tenders
+        </div>
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+      >
+        <div
+          class=""
+          style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+        >
+          <button
+            class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="uui-caption"
+            >
+              Active tenders
+            </div>
+          </button>
+        </div>
+        <div
+          class=""
+          style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+          >
+            0
+          </div>
+        </div>
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+      >
+        <div
+          class=""
+          style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+        >
+          <button
+            class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+            data-testid="others-id"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="uui-caption"
+            >
+              Others
+            </div>
+          </button>
+        </div>
+        <div
+          class=""
+          style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+          >
+            0
+          </div>
+        </div>
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+      >
+        <div
+          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+        >
+          My Art Objects
+        </div>
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+      >
+        <div
+          class=""
+          style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+        >
+          <button
+            class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="uui-caption"
+            >
+              Active art objects
+            </div>
+          </button>
+        </div>
+        <div
+          class=""
+          style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+          >
+            0
+          </div>
+        </div>
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+      >
+        <div
+          class=""
+          style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+        >
+          <button
+            class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary overviewSectionItem"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="uui-caption"
+            >
+              Ready art objects
+            </div>
+          </button>
+        </div>
+        <div
+          class=""
+          style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+          >
+            0
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByAria": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByRoleAndText": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByAria": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByRoleAndText": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByAria": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByRoleAndText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByAria": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByRoleAndText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByAria": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByRoleAndText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByAria": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByRoleAndText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

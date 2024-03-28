@@ -27,12 +27,12 @@ export const SocialMediaSelector = ({
   socialMediaSelection: any;
 }) => {
   const { t } = useTranslation();
-  const initDefaultDesable = initData?.map(
+  const initDefaultDisable = initData?.map(
     (v: { id: string; url: string }) => v.id,
   );
-  const [inputFields, setInputFields] = useState(initData);
+  const [inputFields, setInputFields] = useState(initData || []);
   const [selectable, setselectable] = useState<string[]>(
-    initDefaultDesable || [],
+    initDefaultDisable || [],
   );
 
   const addField = () => {

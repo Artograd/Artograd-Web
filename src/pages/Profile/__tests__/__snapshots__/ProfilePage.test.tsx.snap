@@ -1,0 +1,2364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile page Should create the profile page 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="uui-panel nNCe-- wrapper uEZmHy"
+      >
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE R4E2Lm _5Jq2IB RkwqFu"
+        >
+          <div
+            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileHeader doyi1y"
+          >
+            My Profile
+          </div>
+        </div>
+        <div
+          class="uui-flex-row kfXZUl _7f-LqE R4E2Lm _5Jq2IB CKBzOM"
+        >
+          <div
+            class="cell"
+            style="min-width: 0; flex-grow: 1; flex-basis: 0px;"
+          >
+            <div
+              class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+            >
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu IO7lfg"
+              >
+                <img
+                  class="hd78KB"
+                  height="90"
+                  src="https://static.cdn.epam.com/uploads/690afa39a93c88c4dd13758fe1d869d5/EPM-UUI/Images/avatar_placeholder.jpg"
+                  width="90"
+                />
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileName doyi1y"
+                >
+                   
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileRole doyi1y"
+                />
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="divider"
+                />
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+                >
+                  My Tenders
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+                >
+                  <button
+                    class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="uui-caption"
+                    >
+                      Active tenders
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+                >
+                  <button
+                    class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+                    data-testid="others-id"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="uui-caption"
+                    >
+                      Others
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+                >
+                  My Art Objects
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+                >
+                  <button
+                    class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="uui-caption"
+                    >
+                      Active art objects
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+                >
+                  <button
+                    class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary overviewSectionItem"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="uui-caption"
+                    >
+                      Ready art objects
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="cell"
+            style="min-width: 0; flex-grow: 3; flex-basis: 0px; align-self: flex-start;"
+          >
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+                >
+                  Basic Information
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            First Name
+                            <span
+                              class="uui-labeled-input-asterisk"
+                            >
+                              *
+                            </span>
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="First Name"
+                              required=""
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="lastName"
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            Last Name
+                            <span
+                              class="uui-labeled-input-asterisk"
+                            >
+                              *
+                            </span>
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="Last Name"
+                              required=""
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: 0px;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            Company
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="Company"
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: 0px;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            Job Title
+                          </label>
+                          <div
+                            class="CcZAjD"
+                          />
+                          <span
+                            class="sideNote"
+                          >
+                            This field is optional
+                          </span>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="Title"
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval modalInputLabel"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                          for="locationInput"
+                        >
+                          Location
+                        </label>
+                        <div
+                          class="CcZAjD"
+                        />
+                        <span
+                          class="sideNote"
+                        >
+                          This field is optional
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                          data-testid="city-selector-input"
+                          tabindex="0"
+                        >
+                          <div
+                            class="rWm8MA"
+                          >
+                            <input
+                              aria-haspopup="true"
+                              autocomplete="no"
+                              class="uui-input _4-lVKC -tX49A"
+                              id="locationInput"
+                              placeholder="Please select City / Region"
+                              tabindex="-1"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                          <div
+                            class="PELu7x"
+                          >
+                            <div
+                              class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                            >
+                              <svg
+                                class=""
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+                  >
+                    Contact Information
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            Work Email
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box uui-readonly NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="Work Email"
+                              readonly=""
+                              tabindex="-1"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE GgJ6XF _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="uui-alert XNat-I _9APrWp uui-color-warning wuGYSa"
+                      role="alert"
+                    >
+                      <div
+                        class="ABTbTQ"
+                      >
+                        <div
+                          class="WE48bd"
+                        >
+                          <div
+                            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku P0JX-8 jzu7jV doyi1y"
+                          >
+                            <div
+                              class="tNXKDT cqsR8q OhBval"
+                            >
+                              <div
+                                class="uui-label-top"
+                              >
+                                <div>
+                                  <label
+                                    class="HgvTIN uui-checkbox-container w9Tz3K QSUSrB uui-color-primary -clickable"
+                                  >
+                                    <div
+                                      class="uui-checkbox"
+                                    >
+                                      <input
+                                        aria-checked="false"
+                                        tabindex="0"
+                                        type="checkbox"
+                                      />
+                                    </div>
+                                    <div
+                                      class="uui-input-label"
+                                    >
+                                      Show my email as means of contact in the tender description.
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                    >
+                      <div
+                        class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+                      >
+                        Additional Links
+                      </div>
+                    </div>
+                    <div
+                      class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                    >
+                      <div
+                        class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                      >
+                        Add links to your portfolio to help people know your work profile better.
+                      </div>
+                    </div>
+                    <div
+                      class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                    >
+                      <div
+                        class=""
+                        style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                      >
+                        <div
+                          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                        >
+                          <div
+                            class=""
+                            style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                          >
+                            <div
+                              class="uui-flex-row kfXZUl _7f-LqE kxaOed inputWrapper _5Jq2IB RkwqFu"
+                            >
+                              <div
+                                class="pickerInputWrapper"
+                                style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                              >
+                                <div
+                                  class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="rWm8MA"
+                                  >
+                                    <input
+                                      aria-haspopup="true"
+                                      autocomplete="no"
+                                      class="uui-input _4-lVKC -tX49A"
+                                      placeholder="Please select Social media"
+                                      tabindex="-1"
+                                      type="text"
+                                      value=""
+                                    />
+                                  </div>
+                                  <div
+                                    class="PELu7x"
+                                  >
+                                    <div
+                                      class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                                    >
+                                      <svg
+                                        class=""
+                                        height="18"
+                                        viewBox="0 0 18 18"
+                                        width="18"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                          fill-rule="evenodd"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class=""
+                                style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                              >
+                                <div
+                                  class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                                  tabindex="-1"
+                                >
+                                  <input
+                                    class="uui-input"
+                                    placeholder="https://"
+                                    tabindex="0"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class=""
+                                style="min-width: 0; flex-basis: 0px;"
+                              >
+                                <button
+                                  class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-has-left-icon uui-no-right-icon uui-color-primary deleteButton"
+                                  tabindex="0"
+                                  type="button"
+                                >
+                                  <div
+                                    class="Prmk3w uui-icon uui-enabled"
+                                  >
+                                    <svg
+                                      class=""
+                                    >
+                                      delete-outline-18.svg
+                                    </svg>
+                                  </div>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                        >
+                          <div
+                            class=""
+                            style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                          >
+                            <button
+                              aria-disabled="false"
+                              class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-has-left-icon uui-no-right-icon uui-color-primary"
+                              tabindex="0"
+                              type="button"
+                            >
+                              <div
+                                class="Prmk3w uui-icon uui-enabled"
+                              >
+                                <svg
+                                  class=""
+                                >
+                                  action-add-18.svg
+                                </svg>
+                              </div>
+                              <div
+                                class="uui-caption"
+                              >
+                                Add another
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="divider"
+                  />
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu Fw8UIW"
+                >
+                  <button
+                    class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="uui-caption"
+                    >
+                      Save Information
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+                >
+                  Fundraising Account Data
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="uui-alert XNat-I _9APrWp uui-color-info wuGYSa"
+                      role="alert"
+                    >
+                      <div
+                        class="ABTbTQ"
+                      >
+                        <div
+                          class="I79bea"
+                        >
+                          <div
+                            class="Prmk3w uui-icon uui-enabled _7Z2i5K"
+                          >
+                            <svg
+                              class=""
+                            >
+                              notification-error-fill-18.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="WE48bd"
+                        >
+                          <div
+                            class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                          >
+                            This information is required to start art objects fundraising when winning proposal is chosen and tender is closed.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku P0JX-8 jzu7jV doyi1y"
+                    >
+                      <div
+                        class="tNXKDT cqsR8q OhBval"
+                      >
+                        <div
+                          class="uui-label-top"
+                        >
+                          <div>
+                            <label
+                              class="HgvTIN uui-checkbox-container w9Tz3K QSUSrB uui-color-primary -clickable"
+                            >
+                              <div
+                                class="uui-checkbox"
+                              >
+                                <input
+                                  aria-checked="false"
+                                  tabindex="0"
+                                  type="checkbox"
+                                />
+                              </div>
+                              <div
+                                class="uui-input-label"
+                              >
+                                Use this bank data by default for each tender fundraising.
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            Beneficiary
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="Beneficiary"
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="inputWrapper"
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            Beneficiary Bank
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="Bank name"
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            Account Number
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="Enter account number"
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="inputWrapper"
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            IBAN Number
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="International bank code"
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class=""
+                    style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div
+                          class="ASCPqT"
+                        >
+                          <label
+                            class="uui-label"
+                          >
+                            SWIFT Code
+                          </label>
+                        </div>
+                        <div>
+                          <div
+                            class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                            tabindex="-1"
+                          >
+                            <input
+                              aria-invalid="false"
+                              class="uui-input"
+                              placeholder="Enter code"
+                              tabindex="0"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                >
+                  <div
+                    class="divider"
+                  />
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu Fw8UIW"
+                >
+                  <button
+                    class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="uui-caption"
+                    >
+                      Save Information
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+                >
+                  Delete account
+                </div>
+                <div
+                  class="uui-alert XNat-I _9APrWp uui-color-warning wuGYSa"
+                  role="alert"
+                >
+                  <div
+                    class="ABTbTQ"
+                  >
+                    <div
+                      class="I79bea"
+                    >
+                      <div
+                        class="Prmk3w uui-icon uui-enabled _7Z2i5K"
+                      >
+                        <svg
+                          class=""
+                          height="24"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="WE48bd"
+                    >
+                      <div
+                        class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku P0JX-8 jzu7jV doyi1y"
+                      >
+                         
+                        If you delete account, your personal information and all your activity will be eliminated from the servers. This action cannot be undone.
+                         
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="uui-flex-row kfXZUl _7f-LqE GgJ6XF _5Jq2IB RkwqFu"
+                >
+                  <button
+                    class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-critical uui-size-36"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="Prmk3w uui-icon uui-enabled"
+                    >
+                      <svg
+                        class=""
+                      >
+                        action-deleteforever-18.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="uui-caption"
+                    >
+                      Delete account
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="uui-panel nNCe-- wrapper uEZmHy"
+    >
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE R4E2Lm _5Jq2IB RkwqFu"
+      >
+        <div
+          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileHeader doyi1y"
+        >
+          My Profile
+        </div>
+      </div>
+      <div
+        class="uui-flex-row kfXZUl _7f-LqE R4E2Lm _5Jq2IB CKBzOM"
+      >
+        <div
+          class="cell"
+          style="min-width: 0; flex-grow: 1; flex-basis: 0px;"
+        >
+          <div
+            class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+          >
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu IO7lfg"
+            >
+              <img
+                class="hd78KB"
+                height="90"
+                src="https://static.cdn.epam.com/uploads/690afa39a93c88c4dd13758fe1d869d5/EPM-UUI/Images/avatar_placeholder.jpg"
+                width="90"
+              />
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileName doyi1y"
+              >
+                 
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV profileRole doyi1y"
+              />
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+            >
+              <div
+                class="divider"
+              />
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+            >
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+              >
+                My Tenders
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+            >
+              <div
+                class=""
+                style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+              >
+                <button
+                  class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Active tenders
+                  </div>
+                </button>
+              </div>
+              <div
+                class=""
+                style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+                >
+                  0
+                </div>
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+            >
+              <div
+                class=""
+                style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+              >
+                <button
+                  class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+                  data-testid="others-id"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Others
+                  </div>
+                </button>
+              </div>
+              <div
+                class=""
+                style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+                >
+                  0
+                </div>
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+            >
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionName doyi1y"
+              >
+                My Art Objects
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+            >
+              <div
+                class=""
+                style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+              >
+                <button
+                  class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Active art objects
+                  </div>
+                </button>
+              </div>
+              <div
+                class=""
+                style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+                >
+                  0
+                </div>
+              </div>
+            </div>
+            <div
+              class="uui-flex-row kfXZUl _7f-LqE QjrJq4 _5Jq2IB RkwqFu"
+            >
+              <div
+                class=""
+                style="min-width: 0; flex-grow: 3; flex-basis: 0px;"
+              >
+                <button
+                  class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-no-left-icon uui-no-right-icon uui-color-primary overviewSectionItem"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Ready art objects
+                  </div>
+                </button>
+              </div>
+              <div
+                class=""
+                style="min-width: 0; flex-grow: 1; flex-basis: 0px; text-align: right;"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV overviewSectionItemValue doyi1y"
+                >
+                  0
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="cell"
+          style="min-width: 0; flex-grow: 3; flex-basis: 0px; align-self: flex-start;"
+        >
+          <div
+            class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+          >
+            <div
+              class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+            >
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+              >
+                Basic Information
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          First Name
+                          <span
+                            class="uui-labeled-input-asterisk"
+                          >
+                            *
+                          </span>
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="First Name"
+                            required=""
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="lastName"
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          Last Name
+                          <span
+                            class="uui-labeled-input-asterisk"
+                          >
+                            *
+                          </span>
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="Last Name"
+                            required=""
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: 0px;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          Company
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="Company"
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: 0px;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          Job Title
+                        </label>
+                        <div
+                          class="CcZAjD"
+                        />
+                        <span
+                          class="sideNote"
+                        >
+                          This field is optional
+                        </span>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="Title"
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="tNXKDT cqsR8q OhBval modalInputLabel"
+                >
+                  <div
+                    class="uui-label-top"
+                  >
+                    <div
+                      class="ASCPqT"
+                    >
+                      <label
+                        class="uui-label"
+                        for="locationInput"
+                      >
+                        Location
+                      </label>
+                      <div
+                        class="CcZAjD"
+                      />
+                      <span
+                        class="sideNote"
+                      >
+                        This field is optional
+                      </span>
+                    </div>
+                    <div>
+                      <div
+                        class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                        data-testid="city-selector-input"
+                        tabindex="0"
+                      >
+                        <div
+                          class="rWm8MA"
+                        >
+                          <input
+                            aria-haspopup="true"
+                            autocomplete="no"
+                            class="uui-input _4-lVKC -tX49A"
+                            id="locationInput"
+                            placeholder="Please select City / Region"
+                            tabindex="-1"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                        <div
+                          class="PELu7x"
+                        >
+                          <div
+                            class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                          >
+                            <svg
+                              class=""
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+                >
+                  Contact Information
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          Work Email
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box uui-readonly NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="Work Email"
+                            readonly=""
+                            tabindex="-1"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE GgJ6XF _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="uui-alert XNat-I _9APrWp uui-color-warning wuGYSa"
+                    role="alert"
+                  >
+                    <div
+                      class="ABTbTQ"
+                    >
+                      <div
+                        class="WE48bd"
+                      >
+                        <div
+                          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku P0JX-8 jzu7jV doyi1y"
+                        >
+                          <div
+                            class="tNXKDT cqsR8q OhBval"
+                          >
+                            <div
+                              class="uui-label-top"
+                            >
+                              <div>
+                                <label
+                                  class="HgvTIN uui-checkbox-container w9Tz3K QSUSrB uui-color-primary -clickable"
+                                >
+                                  <div
+                                    class="uui-checkbox"
+                                  >
+                                    <input
+                                      aria-checked="false"
+                                      tabindex="0"
+                                      type="checkbox"
+                                    />
+                                  </div>
+                                  <div
+                                    class="uui-input-label"
+                                  >
+                                    Show my email as means of contact in the tender description.
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                  >
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+                    >
+                      Additional Links
+                    </div>
+                  </div>
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                  >
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                    >
+                      Add links to your portfolio to help people know your work profile better.
+                    </div>
+                  </div>
+                  <div
+                    class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                  >
+                    <div
+                      class=""
+                      style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                    >
+                      <div
+                        class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                      >
+                        <div
+                          class=""
+                          style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                        >
+                          <div
+                            class="uui-flex-row kfXZUl _7f-LqE kxaOed inputWrapper _5Jq2IB RkwqFu"
+                          >
+                            <div
+                              class="pickerInputWrapper"
+                              style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                            >
+                              <div
+                                class="xGJ-Rl uui-input-box -clickable RbCb2m QjaI4q FiHBt5"
+                                tabindex="0"
+                              >
+                                <div
+                                  class="rWm8MA"
+                                >
+                                  <input
+                                    aria-haspopup="true"
+                                    autocomplete="no"
+                                    class="uui-input _4-lVKC -tX49A"
+                                    placeholder="Please select Social media"
+                                    tabindex="-1"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                                <div
+                                  class="PELu7x"
+                                >
+                                  <div
+                                    class="Prmk3w uui-icon uui-enabled -clickable uui-icon-dropdown"
+                                  >
+                                    <svg
+                                      class=""
+                                      height="18"
+                                      viewBox="0 0 18 18"
+                                      width="18"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M12.443 6.442 9 9.877 5.558 6.442 4.5 7.5 9 12l4.5-4.5z"
+                                        fill-rule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class=""
+                              style="min-width: 0; flex-grow: 1; flex-basis: 100%;"
+                            >
+                              <div
+                                class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                                tabindex="-1"
+                              >
+                                <input
+                                  class="uui-input"
+                                  placeholder="https://"
+                                  tabindex="0"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class=""
+                              style="min-width: 0; flex-basis: 0px;"
+                            >
+                              <button
+                                class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-has-left-icon uui-no-right-icon uui-color-primary deleteButton"
+                                tabindex="0"
+                                type="button"
+                              >
+                                <div
+                                  class="Prmk3w uui-icon uui-enabled"
+                                >
+                                  <svg
+                                    class=""
+                                  >
+                                    delete-outline-18.svg
+                                  </svg>
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+                      >
+                        <div
+                          class=""
+                          style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                        >
+                          <button
+                            aria-disabled="false"
+                            class="uui-button-box uui-enabled -clickable uui-link_button iTxfW2 uui-size-36 uui-has-left-icon uui-no-right-icon uui-color-primary"
+                            tabindex="0"
+                            type="button"
+                          >
+                            <div
+                              class="Prmk3w uui-icon uui-enabled"
+                            >
+                              <svg
+                                class=""
+                              >
+                                action-add-18.svg
+                              </svg>
+                            </div>
+                            <div
+                              class="uui-caption"
+                            >
+                              Add another
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="divider"
+                />
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu Fw8UIW"
+              >
+                <button
+                  class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Save Information
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+          >
+            <div
+              class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+            >
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+              >
+                Fundraising Account Data
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="uui-alert XNat-I _9APrWp uui-color-info wuGYSa"
+                    role="alert"
+                  >
+                    <div
+                      class="ABTbTQ"
+                    >
+                      <div
+                        class="I79bea"
+                      >
+                        <div
+                          class="Prmk3w uui-icon uui-enabled _7Z2i5K"
+                        >
+                          <svg
+                            class=""
+                          >
+                            notification-error-fill-18.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="WE48bd"
+                      >
+                        <div
+                          class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku xhqm1P jzu7jV doyi1y"
+                        >
+                          This information is required to start art objects fundraising when winning proposal is chosen and tender is closed.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku P0JX-8 jzu7jV doyi1y"
+                  >
+                    <div
+                      class="tNXKDT cqsR8q OhBval"
+                    >
+                      <div
+                        class="uui-label-top"
+                      >
+                        <div>
+                          <label
+                            class="HgvTIN uui-checkbox-container w9Tz3K QSUSrB uui-color-primary -clickable"
+                          >
+                            <div
+                              class="uui-checkbox"
+                            >
+                              <input
+                                aria-checked="false"
+                                tabindex="0"
+                                type="checkbox"
+                              />
+                            </div>
+                            <div
+                              class="uui-input-label"
+                            >
+                              Use this bank data by default for each tender fundraising.
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          Beneficiary
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="Beneficiary"
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="inputWrapper"
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          Beneficiary Bank
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="Bank name"
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          Account Number
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="Enter account number"
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE kxaOed _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="inputWrapper"
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          IBAN Number
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="International bank code"
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class=""
+                  style="min-width: 0; flex-grow: 1; flex-basis: auto;"
+                >
+                  <div
+                    class="tNXKDT cqsR8q OhBval"
+                  >
+                    <div
+                      class="uui-label-top"
+                    >
+                      <div
+                        class="ASCPqT"
+                      >
+                        <label
+                          class="uui-label"
+                        >
+                          SWIFT Code
+                        </label>
+                      </div>
+                      <div>
+                        <div
+                          class="VJ2Cla uui-input-box -clickable NPdboF kBLuie p-89oR"
+                          tabindex="-1"
+                        >
+                          <input
+                            aria-invalid="false"
+                            class="uui-input"
+                            placeholder="Enter code"
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+              >
+                <div
+                  class="divider"
+                />
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu Fw8UIW"
+              >
+                <button
+                  class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-solid uui-color-primary uui-size-36"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="uui-caption"
+                  >
+                    Save Information
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="uui-flex-row kfXZUl _7f-LqE _5Jq2IB RkwqFu"
+          >
+            <div
+              class="uui-panel nNCe-- fI3ZAq wrapper uEZmHy"
+            >
+              <div
+                class="Ka60RD uui-text uui-color-primary uui-font-weight-600 uui-font-style-normal uui-typography CMzhku _9VGu-f jzu7jV doyi1y"
+              >
+                Delete account
+              </div>
+              <div
+                class="uui-alert XNat-I _9APrWp uui-color-warning wuGYSa"
+                role="alert"
+              >
+                <div
+                  class="ABTbTQ"
+                >
+                  <div
+                    class="I79bea"
+                  >
+                    <div
+                      class="Prmk3w uui-icon uui-enabled _7Z2i5K"
+                    >
+                      <svg
+                        class=""
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="WE48bd"
+                  >
+                    <div
+                      class="Ka60RD uui-text uui-color-primary uui-font-weight-400 uui-font-style-normal uui-typography CMzhku P0JX-8 jzu7jV doyi1y"
+                    >
+                       
+                      If you delete account, your personal information and all your activity will be eliminated from the servers. This action cannot be undone.
+                       
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="uui-flex-row kfXZUl _7f-LqE GgJ6XF _5Jq2IB RkwqFu"
+              >
+                <button
+                  class="uui-button-box uui-enabled -clickable VFUd6V y6sOzI uui-button uui-fill-outline uui-color-critical uui-size-36"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="Prmk3w uui-icon uui-enabled"
+                  >
+                    <svg
+                      class=""
+                    >
+                      action-deleteforever-18.svg
+                    </svg>
+                  </div>
+                  <div
+                    class="uui-caption"
+                  >
+                    Delete account
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByAria": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByRoleAndText": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByAria": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByRoleAndText": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByAria": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByRoleAndText": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByAria": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByRoleAndText": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByAria": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByRoleAndText": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByAria": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByRoleAndText": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

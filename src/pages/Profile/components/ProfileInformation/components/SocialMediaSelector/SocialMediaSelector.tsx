@@ -16,7 +16,7 @@ const socialMedias = [
   { id: 'custom:linkedin', name: 'Linkedin' },
   { id: 'custom:facebook', name: 'Facebook' },
   { id: 'custom:instagram', name: 'Instagram' },
-  { id: 'custom:others', name: 'Other' },
+  { id: 'website', name: 'Other' },
 ];
 
 export const SocialMediaSelector = ({

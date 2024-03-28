@@ -6,7 +6,7 @@ const LINKS = [
   'custom:linkedin',
   'custom:facebook',
   'custom:instagram',
-  'custom:others',
+  'website',
 ];
 interface profileInformationState {
   picture: string;

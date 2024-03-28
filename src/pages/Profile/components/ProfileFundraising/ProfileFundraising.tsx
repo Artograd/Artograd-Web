@@ -34,7 +34,7 @@ export const ProfileFundraising = () => {
     (state: RootState) =>
       state.profileFundrasing.profileFundrasing['custom:bank_account'],
   );
-  const useBankDataByDefault = useSelector(
+  const bank_use_default = useSelector(
     (state: RootState) =>
       state.profileFundrasing.profileFundrasing['custom:bank_use_default'],
   );
@@ -51,7 +51,7 @@ export const ProfileFundraising = () => {
   );
 
   const { lens, save } = useForm({
-    value: { useBankDataByDefault, beneficiary, bank, account, iban, swift },
+    value: { bank_use_default, beneficiary, bank, account, iban, swift },
     onSave: (fundraising) => {
       console.log('form', fundraising);
       return userApi
@@ -70,7 +70,7 @@ export const ProfileFundraising = () => {
         beneficiary: { isRequired: false },
         bank: { isRequired: false },
         account: { isRequired: false },
-        useBankDataByDefault: { isRequired: false },
+        bank_use_default: { isRequired: false },
         swift: { isRequired: false },
         iban: { isRequired: false },
       },
@@ -97,7 +97,7 @@ export const ProfileFundraising = () => {
           <Text fontSize={'12'}>
             <LabeledInput>
               <Checkbox
-                {...lens.prop('useBankDataByDefault').toProps()}
+                {...lens.prop('bank_use_default').toProps()}
                 label="Use this bank data by default for each tender fundraising."
               />
             </LabeledInput>

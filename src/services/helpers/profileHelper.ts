@@ -1,7 +1,7 @@
 export const STANDART_ATTR = ['given_name', 'family_name', 'picture', 'email'];
 enum checkboxes {
   email = 'custom:show_email',
-  bankByDefault = 'custom:useBankDataByDefault',
+  bankByDefault = 'custom:bank_use_default',
 }
 
 export const createProfilePayload = (data: any) => {

@@ -37,7 +37,7 @@ export const rootReducer = combineReducers({
   identity: identityReducer,
   helpers: helpersReducer,
   profileInformation: profileInformationReducer,
-  profileFundrasing: profileFundrasingReducer
+  profileFundrasing: profileFundrasingReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

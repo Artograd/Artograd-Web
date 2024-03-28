@@ -33,7 +33,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "lint": "eslint */**/*.{js,ts,tsx} --quiet --fix",
     "format": "prettier --write .",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",

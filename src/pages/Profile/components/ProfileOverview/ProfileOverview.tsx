@@ -1,12 +1,5 @@
 import styles from './ProfileOverview.module.scss';
-import {
-  Avatar,
-  FlexCell,
-  FlexRow,
-  LinkButton,
-  Panel,
-  Text,
-} from '@epam/uui';
+import { Avatar, FlexCell, FlexRow, LinkButton, Panel, Text } from '@epam/uui';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { RootState } from '../../../../store/store';
@@ -28,12 +21,13 @@ export const ProfileOverview = () => {
     activeTenders,
     others,
     activeArtObjects,
-    readyArtObjects
+    readyArtObjects,
   } = useSelector(
     (state: RootState) => state.profileInformation.profileInformation,
   );
   const organization = useSelector(
-    (state: RootState) => state.profileInformation.profileInformation['custom:organization'],
+    (state: RootState) =>
+      state.profileInformation.profileInformation['custom:organization'],
   );
   const username = useSelector(
     (state: RootState) => state.identity.userData['cognito:username'],
@@ -43,22 +37,23 @@ export const ProfileOverview = () => {
 
   const modalHandler = () => {
     uuiModals
-      .show<string>((props) => <ChangeProfileImageModal modalProps={props} picture={picture} />)
+      .show<string>((props) => (
+        <ChangeProfileImageModal modalProps={props} picture={picture} />
+      ))
       .then((picture) => {
-        userApi.put(username, createProfilePayload({picture: picture || ''})).then(()=>{
-          dispatch(profileAvatarChanged({picture: picture || ''}));
-        })
-      }).catch(() => null);
+        userApi
+          .put(username, createProfilePayload({ picture: picture || '' }))
+          .then(() => {
+            dispatch(profileAvatarChanged({ picture: picture || '' }));
+          });
+      })
+      .catch(() => null);
   };
 
   return (
     <Panel cx={styles.wrapper} shadow>
       <FlexRow justifyContent={'center'}>
-        <Avatar
-          img={picture}
-          size={'90'}
-          onClick={modalHandler}
-        ></Avatar>
+        <Avatar img={picture} size={'90'} onClick={modalHandler}></Avatar>
       </FlexRow>
       <FlexRow>
         <Text cx={styles.profileName}>

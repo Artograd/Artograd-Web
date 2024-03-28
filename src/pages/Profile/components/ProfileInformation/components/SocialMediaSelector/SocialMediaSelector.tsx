@@ -4,7 +4,7 @@ import {
   FlexRow,
   LinkButton,
   PickerInput,
-  TextInput
+  TextInput,
 } from '@epam/uui';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as PlusIcon } from '@epam/assets/icons/common/action-add-18.svg';
@@ -19,11 +19,21 @@ const socialMedias = [
   { id: 'custom:others', name: 'Other' },
 ];
 
-export const SocialMediaSelector = ({initData, socialMediaSelection}: {initData: any, socialMediaSelection: any}) => {
+export const SocialMediaSelector = ({
+  initData,
+  socialMediaSelection,
+}: {
+  initData: any;
+  socialMediaSelection: any;
+}) => {
   const { t } = useTranslation();
-  const initDefaultDesable = initData?.map((v: {id: string, url: string}) => v.id);
+  const initDefaultDesable = initData?.map(
+    (v: { id: string; url: string }) => v.id,
+  );
   const [inputFields, setInputFields] = useState(initData);
-  const [selectable, setselectable] = useState<string[]>(initDefaultDesable || []);
+  const [selectable, setselectable] = useState<string[]>(
+    initDefaultDesable || [],
+  );
 
   const addField = () => {
     const newInputField = { id: '', url: '' };
@@ -32,7 +42,7 @@ export const SocialMediaSelector = ({initData, socialMediaSelection}: {initData:
 
   const deleteField = (id: number) => {
     const data = [...inputFields];
-    data.splice(id, 1)
+    data.splice(id, 1);
     setInputFields(data);
     setDisabled(data);
     socialMediaSelection(data);
@@ -51,61 +61,74 @@ export const SocialMediaSelector = ({initData, socialMediaSelection}: {initData:
     setInputFields(data);
     setDisabled(data);
     socialMediaSelection(data);
-  }
+  };
   const onUrlChange = (val: string, index: number) => {
     const data = [...inputFields];
     data[index].url = val;
     setInputFields(data);
     socialMediaSelection(data);
-  }
+  };
 
-  const setDisabled = (data:  {id: string, url: string}[]) => {
-    const isSelected = data.map(v => v.id);
+  const setDisabled = (data: { id: string; url: string }[]) => {
+    const isSelected = data.map((v) => v.id);
     setselectable([...isSelected]);
-  }
+  };
 
   return (
-      <FlexCell width="auto" grow={1}>
-        <FlexRow>
-          <FlexCell width="auto" grow={1}>
-            {inputFields.map((input: any, index: number) => {
-              return (
-                <FlexRow vPadding="12" key={index} cx={styles.inputWrapper}>
-                  <FlexCell width="100%" grow={1} cx={styles.pickerInputWrapper}>
-                    <PickerInput
-                      dataSource={ data }
-                      value={ input.id || null}
-                      onValueChange={ (val: string) => handleInputChange(val, index) }
-                      getRowOptions={(item,) => {
-                        return (
-                          {
-                            isSelectable: !selectable.includes(item!.id),
-                            isDisabled: selectable.includes(item!.id),
-                          }
-                        )
-                      }}
-                      getName={ (item) => item!.name }
-                      entityName="Social media"
-                      selectionMode="single"
-                      valueType="id"
-                    />
-                  </FlexCell>
-                  <FlexCell width="100%" grow={1}>
-                      <TextInput value={ input.url || '' } onValueChange={ (val: string) => onUrlChange(val, index) } placeholder="https://" />
-                  </FlexCell>
-                  <FlexCell>
-                    <LinkButton cx={styles.deleteButton} icon={DeleteIcon} onClick={()=> deleteField(index)}/>
-                  </FlexCell>
-                </FlexRow>
-              )
-            })}
-          </FlexCell>
-        </FlexRow>
-        <FlexRow>
-          <FlexCell width="auto" grow={1}>
-            <LinkButton isDisabled = {inputFields.length === socialMedias.length} caption={t('Add another')} icon={PlusIcon} onClick={addField}/>
-          </FlexCell>
-        </FlexRow>
-      </FlexCell>
-  )
-}
+    <FlexCell width="auto" grow={1}>
+      <FlexRow>
+        <FlexCell width="auto" grow={1}>
+          {inputFields.map((input: any, index: number) => {
+            return (
+              <FlexRow vPadding="12" key={index} cx={styles.inputWrapper}>
+                <FlexCell width="100%" grow={1} cx={styles.pickerInputWrapper}>
+                  <PickerInput
+                    dataSource={data}
+                    value={input.id || null}
+                    onValueChange={(val: string) =>
+                      handleInputChange(val, index)
+                    }
+                    getRowOptions={(item) => {
+                      return {
+                        isSelectable: !selectable.includes(item!.id),
+                        isDisabled: selectable.includes(item!.id),
+                      };
+                    }}
+                    getName={(item) => item!.name}
+                    entityName="Social media"
+                    selectionMode="single"
+                    valueType="id"
+                  />
+                </FlexCell>
+                <FlexCell width="100%" grow={1}>
+                  <TextInput
+                    value={input.url || ''}
+                    onValueChange={(val: string) => onUrlChange(val, index)}
+                    placeholder="https://"
+                  />
+                </FlexCell>
+                <FlexCell>
+                  <LinkButton
+                    cx={styles.deleteButton}
+                    icon={DeleteIcon}
+                    onClick={() => deleteField(index)}
+                  />
+                </FlexCell>
+              </FlexRow>
+            );
+          })}
+        </FlexCell>
+      </FlexRow>
+      <FlexRow>
+        <FlexCell width="auto" grow={1}>
+          <LinkButton
+            isDisabled={inputFields.length === socialMedias.length}
+            caption={t('Add another')}
+            icon={PlusIcon}
+            onClick={addField}
+          />
+        </FlexCell>
+      </FlexRow>
+    </FlexCell>
+  );
+};

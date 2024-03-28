@@ -19,7 +19,7 @@ const profileFundrasingState = {
   'custom:bank_account': '',
   'custom:bank_iban': '',
   'custom:bank_swift': '',
-}
+};
 
 export const initialState: profileFundrasing = {
   profileFundrasing: profileFundrasingState,
@@ -35,6 +35,5 @@ const profileFundrasingSlice = createSlice({
   },
 });
 
-export const { updateProfileFundrasing } =
-  profileFundrasingSlice.actions;
+export const { updateProfileFundrasing } = profileFundrasingSlice.actions;
 export default profileFundrasingSlice.reducer;

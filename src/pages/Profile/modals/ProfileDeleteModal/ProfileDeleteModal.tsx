@@ -57,7 +57,9 @@ export function DeleteProfileModal(modalProps: IModal<{ delete: string }>) {
           <ScrollBars hasTopShadow hasBottomShadow>
             <FlexRow padding="24">
               <Text>
-                When you delete account, all created tenders and related proposals will be permanently removed. This action cannot be undone.
+                When you delete account, all created tenders and related
+                proposals will be permanently removed. This action cannot be
+                undone.
               </Text>
             </FlexRow>
             <FlexRow padding="24" vPadding="12">

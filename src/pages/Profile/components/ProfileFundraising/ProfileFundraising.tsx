@@ -9,7 +9,7 @@ import {
   TextInput,
   useForm,
   Alert,
-  Checkbox
+  Checkbox,
 } from '@epam/uui';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
@@ -20,44 +20,53 @@ import { createProfilePayload } from '../../../../services/helpers/profileHelper
 import { userApi } from '../../../../services/api/userAPI';
 import { updateProfileFundrasing } from '../../../../store/slices/profileFundrasingSlice';
 
-
 export const ProfileFundraising = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const beneficiary = useSelector(
-    (state: RootState) => state.profileFundrasing.profileFundrasing['custom:bank_benefit_name'],
+    (state: RootState) =>
+      state.profileFundrasing.profileFundrasing['custom:bank_benefit_name'],
   );
   const bank = useSelector(
-    (state: RootState) => state.profileFundrasing.profileFundrasing['custom:bank_benefit_bank'],
+    (state: RootState) =>
+      state.profileFundrasing.profileFundrasing['custom:bank_benefit_bank'],
   );
   const account = useSelector(
-    (state: RootState) => state.profileFundrasing.profileFundrasing['custom:bank_account'],
+    (state: RootState) =>
+      state.profileFundrasing.profileFundrasing['custom:bank_account'],
   );
   const useBankDataByDefault = useSelector(
-    (state: RootState) => state.profileFundrasing.profileFundrasing['custom:bank_use_default'],
+    (state: RootState) =>
+      state.profileFundrasing.profileFundrasing['custom:bank_use_default'],
   );
   const swift = useSelector(
-    (state: RootState) => state.profileFundrasing.profileFundrasing['custom:bank_swift'],
+    (state: RootState) =>
+      state.profileFundrasing.profileFundrasing['custom:bank_swift'],
   );
   const iban = useSelector(
-    (state: RootState) => state.profileFundrasing.profileFundrasing['custom:bank_iban'],
+    (state: RootState) =>
+      state.profileFundrasing.profileFundrasing['custom:bank_iban'],
   );
   const username = useSelector(
     (state: RootState) => state.identity.userData['cognito:username'],
   );
 
-  const [useBankData, useBankDataChange] = useState<boolean>(useBankDataByDefault);
+  const [useBankData, useBankDataChange] =
+    useState<boolean>(useBankDataByDefault);
 
   const { lens, save } = useForm({
     value: { useBankDataByDefault, beneficiary, bank, account, iban, swift },
     onSave: (fundraising) => {
       console.log('form', fundraising);
-      return userApi.put(username, createProfilePayload(fundraising))
+      return userApi
+        .put(username, createProfilePayload(fundraising))
         .then(() => {
           return Promise.resolve({ form: fundraising });
         })
-        .catch(()=> Promise.reject());
-      return Promise.resolve({ form: fundraising }); /* place your save api call here */
+        .catch(() => Promise.reject());
+      return Promise.resolve({
+        form: fundraising,
+      }); /* place your save api call here */
     },
     onSuccess: (data) => {
       dispatch(updateProfileFundrasing(data));
@@ -78,7 +87,10 @@ export const ProfileFundraising = () => {
       <FlexRow vPadding="12">
         <FlexCell width="auto" grow={1}>
           <Alert color="info" icon={InfIcon}>
-            <Text>This information is required to start art objects fundraising when winning proposal is chosen and tender is closed.</Text>
+            <Text>
+              This information is required to start art objects fundraising when
+              winning proposal is chosen and tender is closed.
+            </Text>
           </Alert>
         </FlexCell>
       </FlexRow>
@@ -86,9 +98,12 @@ export const ProfileFundraising = () => {
         <FlexCell width="auto" grow={1}>
           <Text fontSize={'12'}>
             <LabeledInput>
-              <Checkbox {...lens.prop('useBankDataByDefault').toProps()} value={useBankData}
-                        onValueChange={(value) => useBankDataChange(value)}
-                        label="Use this bank data by default for each tender fundraising." />
+              <Checkbox
+                {...lens.prop('useBankDataByDefault').toProps()}
+                value={useBankData}
+                onValueChange={(value) => useBankDataChange(value)}
+                label="Use this bank data by default for each tender fundraising."
+              />
             </LabeledInput>
           </Text>
         </FlexCell>

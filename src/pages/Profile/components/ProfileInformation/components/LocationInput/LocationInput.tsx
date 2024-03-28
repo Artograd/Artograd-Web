@@ -1,17 +1,17 @@
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation, Trans } from 'react-i18next';
 import styles from './LocationInput.module.scss';
-import { useArrayDataSource } from "@epam/uui-core";
-import {
-  LabeledInput,
-  PickerInput
-} from '@epam/uui';
+import { useArrayDataSource } from '@epam/uui-core';
+import { LabeledInput, PickerInput } from '@epam/uui';
 import { useState } from 'react';
 import { CityItemType } from '../../../../../../types';
 
-
-export const LocationInput = ({ data, selectedLocation, updateLocation }: {
-  data: CityItemType[],
-  selectedLocation: CityItemType | undefined,
+export const LocationInput = ({
+  data,
+  selectedLocation,
+  updateLocation,
+}: {
+  data: CityItemType[];
+  selectedLocation: CityItemType | undefined;
   updateLocation: any;
 }) => {
   const cityDataSource = useArrayDataSource(
@@ -22,7 +22,9 @@ export const LocationInput = ({ data, selectedLocation, updateLocation }: {
   );
 
   const { t } = useTranslation();
-  const [selected, setSelectedLocation] = useState<CityItemType | undefined>(selectedLocation);
+  const [selected, setSelectedLocation] = useState<CityItemType | undefined>(
+    selectedLocation,
+  );
 
   const onCityValueChange = (city: CityItemType) => {
     setSelectedLocation(city);
@@ -32,9 +34,7 @@ export const LocationInput = ({ data, selectedLocation, updateLocation }: {
   return (
     <LabeledInput
       htmlFor="locationInput"
-      label={t(
-        'profilePage.Location',
-      )}
+      label={t('profilePage.Location')}
       sidenote={
         <Trans
           components={{
@@ -62,5 +62,5 @@ export const LocationInput = ({ data, selectedLocation, updateLocation }: {
         }}
       />
     </LabeledInput>
-  )
-}
+  );
+};

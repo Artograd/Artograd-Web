@@ -2,7 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
-const LINKS = ['custom:linkedin', 'custom:facebook', 'custom:instagram', 'custom:others']
+const LINKS = [
+  'custom:linkedin',
+  'custom:facebook',
+  'custom:instagram',
+  'custom:others',
+];
 interface profileInformationState {
   picture: string;
   given_name: string;
@@ -54,9 +59,14 @@ const profileInformationSlice = createSlice({
   initialState,
   reducers: {
     updateProfileInformation(state, action) {
-      state.profileInformation = { ...state.profileInformation, ...action.payload };
-      const links = Object.entries(action.payload).filter(key => LINKS.includes(key[0])).map(key => ({id: key[0], url: key[1]}));
-      if(links.length) {
+      state.profileInformation = {
+        ...state.profileInformation,
+        ...action.payload,
+      };
+      const links = Object.entries(action.payload)
+        .filter((key) => LINKS.includes(key[0]))
+        .map((key) => ({ id: key[0], url: key[1] }));
+      if (links.length) {
         state.profileInformation.socialMedia = links;
       }
     },
@@ -66,7 +76,8 @@ const profileInformationSlice = createSlice({
   },
 });
 
-export const { updateProfileInformation, profileAvatarChanged } = profileInformationSlice.actions;
+export const { updateProfileInformation, profileAvatarChanged } =
+  profileInformationSlice.actions;
 export default profileInformationSlice.reducer;
 export const persistedProfileInformationReducer = persistReducer(
   persistConfig,

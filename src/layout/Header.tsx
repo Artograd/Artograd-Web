@@ -36,9 +36,7 @@ export const Header = ({ mobile = false }: { mobile?: boolean }) => {
 
   const { t } = useTranslation();
 
-  const { isLoggedIn } = useSelector(
-    (state: RootState) => state.identity,
-  );
+  const { isLoggedIn } = useSelector((state: RootState) => state.identity);
 
   const visitPage = (props: { onClose: () => void }, page: string) => {
     props.onClose;

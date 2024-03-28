@@ -22,15 +22,15 @@ import { updateProfileFundrasing } from '../../../../store/slices/profileFundras
 export const ProfileFundraising = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const beneficiary = useSelector(
+  const bank_benefit_name = useSelector(
     (state: RootState) =>
       state.profileFundrasing.profileFundrasing['custom:bank_benefit_name'],
   );
-  const bank = useSelector(
+  const bank_benefit_bank = useSelector(
     (state: RootState) =>
       state.profileFundrasing.profileFundrasing['custom:bank_benefit_bank'],
   );
-  const account = useSelector(
+  const bank_account = useSelector(
     (state: RootState) =>
       state.profileFundrasing.profileFundrasing['custom:bank_account'],
   );
@@ -38,11 +38,11 @@ export const ProfileFundraising = () => {
     (state: RootState) =>
       state.profileFundrasing.profileFundrasing['custom:bank_use_default'],
   );
-  const swift = useSelector(
+  const bank_swift = useSelector(
     (state: RootState) =>
       state.profileFundrasing.profileFundrasing['custom:bank_swift'],
   );
-  const iban = useSelector(
+  const bank_iban = useSelector(
     (state: RootState) =>
       state.profileFundrasing.profileFundrasing['custom:bank_iban'],
   );
@@ -51,9 +51,15 @@ export const ProfileFundraising = () => {
   );
 
   const { lens, save } = useForm({
-    value: { bank_use_default, beneficiary, bank, account, iban, swift },
+    value: {
+      bank_use_default,
+      bank_benefit_name,
+      bank_benefit_bank,
+      bank_account,
+      bank_iban,
+      bank_swift,
+    },
     onSave: (fundraising) => {
-      console.log('form', fundraising);
       return userApi
         .put(username, createProfilePayload(fundraising))
         .then(() => {
@@ -67,12 +73,12 @@ export const ProfileFundraising = () => {
     onError: () => null,
     getMetadata: () => ({
       props: {
-        beneficiary: { isRequired: false },
-        bank: { isRequired: false },
-        account: { isRequired: false },
+        bank_benefit_name: { isRequired: false },
+        bank_benefit_bank: { isRequired: false },
+        bank_account: { isRequired: false },
         bank_use_default: { isRequired: false },
-        swift: { isRequired: false },
-        iban: { isRequired: false },
+        bank_swift: { isRequired: false },
+        bank_iban: { isRequired: false },
       },
     }),
     settingsKey: 'basic-form-example',
@@ -108,11 +114,11 @@ export const ProfileFundraising = () => {
         <FlexCell width="auto" grow={1}>
           <LabeledInput
             label={t('Beneficiary')}
-            {...lens.prop('beneficiary').toProps()}
+            {...lens.prop('bank_benefit_name').toProps()}
           >
             <TextInput
               placeholder={t('Beneficiary')}
-              {...lens.prop('beneficiary').toProps()}
+              {...lens.prop('bank_benefit_name').toProps()}
             />
           </LabeledInput>
         </FlexCell>
@@ -121,22 +127,22 @@ export const ProfileFundraising = () => {
         <FlexCell cx={styles.inputWrapper} width="auto" grow={1}>
           <LabeledInput
             label={t('Beneficiary Bank')}
-            {...lens.prop('bank').toProps()}
+            {...lens.prop('bank_benefit_bank').toProps()}
           >
             <TextInput
               placeholder={t('Bank name')}
-              {...lens.prop('bank').toProps()}
+              {...lens.prop('bank_benefit_bank').toProps()}
             />
           </LabeledInput>
         </FlexCell>
         <FlexCell width="auto" grow={1}>
           <LabeledInput
             label={t('Account Number')}
-            {...lens.prop('account').toProps()}
+            {...lens.prop('bank_account').toProps()}
           >
             <TextInput
               placeholder={t('Enter account number')}
-              {...lens.prop('account').toProps()}
+              {...lens.prop('bank_account').toProps()}
             />
           </LabeledInput>
         </FlexCell>
@@ -145,22 +151,22 @@ export const ProfileFundraising = () => {
         <FlexCell cx={styles.inputWrapper} width="auto" grow={1}>
           <LabeledInput
             label={t('IBAN Number')}
-            {...lens.prop('bank').toProps()}
+            {...lens.prop('bank_iban').toProps()}
           >
             <TextInput
               placeholder={t('International bank code')}
-              {...lens.prop('iban').toProps()}
+              {...lens.prop('bank_iban').toProps()}
             />
           </LabeledInput>
         </FlexCell>
         <FlexCell width="auto" grow={1}>
           <LabeledInput
             label={t('SWIFT Code')}
-            {...lens.prop('account').toProps()}
+            {...lens.prop('bank_swift').toProps()}
           >
             <TextInput
               placeholder={t('Enter code')}
-              {...lens.prop('swift').toProps()}
+              {...lens.prop('bank_swift').toProps()}
             />
           </LabeledInput>
         </FlexCell>

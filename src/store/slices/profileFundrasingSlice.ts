@@ -16,7 +16,7 @@ const profileFundrasingState = {
   'custom:bank_use_default': false,
   'custom:bank_benefit_name': '',
   'custom:bank_benefit_bank': '',
-  'custom:bank_account': '',
+  'custom:bank_account': '1',
   'custom:bank_iban': '',
   'custom:bank_swift': '',
 };

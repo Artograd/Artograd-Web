@@ -85,6 +85,7 @@ export const ProfileOverview = () => {
       <FlexRow padding="24">
         <FlexCell grow={3}>
           <LinkButton
+            rawProps={{ 'data-testid': `others-id` }}
             onClick={() => history.push('/home')}
             caption={t('profilePage.Others')}
           />

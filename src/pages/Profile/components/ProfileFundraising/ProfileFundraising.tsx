@@ -13,7 +13,6 @@ import {
 } from '@epam/uui';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react';
 import { RootState } from '../../../../store/store';
 import { ReactComponent as InfIcon } from '@epam/assets/icons/common/notification-error-fill-18.svg';
 import { createProfilePayload } from '../../../../services/helpers/profileHelper';
@@ -51,9 +50,6 @@ export const ProfileFundraising = () => {
     (state: RootState) => state.identity.userData['cognito:username'],
   );
 
-  const [useBankData, useBankDataChange] =
-    useState<boolean>(useBankDataByDefault);
-
   const { lens, save } = useForm({
     value: { useBankDataByDefault, beneficiary, bank, account, iban, swift },
     onSave: (fundraising) => {
@@ -64,9 +60,6 @@ export const ProfileFundraising = () => {
           return Promise.resolve({ form: fundraising });
         })
         .catch(() => Promise.reject());
-      return Promise.resolve({
-        form: fundraising,
-      }); /* place your save api call here */
     },
     onSuccess: (data) => {
       dispatch(updateProfileFundrasing(data));
@@ -75,6 +68,11 @@ export const ProfileFundraising = () => {
     getMetadata: () => ({
       props: {
         beneficiary: { isRequired: false },
+        bank: { isRequired: false },
+        account: { isRequired: false },
+        useBankDataByDefault: { isRequired: false },
+        swift: { isRequired: false },
+        iban: { isRequired: false },
       },
     }),
     settingsKey: 'basic-form-example',
@@ -100,8 +98,6 @@ export const ProfileFundraising = () => {
             <LabeledInput>
               <Checkbox
                 {...lens.prop('useBankDataByDefault').toProps()}
-                value={useBankData}
-                onValueChange={(value) => useBankDataChange(value)}
                 label="Use this bank data by default for each tender fundraising."
               />
             </LabeledInput>
